@@ -1,0 +1,141 @@
+<title>Lezione 3 — Documento informatico e le sue copie nel CAD</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+<p class="eyebrow">Materia 5 · Codice dell'Amministrazione Digitale · Zona 🔴</p>
+<h1>Documento informatico e le sue copie: quattro definizioni fatte apposta per confondersi</h1>
+<p class="subtitle">Lezione 3 — questa volta il tuo istinto da SDET è un vantaggio diretto, non solo un'analogia.</p>
+
+<p class="progress">Percorso: <a href="../MISSION.md">MISSION</a> → Zona 🔴 → CAD (materia 5) → Lezione 3/… · Punteggio quiz: <span id="lesson-quiz-score">0 / 0</span></p>
+
+<p>Il CAD distingue quattro tipi di "copia" digitale e li distingue esattamente come faresti tu confrontando due file: <strong>stesso hash/checksum</strong> (bit-identici) contro <strong>stesso contenuto ma bit diversi</strong> (stesso testo, formato diverso). La differenza legale tra questi casi non è pignoleria: cambia il valore probatorio del documento.</p>
+
+<h2>Il punto di partenza: due tipi di documento</h2>
+
+<table>
+  <tr><th>Termine</th><th>Fonte</th><th>Definizione</th></tr>
+  <tr>
+    <td><span class="term">Documento informatico</span></td>
+    <td>CAD art. 1, lett. p</td>
+    <td>"Il documento elettronico che contiene la rappresentazione informatica di atti, fatti o dati giuridicamente rilevanti."</td>
+  </tr>
+  <tr>
+    <td><span class="term">Documento analogico</span></td>
+    <td>CAD art. 1, lett. p-bis</td>
+    <td>"La rappresentazione <strong>non</strong> informatica di atti, fatti o dati giuridicamente rilevanti" — in pratica, carta.</td>
+  </tr>
+</table>
+
+<h2>Le quattro copie</h2>
+
+<table>
+  <tr><th>Termine</th><th>Da → a</th><th>Cosa deve restare identico</th><th>Esempio</th></tr>
+  <tr>
+    <td><span class="term">Copia informatica di documento analogico</span><br><span class="source-note">lett. i-bis</span></td>
+    <td>Carta → digitale</td>
+    <td>Solo il <strong>contenuto</strong></td>
+    <td>Ritrascrivi a mano un contratto cartaceo in un file di testo</td>
+  </tr>
+  <tr>
+    <td><span class="term">Copia per immagine su supporto informatico</span><br><span class="source-note">lett. i-ter</span></td>
+    <td>Carta → digitale</td>
+    <td>Contenuto <strong>e forma</strong></td>
+    <td>Scansione di un documento cartaceo (PDF/immagine)</td>
+  </tr>
+  <tr>
+    <td><span class="term">Copia informatica di documento informatico</span><br><span class="source-note">lett. i-quater</span></td>
+    <td>Digitale → digitale</td>
+    <td>Contenuto identico, <strong>sequenza binaria diversa</strong></td>
+    <td>Converti un .docx in .pdf: stesso testo, bit diversi</td>
+  </tr>
+  <tr>
+    <td><span class="term">Duplicato informatico</span><br><span class="source-note">lett. i-quinquies</span></td>
+    <td>Digitale → digitale</td>
+    <td><strong>Stessa identica sequenza binaria</strong></td>
+    <td><code>cp file.pdf backup/file.pdf</code> — hash identico</td>
+  </tr>
+</table>
+
+<div class="callout">
+  <p class="callout-title">La domanda-trappola classica</p>
+  <p>"Se copio un PDF su un secondo disco senza modificarlo, ottengo una copia informatica di documento informatico o un duplicato informatico?" Risposta: <strong>duplicato informatico</strong> (lett. i-quinquies), perché la sequenza di valori binari resta identica — è letteralmente quello che verificheresti con un checksum. La "copia informatica di documento informatico" (lett. i-quater) si applica solo quando il contenuto resta lo stesso ma i bit cambiano, cioè quando c'è una conversione o un salvataggio in formato diverso.</p>
+</div>
+
+<h2>Verifica — retrieval practice</h2>
+<p class="source-note">L'ordine delle opzioni cambia a ogni caricamento — rispondi dal ragionamento, non dalla posizione.</p>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">1. Scansioni una fattura cartacea e ottieni un PDF che riproduce esattamente l'aspetto visivo dell'originale. Che tipo di copia è, secondo il CAD?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Copia per immagine su supporto informatico</button>
+    <button class="quiz-option" data-correct="false">Copia informatica di documento analogico</button>
+    <button class="quiz-option" data-correct="false">Copia informatica di documento informatico</button>
+    <button class="quiz-option" data-correct="false">Duplicato informatico del documento originale</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Lett. i-ter: la scansione conserva contenuto E forma del documento analogico di partenza — questo è ciò che distingue la "copia per immagine" dalla semplice "copia informatica di documento analogico" (lett. i-bis), che garantisce solo il contenuto.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">2. Ritrascrivi a mano il testo di una lettera cartacea in un file .txt, senza preservarne l'impaginazione. Che tipo di copia è?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Copia informatica di documento analogico</button>
+    <button class="quiz-option" data-correct="false">Copia per immagine su supporto informatico</button>
+    <button class="quiz-option" data-correct="false">Duplicato informatico del documento analogico</button>
+    <button class="quiz-option" data-correct="false">Documento informatico originale non unico</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Lett. i-bis: garantisce solo l'identità di contenuto rispetto al documento analogico, non di forma — esattamente il caso di una ritrascrizione.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">3. Converti un file .docx in .pdf: il testo è identico ma la sequenza di bit del file è ovviamente diversa. Che tipo di copia è?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Copia informatica di documento informatico</button>
+    <button class="quiz-option" data-correct="false">Duplicato informatico del file originale</button>
+    <button class="quiz-option" data-correct="false">Copia per immagine su supporto informatico</button>
+    <button class="quiz-option" data-correct="false">Copia informatica di documento analogico</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Lett. i-quater: contenuto identico, "diversa sequenza di valori binari" rispetto al documento informatico di origine — è esattamente ciò che succede in una conversione di formato.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">4. Copi un file su un secondo dispositivo con un comando che non altera un solo bit — l'hash dei due file è identico. Che tipo di copia è?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Duplicato informatico</button>
+    <button class="quiz-option" data-correct="false">Copia informatica di documento informatico</button>
+    <button class="quiz-option" data-correct="false">Copia per immagine su supporto informatico</button>
+    <button class="quiz-option" data-correct="false">Copia informatica di documento analogico</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Lett. i-quinquies: "la medesima sequenza di valori binari del documento originario" — un hash identico è esattamente il criterio che rende un duplicato informatico tale, a differenza della copia informatica di documento informatico dove la sequenza binaria cambia.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">5. Qual è la differenza tra "documento informatico" e "documento analogico" nel CAD?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Il secondo è una rappresentazione non elettronica</button>
+    <button class="quiz-option" data-correct="false">Il secondo ha sempre minor valore giuridico</button>
+    <button class="quiz-option" data-correct="false">Il primo richiede sempre una firma digitale</button>
+    <button class="quiz-option" data-correct="false">Il primo esiste solo se scansionato dall'altro</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Lett. p-bis: il documento analogico è "la rappresentazione non informatica di atti, fatti o dati giuridicamente rilevanti" — la differenza è solo il supporto (elettronico o no), non il valore giuridico né la presenza di una firma.</div>
+</div>
+
+<h2>Fonte primaria consigliata</h2>
+<p>Sul testo vigente del CAD su <a href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2005-03-07;82" target="_blank" rel="noopener">normattiva.it</a>, confronta le lettere i-bis, i-ter, i-quater, i-quinquies dell'art. 1 una accanto all'altra — sono scritte apposta per essere quasi identiche nella forma e diverse in un solo dettaglio.</p>
+
+<div class="callout">
+  <p class="callout-title">Blocco?</p>
+  <p>Se una delle quattro definizioni continua a non "stare in piedi" nella tua testa, chiedimelo — a volte basta un secondo esempio pratico diverso da quelli qui sopra per farla scattare.</p>
+</div>
+
+<p class="source-note">Materiale di riferimento compresso: <a href="../reference/cad-documento-e-copie.html">scheda "Documento informatico e le sue copie"</a>.</p>
+
+<nav class="lesson-nav">
+  <span>← <a href="0002-cad-identita-domicilio-digitale.html">Lezione 2 — Identità e domicilio digitale</a></span>
+  <span>Prossima: <a href="0004-diramm-principi-e-vocabolario.html">Lezione 4 — Principi e vocabolario base (diritto amministrativo)</a> →</span>
+</nav>
+
+<script src="../assets/quiz.js"></script>

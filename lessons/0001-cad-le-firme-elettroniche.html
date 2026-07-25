@@ -1,0 +1,123 @@
+<title>Lezione 1 — Le firme elettroniche nel CAD</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+<p class="eyebrow">Materia 5 · Codice dell'Amministrazione Digitale · Zona 🔴</p>
+<h1>Le firme elettroniche: la gerarchia che il CAD ti chiede di conoscere</h1>
+<p class="subtitle">Lezione 1 di percorso — primo mattone della materia più "tecnica" tra quelle giuridiche del bando.</p>
+
+<p class="progress">Percorso: <a href="../MISSION.md">MISSION</a> → Zona 🔴 → CAD (materia 5) → Lezione 1/… · Punteggio quiz: <span id="lesson-quiz-score">0 / 0</span></p>
+
+<p>Nel tuo lavoro da SDET conosci bene l'idea di <em>livelli di fiducia</em>: un token JWT non firmato non prova nulla, uno firmato con HMAC prova che è passato da chi conosce il segreto condiviso, uno firmato con una chiave privata verificata da una CA prova anche l'identità del firmatario. Le firme elettroniche italiane funzionano secondo la stessa logica a livelli — e i quiz del concorso amano chiederti di distinguerli.</p>
+
+<div class="callout">
+  <p class="callout-title">Il dettaglio che quasi tutti sbagliano</p>
+  <p>Fino a qualche anno fa il CAD definiva da solo "firma elettronica", "firma elettronica avanzata" e "firma elettronica qualificata" nel proprio art. 1. Quelle lettere (q, q-bis, r) sono state <strong>abrogate</strong>. Oggi l'art. 1, comma 1-bis del CAD dice semplicemente: <em>"Ai fini del presente Codice, valgono le definizioni di cui all'articolo 3 del Regolamento eIDAS"</em> (Regolamento UE 910/2014). Solo la <span class="term">firma digitale</span> resta definita direttamente dal CAD (art. 1, lett. s), perché è una specificità italiana. Un quiz può chiederti "dove si trova oggi la definizione di firma elettronica avanzata?" aspettandosi <strong>eIDAS</strong>, non il CAD.</p>
+</div>
+
+<h2>La gerarchia in quattro livelli</h2>
+
+<table>
+  <tr><th>Livello</th><th>Definizione (fonte)</th><th>Requisito chiave</th></tr>
+  <tr>
+    <td><span class="term">Firma elettronica</span> (semplice)</td>
+    <td>eIDAS art. 3.10</td>
+    <td>Qualsiasi dato elettronico collegato ad altri dati e usato per firmare — anche una email o un PIN.</td>
+  </tr>
+  <tr>
+    <td><span class="term">Firma elettronica avanzata</span> (FEA)</td>
+    <td>eIDAS art. 3.11 + art. 26</td>
+    <td>Connessa univocamente al firmatario, sotto il suo controllo esclusivo, rileva modifiche successive al documento.</td>
+  </tr>
+  <tr>
+    <td><span class="term">Firma elettronica qualificata</span> (FEQ)</td>
+    <td>eIDAS art. 3.12</td>
+    <td>Una FEA creata con un dispositivo qualificato e basata su un certificato qualificato.</td>
+  </tr>
+  <tr>
+    <td><span class="term">Firma digitale</span></td>
+    <td>CAD art. 1, lett. s</td>
+    <td>Una FEQ specificamente basata su una coppia di chiavi crittografiche correlate, una pubblica e una privata.</td>
+  </tr>
+</table>
+
+<p>In termini che conosci bene: la firma digitale sta alla FEQ come un'implementazione concreta (RSA/ECDSA a chiave pubblica) sta a un'interfaccia astratta — <strong>ogni firma digitale è una FEQ, ma non ogni FEQ è una firma digitale</strong> (altri paesi UE possono usare dispositivi qualificati diversi dal sistema a chiavi pubblica/privata).</p>
+
+<h2>Verifica — retrieval practice</h2>
+<p class="source-note">Rispondi senza rileggere sopra. Se sbagli, la spiegazione con la fonte compare subito dopo.</p>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">1. Qual è oggi la fonte che definisce la "firma elettronica" semplice applicabile in Italia?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Il Regolamento eIDAS europeo</button>
+    <button class="quiz-option" data-correct="false">Il Codice civile italiano</button>
+    <button class="quiz-option" data-correct="false">Il Testo Unico bancario</button>
+    <button class="quiz-option" data-correct="false">La Costituzione della Repubblica</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Le definizioni di firma elettronica, avanzata e qualificata sono state tolte dal CAD e rimandano oggi al Regolamento (UE) 910/2014 (eIDAS), art. 3 — richiamato dal CAD stesso all'art. 1, comma 1-bis.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">2. Quale articolo del CAD stabilisce che si applicano le definizioni di eIDAS?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Articolo 1, comma 1-bis</button>
+    <button class="quiz-option" data-correct="false">Articolo 5, comma 2-ter</button>
+    <button class="quiz-option" data-correct="false">Articolo 20, comma 3-bis</button>
+    <button class="quiz-option" data-correct="false">Articolo 71, comma 1-quater</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Art. 1, comma 1-bis CAD: "Ai fini del presente Codice, valgono le definizioni di cui all'articolo 3 del Regolamento eIDAS".</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">3. Cosa distingue la firma digitale dalla firma elettronica qualificata generica?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Usa una coppia di chiavi crittografiche</button>
+    <button class="quiz-option" data-correct="false">Usa un lettore di impronte digitali</button>
+    <button class="quiz-option" data-correct="false">Usa un codice inviato via SMS</button>
+    <button class="quiz-option" data-correct="false">Usa una fototessera autenticata dal comune</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>CAD art. 1, lett. s: la firma digitale è "un particolare tipo di firma qualificata basato su un sistema di chiavi crittografiche, una pubblica e una privata, correlate tra loro".</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">4. Un dipendente firma con un dispositivo che soddisfa i requisiti dell'art. 26 eIDAS (identifica univocamente il firmatario, resta sotto il suo controllo esclusivo, rileva modifiche successive al testo) ma non si basa su un certificato qualificato. Che tipo di firma è?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Firma elettronica avanzata</button>
+    <button class="quiz-option" data-correct="false">Firma elettronica qualificata</button>
+    <button class="quiz-option" data-correct="false">Firma digitale semplice</button>
+    <button class="quiz-option" data-correct="false">Firma elettronica certificata</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Soddisfare i 4 requisiti dell'art. 26 eIDAS è esattamente la definizione di FEA (art. 3.11). Manca il certificato qualificato, quindi non è FEQ — e senza FEQ non può essere firma digitale, che ne è un sottoinsieme.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">5. Perché "ogni firma digitale è una FEQ" ma non è vero il contrario?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">È un sottotipo italiano di FEQ</button>
+    <button class="quiz-option" data-correct="false">È un sinonimo esatto della FEQ</button>
+    <button class="quiz-option" data-correct="false">È del tutto indipendente dalla FEQ</button>
+    <button class="quiz-option" data-correct="false">È stata abolita dal Regolamento eIDAS</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>La firma digitale (CAD art. 1, lett. s) è definita come "un particolare tipo di firma qualificata" — cioè un sottoinsieme della FEQ specifico dell'ordinamento italiano, basato sul sistema a chiavi pubblica/privata.</div>
+</div>
+
+<h2>Fonte primaria consigliata</h2>
+<p>Leggi il testo vigente dell'<a href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2005-03-07;82" target="_blank" rel="noopener">art. 1 del CAD su normattiva.it</a> — nota da solo quali lettere sono "SOPPRESSA" e quali restano attive. È l'esercizio più efficace per fissare cosa il CAD definisce ancora in proprio e cosa rimanda a eIDAS.</p>
+
+<div class="callout">
+  <p class="callout-title">Blocco?</p>
+  <p>Se qualcosa non torna — anche un dettaglio che ti sembra ovvio dal tuo background tecnico ma non si allinea col linguaggio giuridico — chiedimelo pure adesso. Sono il tuo tutor per questo percorso, non solo il generatore di lezioni.</p>
+</div>
+
+<p class="source-note">Materiale di riferimento compresso per il ripasso: <a href="../reference/cad-firme-elettroniche.html">scheda "Firme elettroniche nel CAD"</a>.</p>
+
+<nav class="lesson-nav">
+  <span>← Sei alla lezione 1</span>
+  <span>Prossima: <a href="0002-cad-identita-domicilio-digitale.html">Lezione 2 — Identità e domicilio digitale</a> →</span>
+</nav>
+
+<script src="../assets/quiz.js"></script>

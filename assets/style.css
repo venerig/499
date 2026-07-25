@@ -1,0 +1,257 @@
+/* Shared stylesheet for the Concorso INPS 499 teaching workspace.
+   Tufte-inspired: quiet typography, generous margins, print-friendly. */
+
+:root {
+  --ink: #1a1a1a;
+  --ink-soft: #4a4a4a;
+  --paper: #fdfcf9;
+  --paper-raised: #f5f2eb;
+  --accent: #8a2e2e;
+  --accent-soft: #b8564f;
+  --rule: #d8d2c4;
+  --ok: #2e6b3e;
+  --ok-bg: #eaf3ec;
+  --bad: #8a2e2e;
+  --bad-bg: #f8ecea;
+  --code-bg: #f0ede4;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #e8e4d8;
+    --ink-soft: #b8b2a0;
+    --paper: #1c1b18;
+    --paper-raised: #26241f;
+    --accent: #d98a80;
+    --accent-soft: #c96b5f;
+    --rule: #3a382f;
+    --ok: #7fbd8f;
+    --ok-bg: #1f2e22;
+    --bad: #d98a80;
+    --bad-bg: #2e211f;
+    --code-bg: #262420;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0 auto;
+  max-width: 44rem;
+  padding: 3.5rem 1.75rem 6rem;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+  font-size: 1.08rem;
+  line-height: 1.65;
+}
+
+.eyebrow {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+  margin: 0 0 0.4rem;
+}
+
+h1 {
+  font-size: 2.1rem;
+  line-height: 1.2;
+  margin: 0 0 0.3rem;
+  font-weight: 600;
+}
+
+.subtitle {
+  color: var(--ink-soft);
+  font-size: 1.05rem;
+  font-style: italic;
+  margin: 0 0 2.2rem;
+}
+
+h2 {
+  font-size: 1.35rem;
+  margin: 2.6rem 0 0.9rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+h3 {
+  font-size: 1.08rem;
+  margin: 1.8rem 0 0.6rem;
+  color: var(--accent);
+}
+
+p { margin: 0 0 1.1rem; }
+
+a { color: var(--accent); text-decoration-color: var(--rule); text-underline-offset: 3px; }
+a:hover { text-decoration-color: var(--accent); }
+
+ul, ol { padding-left: 1.4rem; margin: 0 0 1.1rem; }
+li { margin-bottom: 0.4rem; }
+
+strong { font-weight: 650; }
+
+code, .term {
+  font-family: "SF Mono", ui-monospace, Menlo, Consolas, monospace;
+  font-size: 0.92em;
+  background: var(--code-bg);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}
+
+blockquote {
+  margin: 1.4rem 0;
+  padding: 0.2rem 1.2rem;
+  border-left: 3px solid var(--accent-soft);
+  color: var(--ink-soft);
+  font-size: 0.98rem;
+}
+
+.callout {
+  background: var(--paper-raised);
+  border-left: 3px solid var(--accent);
+  padding: 1rem 1.3rem;
+  border-radius: 4px;
+  margin: 1.6rem 0;
+}
+
+.callout-title {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+}
+
+.source-note {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+}
+
+.progress {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  letter-spacing: 0.02em;
+  margin-bottom: 1.5rem;
+}
+
+nav.lesson-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 3.5rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--rule);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.9rem;
+}
+
+hr.section-break {
+  border: none;
+  border-top: 1px solid var(--rule);
+  margin: 3rem 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.2rem 0;
+  font-size: 0.95rem;
+}
+th, td {
+  text-align: left;
+  padding: 0.5rem 0.7rem;
+  border-bottom: 1px solid var(--rule);
+}
+th {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-soft);
+}
+
+/* ---- Quiz component (see quiz.js) ---- */
+
+.quiz {
+  background: var(--paper-raised);
+  border-radius: 8px;
+  padding: 1.4rem 1.5rem 1.6rem;
+  margin: 1.6rem 0;
+}
+
+.quiz-q {
+  font-weight: 600;
+  margin: 0 0 0.9rem;
+}
+
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin-bottom: 0.9rem;
+}
+
+.quiz-option {
+  text-align: left;
+  font: inherit;
+  font-size: 0.98rem;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  padding: 0.6rem 0.9rem;
+  cursor: pointer;
+  color: var(--ink);
+  transition: border-color 0.15s ease;
+}
+
+.quiz-option:hover { border-color: var(--accent-soft); }
+
+.quiz-option.correct {
+  border-color: var(--ok);
+  background: var(--ok-bg);
+}
+
+.quiz-option.incorrect {
+  border-color: var(--bad);
+  background: var(--bad-bg);
+}
+
+.quiz-option:disabled { cursor: default; }
+
+.quiz-feedback {
+  font-size: 0.92rem;
+  min-height: 1.3em;
+}
+
+.quiz-feedback.correct { color: var(--ok); }
+.quiz-feedback.incorrect { color: var(--bad); }
+
+.quiz-explain {
+  margin-top: 0.6rem;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  display: none;
+}
+
+.quiz-explain.shown { display: block; }
+
+.quiz-score {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  text-align: right;
+  margin-top: -0.6rem;
+  margin-bottom: 1rem;
+}
+
+@media print {
+  body { max-width: none; padding: 0.5in; }
+  .quiz-option { border: 1px solid #999; }
+  a { color: inherit; }
+}
