@@ -1,0 +1,129 @@
+<title>Lezione 17 — Paradigmi di programmazione</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+<p class="eyebrow">Materia 2 · Linguaggi di programmazione · Zona 🟡</p>
+<h1>Nomi da manuale per cose che scrivi ogni giorno</h1>
+<p class="subtitle">Lezione 17 — i paradigmi che i quiz elencano come categorie separate, tu li mescoli già ogni volta che scrivi un test Playwright o una query SQL.</p>
+
+<p class="progress">Percorso: <a href="../MISSION.md">MISSION</a> → Zona 🟡 → Linguaggi di programmazione (materia 2) → Lezione 2/… · Punteggio quiz: <span id="lesson-quiz-score">0 / 0</span></p>
+
+<p>Un paradigma di programmazione è uno stile, un modo di strutturare la soluzione — non un linguaggio specifico. La maggior parte dei linguaggi che usi (TypeScript, Python) sono <strong>multi-paradigma</strong>: mescolano più stili. Il quiz però chiede di riconoscere e nominare ogni stile isolatamente.</p>
+
+<h2>I cinque paradigmi principali</h2>
+
+<table>
+  <tr><th>Paradigma</th><th>Idea centrale</th><th>Esempio nella tua esperienza</th></tr>
+  <tr>
+    <td><span class="term">Imperativo / procedurale</span></td>
+    <td>Sequenza di istruzioni che modificano lo stato del programma passo per passo.</td>
+    <td>Uno script Robot Framework che esegue step in ordine, o un ciclo <code>for</code> classico.</td>
+  </tr>
+  <tr>
+    <td><span class="term">Orientato agli oggetti (OOP)</span></td>
+    <td>Il programma è composto da oggetti che interagiscono, ciascuno con stato e comportamento.</td>
+    <td>Le Page Object di Playwright/Selenium sono OOP puro: ogni pagina è una classe con metodi.</td>
+  </tr>
+  <tr>
+    <td><span class="term">Funzionale</span></td>
+    <td>Il programma è una composizione di funzioni, idealmente senza effetti collaterali (funzioni pure).</td>
+    <td>Metodi di array come <code>.map()</code>/<code>.filter()</code> in TypeScript.</td>
+  </tr>
+  <tr>
+    <td><span class="term">Dichiarativo</span></td>
+    <td>Specifichi <strong>cosa</strong> vuoi ottenere, non <strong>come</strong> ottenerlo passo per passo.</td>
+    <td>Una query SQL: dichiari il risultato voluto, non l'algoritmo per trovarlo.</td>
+  </tr>
+  <tr>
+    <td><span class="term">Event-driven (a eventi)</span></td>
+    <td>Il flusso di esecuzione è guidato da eventi esterni, non da una sequenza lineare.</td>
+    <td>Un listener che reagisce a un click o a una risposta di rete.</td>
+  </tr>
+</table>
+
+<div class="callout">
+  <p class="callout-title">Il tranello più comune</p>
+  <p>Nei quiz, imperativo e dichiarativo vengono spesso messi in coppia come opposti: se la domanda descrive un codice che dice <strong>"cosa" ottenere</strong> senza specificare i passaggi (tipico di SQL, HTML, CSS), la risposta è dichiarativo. Se descrive una sequenza di passi espliciti che modificano lo stato, è imperativo — anche se il codice è scritto in un linguaggio "moderno" come Python.</p>
+</div>
+
+<h2>I quattro pilastri dell'OOP</h2>
+<p>Poiché la programmazione orientata agli oggetti è la più citata nei quiz da manuale, vale la pena fissarne i quattro pilastri classici: <strong>incapsulamento</strong> (nascondere i dettagli interni di un oggetto), <strong>ereditarietà</strong> (una classe eredita comportamento da un'altra), <strong>polimorfismo</strong> (oggetti diversi rispondono allo stesso metodo in modi diversi), <strong>astrazione</strong> (esporre solo l'interfaccia essenziale, nascondendo la complessità).</p>
+
+<h2>Verifica — retrieval practice</h2>
+<p class="source-note">L'ordine delle opzioni cambia a ogni caricamento — rispondi dal ragionamento, non dalla posizione.</p>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">1. Cosa caratterizza il paradigma dichiarativo rispetto a quello imperativo?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Specifica cosa ottenere, non come ottenerlo passo per passo</button>
+    <button class="quiz-option" data-correct="false">Richiede sempre l'uso di classi e oggetti</button>
+    <button class="quiz-option" data-correct="false">Esegue le istruzioni solo in risposta a eventi esterni</button>
+    <button class="quiz-option" data-correct="false">Vieta l'uso di variabili durante l'esecuzione</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Il dichiarativo descrive il risultato voluto (es. una query SQL) senza specificare l'algoritmo passo per passo — è l'opposto dell'imperativo, che invece descrive la sequenza esplicita di istruzioni.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">2. Quali linguaggi sono tradizionalmente citati come rappresentativi del paradigma funzionale?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Lisp e Haskell</button>
+    <button class="quiz-option" data-correct="false">Assembly e linguaggio macchina</button>
+    <button class="quiz-option" data-correct="false">HTML e CSS</button>
+    <button class="quiz-option" data-correct="false">SQL e Prolog</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Lisp e Haskell sono gli esempi da manuale del paradigma funzionale, dove il programma è visto come composizione di funzioni matematiche. SQL e Prolog appartengono invece al paradigma dichiarativo/logico.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">3. Cosa organizza il paradigma orientato agli oggetti (OOP)?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Oggetti con stato e comportamento che interagiscono tra loro</button>
+    <button class="quiz-option" data-correct="false">Una sequenza fissa di eventi esterni al programma</button>
+    <button class="quiz-option" data-correct="false">Un'unica funzione matematica pura senza stato</button>
+    <button class="quiz-option" data-correct="false">Istruzioni assembly tradotte direttamente in macchina</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Un programma OOP è composto da oggetti, ciascuno con proprio stato e comportamento, che interagiscono tra loro — il modello dietro alle Page Object che usi già nei framework di test.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">4. Quale di questi NON è uno dei quattro pilastri classici dell'OOP?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Concorrenza</button>
+    <button class="quiz-option" data-correct="false">Incapsulamento</button>
+    <button class="quiz-option" data-correct="false">Ereditarietà</button>
+    <button class="quiz-option" data-correct="false">Polimorfismo</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>I quattro pilastri classici sono incapsulamento, ereditarietà, polimorfismo e astrazione. La concorrenza è un tema trasversale importante, ma non fa parte di questo elenco specifico.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">5. Come si definisce un linguaggio che integra caratteristiche di più paradigmi, come TypeScript o Python?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Multi-paradigma</button>
+    <button class="quiz-option" data-correct="false">Monolitico</button>
+    <button class="quiz-option" data-correct="false">A basso livello</button>
+    <button class="quiz-option" data-correct="false">Puramente dichiarativo</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>La maggior parte dei linguaggi moderni è multi-paradigma: integra elementi imperativi, orientati agli oggetti e funzionali nello stesso linguaggio, invece di aderire rigidamente a un solo stile.</div>
+</div>
+
+<h2>Fonte primaria consigliata</h2>
+<p>Per un ripasso rapido della tassonomia standard, la voce <a href="https://it.wikipedia.org/wiki/Paradigma_di_programmazione" target="_blank" rel="noopener">"Paradigma di programmazione" su Wikipedia in italiano</a> elenca gli stessi cinque paradigmi con la terminologia usata nei manuali da concorso.</p>
+
+<div class="callout">
+  <p class="callout-title">Blocco?</p>
+  <p>Se un esempio pratico non ti convince come classificazione (capita spesso con codice "di confine" tra due paradigmi), chiedimelo — è normale che il codice reale sia più sfumato della tassonomia da manuale.</p>
+</div>
+
+<p class="source-note">Materiale di riferimento compresso: <a href="../reference/paradigmi-di-programmazione.html">scheda "Paradigmi di programmazione"</a>.</p>
+
+<nav class="lesson-nav">
+  <span>← <a href="0016-linguaggi-livelli-e-traduzione.html">Lezione 16 — Linguaggi: livelli e modalità di traduzione</a></span>
+  <span>Prossima: <a href="0018-ai-act-definizione-e-rischio.html">Lezione 18 — AI Act: definizione e livelli di rischio</a> →</span>
+</nav>
+
+<script src="../assets/quiz.js"></script>

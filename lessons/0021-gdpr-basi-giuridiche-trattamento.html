@@ -1,0 +1,113 @@
+<title>Lezione 21 — Le sei basi giuridiche del trattamento</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+<p class="eyebrow">Materia 4 · Data privacy e sicurezza informatica · Zona 🟡</p>
+<h1>Sei scope validi per trattare dati, e uno negato a chi lavorerai per davvero</h1>
+<p class="subtitle">Lezione 21 — la lettera più rilevante per un futuro Assistente Informatico INPS non è la più famosa (il consenso), è quella che la PA <strong>non può</strong> usare.</p>
+
+<p class="progress">Percorso: <a href="../MISSION.md">MISSION</a> → Zona 🟡 → Data privacy e GDPR (materia 4) → Lezione 2/… · Punteggio quiz: <span id="lesson-quiz-score">0 / 0</span></p>
+
+<p>Ogni trattamento di dati personali deve poggiare su almeno una delle sei basi giuridiche dell'art. 6, co. 1 — pensa a sei "scope" di autorizzazione validi, uno dei quali è però disabilitato per un tipo specifico di attore: le autorità pubbliche.</p>
+
+<h2>Le sei basi — art. 6, co. 1</h2>
+
+<table>
+  <tr><th>Lett.</th><th>Base</th><th>Testo</th></tr>
+  <tr><td>a</td><td><span class="term">Consenso</span></td><td>"L'interessato ha espresso il consenso al trattamento dei propri dati personali per una o più specifiche finalità."</td></tr>
+  <tr><td>b</td><td><span class="term">Esecuzione di un contratto</span></td><td>"Il trattamento è necessario all'esecuzione di un contratto di cui l'interessato è parte o all'esecuzione di misure precontrattuali."</td></tr>
+  <tr><td>c</td><td><span class="term">Obbligo legale</span></td><td>"Il trattamento è necessario per adempiere un obbligo legale al quale è soggetto il titolare del trattamento."</td></tr>
+  <tr><td>d</td><td><span class="term">Interessi vitali</span></td><td>"Il trattamento è necessario per la salvaguardia degli interessi vitali dell'interessato o di un'altra persona fisica."</td></tr>
+  <tr><td>e</td><td><span class="term">Compito di interesse pubblico</span></td><td>"Il trattamento è necessario per l'esecuzione di un compito di interesse pubblico o connesso all'esercizio di pubblici poteri di cui è investito il titolare."</td></tr>
+  <tr><td>f</td><td><span class="term">Legittimo interesse</span></td><td>"Il trattamento è necessario per il perseguimento del legittimo interesse del titolare o di terzi", salvo che prevalgano i diritti dell'interessato.</td></tr>
+</table>
+
+<div class="callout">
+  <p class="callout-title">La riga più importante di questa lezione</p>
+  <p>Subito dopo l'elenco, l'art. 6 aggiunge una frase decisiva: <strong>"La lettera f) del primo comma non si applica al trattamento di dati effettuato dalle autorità pubbliche nell'esecuzione dei loro compiti."</strong> Un ente come l'INPS, nell'esercizio delle sue funzioni istituzionali, <strong>non può</strong> usare il "legittimo interesse" come base giuridica — deve appoggiarsi a b), c) o quasi sempre e) (compito di interesse pubblico/pubblici poteri).</p>
+</div>
+
+<table>
+  <tr><th></th><th>Analogia tecnica</th></tr>
+  <tr><td>Basi giuridiche in generale</td><td>Sei scope OAuth validi per autorizzare un'operazione sui dati</td></tr>
+  <tr><td>Esclusione di f) per le PA</td><td>Uno scope disabilitato per un ruolo/service-account specifico — non è una svista, è una restrizione esplicita nella configurazione</td></tr>
+</table>
+
+<h2>Verifica — retrieval practice</h2>
+<p class="source-note">L'ordine delle opzioni cambia a ogni caricamento — rispondi dal ragionamento, non dalla posizione.</p>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">1. Quale delle seguenti NON è una delle sei basi giuridiche elencate dall'art. 6, co. 1?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Abitudine consolidata del titolare del trattamento</button>
+    <button class="quiz-option" data-correct="false">Esecuzione di un contratto di cui l'interessato è parte</button>
+    <button class="quiz-option" data-correct="false">Adempimento di un obbligo legale</button>
+    <button class="quiz-option" data-correct="false">Salvaguardia di interessi vitali dell'interessato</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Le sei basi sono consenso, esecuzione di un contratto, obbligo legale, interessi vitali, compito di interesse pubblico, legittimo interesse — "l'abitudine consolidata" non è tra queste.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">2. Cosa richiede la base giuridica del "consenso" (lett. a)?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Che l'interessato lo abbia espresso per una o più finalità specifiche</button>
+    <button class="quiz-option" data-correct="false">Che il titolare lo presuma dal comportamento dell'interessato</button>
+    <button class="quiz-option" data-correct="false">Che sia raccolto una sola volta per qualsiasi finalità futura</button>
+    <button class="quiz-option" data-correct="false">Che sia sempre scritto e controfirmato da un notaio</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Lett. a: "l'interessato ha espresso il consenso [...] per una o più specifiche finalità" — un consenso generico e presunto, o valido per finalità future indefinite, non soddisfa questo requisito.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">3. Quale base giuridica NON può essere invocata dalle autorità pubbliche nell'esecuzione dei loro compiti?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Legittimo interesse (lett. f)</button>
+    <button class="quiz-option" data-correct="false">Obbligo legale (lett. c)</button>
+    <button class="quiz-option" data-correct="false">Compito di interesse pubblico (lett. e)</button>
+    <button class="quiz-option" data-correct="false">Esecuzione di un contratto (lett. b)</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>L'art. 6 chiude con: "la lettera f) del primo comma non si applica al trattamento di dati effettuato dalle autorità pubbliche nell'esecuzione dei loro compiti" — un'esclusione esplicita, non un'omissione.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">4. Su quale base giuridica si fonda tipicamente il trattamento dati di un ente come l'INPS nell'esercizio delle proprie funzioni istituzionali?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Compito di interesse pubblico o esercizio di pubblici poteri</button>
+    <button class="quiz-option" data-correct="false">Legittimo interesse dell'ente</button>
+    <button class="quiz-option" data-correct="false">Consenso rinnovato ogni anno da ciascun cittadino</button>
+    <button class="quiz-option" data-correct="false">Interessi vitali del titolare del trattamento</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Lett. e: "esecuzione di un compito di interesse pubblico o connesso all'esercizio di pubblici poteri" — la base tipica per l'attività ordinaria di un ente pubblico, spesso insieme all'obbligo legale (lett. c).</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">5. Cosa richiede la base giuridica del "legittimo interesse" (lett. f) per essere valida?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Che non prevalgano gli interessi o i diritti fondamentali dell'interessato</button>
+    <button class="quiz-option" data-correct="false">Che sia sempre accompagnata dal consenso esplicito</button>
+    <button class="quiz-option" data-correct="false">Che sia utilizzata esclusivamente da enti pubblici</button>
+    <button class="quiz-option" data-correct="false">Che riguardi solo dati già pubblicamente disponibili</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Lett. f: valida "a condizione che non prevalgano gli interessi o i diritti e le libertà fondamentali dell'interessato" — ed esplicitamente non utilizzabile dalle autorità pubbliche nell'esecuzione dei loro compiti, l'opposto di quanto affermato nella terza opzione.</div>
+</div>
+
+<h2>Fonte primaria consigliata</h2>
+<p>Sul testo vigente dell'<a href="https://www.privacy-regulation.eu/it/6.htm" target="_blank" rel="noopener">art. 6 GDPR su privacy-regulation.eu</a> (o l'equivalente su <a href="https://eur-lex.europa.eu/legal-content/it/TXT/?uri=CELEX%3A32016R0679" target="_blank" rel="noopener">EUR-Lex</a>), leggi per intero il comma 1 e la frase finale sull'esclusione della lett. f per le autorità pubbliche — è la parte che più probabilmente distingue un quiz da concorso PA da un quiz GDPR generico.</p>
+
+<div class="callout">
+  <p class="callout-title">Blocco?</p>
+  <p>Se la differenza tra "compito di interesse pubblico" (lett. e) e "obbligo legale" (lett. c) resta sfumata — spesso coesistono per lo stesso trattamento — chiedimelo, è un punto dove anche i testi normativi si sovrappongono.</p>
+</div>
+
+<p class="source-note">Materiale di riferimento compresso: <a href="../reference/gdpr-basi-giuridiche-trattamento.html">scheda "Le sei basi giuridiche del trattamento"</a>.</p>
+
+<nav class="lesson-nav">
+  <span>← <a href="0020-gdpr-definizioni-e-principi.html">Lezione 20 — GDPR: definizioni chiave e i sei principi</a></span>
+  <span>Prossima: <a href="0022-gdpr-diritti-interessato.html">Lezione 22 — I diritti dell'interessato</a> →</span>
+</nav>
+
+<script src="../assets/quiz.js"></script>

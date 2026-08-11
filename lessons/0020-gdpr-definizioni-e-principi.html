@@ -1,0 +1,136 @@
+<title>Lezione 20 — GDPR: definizioni chiave e i sei principi</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+<p class="eyebrow">Materia 4 · Data privacy e sicurezza informatica · Zona 🟡</p>
+<h1>Chi decide, chi esegue, e sei regole che valgono per ogni singolo dato</h1>
+<p class="subtitle">Lezione 20 — ultima materia della zona 🟡. Qui il tuo istinto da SDET su ownership e contratti tra sistemi ti aiuta più che altrove: titolare e responsabile del trattamento sono esattamente quella distinzione.</p>
+
+<p class="progress">Percorso: <a href="../MISSION.md">MISSION</a> → Zona 🟡 → Data privacy e GDPR (materia 4) → Lezione 1/… · Punteggio quiz: <span id="lesson-quiz-score">0 / 0</span></p>
+
+<h2>Art. 4 — le quattro definizioni fondanti</h2>
+
+<table>
+  <tr><th>Termine</th><th>Definizione</th><th>Analogia tecnica</th></tr>
+  <tr>
+    <td><span class="term">Dato personale</span></td>
+    <td>"Qualsiasi informazione riguardante una persona fisica <strong>identificata o identificabile</strong>."</td>
+    <td>Non serve un nome esplicito: se una combinazione di campi permette di risalire alla persona, è dato personale.</td>
+  </tr>
+  <tr>
+    <td><span class="term">Trattamento</span></td>
+    <td>"Qualsiasi operazione o insieme di operazioni, compiute con o senza l'ausilio di processi automatizzati e applicate a dati personali."</td>
+    <td>Praticamente ogni CRUD sui dati — leggere, scrivere, cancellare, anche solo consultare, è "trattamento".</td>
+  </tr>
+  <tr>
+    <td><span class="term">Titolare del trattamento</span></td>
+    <td>Chi "determina le finalità e i mezzi del trattamento".</td>
+    <td>Il product/business owner: decide perché raccogliere quei dati e come vengono usati.</td>
+  </tr>
+  <tr>
+    <td><span class="term">Responsabile del trattamento</span></td>
+    <td>Chi "tratta dati personali per conto del titolare del trattamento".</td>
+    <td>Un vendor/SaaS che processa dati per tuo conto sotto contratto — esegue, non decide il "perché".</td>
+  </tr>
+</table>
+
+<div class="callout">
+  <p class="callout-title">Un pattern che hai già visto</p>
+  <p>Titolare (decide) / responsabile (esegue per conto di) è la stessa struttura logica vista nella separazione tra indirizzo politico e gestione dirigenziale (D.Lgs. 165/2001, lezione 7) e tra RPCT che propone e organo di indirizzo che adotta (L. 190/2012, lezione 11): chi definisce l'obiettivo e chi lo esegue sono quasi sempre soggetti distinti nel diritto amministrativo italiano.</p>
+</div>
+
+<h2>Art. 5, co. 1 — i sei principi del trattamento</h2>
+
+<table>
+  <tr><th>Principio</th><th>Testo</th></tr>
+  <tr><td><span class="term">Liceità, correttezza, trasparenza</span></td><td>"Trattati in modo lecito, corretto e trasparente nei confronti dell'interessato."</td></tr>
+  <tr><td><span class="term">Limitazione della finalità</span></td><td>"Raccolti per finalità determinate, esplicite e legittime, e successivamente trattati in modo che non sia incompatibile" con quelle finalità.</td></tr>
+  <tr><td><span class="term">Minimizzazione dei dati</span></td><td>"Adeguati, pertinenti e limitati a quanto necessario rispetto alle finalità per le quali sono trattati."</td></tr>
+  <tr><td><span class="term">Esattezza</span></td><td>"Esatti e, se necessario, aggiornati; devono essere adottate tutte le misure ragionevoli per cancellare o rettificare" i dati inesatti.</td></tr>
+  <tr><td><span class="term">Limitazione della conservazione</span></td><td>"Conservati in una forma che consenta l'identificazione degli interessati per un arco di tempo non superiore al conseguimento" delle finalità.</td></tr>
+  <tr><td><span class="term">Integrità e riservatezza</span></td><td>"Trattati in maniera da garantire un'adeguata sicurezza dei dati personali, compresa la protezione, mediante misure tecniche" adeguate.</td></tr>
+</table>
+
+<div class="callout">
+  <p class="callout-title">Il tranello più comune</p>
+  <p>Minimizzazione ed esattezza si confondono facilmente: <strong>minimizzazione</strong> riguarda <em>quanti</em> dati raccogli (solo quelli necessari alla finalità), <strong>esattezza</strong> riguarda la <em>qualità</em> dei dati che già hai (devono essere corretti e aggiornati). Un dato può essere minimo ma inesatto, o esatto ma raccolto in eccesso: sono due dimensioni indipendenti, non la stessa cosa vista da due angoli.</p>
+</div>
+
+<h2>Verifica — retrieval practice</h2>
+<p class="source-note">L'ordine delle opzioni cambia a ogni caricamento — rispondi dal ragionamento, non dalla posizione.</p>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">1. Come definisce il GDPR il "dato personale" all'art. 4?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Qualsiasi informazione riguardante una persona fisica identificata o identificabile</button>
+    <button class="quiz-option" data-correct="false">Solo i dati contenenti nome e cognome espliciti</button>
+    <button class="quiz-option" data-correct="false">Solo i dati sanitari e biometrici</button>
+    <button class="quiz-option" data-correct="false">Solo i dati raccolti con consenso esplicito scritto</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Art. 4, punto 1: "qualsiasi informazione riguardante una persona fisica identificata o identificabile" — non serve un nome esplicito, basta la possibilità di identificazione, anche indiretta.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">2. Chi è, secondo il GDPR, il "titolare del trattamento"?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Chi determina le finalità e i mezzi del trattamento</button>
+    <button class="quiz-option" data-correct="false">Chi tratta dati esclusivamente per conto di un altro soggetto</button>
+    <button class="quiz-option" data-correct="false">Chi è unicamente destinatario finale dei dati raccolti</button>
+    <button class="quiz-option" data-correct="false">Chi effettua solo la manutenzione tecnica del sistema</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Il titolare "determina le finalità e i mezzi del trattamento" — decide il perché e il come. Chi tratta dati per conto di un altro soggetto è invece il responsabile del trattamento.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">3. Cosa richiede il principio di "minimizzazione dei dati" dell'art. 5?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Dati adeguati, pertinenti e limitati a quanto necessario per la finalità</button>
+    <button class="quiz-option" data-correct="false">Dati sempre esatti e aggiornati in tempo reale</button>
+    <button class="quiz-option" data-correct="false">Dati conservati per il minor tempo tecnicamente possibile</button>
+    <button class="quiz-option" data-correct="false">Dati cifrati con lo standard di sicurezza più recente</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Art. 5, co. 1, lett. c: "adeguati, pertinenti e limitati a quanto necessario rispetto alle finalità per le quali sono trattati" — riguarda la quantità/pertinenza dei dati raccolti, non la loro qualità (esattezza) o il tempo di conservazione.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">4. Cosa richiede il principio di "limitazione della conservazione"?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Conservazione dei dati non oltre il tempo necessario alla finalità</button>
+    <button class="quiz-option" data-correct="false">Conservazione permanente di tutti i dati raccolti</button>
+    <button class="quiz-option" data-correct="false">Cancellazione automatica dopo 24 ore da ogni raccolta</button>
+    <button class="quiz-option" data-correct="false">Conservazione solo su supporti fisici, non in cloud</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Art. 5, co. 1, lett. e: i dati vanno conservati "per un arco di tempo non superiore al conseguimento" delle finalità del trattamento — un limite temporale legato allo scopo, non un termine fisso uguale per tutti i casi.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">5. Un fornitore SaaS che elabora dati dei tuoi utenti seguendo le tue istruzioni contrattuali è, secondo il GDPR:</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Responsabile del trattamento</button>
+    <button class="quiz-option" data-correct="false">Titolare del trattamento</button>
+    <button class="quiz-option" data-correct="false">Interessato</button>
+    <button class="quiz-option" data-correct="false">Autorità di controllo</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Il responsabile del trattamento "tratta dati personali per conto del titolare" — esegue secondo istruzioni, non decide autonomamente finalità e mezzi, che restano in capo al titolare (in questo caso, la tua azienda).</div>
+</div>
+
+<h2>Fonte primaria consigliata</h2>
+<p>Il testo ufficiale del <a href="https://eur-lex.europa.eu/legal-content/it/TXT/?uri=CELEX%3A32016R0679" target="_blank" rel="noopener">Regolamento (UE) 2016/679 su EUR-Lex</a> è la fonte primaria. Per una lettura articolo per articolo più maneggevole, anche il <a href="https://www.privacy-regulation.eu/it/" target="_blank" rel="noopener">mirror privacy-regulation.eu</a> è utile (non ufficiale, ma comodo per confronto rapido tra articoli).</p>
+
+<div class="callout">
+  <p class="callout-title">Blocco?</p>
+  <p>Basi giuridiche del trattamento (art. 6), diritti dell'interessato (artt. 15-22), DPO e data breach restano fuori da questa prima lezione — arriveranno nelle prossime. Chiedimi pure se vuoi cambiare l'ordine.</p>
+</div>
+
+<p class="source-note">Materiale di riferimento compresso: <a href="../reference/gdpr-definizioni-e-principi.html">scheda "GDPR: definizioni e principi"</a>.</p>
+
+<nav class="lesson-nav">
+  <span>← <a href="0019-tipi-di-apprendimento-automatico.html">Lezione 19 — Tipi di apprendimento automatico</a></span>
+  <span>Prossima: <a href="0021-gdpr-basi-giuridiche-trattamento.html">Lezione 21 — Le sei basi giuridiche del trattamento</a> →</span>
+</nav>
+
+<script src="../assets/quiz.js"></script>

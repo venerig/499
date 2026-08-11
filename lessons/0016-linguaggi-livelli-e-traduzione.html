@@ -1,0 +1,124 @@
+<title>Lezione 16 — Linguaggi: livelli e modalità di traduzione</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+<p class="eyebrow">Materia 2 · Linguaggi di programmazione · Zona 🟡</p>
+<h1>Cose che sai già, tradotte nel vocabolario che il quiz si aspetta</h1>
+<p class="subtitle">Lezione 16 — cambio di passo: qui non stai imparando concetti nuovi, stai calibrando risposte già solide sul fraseggio semplificato che i quiz PA usano.</p>
+
+<p class="progress">Percorso: <a href="../MISSION.md">MISSION</a> → Zona 🟡 → Linguaggi di programmazione (materia 2) → Lezione 1/… · Punteggio quiz: <span id="lesson-quiz-score">0 / 0</span></p>
+
+<p>Nessuna sorpresa concettuale qui: compilatori, interpreti, bytecode li usi ogni giorno. Il rischio in questa materia non è non sapere — è <strong>rispondere con la sfumatura tecnica corretta</strong> quando il quiz si aspetta la categoria da manuale, più semplice e netta.</p>
+
+<h2>Classificazione per livello</h2>
+
+<table>
+  <tr><th>Livello</th><th>Cosa comprende</th></tr>
+  <tr><td><span class="term">Basso livello</span></td><td>Linguaggio macchina, Assembly — operano direttamente sull'hardware.</td></tr>
+  <tr><td><span class="term">Alto livello</span></td><td>Linguaggi astratti dalla struttura fisica del computer: C, Java, Python e la maggior parte dei linguaggi che usi ogni giorno.</td></tr>
+</table>
+
+<h2>Compilato, interpretato, o ibrido?</h2>
+
+<table>
+  <tr><th>Modalità</th><th>Come funziona</th><th>Compromesso</th></tr>
+  <tr>
+    <td><span class="term">Compilato</span></td>
+    <td>Un compilatore traduce l'intero programma in eseguibile prima dell'esecuzione.</td>
+    <td>Più veloce a runtime, ma un eseguibile diverso per ogni piattaforma.</td>
+  </tr>
+  <tr>
+    <td><span class="term">Interpretato</span></td>
+    <td>Il codice sorgente viene eseguito direttamente da un interprete, riga per riga.</td>
+    <td>Portabile ovunque giri l'interprete, ma più lento.</td>
+  </tr>
+  <tr>
+    <td><span class="term">Ibrido (bytecode + JIT)</span></td>
+    <td>Un compilatore genera bytecode intermedio, poi eseguito da una macchina virtuale; un compilatore JIT (Just-In-Time) lo traduce "al volo" in codice nativo durante l'esecuzione.</td>
+    <td>Velocità vicina al compilato, portabilità vicina all'interpretato.</td>
+  </tr>
+</table>
+
+<div class="callout">
+  <p class="callout-title">Il tranello più comune</p>
+  <p>Python e Java sono tecnicamente <strong>ibridi</strong>: il sorgente viene prima compilato in bytecode, poi eseguito da una macchina virtuale (CPython/JVM), spesso con JIT. Ma nei quiz PA a scelta multipla, se le opzioni sono solo "compilato" / "interpretato" senza terza via, la risposta attesa per Python è quasi sempre <strong>"interpretato"</strong> — è la categoria didattica semplificata, non la descrizione tecnicamente più precisa. Leggi bene le opzioni disponibili prima di applicare la sfumatura che conosci: se c'è un'opzione "bytecode/ibrido", scegli quella; se non c'è, vince la categoria da manuale.</p>
+</div>
+
+<h2>Verifica — retrieval practice</h2>
+<p class="source-note">L'ordine delle opzioni cambia a ogni caricamento — rispondi dal ragionamento, non dalla posizione.</p>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">1. Quali linguaggi appartengono alla categoria "basso livello"?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Linguaggio macchina e Assembly</button>
+    <button class="quiz-option" data-correct="false">Java e Python</button>
+    <button class="quiz-option" data-correct="false">SQL e HTML</button>
+    <button class="quiz-option" data-correct="false">C e Fortran</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Basso livello = linguaggio macchina e Assembly, che operano direttamente sull'hardware. C e Fortran, pur "vicini alla macchina" nell'uso comune, sono classificati come alto livello nella tassonomia standard dei manuali.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">2. Qual è il vantaggio tipico di un linguaggio compilato rispetto a uno interpretato?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Maggiore velocità di esecuzione a runtime</button>
+    <button class="quiz-option" data-correct="false">Portabilità immediata su qualunque piattaforma</button>
+    <button class="quiz-option" data-correct="false">Nessun bisogno di un ambiente di esecuzione</button>
+    <button class="quiz-option" data-correct="false">Esecuzione riga per riga del codice sorgente</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Un eseguibile compilato gira più velocemente perché la traduzione avviene tutta prima dell'esecuzione — a costo però di dover generare un eseguibile diverso per ogni piattaforma, a differenza di un linguaggio interpretato.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">3. Cosa fa un compilatore Just-In-Time (JIT)?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Traduce il bytecode in codice nativo durante l'esecuzione</button>
+    <button class="quiz-option" data-correct="false">Traduce l'intero programma prima ancora di essere avviato</button>
+    <button class="quiz-option" data-correct="false">Esegue il codice sorgente riga per riga senza traduzione</button>
+    <button class="quiz-option" data-correct="false">Converte il codice sorgente in un altro linguaggio ad alto livello</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Il compilatore JIT compila "al volo" il codice intermedio (bytecode) durante l'esecuzione, ottenendo prestazioni vicine a un linguaggio compilato pur mantenendo la portabilità del bytecode.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">4. In un quiz che offre solo le opzioni "compilato" e "interpretato" (senza opzione "ibrido"), quale viene tipicamente considerata la risposta corretta per Python?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Interpretato</button>
+    <button class="quiz-option" data-correct="false">Compilato</button>
+    <button class="quiz-option" data-correct="false">Nessuna delle due, la domanda sarebbe priva di risposta</button>
+    <button class="quiz-option" data-correct="false">Dipende esclusivamente dal sistema operativo usato</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Con solo due opzioni disponibili, la categoria didattica semplificata prevale: Python viene classificato come "interpretato" nei manuali base, anche se tecnicamente passa da una compilazione a bytecode. Leggere sempre le opzioni disponibili prima di applicare la sfumatura tecnica più precisa.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">5. Cosa distingue l'approccio ibrido (bytecode + macchina virtuale) dal semplice compilato o interpretato?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Combina una compilazione intermedia con un'esecuzione tramite macchina virtuale</button>
+    <button class="quiz-option" data-correct="false">Elimina completamente la necessità di un compilatore</button>
+    <button class="quiz-option" data-correct="false">Richiede sempre un eseguibile diverso per ogni piattaforma</button>
+    <button class="quiz-option" data-correct="false">Esegue il codice sorgente originale senza alcuna traduzione</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>L'approccio ibrido genera bytecode intermedio tramite un compilatore, poi eseguito da una macchina virtuale (eventualmente con JIT) — un compromesso tra la velocità del compilato e la portabilità dell'interpretato.</div>
+</div>
+
+<h2>Fonte primaria consigliata</h2>
+<p>Per un ripasso rapido della tassonomia standard, la voce <a href="https://it.wikipedia.org/wiki/Linguaggio_di_programmazione" target="_blank" rel="noopener">"Linguaggio di programmazione" su Wikipedia in italiano</a> riassume bene le categorie usate nei manuali da concorso — utile proprio perché riflette il livello di semplificazione che i quiz si aspettano, più che l'approfondimento tecnico che già conosci.</p>
+
+<div class="callout">
+  <p class="callout-title">Blocco?</p>
+  <p>Se una domanda del quiz sembra "sbagliata" rispetto a quello che sai per esperienza, prima di tutto controlla le opzioni disponibili — è quasi sempre un problema di livello di semplificazione atteso, non un errore tuo. Chiedimi pure se un caso specifico ti sembra ambiguo.</p>
+</div>
+
+<p class="source-note">Materiale di riferimento compresso: <a href="../reference/linguaggi-livelli-e-traduzione.html">scheda "Livelli e modalità di traduzione"</a>.</p>
+
+<nav class="lesson-nav">
+  <span>← <a href="0015-24-whistleblowing.html">Lezione 15 — Whistleblowing: canali, condizioni, protezione</a></span>
+  <span>Prossima: <a href="0017-paradigmi-di-programmazione.html">Lezione 17 — Paradigmi di programmazione</a> →</span>
+</nav>
+
+<script src="../assets/quiz.js"></script>

@@ -1,0 +1,117 @@
+<title>Lezione 11 — PNA, RPCT e PTPC: chi fa cosa nell'anticorruzione</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+<p class="eyebrow">Materia 15 · Trasparenza, anticorruzione e privacy · Zona 🔴</p>
+<h1>Un framework nazionale, un piano per ogni ente, una persona che lo possiede</h1>
+<p class="subtitle">Lezione 11 — nuova materia: L. 190/2012, la "Legge Severino". Tre acronimi che vanno fissati subito perché reggono tutto il resto della materia.</p>
+
+<p class="progress">Percorso: <a href="../MISSION.md">MISSION</a> → Zona 🔴 → Trasparenza/anticorruzione (materia 15) → Lezione 1/… · Punteggio quiz: <span id="lesson-quiz-score">0 / 0</span></p>
+
+<p>Il sistema anticorruzione italiano è strutturato su tre livelli, ed è più familiare di quanto sembri: un framework nazionale di riferimento, un piano di rischio specifico per ogni organizzazione derivato da quel framework, e una persona che possiede quel piano ed è responsabile della sua attuazione. Come OWASP Top 10 (framework generale) → il threat model della tua azienda (derivato da quello) → il security champion che lo tiene aggiornato.</p>
+
+<h2>ANAC — l'autorità che adotta il framework nazionale</h2>
+
+<p>L'<strong>ANAC</strong> (Autorità Nazionale Anticorruzione) nasce dalla trasformazione di un organismo preesistente: "la Commissione per la valutazione, la trasparenza e l'integrità delle amministrazioni pubbliche [...] opera quale Autorità nazionale anticorruzione" (art. 1, co. 2). Tra i suoi compiti, adotta il <strong>Piano Nazionale Anticorruzione (PNA)</strong>: un piano di durata triennale, aggiornato annualmente, che detta le linee guida per i piani di tutte le singole amministrazioni.</p>
+
+<h2>PTPC — il piano di ogni singola amministrazione</h2>
+
+<p>Ogni PA deve avere il proprio <strong>Piano Triennale per la Prevenzione della Corruzione (PTPC)</strong>, costruito seguendo le indicazioni del PNA ma calibrato sui rischi specifici dell'ente. Il co. 9 specifica cosa deve contenere: le attività a rischio, i controlli sulle decisioni, le procedure di monitoraggio, e ulteriori obblighi di trasparenza oltre a quelli già previsti per legge.</p>
+
+<div class="callout">
+  <p class="callout-title">Il tranello più comune</p>
+  <p>Il PTPC non lo adotta il responsabile anticorruzione: <strong>"l'organo di indirizzo adotta il Piano triennale [...] su proposta del Responsabile della prevenzione della corruzione e della trasparenza entro il 31 gennaio di ogni anno"</strong> (co. 8). Chi propone (RPCT) e chi adotta (organo di indirizzo, es. la giunta o il consiglio) sono soggetti diversi — lo stesso schema di separazione già visto nel D.Lgs. 165/2001 tra indirizzo politico e gestione.</p>
+</div>
+
+<h2>RPCT — chi possiede il piano</h2>
+
+<p>Il <strong>Responsabile della Prevenzione della Corruzione e della Trasparenza</strong> è individuato dall'organo di indirizzo, "<strong>di norma</strong> tra i dirigenti di ruolo in servizio" — è la prassi, non un obbligo assoluto senza eccezioni. I suoi compiti principali:</p>
+
+<table>
+  <tr><th>Compito</th><th>Analogia tecnica</th></tr>
+  <tr><td>Verifica l'effettiva attuazione del piano</td><td>Audit periodico sul rispetto del threat model</td></tr>
+  <tr><td>Propone modifiche in caso di violazioni</td><td>Aggiornamento del piano dopo un incident report</td></tr>
+  <tr><td>Monitora la rotazione degli incarichi negli uffici a rischio</td><td>Evitare che una sola persona detenga sempre gli stessi accessi critici (bus factor / segregazione dei compiti)</td></tr>
+  <tr><td>Individua il personale da formare</td><td>Piano di security training mirato</td></tr>
+  <tr><td>Segnala disfunzioni ai vertici e agli organismi di valutazione</td><td>Escalation di un rischio non mitigato</td></tr>
+  <tr><td>Relaziona annualmente sui risultati</td><td>Report annuale di sicurezza/compliance</td></tr>
+</table>
+
+<h2>Verifica — retrieval practice</h2>
+<p class="source-note">L'ordine delle opzioni cambia a ogni caricamento — rispondi dal ragionamento, non dalla posizione.</p>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">1. Chi adotta il Piano Nazionale Anticorruzione (PNA)?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">L'ANAC</button>
+    <button class="quiz-option" data-correct="false">Il RPCT di ciascuna amministrazione</button>
+    <button class="quiz-option" data-correct="false">Il Presidente del Consiglio dei Ministri</button>
+    <button class="quiz-option" data-correct="false">Ogni singolo dirigente di ruolo</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Art. 1, co. 2: l'ANAC "adotta il Piano nazionale anticorruzione" — il framework di riferimento nazionale, di durata triennale e aggiornato annualmente.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">2. Chi propone il Piano Triennale per la Prevenzione della Corruzione (PTPC), e chi lo adotta formalmente?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Lo propone il RPCT, lo adotta l'organo di indirizzo</button>
+    <button class="quiz-option" data-correct="false">Lo propone e lo adotta sempre il RPCT da solo</button>
+    <button class="quiz-option" data-correct="false">Lo propone e lo adotta sempre l'ANAC direttamente</button>
+    <button class="quiz-option" data-correct="false">Lo propone l'organo di indirizzo, lo adotta il RPCT</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Co. 8: "l'organo di indirizzo adotta il Piano triennale [...] su proposta del Responsabile della prevenzione della corruzione e della trasparenza" — proposta e adozione restano su due soggetti distinti.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">3. Entro quale data deve essere adottato il PTPC ogni anno?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">31 gennaio</button>
+    <button class="quiz-option" data-correct="false">15 dicembre</button>
+    <button class="quiz-option" data-correct="false">30 giugno</button>
+    <button class="quiz-option" data-correct="false">1 marzo</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Co. 8: adozione "entro il 31 gennaio di ogni anno" — non confondere con il 15 dicembre, che è il termine entro cui il RPCT relaziona sui risultati dell'attività svolta.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">4. Quale attività, tra i compiti del RPCT, riguarda direttamente gli uffici a rischio corruzione?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Monitorare la rotazione degli incarichi</button>
+    <button class="quiz-option" data-correct="false">Approvare il bilancio annuale dell'ente</button>
+    <button class="quiz-option" data-correct="false">Nominare i dirigenti di nuova assunzione</button>
+    <button class="quiz-option" data-correct="false">Definire gli obiettivi strategici dell'ente</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Tra i compiti del RPCT: monitorare "la rotazione degli incarichi negli uffici preposti allo svolgimento delle attività a più elevato rischio di corruzione" — una misura di prevenzione strutturale, non di gestione ordinaria.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">5. Chi viene individuato, di norma, come RPCT dall'organo di indirizzo?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Un dirigente di ruolo in servizio</button>
+    <button class="quiz-option" data-correct="false">Un membro esterno nominato dall'ANAC</button>
+    <button class="quiz-option" data-correct="false">Un rappresentante eletto dai dipendenti</button>
+    <button class="quiz-option" data-correct="false">Sempre il segretario generale dell'ente</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Co. 7: "l'organo di indirizzo individua, di norma tra i dirigenti di ruolo in servizio, il Responsabile della prevenzione della corruzione e della trasparenza" — "di norma" segnala che è la prassi, non un vincolo assoluto senza eccezioni.</div>
+</div>
+
+<h2>Fonte primaria consigliata</h2>
+<p>Sul testo vigente della <a href="https://www.bosettiegatti.eu/info/norme/statali/2012_0190.htm" target="_blank" rel="noopener">L. 190/2012 su Bosetti & Gatti</a>, leggi l'art. 1, commi 2 e 5-9 — concentrano quasi tutto il vocabolario istituzionale della materia.</p>
+
+<div class="callout">
+  <p class="callout-title">Blocco?</p>
+  <p>Prima lezione su questa materia: se la catena ANAC → PNA → PTPC → RPCT non è ancora chiara nei ruoli, chiedimelo — è la struttura su cui si appoggerà anche il D.Lgs. 33/2013 (trasparenza), prossimo testo della materia.</p>
+</div>
+
+<p class="source-note">Materiale di riferimento compresso: <a href="../reference/190-pna-rpct-ptpc.html">scheda "PNA, RPCT e PTPC"</a>.</p>
+
+<nav class="lesson-nav">
+  <span>← <a href="0010-165-mobilita-del-personale.html">Lezione 10 — Mobilità volontaria e mobilità obbligatoria</a></span>
+  <span>Prossima: <a href="0012-39-inconferibilita-incompatibilita.html">Lezione 12 — Inconferibilità e incompatibilità degli incarichi</a> →</span>
+</nav>
+
+<script src="../assets/quiz.js"></script>

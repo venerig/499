@@ -1,0 +1,114 @@
+<title>Lezione 19 — Tipi di apprendimento automatico</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+<p class="eyebrow">Materia 3 · Principi di Intelligenza Artificiale · Zona 🟡</p>
+<h1>Tre modi di imparare, distinti da cosa manca nei dati</h1>
+<p class="subtitle">Lezione 19 — l'AI Act (lezione 18) regola il "cosa succede se"; questa lezione copre il "come funziona", i tre paradigmi base del machine learning.</p>
+
+<p class="progress">Percorso: <a href="../MISSION.md">MISSION</a> → Zona 🟡 → Principi di Intelligenza Artificiale (materia 3) → Lezione 2/… · Punteggio quiz: <span id="lesson-quiz-score">0 / 0</span></p>
+
+<p>I tre tipi principali di apprendimento automatico si distinguono per <strong>cosa sa il modello durante l'addestramento</strong>: la risposta corretta per ogni esempio, nessuna risposta ma dati grezzi, o solo un segnale che dice se ha raggiunto l'obiettivo.</p>
+
+<h2>Apprendimento supervisionato</h2>
+<p>"Al modello vengono forniti degli esempi nella forma di possibili input e i rispettivi <strong>output desiderati</strong>, e l'obiettivo è estrarre una regola generale che associ l'input all'output corretto." I dati sono <strong>etichettati</strong>: ogni esempio arriva già con la risposta giusta.</p>
+<p><strong>Esempio classico:</strong> un filtro antispam, addestrato su email già classificate come "spam" o "non spam".</p>
+
+<h2>Apprendimento non supervisionato</h2>
+<p>"Il modello ha lo scopo di trovare una <strong>struttura</strong> negli input forniti, senza che questi vengano etichettati in alcun modo." Non c'è una risposta corretta da imparare — il modello cerca pattern, gruppi, somiglianze nei dati grezzi.</p>
+<p><strong>Esempio classico:</strong> il clustering del comportamento degli utenti di un sito web, che raggruppa dati simili senza categorie predefinite in partenza.</p>
+
+<h2>Apprendimento per rinforzo</h2>
+<p>"Il modello interagisce con un ambiente dinamico nel quale cerca di raggiungere un obiettivo, avendo un insegnante che gli dice solo se ha raggiunto l'obiettivo." Niente esempi etichettati né dati grezzi da esplorare: solo un ciclo di azione → feedback (ricompensa/penalità) → aggiustamento, ripetuto nel tempo.</p>
+<p><strong>Esempio classico:</strong> un sistema che impara a giocare contro un avversario provando mosse e ricevendo solo un segnale di vittoria/sconfitta (es. TD-Gammon per il backgammon).</p>
+
+<table>
+  <tr><th>Tipo</th><th>Cosa sa il modello</th><th>Analogia SDET</th></tr>
+  <tr><td>Supervisionato</td><td>Input + output corretto per ogni esempio</td><td>Dataset etichettato di test "flaky" vs "stabili", per addestrare un classificatore</td></tr>
+  <tr><td>Non supervisionato</td><td>Solo input, nessuna etichetta</td><td>Clustering dei log di errore per trovare pattern di anomalie non ancora categorizzate</td></tr>
+  <tr><td>Per rinforzo</td><td>Nessun esempio, solo un segnale di ricompensa/obiettivo</td><td>Un agente che ottimizza l'ordine di esecuzione dei test in CI in base a un segnale di feedback (tempo totale, fallimenti)</td></tr>
+</table>
+
+<div class="callout">
+  <p class="callout-title">Il tranello più comune</p>
+  <p>La domanda-guida per distinguere i tre tipi: <strong>"il modello riceve la risposta corretta per ogni esempio (supervisionato), nessuna risposta ma dati da esplorare (non supervisionato), o solo un segnale su un obiettivo raggiunto o no (rinforzo)?"</strong> L'errore più comune è confondere "non supervisionato" con "per rinforzo" perché in entrambi mancano etichette esplicite — la differenza è che il rinforzo ha comunque un obiettivo e un feedback, mentre il non supervisionato no.</p>
+</div>
+
+<h2>Verifica — retrieval practice</h2>
+<p class="source-note">L'ordine delle opzioni cambia a ogni caricamento — rispondi dal ragionamento, non dalla posizione.</p>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">1. Cosa riceve un modello durante l'addestramento supervisionato?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Esempi di input insieme ai rispettivi output desiderati</button>
+    <button class="quiz-option" data-correct="false">Solo dati grezzi, senza alcuna etichetta</button>
+    <button class="quiz-option" data-correct="false">Solo un segnale di ricompensa o penalità</button>
+    <button class="quiz-option" data-correct="false">Nessun dato, solo regole scritte a mano</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Nell'apprendimento supervisionato il modello riceve "possibili input e i rispettivi output desiderati" — dati etichettati da cui estrarre una regola generale.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">2. Qual è l'obiettivo dell'apprendimento non supervisionato?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Trovare una struttura nei dati, senza etichette</button>
+    <button class="quiz-option" data-correct="false">Massimizzare una ricompensa in un ambiente dinamico</button>
+    <button class="quiz-option" data-correct="false">Replicare esattamente le etichette fornite in input</button>
+    <button class="quiz-option" data-correct="false">Classificare i dati secondo categorie già note</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>L'apprendimento non supervisionato cerca "una struttura negli input forniti, senza che questi vengano etichettati in alcun modo" — es. il clustering, non la classificazione su categorie predefinite.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">3. Quale esempio è tipicamente citato per l'apprendimento supervisionato?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Un filtro antispam addestrato su email già classificate</button>
+    <button class="quiz-option" data-correct="false">Un agente che impara a giocare tramite vittorie e sconfitte</button>
+    <button class="quiz-option" data-correct="false">Il clustering degli utenti di un sito senza categorie predefinite</button>
+    <button class="quiz-option" data-correct="false">Un sistema che esplora dati senza nessun obiettivo definito</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Il filtro antispam è l'esempio classico di classificazione supervisionata: email già etichettate come "spam"/"non spam" insegnano al modello la regola generale.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">4. Cosa riceve il modello nell'apprendimento per rinforzo, invece di esempi etichettati?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Un segnale che indica solo se l'obiettivo è stato raggiunto</button>
+    <button class="quiz-option" data-correct="false">Un output desiderato per ogni singolo input</button>
+    <button class="quiz-option" data-correct="false">Un insieme di dati privi di qualunque struttura da scoprire</button>
+    <button class="quiz-option" data-correct="false">Nessun tipo di feedback durante l'addestramento</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Nell'apprendimento per rinforzo il modello "interagisce con un ambiente dinamico [...] avendo un insegnante che gli dice solo se ha raggiunto l'obiettivo" — feedback sul risultato, non esempi pre-etichettati.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">5. Per raggruppare gli utenti di un sito web in base al comportamento, senza categorie definite in anticipo, quale tipo di apprendimento è più adatto?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Non supervisionato</button>
+    <button class="quiz-option" data-correct="false">Supervisionato</button>
+    <button class="quiz-option" data-correct="false">Per rinforzo</button>
+    <button class="quiz-option" data-correct="false">Nessuno dei tre, serve un sistema a regole fisse</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Il clustering del comportamento degli utenti senza categorie predefinite è l'esempio classico di apprendimento non supervisionato: si cerca una struttura nei dati, non si applica un'etichetta nota in partenza.</div>
+</div>
+
+<h2>Fonte primaria consigliata</h2>
+<p>La voce <a href="https://it.wikipedia.org/wiki/Apprendimento_automatico" target="_blank" rel="noopener">"Apprendimento automatico" su Wikipedia in italiano</a> riassume bene questa classificazione base, con lo stesso livello di dettaglio richiesto dai quiz da concorso.</p>
+
+<div class="callout">
+  <p class="callout-title">Blocco?</p>
+  <p>Reti neurali e deep learning non sono trattati in questa lezione — restano per una lezione dedicata, se emergono nei quiz. Chiedimi pure se vuoi approfondire prima quelli.</p>
+</div>
+
+<p class="source-note">Materiale di riferimento compresso: <a href="../reference/tipi-di-apprendimento-automatico.html">scheda "Tipi di apprendimento automatico"</a>.</p>
+
+<nav class="lesson-nav">
+  <span>← <a href="0018-ai-act-definizione-e-rischio.html">Lezione 18 — AI Act: definizione e livelli di rischio</a></span>
+  <span>Prossima: <a href="0020-gdpr-definizioni-e-principi.html">Lezione 20 — GDPR: definizioni chiave e i sei principi</a> →</span>
+</nav>
+
+<script src="../assets/quiz.js"></script>

@@ -1,0 +1,132 @@
+<title>Lezione 18 — AI Act: cos'è un "sistema di IA" e classificazione del rischio</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+<p class="eyebrow">Materia 3 · Principi di Intelligenza Artificiale · Zona 🟡</p>
+<h1>Non tutto ciò che "sembra intelligente" è un sistema di IA per la legge</h1>
+<p class="subtitle">Lezione 18 — prima lezione di materia, e prima volta che il gap in RESOURCES.md viene colmato: la fonte è il Regolamento (UE) 2024/1689, l'AI Act.</p>
+
+<p class="progress">Percorso: <a href="../MISSION.md">MISSION</a> → Zona 🟡 → Principi di Intelligenza Artificiale (materia 3) → Lezione 1/… · Punteggio quiz: <span id="lesson-quiz-score">0 / 0</span></p>
+
+<p>L'AI Act non regola "l'informatica avanzata" in generale: regola una categoria precisa di sistemi, definita all'art. 3, punto 1. Poi li classifica per livello di rischio — un sistema di triage familiare a chiunque abbia gestito una severity matrix per i bug: alcune categorie sono vietate a prescindere, altre richiedono controlli pesanti, altre solo un'etichetta di trasparenza, altre nessun obbligo.</p>
+
+<h2>Art. 3, punto 1 — la definizione legale di "sistema di IA"</h2>
+
+<p>Il testo ufficiale (in inglese, lingua in cui è stato reperito qui — la versione italiana ufficiale è sulla Gazzetta Ufficiale UE) definisce il "sistema di IA" come: <em>"a machine-based system that is designed to operate with varying levels of autonomy and that may exhibit adaptiveness after deployment, and that, for explicit or implicit objectives, infers, from the input it receives, how to generate outputs such as predictions, content, recommendations, or decisions that can influence physical or virtual environments"</em>.</p>
+
+<p>In sintesi (traduzione libera): un sistema basato su macchina, con un certo grado di autonomia, che può adattarsi dopo il rilascio, e che <strong>inferisce</strong> dagli input come generare output (previsioni, contenuti, raccomandazioni, decisioni) che influenzano l'ambiente fisico o virtuale.</p>
+
+<div class="callout">
+  <p class="callout-title">Il tranello più comune</p>
+  <p>La parola chiave è <strong>"infers"</strong> — inferisce. Un sistema che segue solo regole scritte esplicitamente da un umano (if/else, uno script di automazione classico) non è un "sistema di IA" ai sensi della legge, anche se automatizza decisioni complesse. Ciò che distingue un sistema di IA è la capacità di derivare pattern o strategie dai dati, non solo eseguire istruzioni predefinite — un confine che un SDET riconosce bene: non ogni script che "decide qualcosa" è un modello.</p>
+</div>
+
+<h2>La classificazione per livello di rischio</h2>
+
+<table>
+  <tr><th>Livello</th><th>Cosa comprende</th><th>Conseguenza</th></tr>
+  <tr>
+    <td><span class="term">Rischio inaccettabile</span><br><span class="source-note">art. 5</span></td>
+    <td>Sistemi di manipolazione subliminale/ingannevole, social scoring discriminatorio, identificazione biometrica in tempo reale in spazi pubblici per le forze dell'ordine (con eccezioni strette), riconoscimento delle emozioni su lavoro/istruzione.</td>
+    <td><strong>Vietati</strong>, senza eccezioni sostanziali.</td>
+  </tr>
+  <tr>
+    <td><span class="term">Alto rischio</span><br><span class="source-note">Titolo III</span></td>
+    <td>Componenti di sicurezza in prodotti regolati (dispositivi medici, veicoli, macchinari), sistemi che incidono su diritti fondamentali (lavoro, istruzione, credito, giustizia).</td>
+    <td>Valutazione di conformità obbligatoria, documentazione tecnica, sorveglianza umana, monitoraggio continuo.</td>
+  </tr>
+  <tr>
+    <td><span class="term">Rischio limitato / trasparenza</span><br><span class="source-note">art. 50</span></td>
+    <td>Chatbot, contenuti generati o manipolati artificialmente (deepfake).</td>
+    <td>Obbligo di informare l'utente che sta interagendo con un'IA o che il contenuto è generato artificialmente.</td>
+  </tr>
+  <tr>
+    <td><span class="term">Rischio minimo</span></td>
+    <td>La maggior parte delle applicazioni di IA (es. filtri antispam, videogiochi con IA).</td>
+    <td>Nessun obbligo specifico previsto dal regolamento.</td>
+  </tr>
+</table>
+
+<div class="callout">
+  <p class="callout-title">Analogia per fissarla</p>
+  <p>Pensa a una severity matrix di triage bug: <strong>blocker</strong> (rischio inaccettabile → si blocca il rilascio, punto), <strong>critical</strong> (alto rischio → serve un processo di review formale prima del rilascio), <strong>minor con nota utente</strong> (rischio limitato → basta documentarlo/segnalarlo), <strong>trivial</strong> (rischio minimo → nessun processo aggiuntivo richiesto).</p>
+</div>
+
+<h2>Verifica — retrieval practice</h2>
+<p class="source-note">L'ordine delle opzioni cambia a ogni caricamento — rispondi dal ragionamento, non dalla posizione.</p>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">1. Cosa distingue un "sistema di IA", secondo la definizione dell'art. 3 AI Act, da un software basato solo su regole scritte da un umano?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">La capacità di inferire dagli input come generare i propri output</button>
+    <button class="quiz-option" data-correct="false">Il fatto di essere scritto in un linguaggio di alto livello</button>
+    <button class="quiz-option" data-correct="false">Il fatto di essere eseguito su infrastruttura cloud</button>
+    <button class="quiz-option" data-correct="false">Il fatto di avere un'interfaccia grafica per l'utente</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>La definizione dell'art. 3 richiede che il sistema "inferisca" dagli input come generare output — un tratto che lo distingue da un sistema puramente basato su regole esplicite (if/else) scritte da un umano.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">2. In quale livello di rischio rientra un sistema di social scoring discriminatorio, secondo l'art. 5?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Rischio inaccettabile — vietato</button>
+    <button class="quiz-option" data-correct="false">Alto rischio, con obbligo di conformità</button>
+    <button class="quiz-option" data-correct="false">Rischio limitato, con obbligo di trasparenza</button>
+    <button class="quiz-option" data-correct="false">Rischio minimo, senza obblighi</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Art. 5: il social scoring che produce risultati discriminatori è tra le pratiche vietate a livello di rischio inaccettabile — non una categoria regolata con controlli, ma proprio esclusa dal mercato.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">3. Cosa richiedono i sistemi classificati "ad alto rischio" secondo il Titolo III?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Valutazione di conformità, documentazione tecnica, sorveglianza umana</button>
+    <button class="quiz-option" data-correct="false">Nessun obbligo, solo una dichiarazione volontaria</button>
+    <button class="quiz-option" data-correct="false">Il divieto assoluto di commercializzazione</button>
+    <button class="quiz-option" data-correct="false">Solo un'etichetta che segnala l'uso di IA all'utente</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>I sistemi ad alto rischio (es. componenti di sicurezza in dispositivi medici, sistemi per decisioni su lavoro/credito/giustizia) richiedono un processo di conformità formale, non solo un'etichetta o un divieto totale.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">4. Un chatbot che deve dichiarare esplicitamente all'utente di essere un'intelligenza artificiale rientra in quale categoria, secondo l'art. 50?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Rischio limitato / obblighi di trasparenza</button>
+    <button class="quiz-option" data-correct="false">Rischio inaccettabile</button>
+    <button class="quiz-option" data-correct="false">Alto rischio</button>
+    <button class="quiz-option" data-correct="false">Nessuna delle categorie, è escluso dal regolamento</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Art. 50: chatbot e contenuti generati/manipolati artificialmente rientrano nel rischio limitato, con il solo obbligo di informare l'utente — non richiedono la conformità pesante prevista per l'alto rischio.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">5. Quale livello di rischio non comporta obblighi specifici previsti dall'AI Act?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Rischio minimo</button>
+    <button class="quiz-option" data-correct="false">Rischio inaccettabile</button>
+    <button class="quiz-option" data-correct="false">Alto rischio</button>
+    <button class="quiz-option" data-correct="false">Rischio limitato</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Il rischio minimo (es. filtri antispam, IA nei videogiochi) copre la maggior parte delle applicazioni di IA e non comporta obblighi specifici nel regolamento — a differenza degli altri tre livelli, tutti soggetti a qualche forma di controllo.</div>
+</div>
+
+<h2>Fonte primaria consigliata</h2>
+<p>Il testo ufficiale del <a href="https://eur-lex.europa.eu/legal-content/IT/TXT/?uri=CELEX%3A32024R1689" target="_blank" rel="noopener">Regolamento (UE) 2024/1689 su EUR-Lex</a> (disponibile anche in italiano) è la fonte primaria. Per una lettura articolo per articolo più maneggevole, anche <a href="https://artificialintelligenceact.eu/" target="_blank" rel="noopener">artificialintelligenceact.eu</a> è utile, pur non essendo un sito ufficiale UE.</p>
+
+<div class="callout">
+  <p class="callout-title">Blocco?</p>
+  <p>Questa è la prima lezione della materia e la fonte primaria era un gap dichiarato in RESOURCES.md — ora colmato. Se emergono altri concetti (ML, reti neurali, IA generativa, bias) che il bando si aspetta oltre all'AI Act, chiedimelo: li affronteremo nelle prossime lezioni.</p>
+</div>
+
+<p class="source-note">Materiale di riferimento compresso: <a href="../reference/ai-act-definizione-e-rischio.html">scheda "AI Act: definizione e livelli di rischio"</a>.</p>
+
+<nav class="lesson-nav">
+  <span>← <a href="0017-paradigmi-di-programmazione.html">Lezione 17 — Paradigmi di programmazione</a></span>
+  <span>Prossima: <a href="0019-tipi-di-apprendimento-automatico.html">Lezione 19 — Tipi di apprendimento automatico</a> →</span>
+</nav>
+
+<script src="../assets/quiz.js"></script>

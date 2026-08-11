@@ -12,20 +12,35 @@
   Fonte primaria per la materia 14. Usare per: organizzazione degli uffici, contrattazione collettiva, accesso al pubblico impiego, dirigenza pubblica, responsabilità disciplinare, mobilità.
 - [Legge 190/2012 — Disposizioni per la prevenzione e la repressione della corruzione ("Legge Severino"), testo vigente](https://www.bosettiegatti.eu/info/norme/statali/2012_0190.htm)
   Fonte primaria (prima parte) per la materia 15. Usare per: Piano Nazionale Anticorruzione (PNA), RPCT (Responsabile Prevenzione Corruzione e Trasparenza), ANAC, inconferibilità/incompatibilità.
+- [D.Lgs. 39/2013 — Inconferibilità e incompatibilità di incarichi presso le PA, testo vigente](https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2013-04-08;39)
+  Fonte primaria (terza parte) per la materia 15, attuativo della delega L.190/2012. Usare per: definizioni di inconferibilità (art.1 co.2 lett.g) e incompatibilità (lett.h), nullità degli atti in violazione (art.17).
+- [D.Lgs. 24/2023 — Protezione dei whistleblower, attuazione direttiva UE 2019/1937, testo vigente](https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2023-03-10;24)
+  Fonte primaria (quarta parte) per la materia 15. Ha sostituito il vecchio art. 54-bis D.Lgs. 165/2001. Usare per: canali di segnalazione interna (art.4), condizioni per la segnalazione esterna ad ANAC (art.6), divieto di ritorsione e inversione onere della prova (art.17).
 - [D.Lgs. 33/2013 — "Decreto Trasparenza", riordino degli obblighi di pubblicità e trasparenza, testo vigente](https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2013-03-14;33)
   Fonte primaria (seconda parte) per la materia 15, attuativo dell'art. 1 co. 35 L.190/2012. Usare per: accesso civico semplice e generalizzato (FOIA italiano), obblighi di pubblicazione in Amministrazione Trasparente, whistleblowing.
 
 ### Zona 🟡 — Materie 2, 3, 4
 
+- [Linguaggio di programmazione — Wikipedia IT](https://it.wikipedia.org/wiki/Linguaggio_di_programmazione)
+  Riferimento per la materia 2: tassonomia semplificata (livelli, compilato/interpretato/ibrido) usata dai manuali da concorso — utile più per calibrare il livello di semplificazione atteso nei quiz che per contenuto nuovo, dato il background tecnico già solido dell'utente.
+- [Paradigma di programmazione — Wikipedia IT](https://it.wikipedia.org/wiki/Paradigma_di_programmazione)
+  Riferimento per la materia 2: i cinque paradigmi (imperativo, OOP, funzionale, dichiarativo, event-driven) con la terminologia da manuale da concorso.
 - [Regolamento (UE) 2016/679 (GDPR), testo ufficiale italiano — EUR-Lex](https://eur-lex.europa.eu/legal-content/it/TXT/?uri=CELEX%3A32016R0679)
   Fonte primaria per la materia 4. Usare per: definizioni (dato personale, trattamento, titolare/responsabile), principi art. 5, basi giuridiche art. 6, diritti dell'interessato artt. 15-22, DPO, data breach.
-  _Gap:_ nessuna fonte primaria italiana ancora individuata su "Principi di Intelligenza Artificiale" specifica per il bando — probabile riferimento a AI Act (Reg. UE 2024/1689) e concetti generali (ML, reti neurali, IA generativa, rischi/bias). Da approfondire nella lezione dedicata.
+  Nota: EUR-Lex spesso non espone il testo degli articoli via fetch automatico (solo preambolo) — usare come mirror di lettura [privacy-regulation.eu/it](https://www.privacy-regulation.eu/it/) (non ufficiale, comodo per articolo).
+- [Regolamento (UE) 2024/1689 (AI Act), testo ufficiale — EUR-Lex](https://eur-lex.europa.eu/legal-content/IT/TXT/?uri=CELEX%3A32024R1689)
+  Fonte primaria per la materia 3. Usare per: definizione di "sistema di IA" (art. 3 punto 1), classificazione per rischio (art. 5 vietato, Titolo III alto rischio, art. 50 trasparenza). Specchio non ufficiale utile per lettura per articolo: [artificialintelligenceact.eu](https://artificialintelligenceact.eu/).
+- [Apprendimento automatico — Wikipedia IT](https://it.wikipedia.org/wiki/Apprendimento_automatico)
+  Riferimento per la materia 3: classificazione supervisionato/non supervisionato/per rinforzo, terminologia da manuale da concorso.
+  _Gap residuo:_ reti neurali/deep learning/IA generativa non ancora coperti — da cercare fonte quando si arriva a quella lezione.
 
 ### Materie 🟢 — ripasso rapido (1, 7-13)
 Nessuna lezione di introduzione prevista (fuori mandato, vedi [[MISSION]]). Se emergono lacune terminologiche specifiche del linguaggio PA durante i quiz, integrare qui.
 
 ### Materia ⚪ — Inglese (16)
-_Gap:_ da popolare — cercare risorse per inglese tecnico/PA in contesto concorsuale (probabile comprensione testo + grammatica di base).
+- [Falso amico — Wikipedia IT](https://it.wikipedia.org/wiki/Falso_amico)
+  Riferimento per false friends italiano-inglese ricorrenti nei quiz.
+_Gap:_ formato esatto della prova di inglese non confermato dal bando (il fetch della pagina InPA non espone il PDF completo) — si assume stesso formato a risposta multipla delle altre materie, coerente con "prova scritta unica". Verificare quando disponibile il PDF del bando 499 Assistenti Informatici (pubblicato 25/06/2026).
 
 ## Esercitazione (banche dati quiz)
 

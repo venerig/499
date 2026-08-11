@@ -1,0 +1,132 @@
+<title>Lezione 23 — DPO e violazioni dei dati (data breach)</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+<p class="eyebrow">Materia 4 · Data privacy e sicurezza informatica · Zona 🟡</p>
+<h1>Un ruolo obbligatorio senza soglie per chi lavorerai, e due orologi diversi per un incidente</h1>
+<p class="subtitle">Lezione 23 — ultima lezione della materia. La prima parte ti riguarderà direttamente da dipendente pubblico: l'INPS non ha scelta sul nominare un DPO.</p>
+
+<p class="progress">Percorso: <a href="../MISSION.md">MISSION</a> → Zona 🟡 → Data privacy e GDPR (materia 4) → Lezione 4/… · Punteggio quiz: <span id="lesson-quiz-score">0 / 0</span></p>
+
+<h2>Art. 37 — quando è obbligatorio il DPO</h2>
+
+<p>Titolare e responsabile devono designare un <strong>Responsabile della Protezione dei Dati (DPO)</strong> in tre casi:</p>
+
+<table>
+  <tr><th>Lett.</th><th>Caso</th><th>Soglia richiesta?</th></tr>
+  <tr>
+    <td>a</td>
+    <td>"Il trattamento è effettuato da un'autorità pubblica o da un organismo pubblico" (eccettuate le autorità giurisdizionali in funzione giurisdizionale).</td>
+    <td><strong>Nessuna.</strong> Vale sempre, indipendentemente dalla quantità di dati trattati.</td>
+  </tr>
+  <tr>
+    <td>b</td>
+    <td>Attività principale che richiede "il monitoraggio regolare e sistematico degli interessati su larga scala".</td>
+    <td>Sì — solo su larga scala.</td>
+  </tr>
+  <tr>
+    <td>c</td>
+    <td>Attività principale su larga scala di categorie particolari di dati (art. 9) o dati su condanne/reati (art. 10).</td>
+    <td>Sì — solo su larga scala.</td>
+  </tr>
+</table>
+
+<div class="callout">
+  <p class="callout-title">Il tranello più comune, e il più rilevante per te</p>
+  <p>Le lett. b e c richiedono la condizione "<strong>su larga scala</strong>" — un piccolo studio privato che tratta pochi dati sensibili può restare sotto soglia. La lett. a invece <strong>non ha alcuna soglia</strong>: qualunque autorità pubblica, incluso un ente come l'INPS, deve nominare un DPO indipendentemente dalla quantità di dati o dal tipo di trattamento svolto. Un quiz che condiziona l'obbligo per una PA a una soglia di scala sta sbagliando la lettera a.</p>
+</div>
+
+<h2>Artt. 33-34 — violazione dei dati personali (data breach)</h2>
+
+<p>Due obblighi distinti, con due condizioni diverse di attivazione:</p>
+
+<table>
+  <tr><th></th><th>Art. 33 — notifica all'autorità</th><th>Art. 34 — comunicazione all'interessato</th></tr>
+  <tr><td>Quando scatta</td><td>Sempre, in caso di violazione dei dati personali</td><td>Solo se la violazione comporta un <strong>rischio elevato</strong> per diritti e libertà</td></tr>
+  <tr><td>Termine</td><td>"Senza ingiustificato ritardo e, ove possibile, entro <strong>72 ore</strong>" dalla conoscenza del fatto</td><td>"Senza ingiustificato ritardo" (nessun termine fisso in ore)</td></tr>
+  <tr><td>Destinatario</td><td>Autorità di controllo (in Italia, il Garante)</td><td>Direttamente le persone i cui dati sono coinvolti</td></tr>
+</table>
+
+<div class="callout">
+  <p class="callout-title">Analogia per fissarla</p>
+  <p>Pensa a un incident con due SLA diversi: la notifica all'autorità (art. 33) è come un report interno obbligatorio a un ente di vigilanza entro un tempo fisso, <strong>indipendentemente dalla gravità</strong>. La comunicazione all'utente (art. 34) è come lo status update pubblico che mandi solo se l'incidente è abbastanza grave da avere impatto reale sugli utenti — non ogni incidente minore genera un'email a tutti.</p>
+</div>
+
+<h2>Verifica — retrieval practice</h2>
+<p class="source-note">L'ordine delle opzioni cambia a ogni caricamento — rispondi dal ragionamento, non dalla posizione.</p>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">1. Secondo l'art. 37, lett. a, quando un'autorità pubblica deve designare un DPO?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Sempre, senza soglie legate alla quantità di dati trattati</button>
+    <button class="quiz-option" data-correct="false">Solo se tratta dati su larga scala, come nei casi b e c</button>
+    <button class="quiz-option" data-correct="false">Solo se impiega più di 250 dipendenti</button>
+    <button class="quiz-option" data-correct="false">Solo su richiesta esplicita del Garante</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>La lett. a non richiede alcuna soglia: "il trattamento è effettuato da un'autorità pubblica o da un organismo pubblico" è di per sé sufficiente — a differenza delle lett. b e c, che invece richiedono trattamento "su larga scala".</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">2. Un ente come l'INPS deve nominare un DPO?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Sì, in quanto organismo pubblico, indipendentemente dalla scala del trattamento</button>
+    <button class="quiz-option" data-correct="false">No, gli enti previdenziali sono esplicitamente esclusi</button>
+    <button class="quiz-option" data-correct="false">Solo se supera una soglia annuale di reclami</button>
+    <button class="quiz-option" data-correct="false">Solo per i trattamenti relativi a dati sanitari</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Come organismo pubblico, l'INPS rientra nella lett. a dell'art. 37, che non prevede eccezioni legate alla scala del trattamento o al tipo di dati.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">3. Entro quante ore, ove possibile, va notificata una violazione dei dati personali all'autorità di controllo secondo l'art. 33?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">72 ore</button>
+    <button class="quiz-option" data-correct="false">24 ore</button>
+    <button class="quiz-option" data-correct="false">7 giorni</button>
+    <button class="quiz-option" data-correct="false">30 giorni</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Art. 33: "senza ingiustificato ritardo e, ove possibile, entro 72 ore dal momento in cui ne è venuto a conoscenza" — un termine specifico, diverso dai 30 giorni visti per altre procedure amministrative in materie precedenti.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">4. Quando scatta l'obbligo di comunicare la violazione direttamente all'interessato, secondo l'art. 34?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Solo se la violazione comporta un rischio elevato per diritti e libertà</button>
+    <button class="quiz-option" data-correct="false">Sempre, in ogni caso di violazione, senza eccezioni</button>
+    <button class="quiz-option" data-correct="false">Solo se lo richiede esplicitamente l'autorità di controllo</button>
+    <button class="quiz-option" data-correct="false">Mai, la comunicazione spetta solo all'autorità di controllo</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Art. 34: la comunicazione diretta all'interessato è dovuta solo "quando la violazione [...] è suscettibile di presentare un rischio elevato per i diritti e le libertà" — a differenza della notifica all'autorità (art. 33), sempre dovuta.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">5. Qual è la differenza principale tra l'obbligo dell'art. 33 e quello dell'art. 34?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">L'art. 33 vale sempre verso l'autorità, l'art. 34 solo con rischio elevato verso l'interessato</button>
+    <button class="quiz-option" data-correct="false">L'art. 33 riguarda solo violazioni interne, l'art. 34 solo violazioni esterne</button>
+    <button class="quiz-option" data-correct="false">L'art. 33 si applica solo al settore privato, l'art. 34 solo al pubblico</button>
+    <button class="quiz-option" data-correct="false">Sono lo stesso obbligo, l'art. 34 è solo un richiamo dell'art. 33</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>L'art. 33 impone la notifica all'autorità di controllo in ogni caso di violazione, entro 72 ore; l'art. 34 impone la comunicazione diretta all'interessato solo quando il rischio per i suoi diritti è elevato — due obblighi distinti con condizioni diverse.</div>
+</div>
+
+<h2>Fonte primaria consigliata</h2>
+<p>Sul testo vigente degli artt. <a href="https://www.privacy-regulation.eu/it/37.htm" target="_blank" rel="noopener">37</a>, <a href="https://www.privacy-regulation.eu/it/33.htm" target="_blank" rel="noopener">33</a> e <a href="https://www.privacy-regulation.eu/it/34.htm" target="_blank" rel="noopener">34</a> del GDPR, nota come l'art. 37 lett. a sia scritta senza condizioni di scala, a differenza di b e c — è il dettaglio che la rende diversa dalle altre due.</p>
+
+<div class="callout">
+  <p class="callout-title">Materia 4 completata</p>
+  <p>Con questa lezione la materia 4 (data privacy e GDPR) copre definizioni, principi, basi giuridiche, diritti dell'interessato, DPO e data breach — la struttura portante per qualunque quiz sul regolamento. Se emergono altri temi specifici durante l'esercitazione (es. trasferimenti extra-UE, sanzioni), chiedimeli e li affrontiamo.</p>
+</div>
+
+<p class="source-note">Materiale di riferimento compresso: <a href="../reference/gdpr-dpo-e-data-breach.html">scheda "DPO e data breach"</a>.</p>
+
+<nav class="lesson-nav">
+  <span>← <a href="0022-gdpr-diritti-interessato.html">Lezione 22 — I diritti dell'interessato</a></span>
+  <span>Prossima: <a href="0024-english-false-friends.html">Lezione 24 — False friends italiano-inglese</a> →</span>
+</nav>
+
+<script src="../assets/quiz.js"></script>
