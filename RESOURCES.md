@@ -32,7 +32,8 @@
   Fonte primaria per la materia 3. Usare per: definizione di "sistema di IA" (art. 3 punto 1), classificazione per rischio (art. 5 vietato, Titolo III alto rischio, art. 50 trasparenza). Specchio non ufficiale utile per lettura per articolo: [artificialintelligenceact.eu](https://artificialintelligenceact.eu/).
 - [Apprendimento automatico — Wikipedia IT](https://it.wikipedia.org/wiki/Apprendimento_automatico)
   Riferimento per la materia 3: classificazione supervisionato/non supervisionato/per rinforzo, terminologia da manuale da concorso.
-  _Gap residuo:_ reti neurali/deep learning/IA generativa non ancora coperti — da cercare fonte quando si arriva a quella lezione.
+- [Rete neurale artificiale — Wikipedia IT](https://it.wikipedia.org/wiki/Rete_neurale_artificiale) · [Intelligenza artificiale generativa — Wikipedia IT](https://it.wikipedia.org/wiki/Intelligenza_artificiale_generativa)
+  Riferimenti per reti neurali (neuroni/pesi/strati/deep learning) e distinzione generativa/discriminativa.
 
 ### Materie 🟢 — ripasso rapido (1, 7-13)
 Nessuna lezione di introduzione prevista (fuori mandato, vedi [[MISSION]]). Se emergono lacune terminologiche specifiche del linguaggio PA durante i quiz, integrare qui.

@@ -1,0 +1,116 @@
+<title>Lezione 32 — Reti neurali e IA generativa</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+<p class="eyebrow">Materia 3 · Principi di Intelligenza Artificiale · Zona 🟡</p>
+<h1>Una pipeline a strati, e la differenza tra classificare e creare</h1>
+<p class="subtitle">Lezione 32 — ultimo gap noto della materia: come funziona una rete neurale, e cosa rende "generativa" una parte specifica dell'IA.</p>
+
+<p class="progress">Percorso: <a href="../MISSION.md">MISSION</a> → Zona 🟡 → Principi di Intelligenza Artificiale (materia 3) → Lezione 3/… · Punteggio quiz: <span id="lesson-quiz-score">0 / 0</span></p>
+
+<h2>Rete neurale artificiale: la struttura base</h2>
+<p>Una rete neurale è composta da <strong>neuroni</strong> organizzati in <strong>strati</strong>: lo <span class="term">strato di input</span> riceve i dati, lo <span class="term">strato nascosto (hidden)</span> — o più strati — esegue l'elaborazione, lo <span class="term">strato di output</span> produce il risultato. Ogni connessione tra neuroni ha un <strong>peso</strong>, che indica quanto quel segnale conta; dopo aver sommato gli input pesati, il neurone applica una <strong>funzione di attivazione</strong> per decidere l'output da passare avanti.</p>
+
+<p>Quando la rete ha <strong>molti strati nascosti</strong> in sequenza, si parla di <strong>deep learning</strong> (apprendimento profondo) — non un concetto diverso, solo una rete neurale con più livelli di elaborazione intermedi.</p>
+
+<table>
+  <tr><th>Componente rete neurale</th><th>Analogia tecnica</th></tr>
+  <tr><td>Neurone + peso + funzione di attivazione</td><td>Uno step di una pipeline che trasforma l'input in base a una configurazione appresa</td></tr>
+  <tr><td>Strati (input → hidden → output)</td><td>Una catena di middleware, ognuno passa il risultato trasformato al successivo</td></tr>
+  <tr><td>Deep learning</td><td>Una pipeline con molti step intermedi invece di uno o due</td></tr>
+</table>
+
+<h2>IA generativa vs discriminativa</h2>
+<p>La distinzione più rilevante per l'AI Act (lezione 18) e per i quiz è tra due famiglie di modelli:</p>
+<table>
+  <tr><th></th><th>IA discriminativa/predittiva</th><th>IA generativa</th></tr>
+  <tr><td>Cosa fa</td><td>Classifica o predice su dati esistenti</td><td>Genera contenuto nuovo (testo, immagini, video, musica)</td></tr>
+  <tr><td>Esempio</td><td>Il filtro antispam della lezione 19 (supervisionato)</td><td>Un modello che scrive un testo o disegna un'immagine da un prompt</td></tr>
+  <tr><td>Architetture citate</td><td>Classificatori, reti neurali "tradizionali"</td><td>LLM (modelli linguistici di grandi dimensioni), modelli di diffusione, trasformatori</td></tr>
+</table>
+
+<p>Esempi concreti di sistemi generativi: modelli linguistici come GPT per il testo, modelli di diffusione come Stable Diffusion per le immagini, sistemi come Sora per il video, MusicLM per la musica.</p>
+
+<div class="callout">
+  <p class="callout-title">Il tranello più comune</p>
+  <p>"IA generativa" non è un sinonimo di "intelligenza artificiale" in generale — è un <strong>sottoinsieme specifico</strong>. Gran parte delle applicazioni di IA tradizionali (filtri antispam, sistemi di raccomandazione, riconoscimento immagini per classificazione) sono <strong>discriminative</strong>, non generative: classificano o prevedono, non creano contenuto nuovo. Un quiz che usa i due termini come intercambiabili sta commettendo un errore concettuale.</p>
+</div>
+
+<h2>Verifica — retrieval practice</h2>
+<p class="source-note">L'ordine delle opzioni cambia a ogni caricamento — rispondi dal ragionamento, non dalla posizione.</p>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">1. Cosa fa un neurone artificiale con i segnali che riceve in ingresso?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Li pesa e applica una funzione di attivazione per produrre un output</button>
+    <button class="quiz-option" data-correct="false">Li ignora completamente fino allo strato di output</button>
+    <button class="quiz-option" data-correct="false">Li memorizza senza alcuna elaborazione</button>
+    <button class="quiz-option" data-correct="false">Li trasmette invariati al neurone successivo</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Ogni input viene moltiplicato per un peso (che ne indica l'importanza), poi la somma pesata passa attraverso una funzione di attivazione che determina l'output del neurone.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">2. Quali sono i tre strati tipici di una rete neurale?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Input, nascosto (hidden), output</button>
+    <button class="quiz-option" data-correct="false">Input, cache, output</button>
+    <button class="quiz-option" data-correct="false">Client, server, database</button>
+    <button class="quiz-option" data-correct="false">Sorgente, transito, destinazione</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Lo strato di input riceve i dati, lo strato nascosto (uno o più) esegue l'elaborazione principale, lo strato di output produce il risultato finale.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">3. Cosa distingue l'IA generativa da quella discriminativa?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Genera contenuto nuovo invece di classificare dati esistenti</button>
+    <button class="quiz-option" data-correct="false">Non usa mai reti neurali come architettura di base</button>
+    <button class="quiz-option" data-correct="false">Funziona solo con dati numerici, mai testuali</button>
+    <button class="quiz-option" data-correct="false">Richiede sempre l'intervento umano in tempo reale</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>L'IA generativa produce contenuto nuovo (testo, immagini, video, musica), mentre l'IA discriminativa classifica o predice su dati esistenti — entrambe possono usare reti neurali come architettura di base.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">4. Quale tipo di modello è alla base di sistemi come GPT per la generazione di testo?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Modelli linguistici di grandi dimensioni (LLM)</button>
+    <button class="quiz-option" data-correct="false">Modelli di diffusione per immagini</button>
+    <button class="quiz-option" data-correct="false">Alberi decisionali classici</button>
+    <button class="quiz-option" data-correct="false">Sistemi esperti basati solo su regole</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>I modelli linguistici di grandi dimensioni (LLM) sono l'architettura alla base di sistemi come GPT; i modelli di diffusione (es. Stable Diffusion) sono invece tipici della generazione di immagini.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">5. Il filtro antispam della lezione 19 (apprendimento supervisionato) è un esempio di IA generativa o discriminativa?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Discriminativa — classifica le email, non ne genera di nuove</button>
+    <button class="quiz-option" data-correct="false">Generativa — crea nuovi esempi di email spam</button>
+    <button class="quiz-option" data-correct="false">Nessuna delle due, non è considerabile IA</button>
+    <button class="quiz-option" data-correct="false">Entrambe contemporaneamente, senza distinzione possibile</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Il filtro antispam classifica email esistenti come "spam" o "non spam" — è un esempio classico di IA discriminativa/predittiva, non generativa, anche se può essere addestrato con una rete neurale.</div>
+</div>
+
+<h2>Fonte primaria consigliata</h2>
+<p>Le voci <a href="https://it.wikipedia.org/wiki/Rete_neurale_artificiale" target="_blank" rel="noopener">"Rete neurale artificiale"</a> e <a href="https://it.wikipedia.org/wiki/Intelligenza_artificiale_generativa" target="_blank" rel="noopener">"Intelligenza artificiale generativa"</a> su Wikipedia in italiano coprono questi due argomenti con lo stesso livello di dettaglio richiesto dai quiz da concorso.</p>
+
+<div class="callout">
+  <p class="callout-title">Materia 3 aggiornata</p>
+  <p>Con questa lezione, l'ultimo gap noto della materia 3 (reti neurali, deep learning, IA generativa) è colmato. La materia copre ora: AI Act (lezione 18), tipi di apprendimento automatico (lezione 19), reti neurali e IA generativa (questa lezione).</p>
+</div>
+
+<p class="source-note">Materiale di riferimento compresso: <a href="../reference/reti-neurali-e-ia-generativa.html">scheda "Reti neurali e IA generativa"</a>.</p>
+
+<nav class="lesson-nav">
+  <span>← <a href="0031-33-limiti-accesso-civico.html">Lezione 31 — I limiti dell'accesso civico generalizzato</a></span>
+  <span>Prossima: da definire in base a lacune emerse o richieste specifiche →</span>
+</nav>
+
+<script src="../assets/quiz.js"></script>
