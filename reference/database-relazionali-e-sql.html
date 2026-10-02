@@ -1,0 +1,38 @@
+<title>Reference — Database relazionali e SQL</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+<p class="eyebrow">Scheda di riferimento · Database relazionali · Materia 8</p>
+<h1>Normalizzazione, SQL, ACID, JOIN</h1>
+<p class="subtitle">Stampabile — tienila a portata per il ripasso rapido prima dei quiz a tempo.</p>
+
+<table>
+  <tr><th>Forma normale</th><th>Risolve</th></tr>
+  <tr><td>1NF</td><td>Valori non atomici</td></tr>
+  <tr><td>2NF</td><td>Dipendenze parziali da chiave composta</td></tr>
+  <tr><td>3NF</td><td>Dipendenze transitive</td></tr>
+</table>
+
+<table>
+  <tr><th>Categoria SQL</th><th>Comandi</th></tr>
+  <tr><td>DDL</td><td>CREATE, ALTER, DROP</td></tr>
+  <tr><td>DML</td><td>SELECT, INSERT, UPDATE, DELETE</td></tr>
+  <tr><td>DCL</td><td>GRANT, REVOKE</td></tr>
+  <tr><td>TCL</td><td>COMMIT, ROLLBACK</td></tr>
+</table>
+
+<p><strong>ACID</strong>: Atomicità (tutto o nulla) · Consistenza (stato valido→valido) · Isolamento (concorrenza) · Durabilità (commit sopravvive a crash).</p>
+
+<p><strong>JOIN</strong>: INNER (solo corrispondenze) · LEFT (tutta la sinistra + NULL) · RIGHT (tutta la destra + NULL) · FULL OUTER (tutto, NULL dove manca).</p>
+
+<div class="callout">
+  <p class="callout-title">Trappola quiz</p>
+  <p>SELECT è DML, non una categoria a parte. Le forme normali sono cumulative: 3NF richiede già 1NF e 2NF.</p>
+</div>
+
+<h2>Fonti</h2>
+<ul>
+  <li><a href="https://it.wikipedia.org/wiki/Modello_relazionale" target="_blank" rel="noopener">Modello relazionale — Wikipedia IT</a></li>
+  <li><a href="https://it.wikipedia.org/wiki/ACID" target="_blank" rel="noopener">ACID — Wikipedia IT</a></li>
+</ul>
+
+<p class="source-note">Da: <a href="../lessons/0036-database-relazionali-e-sql.html">Lezione 36 — Database relazionali e SQL</a></p>

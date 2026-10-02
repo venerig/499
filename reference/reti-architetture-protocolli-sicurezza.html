@@ -1,0 +1,36 @@
+<title>Reference — Reti: architetture, protocolli, sicurezza</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+<p class="eyebrow">Scheda di riferimento · Fondamenti di sistemi e reti · Materia 11</p>
+<h1>OSI/TCP-IP, TCP/UDP, apparati, sicurezza</h1>
+<p class="subtitle">Stampabile — tienila a portata per il ripasso rapido prima dei quiz a tempo.</p>
+
+<p>OSI = 7 livelli (fisico, collegamento dati, rete, trasporto, sessione, presentazione, applicazione). TCP/IP = 4 livelli (accesso rete, internet, trasporto, applicazione).</p>
+
+<table>
+  <tr><th></th><th>TCP</th><th>UDP</th></tr>
+  <tr><td>Connessione</td><td>Sì (handshake)</td><td>No</td></tr>
+  <tr><td>Affidabilità</td><td>Garantita</td><td>Non garantita</td></tr>
+  <tr><td>Uso</td><td>HTTP, email, file transfer</td><td>Streaming, VoIP, DNS</td></tr>
+</table>
+
+<table>
+  <tr><th>Apparato</th><th>Livello OSI</th><th>Instrada per</th></tr>
+  <tr><td>Hub</td><td>1</td><td>Broadcast puro</td></tr>
+  <tr><td>Switch</td><td>2</td><td>MAC address</td></tr>
+  <tr><td>Router</td><td>3</td><td>IP address</td></tr>
+</table>
+
+<p><strong>DNS</strong> risolve nomi→IP · <strong>DHCP</strong> assegna IP automaticamente · <strong>Firewall</strong> filtra il traffico · <strong>VPN</strong> cifra il tunnel · <strong>TLS/SSL</strong> cifra il canale (HTTPS).</p>
+
+<div class="callout">
+  <p class="callout-title">Trappola quiz</p>
+  <p>Firewall e VPN non sono intercambiabili: uno decide chi passa, l'altra protegge cosa passa. Switch instrada per MAC, router per IP.</p>
+</div>
+
+<h2>Fonti</h2>
+<ul>
+  <li><a href="https://it.wikipedia.org/wiki/Modello_OSI" target="_blank" rel="noopener">Modello OSI — Wikipedia IT</a></li>
+</ul>
+
+<p class="source-note">Da: <a href="../lessons/0038-reti-architetture-protocolli-sicurezza.html">Lezione 38 — Reti: architetture, protocolli, sicurezza</a></p>

@@ -1,0 +1,107 @@
+<title>Lezione 34 — Linguaggi specifici del bando: Java, C, C++, C#, Python, JavaScript</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+<p class="eyebrow">Materia 2 · Linguaggi di programmazione · Zona 🟢/🟡</p>
+<h1>Sei linguaggi nominati esplicitamente dal bando, una tabella per non confonderli</h1>
+<p class="subtitle">Lezione 34 — le lezioni 16-17 coprivano tassonomia e paradigmi in generale; qui si fissano le caratteristiche specifiche dei sei linguaggi che il bando cita per nome, perché un quiz può chiedere "a quale appartiene questa caratteristica" linguaggio per linguaggio.</p>
+
+<p class="progress">Percorso: <a href="../MISSION.md">MISSION</a> → Zona 🟡 → Linguaggi di programmazione (materia 2) → Lezione 3/… · Punteggio quiz: <span id="lesson-quiz-score">0 / 0</span></p>
+
+<p>Li usi o li hai usati tutti, in un modo o nell'altro. Il quiz però non chiede "sai scrivere codice", chiede "sai classificare" — stessa logica della lezione 16 (compilato/interpretato), applicata linguaggio per linguaggio.</p>
+
+<table>
+  <tr><th>Linguaggio</th><th>Paradigma principale</th><th>Tipizzazione</th><th>Esecuzione</th><th>Ambito tipico da manuale</th></tr>
+  <tr><td>C</td><td>Procedurale</td><td>Statica, debole</td><td>Compilato nativo</td><td>Sistemi operativi, embedded, basso livello</td></tr>
+  <tr><td>C++</td><td>Procedurale + OOP (multi-paradigma)</td><td>Statica, debole/forte</td><td>Compilato nativo</td><td>Software di sistema, performance, videogiochi</td></tr>
+  <tr><td>Java</td><td>Orientato agli oggetti</td><td>Statica, forte</td><td>Compilato in bytecode, eseguito da JVM ("gestito")</td><td>Applicazioni enterprise, Android</td></tr>
+  <tr><td>C#</td><td>Orientato agli oggetti</td><td>Statica, forte</td><td>Compilato in IL, eseguito da CLR/.NET ("gestito")</td><td>Applicazioni enterprise Microsoft, Windows</td></tr>
+  <tr><td>Python</td><td>Multi-paradigma</td><td>Dinamica, forte</td><td>Interpretato (bytecode CPython)</td><td>Scripting, data science, automazione, IA</td></tr>
+  <tr><td>JavaScript</td><td>Multi-paradigma, event-driven</td><td>Dinamica, debole</td><td>Interpretato/JIT</td><td>Pagine web lato client, Node.js lato server</td></tr>
+</table>
+
+<div class="callout">
+  <p class="callout-title">Il tranello più comune: "C#" non deriva da "C++"</p>
+  <p>Il nome suggerisce una progressione C → C++ → C#, ma <strong>C# è un linguaggio a sé</strong>, creato da Microsoft, sintatticamente vicino a Java/C++ ma eseguito su una piattaforma diversa (.NET CLR) e senza l'ereditarietà diretta che il nome implica. Un quiz che chiede "C# è un'evoluzione diretta del C++?" si aspetta <strong>falso</strong>.</p>
+</div>
+
+<div class="callout">
+  <p class="callout-title">Statico vs dinamico, non "compilato vs interpretato"</p>
+  <p>Sono due assi diversi che si confondono facilmente: la <strong>tipizzazione</strong> (quando si controllano i tipi: a compile-time = statica, a runtime = dinamica) è indipendente dalla <strong>modalità di esecuzione</strong> (compilato/interpretato/gestito, vista in lezione 16). Java è staticamente tipizzato ma gestito via bytecode+JVM; Python è dinamicamente tipizzato e interpretato. Non sono la stessa cosa, anche se spesso vanno a braccetto nei linguaggi più comuni.</p>
+</div>
+
+<p>Richiamo dalla lezione 16: Java e Python sono tecnicamente "ibridi" (bytecode + macchina virtuale), ma nei quiz a due sole opzioni (compilato/interpretato) Java viene trattato come "compilato" (per la JVM) e Python come "interpretato" — è la semplificazione da manuale, non la descrizione tecnicamente più precisa.</p>
+
+<h2>Verifica — retrieval practice</h2>
+<p class="source-note">L'ordine delle opzioni cambia a ogni caricamento — rispondi dal ragionamento, non dalla posizione.</p>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">1. Quale di questi linguaggi ha tipizzazione dinamica?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Python</button>
+    <button class="quiz-option" data-correct="false">Java</button>
+    <button class="quiz-option" data-correct="false">C#</button>
+    <button class="quiz-option" data-correct="false">C</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Python controlla i tipi a runtime (tipizzazione dinamica). Java, C# e C sono tipizzati staticamente: i tipi si controllano a compile-time.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">2. Su quale piattaforma/ambiente di esecuzione gira tipicamente il codice C#?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">CLR (.NET)</button>
+    <button class="quiz-option" data-correct="false">JVM</button>
+    <button class="quiz-option" data-correct="false">Interprete nativo del browser</button>
+    <button class="quiz-option" data-correct="false">Nessuno, viene eseguito direttamente dalla CPU senza livelli intermedi</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>C# viene compilato in IL (Intermediate Language) ed eseguito dal CLR di .NET — stesso schema "gestito" della JVM per Java, ma piattaforma diversa.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">3. "C# è un'evoluzione diretta di C++, come C++ lo è di C." Questa affermazione è:</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Falsa: C# è un linguaggio a sé, creato da Microsoft, non un'evoluzione diretta del C++</button>
+    <button class="quiz-option" data-correct="false">Vera: la numerazione dei nomi riflette una vera gerarchia di derivazione</button>
+    <button class="quiz-option" data-correct="false">Vera solo per la sintassi, falsa per la semantica</button>
+    <button class="quiz-option" data-correct="false">Non determinabile senza ulteriori informazioni</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Il nome è ingannevole: C# è sintatticamente vicino a Java/C++ ma è un linguaggio indipendente creato da Microsoft per la piattaforma .NET, non una terza iterazione evolutiva di C.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">4. Quale linguaggio, tra questi, è tipicamente usato lato client in una pagina web eseguita nel browser?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">JavaScript</button>
+    <button class="quiz-option" data-correct="false">C</button>
+    <button class="quiz-option" data-correct="false">C#</button>
+    <button class="quiz-option" data-correct="false">C++</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>JavaScript è il linguaggio nativo di esecuzione lato client nei browser (ed è anche usabile lato server con Node.js). Gli altri tre non sono linguaggi nativi del browser.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">5. Quale coppia di linguaggi condivide lo stesso schema di esecuzione "gestito" (compilazione intermedia + macchina virtuale)?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Java e C#</button>
+    <button class="quiz-option" data-correct="false">C e C++</button>
+    <button class="quiz-option" data-correct="false">Python e JavaScript</button>
+    <button class="quiz-option" data-correct="false">C e Python</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Java (bytecode + JVM) e C# (IL + CLR) condividono lo stesso schema concettuale di esecuzione gestita, anche su piattaforme diverse. C/C++ sono compilati nativi; Python/JavaScript sono interpretati/JIT senza una compilazione intermedia "gestita" equivalente nel senso da manuale.</div>
+</div>
+
+<h2>Fonte primaria consigliata</h2>
+<p>Per ripasso rapido: <a href="https://it.wikipedia.org/wiki/Linguaggio_di_programmazione" target="_blank" rel="noopener">Linguaggio di programmazione — Wikipedia IT</a> (vedi anche le singole voci per C, C++, Java, C#, Python, JavaScript per le caratteristiche riassunte in tabella).</p>
+
+<p class="source-note">Materiale di riferimento compresso: <a href="../reference/linguaggi-specifici-del-bando.html">scheda "Linguaggi specifici del bando"</a>.</p>
+
+<nav class="lesson-nav">
+  <span>← <a href="0033-informatica-di-base-architettura-e-logica.html">Lezione 33 — Informatica di base: architettura e logica booleana</a></span>
+  <span>Prossima: <a href="0035-sistemi-operativi-linux-windows.html">Lezione 35 — Sistemi operativi: Linux e Windows, server e client</a> →</span>
+</nav>
+
+<script src="../assets/quiz.js"></script>

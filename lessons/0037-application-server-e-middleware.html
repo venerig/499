@@ -1,0 +1,112 @@
+<title>Lezione 37 — Application server e middleware</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+<p class="eyebrow">Materia 9 · Application server e middleware · Zona 🟢</p>
+<h1>Web server, application server, middleware: chi fa cosa nello stack</h1>
+<p class="subtitle">Lezione 37 — ripasso mirato: i tre livelli che spesso si usano come sinonimi sul lavoro, ma che il quiz vuole distinti.</p>
+
+<p class="progress">Percorso: <a href="../MISSION.md">MISSION</a> → Zona 🟢 → Application server e middleware (materia 9) → Lezione 1/… · Punteggio quiz: <span id="lesson-quiz-score">0 / 0</span></p>
+
+<h2>Web server vs application server</h2>
+<table>
+  <tr><th></th><th>Cosa serve</th><th>Esempi</th></tr>
+  <tr><td>Web server</td><td>Contenuto statico e richieste HTTP/HTTPS di base (file, reverse proxy)</td><td>Apache HTTP Server, Nginx</td></tr>
+  <tr><td>Application server</td><td>Esegue la logica applicativa (business logic), genera contenuto dinamico</td><td>Tomcat, WildFly/JBoss, WebLogic, IIS (con ASP.NET)</td></tr>
+</table>
+
+<div class="callout">
+  <p class="callout-title">Il tranello più comune</p>
+  <p>Non sono sempre due prodotti separati: molti application server includono anche le funzioni di web server (es. Tomcat serve sia richieste statiche che esegue servlet/JSP). Il quiz distingue le <strong>funzioni</strong> (servire file vs eseguire logica), non necessariamente due software diversi installati fianco a fianco.</p>
+</div>
+
+<h2>Architettura a livelli (3-tier / n-tier)</h2>
+<p>Schema classico: <strong>client</strong> (presentazione) → <strong>application server</strong> (logica di business) → <strong>database</strong> (persistenza). Il web server, quando presente come livello separato, si colloca davanti all'application server come reverse proxy/load balancer.</p>
+
+<h2>Middleware</h2>
+<p>Software che fa da <strong>ponte</strong> tra applicazioni o sistemi diversi, nascondendo la complessità dell'integrazione. Categorie tipiche da manuale:</p>
+<table>
+  <tr><th>Tipo</th><th>Funzione</th><th>Esempi</th></tr>
+  <tr><td>Message broker</td><td>Scambio asincrono di messaggi tra sistemi</td><td>RabbitMQ, Apache Kafka</td></tr>
+  <tr><td>ESB (Enterprise Service Bus)</td><td>Instrada ed eventualmente trasforma messaggi tra molti sistemi enterprise</td><td>MuleSoft, IBM Integration Bus</td></tr>
+  <tr><td>Middleware dati (ORM)</td><td>Fa da ponte tra codice applicativo orientato agli oggetti e database relazionale</td><td>Hibernate, Entity Framework</td></tr>
+</table>
+
+<div class="callout">
+  <p class="callout-title">Analogia per fissarla</p>
+  <p>Pensa al middleware come al layer di integrazione che già conosci tra microservizi: un message broker tipo Kafka tra due servizi è concettualmente lo stesso ruolo di "ponte" che un ESB gioca tra sistemi legacy enterprise — stessa funzione, scala e contesto diversi.</p>
+</div>
+
+<h2>Verifica — retrieval practice</h2>
+<p class="source-note">L'ordine delle opzioni cambia a ogni caricamento — rispondi dal ragionamento, non dalla posizione.</p>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">1. Qual è la differenza principale tra un web server e un application server?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Il web server serve contenuto statico/richieste HTTP base, l'application server esegue la logica applicativa</button>
+    <button class="quiz-option" data-correct="false">Il web server esegue solo codice Java, l'application server solo codice .NET</button>
+    <button class="quiz-option" data-correct="false">Non c'è alcuna differenza, sono sinonimi intercambiabili in ogni contesto</button>
+    <button class="quiz-option" data-correct="false">L'application server serve solo immagini, il web server solo testo</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Il web server gestisce richieste HTTP e contenuto statico; l'application server esegue la logica di business e genera contenuto dinamico. Alcuni prodotti (es. Tomcat) coprono entrambe le funzioni.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">2. Quale di questi è un esempio di message broker?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Apache Kafka</button>
+    <button class="quiz-option" data-correct="false">Nginx</button>
+    <button class="quiz-option" data-correct="false">PostgreSQL</button>
+    <button class="quiz-option" data-correct="false">NTFS</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Apache Kafka (e RabbitMQ) sono message broker: gestiscono lo scambio asincrono di messaggi tra sistemi. Nginx è un web server, PostgreSQL un database, NTFS un file system.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">3. In un'architettura a 3 livelli (3-tier) classica, dove si colloca la logica di business?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Nel livello intermedio, l'application server</button>
+    <button class="quiz-option" data-correct="false">Nel database</button>
+    <button class="quiz-option" data-correct="false">Esclusivamente nel client</button>
+    <button class="quiz-option" data-correct="false">Nel web server, mai nell'application server</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Lo schema client → application server → database colloca la logica di business nel livello intermedio, separata dalla presentazione (client) e dalla persistenza (database).</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">4. Qual è la funzione principale di un middleware di tipo ORM (es. Hibernate)?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Fare da ponte tra oggetti applicativi e dati relazionali in un database</button>
+    <button class="quiz-option" data-correct="false">Instradare pacchetti di rete tra router diversi</button>
+    <button class="quiz-option" data-correct="false">Compilare codice sorgente in bytecode</button>
+    <button class="quiz-option" data-correct="false">Gestire i permessi del file system</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Un ORM (Object-Relational Mapping) traduce tra il modello a oggetti del codice applicativo e il modello relazionale del database, fungendo da middleware tra i due mondi.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">5. Perché un prodotto come Tomcat può essere citato sia come web server che come application server?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Perché integra entrambe le funzioni: serve richieste HTTP ed esegue logica applicativa (servlet/JSP)</button>
+    <button class="quiz-option" data-correct="false">Perché il termine "application server" è stato abbandonato dal settore</button>
+    <button class="quiz-option" data-correct="false">Perché Tomcat non può eseguire alcuna logica applicativa</button>
+    <button class="quiz-option" data-correct="false">Perché i due termini si riferiscono sempre allo stesso identico prodotto</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Tomcat è un servlet container: serve contenuto HTTP e, al tempo stesso, esegue la logica applicativa Java (servlet/JSP) — da qui l'ambiguità nella classificazione che il quiz chiede di sciogliere.</div>
+</div>
+
+<h2>Fonte primaria consigliata</h2>
+<p>Per ripasso rapido: <a href="https://it.wikipedia.org/wiki/Middleware" target="_blank" rel="noopener">Middleware — Wikipedia IT</a> e <a href="https://it.wikipedia.org/wiki/Application_server" target="_blank" rel="noopener">Application server — Wikipedia IT</a>.</p>
+
+<p class="source-note">Materiale di riferimento compresso: <a href="../reference/application-server-e-middleware.html">scheda "Application server e middleware"</a>.</p>
+
+<nav class="lesson-nav">
+  <span>← <a href="0036-database-relazionali-e-sql.html">Lezione 36 — Database relazionali e SQL</a></span>
+  <span>Prossima: <a href="0038-reti-architetture-protocolli-sicurezza.html">Lezione 38 — Reti: architetture, protocolli, sicurezza delle connessioni</a> →</span>
+</nav>
+
+<script src="../assets/quiz.js"></script>

@@ -1,0 +1,126 @@
+<title>Lezione 41 — Backup e recovery</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+<p class="eyebrow">Materia 13 · Backup e recovery · Zona 🟢</p>
+<h1>RPO, RTO, 3-2-1: i numeri e le sigle che il quiz vuole, non la pratica che già fai</h1>
+<p class="subtitle">Lezione 41 — ultima lezione della zona 🟢 pianificata: continuità operativa, nel vocabolario da manuale.</p>
+
+<p class="progress">Percorso: <a href="../MISSION.md">MISSION</a> → Zona 🟢 → Backup e recovery (materia 13) → Lezione 1/… · Punteggio quiz: <span id="lesson-quiz-score">0 / 0</span></p>
+
+<h2>Tipi di backup</h2>
+<table>
+  <tr><th>Tipo</th><th>Cosa copia</th><th>Spazio occupato</th><th>Velocità di restore</th></tr>
+  <tr><td>Completo (full)</td><td>Tutti i dati, ogni volta</td><td>Massimo</td><td>Più rapido (un solo set di dati)</td></tr>
+  <tr><td>Incrementale</td><td>Solo le modifiche dall'<strong>ultimo backup di qualsiasi tipo</strong></td><td>Minimo</td><td>Più lento (serve l'ultimo full + tutti gli incrementali successivi in ordine)</td></tr>
+  <tr><td>Differenziale</td><td>Tutte le modifiche dall'<strong>ultimo backup completo</strong></td><td>Intermedio</td><td>Intermedio (serve l'ultimo full + un solo differenziale)</td></tr>
+</table>
+
+<div class="callout">
+  <p class="callout-title">Il tranello più comune</p>
+  <p>Incrementale vs differenziale si confondono sempre sullo stesso punto: l'incrementale guarda all'<strong>ultimo backup di qualsiasi tipo</strong> (quindi anche a un altro incrementale precedente), il differenziale guarda sempre all'<strong>ultimo full</strong>. Per questo il restore di un incrementale richiede l'intera catena in ordine, quello di un differenziale no.</p>
+</div>
+
+<h2>RPO e RTO</h2>
+<table>
+  <tr><th>Sigla</th><th>Significato</th><th>Risponde alla domanda</th></tr>
+  <tr><td>RPO (Recovery Point Objective)</td><td>Punto di ripristino obiettivo</td><td>"Quanti dati posso permettermi di perdere?" (es. RPO 1 ora → backup ogni ora)</td></tr>
+  <tr><td>RTO (Recovery Time Objective)</td><td>Tempo di ripristino obiettivo</td><td>"Quanto tempo posso permettermi di stare fermo?" (es. RTO 4 ore → il sistema deve tornare operativo entro 4 ore)</td></tr>
+</table>
+
+<div class="callout">
+  <p class="callout-title">Analogia per fissarla</p>
+  <p>RPO è "quanto indietro nel tempo torna il mio ultimo commit buono"; RTO è "quanto tempo mi serve per fare il deploy di rollback e tornare operativo" — due assi indipendenti: puoi avere un RPO stretto (backup frequenti) ma un RTO lungo (restore lento), o viceversa.</p>
+</div>
+
+<h2>Regola 3-2-1</h2>
+<p>Linea guida classica per una strategia di backup robusta: <strong>3</strong> copie dei dati, su <strong>2</strong> supporti/tecnologie diverse, con <strong>1</strong> copia conservata offsite (fuori dalla sede principale) — per resistere sia a un guasto hardware che a un disastro fisico che colpisce l'intera sede.</p>
+
+<h2>Disaster recovery vs business continuity</h2>
+<table>
+  <tr><th>Concetto</th><th>Ambito</th></tr>
+  <tr><td>Disaster Recovery (DR)</td><td>Ripristino dell'infrastruttura IT dopo un evento disastroso</td></tr>
+  <tr><td>Business Continuity (BC)</td><td>Continuità dell'intera organizzazione (processi, persone, IT) durante e dopo un evento disastroso</td></tr>
+</table>
+<p>Il DR è un sottoinsieme tecnico della BC, non un sinonimo: la BC comprende anche aspetti non IT (procedure operative alternative, comunicazione, personale).</p>
+
+<p>Promemoria da manuale, spesso citato come principio a sé: <strong>un backup non testato non è un backup</strong> — il test di restore periodico fa parte della strategia, non è un passaggio opzionale.</p>
+
+<h2>Verifica — retrieval practice</h2>
+<p class="source-note">L'ordine delle opzioni cambia a ogni caricamento — rispondi dal ragionamento, non dalla posizione.</p>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">1. Un backup incrementale copia:</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Solo le modifiche dall'ultimo backup di qualsiasi tipo (full o incrementale)</button>
+    <button class="quiz-option" data-correct="false">Sempre tutti i dati, come un backup completo</button>
+    <button class="quiz-option" data-correct="false">Solo le modifiche dall'ultimo backup completo, ignorando altri incrementali</button>
+    <button class="quiz-option" data-correct="false">Nessun dato, solo i metadati del file system</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>L'incrementale copia le modifiche dall'ultimo backup di qualsiasi tipo, che può essere un full o un altro incrementale — a differenza del differenziale, che guarda sempre all'ultimo full.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">2. Il Recovery Point Objective (RPO) risponde a quale domanda?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Quanti dati posso permettermi di perdere in caso di incidente?</button>
+    <button class="quiz-option" data-correct="false">Quanto tempo posso permettermi di stare fermo prima del ripristino?</button>
+    <button class="quiz-option" data-correct="false">Quanti supporti di backup diversi devo usare?</button>
+    <button class="quiz-option" data-correct="false">Quanto spazio occupa il backup completo?</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>RPO misura la quantità massima di dati accettabile da perdere (definita dalla frequenza dei backup). RTO, invece, misura il tempo massimo accettabile di inattività prima del ripristino.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">3. Secondo la regola 3-2-1 per il backup, quante copie dei dati devono essere conservate fuori sede (offsite)?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">1</button>
+    <button class="quiz-option" data-correct="false">3</button>
+    <button class="quiz-option" data-correct="false">2</button>
+    <button class="quiz-option" data-correct="false">Nessuna, bastano supporti diversi nella stessa sede</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>La regola 3-2-1 prevede 3 copie totali, su 2 supporti/tecnologie diverse, con 1 copia offsite per resistere a un disastro che colpisce l'intera sede principale.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">4. Qual è la differenza principale tra Disaster Recovery (DR) e Business Continuity (BC)?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Il DR è il ripristino tecnico dell'IT, la BC comprende la continuità dell'intera organizzazione</button>
+    <button class="quiz-option" data-correct="false">Sono due nomi equivalenti per lo stesso identico processo</button>
+    <button class="quiz-option" data-correct="false">La BC riguarda solo il backup dei dati, il DR riguarda solo il personale</button>
+    <button class="quiz-option" data-correct="false">Il DR si applica solo alle piccole organizzazioni, la BC solo alle grandi</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Il DR è un sottoinsieme tecnico (ripristino IT) della più ampia Business Continuity, che copre anche processi operativi, personale e comunicazione durante un'interruzione.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">5. Per ripristinare i dati da un backup differenziale, di cosa si ha bisogno?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Dell'ultimo backup completo più il backup differenziale più recente</button>
+    <button class="quiz-option" data-correct="false">Solo del backup differenziale, senza alcun backup completo</button>
+    <button class="quiz-option" data-correct="false">Dell'intera catena di tutti i backup differenziali mai eseguiti, in ordine</button>
+    <button class="quiz-option" data-correct="false">Di nessun dato precedente, il differenziale è sempre autosufficiente</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Il differenziale contiene tutte le modifiche dall'ultimo full: basta l'ultimo full più l'ultimo differenziale per il restore completo, senza dover ricostruire una catena come con gli incrementali.</div>
+</div>
+
+<h2>Fonte primaria consigliata</h2>
+<p>Per ripasso rapido: <a href="https://it.wikipedia.org/wiki/Backup" target="_blank" rel="noopener">Backup — Wikipedia IT</a> e <a href="https://it.wikipedia.org/wiki/Disaster_recovery" target="_blank" rel="noopener">Disaster recovery — Wikipedia IT</a>.</p>
+
+<div class="callout">
+  <p class="callout-title">Zona 🟢 e materia 2 integrate</p>
+  <p>Con le lezioni 33-41 sono state coperte tutte le materie zona 🟢 rimaste a copertura zero (1, 7, 8, 9, 10, 11, 12, 13) più un'integrazione sui linguaggi specifici nominati dal bando (materia 2, lezione 34). Area Informatica e Tecnologica del bando ora coperta su tutte le sue componenti esplicite.</p>
+</div>
+
+<p class="source-note">Materiale di riferimento compresso: <a href="../reference/backup-e-recovery.html">scheda "Backup e recovery"</a>.</p>
+
+<nav class="lesson-nav">
+  <span>← <a href="0040-office-automation.html">Lezione 40 — Office automation</a></span>
+  <span><a href="../index.html">Torna all'indice delle lezioni</a> →</span>
+</nav>
+
+<script src="../assets/quiz.js"></script>

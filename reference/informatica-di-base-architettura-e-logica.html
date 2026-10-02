@@ -1,0 +1,42 @@
+<title>Reference — Architettura e logica booleana</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+<p class="eyebrow">Scheda di riferimento · Informatica di base · Materia 1</p>
+<h1>Architettura, memoria, logica booleana</h1>
+<p class="subtitle">Stampabile — tienila a portata per il ripasso rapido prima dei quiz a tempo.</p>
+
+<h2>Ciclo CPU</h2>
+<p>Fetch → Decode → Execute. Unità di controllo coordina il ciclo; ALU esegue le operazioni aritmetiche/logiche.</p>
+
+<h2>Gerarchia di memoria (dalla più veloce alla più lenta)</h2>
+<table>
+  <tr><th>Livello</th><th>Volatile?</th></tr>
+  <tr><td>Cache (L1/L2/L3)</td><td>Sì</td></tr>
+  <tr><td>RAM</td><td>Sì</td></tr>
+  <tr><td>SSD/HDD</td><td>No</td></tr>
+  <tr><td>ROM/Firmware</td><td>No</td></tr>
+</table>
+
+<h2>Porte logiche</h2>
+<table>
+  <tr><th>Porta</th><th>Output = 1 quando...</th></tr>
+  <tr><td>AND</td><td>Entrambi input 1</td></tr>
+  <tr><td>OR</td><td>Almeno un input 1</td></tr>
+  <tr><td>NOT</td><td>Input è 0 (inverte)</td></tr>
+  <tr><td>XOR</td><td>Input diversi tra loro</td></tr>
+</table>
+
+<div class="callout">
+  <p class="callout-title">Trappola quiz</p>
+  <p>XOR(1,1) = 0, non 1. È vero solo quando gli input differiscono.</p>
+</div>
+
+<p>1 byte = 8 bit. Numeri negativi: complemento a 2.</p>
+
+<h2>Fonti</h2>
+<ul>
+  <li><a href="https://it.wikipedia.org/wiki/Architettura_di_von_Neumann" target="_blank" rel="noopener">Architettura di von Neumann — Wikipedia IT</a></li>
+  <li><a href="https://it.wikipedia.org/wiki/Porta_logica" target="_blank" rel="noopener">Porta logica — Wikipedia IT</a></li>
+</ul>
+
+<p class="source-note">Da: <a href="../lessons/0033-informatica-di-base-architettura-e-logica.html">Lezione 33 — Informatica di base: architettura e logica booleana</a></p>

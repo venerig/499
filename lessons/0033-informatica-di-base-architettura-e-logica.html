@@ -1,0 +1,121 @@
+<title>Lezione 33 — Informatica di base: architettura e logica booleana</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+<p class="eyebrow">Materia 1 · Informatica di base · Zona 🟢</p>
+<h1>I mattoni che usi ogni giorno, nel vocabolario che vuole il quiz</h1>
+<p class="subtitle">Lezione 33 — prima lezione di ripasso per la zona 🟢: non concetti nuovi, ma la terminologia esatta da manuale da concorso per architettura, memoria e logica booleana.</p>
+
+<p class="progress">Percorso: <a href="../MISSION.md">MISSION</a> → Zona 🟢 → Informatica di base (materia 1) → Lezione 1/… · Punteggio quiz: <span id="lesson-quiz-score">0 / 0</span></p>
+
+<p>Conosci già tutto questo nella pratica — qui si tratta solo di calibrare i nomi "da manuale" che i quiz PA usano per cose che per te sono scontate.</p>
+
+<h2>Architettura di von Neumann</h2>
+<p>Lo schema di riferimento di (quasi) ogni computer moderno: <strong>CPU</strong> (unità di elaborazione centrale, a sua volta ALU + registri + unità di controllo), <strong>memoria</strong> (dati e istruzioni nello stesso spazio di memorizzazione), <strong>bus</strong> (canali che collegano i componenti: bus dati, bus indirizzi, bus di controllo) e <strong>I/O</strong> (periferiche di input/output). Il ciclo base della CPU è <strong>fetch → decode → execute</strong>: preleva l'istruzione, la decodifica, la esegue.</p>
+
+<div class="callout">
+  <p class="callout-title">Trappola quiz</p>
+  <p>"ALU" (Arithmetic Logic Unit) esegue operazioni aritmetiche/logiche; l'<strong>unità di controllo</strong> coordina il ciclo fetch-decode-execute e pilota gli altri componenti — nei quiz vengono spesso scambiate le due funzioni.</p>
+</div>
+
+<h2>Gerarchia di memoria</h2>
+<table>
+  <tr><th>Livello</th><th>Volatile?</th><th>Velocità</th><th>Capacità tipica</th></tr>
+  <tr><td>Cache (L1/L2/L3)</td><td>Sì</td><td>Altissima</td><td>KB–MB</td></tr>
+  <tr><td>RAM</td><td>Sì</td><td>Alta</td><td>GB</td></tr>
+  <tr><td>SSD/HDD (disco)</td><td>No</td><td>Bassa</td><td>GB–TB</td></tr>
+  <tr><td>ROM/Firmware</td><td>No</td><td>Bassa (lettura)</td><td>Piccola, dati fissi (es. BIOS/UEFI)</td></tr>
+</table>
+<p>Regola generale della gerarchia: più sei vicino alla CPU, più sei veloce, più piccolo e più costoso per byte. La RAM perde il contenuto allo spegnimento (<strong>volatile</strong>); disco e ROM lo conservano (<strong>non volatile</strong>) — è il contrasto più chiesto nei quiz su questo argomento.</p>
+
+<h2>Logica booleana</h2>
+<p>Le porte logiche sono i mattoni elementari con cui è costruito l'hardware digitale (incluse le ALU). Le tabelle di verità delle quattro porte base:</p>
+<table>
+  <tr><th>Porta</th><th>Output = 1 quando...</th></tr>
+  <tr><td>AND</td><td>Entrambi gli input sono 1</td></tr>
+  <tr><td>OR</td><td>Almeno un input è 1</td></tr>
+  <tr><td>NOT</td><td>L'unico input è 0 (inverte)</td></tr>
+  <tr><td>XOR</td><td>Gli input sono diversi tra loro (uno 0 e uno 1)</td></tr>
+</table>
+
+<div class="callout">
+  <p class="callout-title">Il tranello più comune</p>
+  <p>XOR non è "OR esclusivo nel senso di OR più permissivo": è vero solo quando gli input <strong>differiscono</strong>. Con input 1,1 l'OR normale dà 1, ma lo XOR dà 0 — è lo scambio più frequente nei quiz su logica booleana.</p>
+</div>
+
+<h2>Rappresentazione binaria</h2>
+<p>Un <strong>bit</strong> è l'unità minima (0 o 1); un <strong>byte</strong> sono 8 bit. I numeri negativi negli interi si rappresentano in <strong>complemento a 2</strong>, non con un semplice bit di segno — è la convenzione usata da (quasi) tutte le CPU moderne.</p>
+
+<h2>Verifica — retrieval practice</h2>
+<p class="source-note">L'ordine delle opzioni cambia a ogni caricamento — rispondi dal ragionamento, non dalla posizione.</p>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">1. Qual è il ciclo base di esecuzione di una CPU?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Fetch, decode, execute</button>
+    <button class="quiz-option" data-correct="false">Compile, link, run</button>
+    <button class="quiz-option" data-correct="false">Boot, load, shutdown</button>
+    <button class="quiz-option" data-correct="false">Read, write, delete</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Fetch (preleva l'istruzione) → decode (la decodifica) → execute (la esegue) è il ciclo base di ogni CPU von Neumann.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">2. Quale affermazione sulla RAM è corretta?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">È una memoria volatile: perde il contenuto allo spegnimento</button>
+    <button class="quiz-option" data-correct="false">È una memoria non volatile come il disco</button>
+    <button class="quiz-option" data-correct="false">Ha capacità tipicamente maggiore di un SSD</button>
+    <button class="quiz-option" data-correct="false">È più lenta della cache ma più veloce del disco rigido meccanico, mai il contrario</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>La RAM è volatile: senza alimentazione il contenuto si perde. Disco e ROM sono non volatili.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">3. In logica booleana, quando una porta XOR restituisce 1?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Quando i due input sono diversi tra loro</button>
+    <button class="quiz-option" data-correct="false">Quando almeno uno dei due input è 1</button>
+    <button class="quiz-option" data-correct="false">Quando entrambi gli input sono 1</button>
+    <button class="quiz-option" data-correct="false">Quando entrambi gli input sono 0</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>XOR è vero solo quando i due input differiscono (uno 0 e uno 1) — con input uguali (1,1 o 0,0) il risultato è sempre 0.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">4. Quanti bit compongono un byte?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">8</button>
+    <button class="quiz-option" data-correct="false">4</button>
+    <button class="quiz-option" data-correct="false">16</button>
+    <button class="quiz-option" data-correct="false">10</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Un byte è definito come 8 bit — base di ogni unità di misura successiva (KB, MB, GB...).</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">5. Quale componente della CPU coordina il ciclo fetch-decode-execute e pilota gli altri componenti?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">L'unità di controllo</button>
+    <button class="quiz-option" data-correct="false">L'ALU (Arithmetic Logic Unit)</button>
+    <button class="quiz-option" data-correct="false">Il bus dati</button>
+    <button class="quiz-option" data-correct="false">La cache L1</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>L'unità di controllo coordina il ciclo di esecuzione; l'ALU esegue le operazioni aritmetiche/logiche effettive, ma non pilota il ciclo.</div>
+</div>
+
+<h2>Fonte primaria consigliata</h2>
+<p>Per ripasso rapido: <a href="https://it.wikipedia.org/wiki/Architettura_di_von_Neumann" target="_blank" rel="noopener">Architettura di von Neumann — Wikipedia IT</a> e <a href="https://it.wikipedia.org/wiki/Porta_logica" target="_blank" rel="noopener">Porta logica — Wikipedia IT</a>.</p>
+
+<p class="source-note">Materiale di riferimento compresso: <a href="../reference/informatica-di-base-architettura-e-logica.html">scheda "Architettura e logica booleana"</a>.</p>
+
+<nav class="lesson-nav">
+  <span>← <a href="0032-reti-neurali-e-ia-generativa.html">Lezione 32 — Reti neurali e IA generativa</a></span>
+  <span>Prossima: <a href="0034-linguaggi-specifici-del-bando.html">Lezione 34 — Linguaggi specifici del bando (Java, C, C++, C#, Python, JavaScript)</a> →</span>
+</nav>
+
+<script src="../assets/quiz.js"></script>

@@ -1,0 +1,127 @@
+<title>Lezione 36 — Database relazionali e SQL</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+<p class="eyebrow">Materia 8 · Database relazionali · Zona 🟢</p>
+<h1>ACID, normalizzazione, JOIN: i nomi da manuale per cose che scrivi a mano ogni settimana</h1>
+<p class="subtitle">Lezione 36 — ripasso mirato: non la sintassi SQL (la conosci), ma la classificazione teorica che il quiz PA chiede di riconoscere.</p>
+
+<p class="progress">Percorso: <a href="../MISSION.md">MISSION</a> → Zona 🟢 → Database relazionali (materia 8) → Lezione 1/… · Punteggio quiz: <span id="lesson-quiz-score">0 / 0</span></p>
+
+<h2>Modello relazionale</h2>
+<p>Dati organizzati in <strong>tabelle</strong> (righe = record, colonne = attributi). La <strong>chiave primaria</strong> (primary key) identifica univocamente ogni riga ed è obbligatoriamente non nulla; la <strong>chiave esterna</strong> (foreign key) referenzia la chiave primaria di un'altra tabella, garantendo <strong>integrità referenziale</strong> (non puoi avere un ordine che punta a un cliente inesistente).</p>
+
+<h2>Normalizzazione</h2>
+<table>
+  <tr><th>Forma</th><th>Cosa elimina</th></tr>
+  <tr><td>1NF (prima forma normale)</td><td>Valori non atomici: ogni cella deve contenere un solo valore, niente liste in una colonna</td></tr>
+  <tr><td>2NF (seconda forma normale)</td><td>Dipendenze parziali: ogni attributo non-chiave deve dipendere dall'intera chiave (primaria composta), non solo da una parte</td></tr>
+  <tr><td>3NF (terza forma normale)</td><td>Dipendenze transitive: un attributo non-chiave non può dipendere da un altro attributo non-chiave</td></tr>
+</table>
+
+<div class="callout">
+  <p class="callout-title">Il tranello più comune</p>
+  <p>Le forme normali sono <strong>progressive e cumulative</strong>: per essere in 3NF una tabella deve già rispettare 1NF e 2NF. Un quiz che chiede "quale forma risolve le dipendenze transitive" si aspetta 3NF, non una forma isolata dalle altre.</p>
+</div>
+
+<h2>Classificazione dei comandi SQL</h2>
+<table>
+  <tr><th>Categoria</th><th>Comandi</th><th>Scopo</th></tr>
+  <tr><td>DDL (Data Definition Language)</td><td>CREATE, ALTER, DROP</td><td>Definisce la struttura (schema)</td></tr>
+  <tr><td>DML (Data Manipulation Language)</td><td>SELECT, INSERT, UPDATE, DELETE</td><td>Manipola i dati</td></tr>
+  <tr><td>DCL (Data Control Language)</td><td>GRANT, REVOKE</td><td>Gestisce i permessi</td></tr>
+  <tr><td>TCL (Transaction Control Language)</td><td>COMMIT, ROLLBACK</td><td>Gestisce le transazioni</td></tr>
+</table>
+<p>Il tranello più frequente: <strong>SELECT</strong> viene talvolta istintivamente percepito come "a parte" perché non modifica dati, ma è classificato a pieno titolo come DML.</p>
+
+<h2>ACID</h2>
+<table>
+  <tr><th>Proprietà</th><th>Garantisce</th></tr>
+  <tr><td>Atomicità</td><td>Una transazione è tutto o nulla: se un passaggio fallisce, si annulla l'intera transazione</td></tr>
+  <tr><td>Consistenza</td><td>Il database passa da uno stato valido a un altro stato valido, mai in uno stato intermedio inconsistente</td></tr>
+  <tr><td>Isolamento</td><td>Transazioni concorrenti non si "vedono" a metà percorso l'una con l'altra</td></tr>
+  <tr><td>Durabilità</td><td>Una volta confermata (commit), la modifica resta anche in caso di crash successivo</td></tr>
+</table>
+
+<h2>JOIN</h2>
+<table>
+  <tr><th>Tipo</th><th>Cosa restituisce</th></tr>
+  <tr><td>INNER JOIN</td><td>Solo le righe con corrispondenza in entrambe le tabelle</td></tr>
+  <tr><td>LEFT JOIN</td><td>Tutte le righe della tabella sinistra, con NULL dove non c'è corrispondenza a destra</td></tr>
+  <tr><td>RIGHT JOIN</td><td>Tutte le righe della tabella destra, con NULL dove non c'è corrispondenza a sinistra</td></tr>
+  <tr><td>FULL OUTER JOIN</td><td>Tutte le righe di entrambe le tabelle, con NULL dove manca corrispondenza da un lato o dall'altro</td></tr>
+</table>
+
+<h2>Verifica — retrieval practice</h2>
+<p class="source-note">L'ordine delle opzioni cambia a ogni caricamento — rispondi dal ragionamento, non dalla posizione.</p>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">1. A quale categoria di comandi SQL appartiene SELECT?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">DML (Data Manipulation Language)</button>
+    <button class="quiz-option" data-correct="false">DDL (Data Definition Language)</button>
+    <button class="quiz-option" data-correct="false">DCL (Data Control Language)</button>
+    <button class="quiz-option" data-correct="false">TCL (Transaction Control Language)</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>SELECT, insieme a INSERT/UPDATE/DELETE, è un comando DML — manipola (anche solo leggendo) i dati, non la struttura dello schema.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">2. Quale forma normale risolve il problema delle dipendenze transitive tra attributi non-chiave?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">3NF (terza forma normale)</button>
+    <button class="quiz-option" data-correct="false">1NF (prima forma normale)</button>
+    <button class="quiz-option" data-correct="false">2NF (seconda forma normale)</button>
+    <button class="quiz-option" data-correct="false">Nessuna forma normale affronta questo problema</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>3NF elimina le dipendenze transitive (un attributo non-chiave che dipende da un altro attributo non-chiave). 1NF riguarda l'atomicità dei valori, 2NF le dipendenze parziali da chiavi composte.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">3. Quale proprietà ACID garantisce che una transazione confermata (commit) resti valida anche dopo un crash del sistema?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Durabilità</button>
+    <button class="quiz-option" data-correct="false">Atomicità</button>
+    <button class="quiz-option" data-correct="false">Isolamento</button>
+    <button class="quiz-option" data-correct="false">Consistenza</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>La durabilità garantisce che una modifica confermata sopravviva a crash successivi. L'atomicità riguarda il tutto-o-nulla, l'isolamento la concorrenza, la consistenza la validità dello stato.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">4. Un LEFT JOIN tra tabella Clienti (sinistra) e Ordini (destra) restituisce:</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Tutti i clienti, anche quelli senza ordini (con NULL nei campi ordine)</button>
+    <button class="quiz-option" data-correct="false">Solo i clienti che hanno almeno un ordine</button>
+    <button class="quiz-option" data-correct="false">Solo gli ordini senza cliente associato</button>
+    <button class="quiz-option" data-correct="false">Tutti gli ordini, indipendentemente dal cliente</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Il LEFT JOIN mantiene tutte le righe della tabella a sinistra (Clienti), riempiendo con NULL i campi della tabella a destra dove non c'è corrispondenza. Solo i clienti con ordini sarebbe un INNER JOIN.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">5. Cosa garantisce in particolare la proprietà di "Isolamento" (Isolation) in ACID?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Che transazioni concorrenti non interferiscano vedendosi a metà percorso</button>
+    <button class="quiz-option" data-correct="false">Che ogni query venga eseguita in meno di un secondo</button>
+    <button class="quiz-option" data-correct="false">Che i dati siano sempre normalizzati in 3NF</button>
+    <button class="quiz-option" data-correct="false">Che il database sia sempre disponibile senza downtime</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>L'isolamento riguarda la concorrenza tra transazioni: ciascuna deve comportarsi come se fosse l'unica in esecuzione, senza vedere stati intermedi di altre transazioni non ancora confermate.</div>
+</div>
+
+<h2>Fonte primaria consigliata</h2>
+<p>Per ripasso rapido: <a href="https://it.wikipedia.org/wiki/Modello_relazionale" target="_blank" rel="noopener">Modello relazionale — Wikipedia IT</a> e <a href="https://it.wikipedia.org/wiki/ACID" target="_blank" rel="noopener">ACID — Wikipedia IT</a>.</p>
+
+<p class="source-note">Materiale di riferimento compresso: <a href="../reference/database-relazionali-e-sql.html">scheda "Database relazionali e SQL"</a>.</p>
+
+<nav class="lesson-nav">
+  <span>← <a href="0035-sistemi-operativi-linux-windows.html">Lezione 35 — Sistemi operativi: Linux e Windows</a></span>
+  <span>Prossima: <a href="0037-application-server-e-middleware.html">Lezione 37 — Application server e middleware</a> →</span>
+</nav>
+
+<script src="../assets/quiz.js"></script>

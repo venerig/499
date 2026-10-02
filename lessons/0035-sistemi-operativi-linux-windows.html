@@ -1,0 +1,120 @@
+<title>Lezione 35 — Sistemi operativi: Linux e Windows, server e client</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+<p class="eyebrow">Materia 7 · Sistemi operativi Linux/Windows · Zona 🟢</p>
+<h1>Kernel, file system e permessi: la terminologia da manuale, non la pratica quotidiana</h1>
+<p class="subtitle">Lezione 35 — ripasso mirato: ci lavori ogni giorno, qui si fissano solo i contrasti che un quiz PA ama chiedere a coppie.</p>
+
+<p class="progress">Percorso: <a href="../MISSION.md">MISSION</a> → Zona 🟢 → Sistemi operativi (materia 7) → Lezione 1/… · Punteggio quiz: <span id="lesson-quiz-score">0 / 0</span></p>
+
+<h2>Kernel</h2>
+<table>
+  <tr><th></th><th>Tipo di kernel</th><th>Nota</th></tr>
+  <tr><td>Linux</td><td>Monolitico (modulare)</td><td>Un unico spazio kernel, ma con moduli caricabili dinamicamente</td></tr>
+  <tr><td>Windows (NT)</td><td>Ibrido</td><td>Nucleo monolitico con componenti in stile microkernel per alcuni sottosistemi</td></tr>
+</table>
+
+<h2>File system</h2>
+<table>
+  <tr><th></th><th>File system tipico</th><th>Case sensitivity</th></tr>
+  <tr><td>Linux</td><td>ext4, XFS, Btrfs</td><td>Case-sensitive (<code>file.txt</code> ≠ <code>File.txt</code>)</td></tr>
+  <tr><td>Windows</td><td>NTFS (ReFS per alcuni scenari server)</td><td>Case-insensitive di default</td></tr>
+</table>
+
+<div class="callout">
+  <p class="callout-title">Il tranello più comune</p>
+  <p>La case-sensitivity è il contrasto più chiesto: su Linux <code>Report.docx</code> e <code>report.docx</code> sono due file distinti nella stessa cartella; su Windows, no (collisione, stesso file).</p>
+</div>
+
+<h2>Permessi</h2>
+<p>Linux: modello <strong>rwx</strong> (read/write/execute) per tre categorie — <strong>owner</strong>, <strong>group</strong>, <strong>other</strong> — espresso anche in notazione numerica (es. <code>755</code> = owner rwx, group r-x, other r-x). Windows: <strong>ACL</strong> (Access Control List) più granulare, con permessi assegnabili per singolo utente o gruppo su ogni oggetto, non solo tre categorie fisse.</p>
+
+<h2>Processi e shell</h2>
+<table>
+  <tr><th></th><th>Init/gestione servizi</th><th>Shell tipica</th><th>Modello pipeline</th></tr>
+  <tr><td>Linux</td><td>systemd (PID 1)</td><td>bash</td><td>Flusso di testo tra comandi</td></tr>
+  <tr><td>Windows</td><td>Services Control Manager</td><td>PowerShell</td><td>Flusso di oggetti (.NET) tra comandi</td></tr>
+</table>
+
+<div class="callout">
+  <p class="callout-title">Analogia per fissarla</p>
+  <p>Pensa a bash come a una pipeline CI che passa stringhe grezze tra step (devi fare parsing tu); PowerShell passa oggetti tipizzati tra step (puoi accedere direttamente alle proprietà) — stesso concetto delle pipeline Jenkins che già conosci, applicato alla shell del sistema operativo.</p>
+</div>
+
+<h2>Server vs client</h2>
+<p>Non è una differenza di kernel, ma di <strong>ruolo e configurazione</strong>: Windows Server offre ruoli enterprise (Active Directory, DNS, DHCP server) assenti nelle edizioni client; le distribuzioni Linux "server" (es. Ubuntu Server, Red Hat Enterprise Linux) tipicamente non installano un'interfaccia grafica di default (<strong>headless</strong>), a differenza delle edizioni desktop.</p>
+
+<h2>Verifica — retrieval practice</h2>
+<p class="source-note">L'ordine delle opzioni cambia a ogni caricamento — rispondi dal ragionamento, non dalla posizione.</p>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">1. Il file system NTFS di Windows è, di default:</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Case-insensitive</button>
+    <button class="quiz-option" data-correct="false">Case-sensitive</button>
+    <button class="quiz-option" data-correct="false">Privo di un concetto di permessi sui file</button>
+    <button class="quiz-option" data-correct="false">Identico a ext4 nella struttura interna</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>NTFS è case-insensitive di default: "File.txt" e "file.txt" sono visti come lo stesso nome. I file system Linux più comuni (ext4, XFS) sono invece case-sensitive.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">2. Cosa rappresenta il permesso Linux espresso come "755"?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Owner: read/write/execute; group e other: read/execute</button>
+    <button class="quiz-option" data-correct="false">Un identificativo numerico del processo (PID)</button>
+    <button class="quiz-option" data-correct="false">La dimensione massima del file in KB</button>
+    <button class="quiz-option" data-correct="false">Il numero di utenti autorizzati ad accedere al file</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>La notazione numerica rwx codifica i permessi per owner/group/other: 7 = rwx, 5 = r-x. "755" significa owner con tutti i permessi, group e other solo lettura ed esecuzione.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">3. Qual è il processo con PID 1 nei moderni sistemi Linux che usano systemd?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">systemd stesso, il primo processo avviato dal kernel</button>
+    <button class="quiz-option" data-correct="false">bash, la shell di default</button>
+    <button class="quiz-option" data-correct="false">Il kernel stesso</button>
+    <button class="quiz-option" data-correct="false">Il primo processo utente avviato dopo il login</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>systemd è il processo di init, avviato con PID 1 dal kernel, e gestisce l'avvio e il ciclo di vita di tutti i servizi successivi.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">4. Qual è la differenza principale tra il modello di pipeline di bash e quello di PowerShell?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Bash passa flussi di testo grezzo, PowerShell passa oggetti tipizzati</button>
+    <button class="quiz-option" data-correct="false">Bash funziona solo su Windows, PowerShell solo su Linux</button>
+    <button class="quiz-option" data-correct="false">PowerShell non supporta la concatenazione di comandi</button>
+    <button class="quiz-option" data-correct="false">Non c'è alcuna differenza concettuale tra i due modelli</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Bash passa stringhe di testo tra comandi concatenati; PowerShell passa oggetti .NET con proprietà accessibili direttamente, senza bisogno di fare parsing testuale.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">5. Cosa caratterizza tipicamente un'installazione server di una distribuzione Linux rispetto a un'edizione desktop?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Nessuna interfaccia grafica installata di default (headless)</button>
+    <button class="quiz-option" data-correct="false">Un kernel completamente diverso, incompatibile con l'edizione desktop</button>
+    <button class="quiz-option" data-correct="false">L'impossibilità di installare software aggiuntivo</button>
+    <button class="quiz-option" data-correct="false">Un file system obbligatoriamente diverso da quello desktop</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Le distribuzioni server (Ubuntu Server, RHEL...) tipicamente non installano una GUI di default — stesso kernel e stessa base del sistema, configurazione e ruoli diversi.</div>
+</div>
+
+<h2>Fonte primaria consigliata</h2>
+<p>Per ripasso rapido: <a href="https://it.wikipedia.org/wiki/Kernel_(informatica)" target="_blank" rel="noopener">Kernel — Wikipedia IT</a> e <a href="https://it.wikipedia.org/wiki/Permessi_dei_file" target="_blank" rel="noopener">Permessi dei file — Wikipedia IT</a>.</p>
+
+<p class="source-note">Materiale di riferimento compresso: <a href="../reference/sistemi-operativi-linux-windows.html">scheda "Sistemi operativi Linux/Windows"</a>.</p>
+
+<nav class="lesson-nav">
+  <span>← <a href="0034-linguaggi-specifici-del-bando.html">Lezione 34 — Linguaggi specifici del bando</a></span>
+  <span>Prossima: <a href="0036-database-relazionali-e-sql.html">Lezione 36 — Database relazionali e SQL</a> →</span>
+</nav>
+
+<script src="../assets/quiz.js"></script>

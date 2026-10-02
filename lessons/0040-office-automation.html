@@ -1,0 +1,117 @@
+<title>Lezione 40 — Office automation</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+<p class="eyebrow">Materia 10 · Office automation · Zona 🟢</p>
+<h1>Formati, formule, macro: il vocabolario da manuale degli strumenti che usi ogni giorno</h1>
+<p class="subtitle">Lezione 40 — ripasso mirato: non come si usa Excel, ma come il quiz PA classifica formati file e funzioni.</p>
+
+<p class="progress">Percorso: <a href="../MISSION.md">MISSION</a> → Zona 🟢 → Office automation (materia 10) → Lezione 1/… · Punteggio quiz: <span id="lesson-quiz-score">0 / 0</span></p>
+
+<h2>Suite e corrispondenze</h2>
+<table>
+  <tr><th>Funzione</th><th>Microsoft Office</th><th>LibreOffice (open source)</th></tr>
+  <tr><td>Videoscrittura</td><td>Word</td><td>Writer</td></tr>
+  <tr><td>Fogli di calcolo</td><td>Excel</td><td>Calc</td></tr>
+  <tr><td>Presentazioni</td><td>PowerPoint</td><td>Impress</td></tr>
+</table>
+
+<h2>Formati file</h2>
+<table>
+  <tr><th>Categoria</th><th>Formati</th><th>Nota</th></tr>
+  <tr><td>Office moderno (2007+)</td><td>.docx, .xlsx, .pptx</td><td>Basati su XML, in realtà archivi ZIP di file XML</td></tr>
+  <tr><td>Office legacy (pre-2007)</td><td>.doc, .xls, .ppt</td><td>Formati binari proprietari</td></tr>
+  <tr><td>Formati aperti (ODF)</td><td>.odt, .ods, .odp</td><td>Standard ISO, usati da LibreOffice/OpenOffice come formato nativo</td></tr>
+  <tr><td>Interscambio/stampa</td><td>.pdf</td><td>Pensato per la lettura/stampa fissa, non per l'editing nativo</td></tr>
+</table>
+
+<div class="callout">
+  <p class="callout-title">Il tranello più comune</p>
+  <p>La "x" finale in .docx/.xlsx/.pptx non è decorativa: segna il passaggio dal formato binario proprietario (.doc/.xls/.ppt) al formato basato su XML introdotto da Office 2007. Un quiz che chiede "cosa indica la x" si aspetta questo, non una versione generica più recente.</p>
+</div>
+
+<h2>Funzioni fogli di calcolo</h2>
+<table>
+  <tr><th>Funzione</th><th>Cosa fa</th></tr>
+  <tr><td>SOMMA / MEDIA</td><td>Aggrega valori numerici in un intervallo</td></tr>
+  <tr><td>SE (IF)</td><td>Restituisce un valore in base a una condizione logica</td></tr>
+  <tr><td>CERCA.VERT (VLOOKUP) / CERCA.X (XLOOKUP)</td><td>Cerca un valore in una colonna e restituisce un valore corrispondente da un'altra colonna</td></tr>
+</table>
+<p>Riferimenti di cella: <strong>relativo</strong> (es. <code>A1</code>, cambia se copiato in un'altra cella) vs <strong>assoluto</strong> (es. <code>$A$1</code>, resta fisso quando la formula viene copiata) — distinzione chiesta spesso con un esempio pratico di copia-formula.</p>
+
+<h2>Macro</h2>
+<p>Sequenze di istruzioni registrate o scritte (tipicamente in <strong>VBA</strong>, Visual Basic for Applications) per automatizzare operazioni ripetitive nei documenti Office. Nota di sicurezza da manuale: le macro sono anche un vettore comune di malware (macro malevole in allegati Office), motivo per cui sono disabilitate di default nei documenti scaricati da Internet.</p>
+
+<h2>Verifica — retrieval practice</h2>
+<p class="source-note">L'ordine delle opzioni cambia a ogni caricamento — rispondi dal ragionamento, non dalla posizione.</p>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">1. Cosa indica la "x" finale nei formati .docx/.xlsx/.pptx rispetto a .doc/.xls/.ppt?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Il passaggio a un formato basato su XML, introdotto da Office 2007</button>
+    <button class="quiz-option" data-correct="false">Un file protetto da password</button>
+    <button class="quiz-option" data-correct="false">Un file compatibile solo con macOS</button>
+    <button class="quiz-option" data-correct="false">Un file di sola lettura</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>La "x" segna il passaggio dal formato binario proprietario legacy al formato XML (in realtà un archivio ZIP di file XML) introdotto con Office 2007.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">2. In un foglio di calcolo, qual è il comportamento di un riferimento assoluto come $A$1 quando la formula viene copiata in un'altra cella?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Resta fisso, non cambia</button>
+    <button class="quiz-option" data-correct="false">Si aggiorna seguendo lo spostamento, come un riferimento relativo</button>
+    <button class="quiz-option" data-correct="false">Genera sempre un errore di formula</button>
+    <button class="quiz-option" data-correct="false">Diventa automaticamente un riferimento a un altro foglio</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Il simbolo $ blocca riga e/o colonna: un riferimento assoluto ($A$1) non cambia quando la formula viene copiata altrove, al contrario di un riferimento relativo (A1).</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">3. Qual è il formato nativo standard (ISO) usato da LibreOffice/OpenOffice?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">ODF (.odt, .ods, .odp)</button>
+    <button class="quiz-option" data-correct="false">.docx, .xlsx, .pptx</button>
+    <button class="quiz-option" data-correct="false">.pdf</button>
+    <button class="quiz-option" data-correct="false">.doc, .xls, .ppt</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>ODF (OpenDocument Format) è lo standard ISO nativo di LibreOffice/OpenOffice; i formati .docx/.xlsx/.pptx sono di Microsoft Office, pur essendo entrambi apribili da entrambe le suite per compatibilità.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">4. Perché il formato PDF non è generalmente indicato per l'editing nativo di un documento?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">È pensato principalmente per la lettura e la stampa con layout fisso, non per la modifica del contenuto</button>
+    <button class="quiz-option" data-correct="false">Non può contenere testo, solo immagini</button>
+    <button class="quiz-option" data-correct="false">È leggibile solo su sistemi Windows</button>
+    <button class="quiz-option" data-correct="false">Non esiste alcun software in grado di aprirlo</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Il PDF è un formato di interscambio/stampa con layout fisso, pensato per la visualizzazione coerente su ogni dispositivo — non per l'editing diretto del contenuto come i formati nativi delle suite office.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">5. Perché le macro nei documenti Office sono considerate anche un rischio di sicurezza?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Possono contenere codice eseguibile (VBA) usato come vettore di malware in allegati malevoli</button>
+    <button class="quiz-option" data-correct="false">Occupano sempre troppo spazio su disco</button>
+    <button class="quiz-option" data-correct="false">Rendono il documento illeggibile su altri computer</button>
+    <button class="quiz-option" data-correct="false">Sono vietate per legge in ogni contesto</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Le macro sono codice eseguibile (tipicamente VBA): un allegato con macro malevola è un classico vettore di infezione, motivo per cui le macro da file scaricati da Internet sono disabilitate di default.</div>
+</div>
+
+<h2>Fonte primaria consigliata</h2>
+<p>Per ripasso rapido: <a href="https://it.wikipedia.org/wiki/Office_Open_XML" target="_blank" rel="noopener">Office Open XML — Wikipedia IT</a> e <a href="https://it.wikipedia.org/wiki/OpenDocument" target="_blank" rel="noopener">OpenDocument — Wikipedia IT</a>.</p>
+
+<p class="source-note">Materiale di riferimento compresso: <a href="../reference/office-automation.html">scheda "Office automation"</a>.</p>
+
+<nav class="lesson-nav">
+  <span>← <a href="0039-reti-multimediali-smart-working.html">Lezione 39 — Reti multimediali e smart working</a></span>
+  <span>Prossima: <a href="0041-backup-e-recovery.html">Lezione 41 — Backup e recovery</a> →</span>
+</nav>
+
+<script src="../assets/quiz.js"></script>

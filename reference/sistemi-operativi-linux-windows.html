@@ -1,0 +1,28 @@
+<title>Reference — Sistemi operativi Linux/Windows</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+<p class="eyebrow">Scheda di riferimento · Sistemi operativi · Materia 7</p>
+<h1>Kernel, file system, permessi, shell</h1>
+<p class="subtitle">Stampabile — tienila a portata per il ripasso rapido prima dei quiz a tempo.</p>
+
+<table>
+  <tr><th></th><th>Linux</th><th>Windows</th></tr>
+  <tr><td>Kernel</td><td>Monolitico modulare</td><td>Ibrido (NT)</td></tr>
+  <tr><td>File system</td><td>ext4/XFS, case-sensitive</td><td>NTFS, case-insensitive</td></tr>
+  <tr><td>Permessi</td><td>rwx owner/group/other (es. 755)</td><td>ACL granulari</td></tr>
+  <tr><td>Init/servizi</td><td>systemd (PID 1)</td><td>Services Control Manager</td></tr>
+  <tr><td>Shell</td><td>bash (pipeline di testo)</td><td>PowerShell (pipeline di oggetti)</td></tr>
+</table>
+
+<div class="callout">
+  <p class="callout-title">Trappola quiz</p>
+  <p>NTFS è case-insensitive di default; ext4/XFS sono case-sensitive. Edizioni server Linux: tipicamente headless (no GUI di default).</p>
+</div>
+
+<h2>Fonti</h2>
+<ul>
+  <li><a href="https://it.wikipedia.org/wiki/Kernel_(informatica)" target="_blank" rel="noopener">Kernel — Wikipedia IT</a></li>
+  <li><a href="https://it.wikipedia.org/wiki/Permessi_dei_file" target="_blank" rel="noopener">Permessi dei file — Wikipedia IT</a></li>
+</ul>
+
+<p class="source-note">Da: <a href="../lessons/0035-sistemi-operativi-linux-windows.html">Lezione 35 — Sistemi operativi: Linux e Windows</a></p>

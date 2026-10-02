@@ -35,8 +35,27 @@
 - [Rete neurale artificiale — Wikipedia IT](https://it.wikipedia.org/wiki/Rete_neurale_artificiale) · [Intelligenza artificiale generativa — Wikipedia IT](https://it.wikipedia.org/wiki/Intelligenza_artificiale_generativa)
   Riferimenti per reti neurali (neuroni/pesi/strati/deep learning) e distinzione generativa/discriminativa.
 
-### Materie 🟢 — ripasso rapido (1, 7-13)
-Nessuna lezione di introduzione prevista (fuori mandato, vedi [[MISSION]]). Se emergono lacune terminologiche specifiche del linguaggio PA durante i quiz, integrare qui.
+### Materie 🟢 — ripasso rapido (1, 7-13) — Area Informatica e Tecnologica
+
+- [Architettura di von Neumann — Wikipedia IT](https://it.wikipedia.org/wiki/Architettura_di_von_Neumann) · [Porta logica — Wikipedia IT](https://it.wikipedia.org/wiki/Porta_logica)
+  Riferimento per la materia 1: ciclo CPU, gerarchia di memoria, logica booleana.
+  Materia 2 (lezione 34, integrazione): [Linguaggio di programmazione — Wikipedia IT](https://it.wikipedia.org/wiki/Linguaggio_di_programmazione) per le caratteristiche specifiche di Java/C/C++/C#/Python/JavaScript nominati dal bando.
+- [Kernel (informatica) — Wikipedia IT](https://it.wikipedia.org/wiki/Kernel_(informatica)) · [Permessi dei file — Wikipedia IT](https://it.wikipedia.org/wiki/Permessi_dei_file)
+  Riferimento per la materia 7: Linux vs Windows, file system, permessi, shell.
+- [Modello relazionale — Wikipedia IT](https://it.wikipedia.org/wiki/Modello_relazionale) · [ACID — Wikipedia IT](https://it.wikipedia.org/wiki/ACID)
+  Riferimento per la materia 8: normalizzazione, classificazione comandi SQL, transazioni, JOIN.
+- [Middleware — Wikipedia IT](https://it.wikipedia.org/wiki/Middleware) · [Application server — Wikipedia IT](https://it.wikipedia.org/wiki/Application_server)
+  Riferimento per la materia 9: web server vs application server, message broker, ESB, ORM.
+- [Office Open XML — Wikipedia IT](https://it.wikipedia.org/wiki/Office_Open_XML) · [OpenDocument — Wikipedia IT](https://it.wikipedia.org/wiki/OpenDocument)
+  Riferimento per la materia 10: formati file, funzioni fogli di calcolo, macro.
+- [Modello OSI — Wikipedia IT](https://it.wikipedia.org/wiki/Modello_OSI) · [Transmission Control Protocol — Wikipedia IT](https://it.wikipedia.org/wiki/Transmission_Control_Protocol)
+  Riferimento per la materia 11: OSI/TCP-IP, TCP/UDP, apparati di rete, sicurezza delle connessioni (firewall/VPN/TLS).
+- [Voice over IP — Wikipedia IT](https://it.wikipedia.org/wiki/Voice_over_IP) · [Quality of service — Wikipedia IT](https://it.wikipedia.org/wiki/Quality_of_service)
+  Riferimento per la materia 12: VoIP, videoconferenza, QoS, VPN per smart working.
+- [Backup — Wikipedia IT](https://it.wikipedia.org/wiki/Backup) · [Disaster recovery — Wikipedia IT](https://it.wikipedia.org/wiki/Disaster_recovery)
+  Riferimento per la materia 13: tipi di backup, RPO/RTO, regola 3-2-1, DR vs business continuity.
+
+Lezioni 33, 35-41 aggiunte su richiesta esplicita dell'utente (area a copertura zero fino a quel momento, pur essendo il nucleo tecnico principale del bando). Tono "ripasso calibrato al quiz PA", non introduzione da zero — vedi [[MISSION]] e [[NOTES]].
 
 ### Materia ⚪ — Inglese (16)
 - [Falso amico — Wikipedia IT](https://it.wikipedia.org/wiki/Falso_amico)
@@ -62,6 +81,5 @@ _Gap:_ formato esatto della prova di inglese non confermato dal bando (il fetch 
 _Non ancora esplorato._ Possibili candidati da valutare in una sessione futura: forum di categoria per concorsi INPS/PA su Concorsando.it o gruppi Telegram/Facebook dedicati al concorso 499 assistenti informatici INPS 2026 (utili per aggiornamenti sulla data della prova e condivisione di quesiti usciti in prove simili). Non ancora chiesto all'utente se preferisce partecipare — da verificare.
 
 ## Gaps
-- Nessuna fonte primaria ufficiale ancora trovata per "Principi di Intelligenza Artificiale" (materia 3) — probabile riferimento normativo AI Act, da confermare.
-- Nessuna fonte specifica trovata per "Lingua inglese" (materia 16) — da cercare quando si inizierà quella materia.
+- Lezione 11 (PNA/RPCT/PTPC, materia 15): non menziona che dal D.L. 80/2021 art.6 il PTPC è per la maggior parte delle PA assorbito nella sezione "Anticorruzione e Trasparenza" del PIAO — testo originale L.190/2012 ancora corretto, ma la prassi attuale (incl. INPS) usa il PIAO. Da integrare se richiesto.
 - Da verificare se la banca dati Concorsando è effettivamente allineata al bando 2026 attuale o a versioni precedenti del concorso.

@@ -1,0 +1,29 @@
+<title>Reference — Backup e recovery</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+<p class="eyebrow">Scheda di riferimento · Backup e recovery · Materia 13</p>
+<h1>Tipi di backup, RPO/RTO, 3-2-1</h1>
+<p class="subtitle">Stampabile — tienila a portata per il ripasso rapido prima dei quiz a tempo.</p>
+
+<table>
+  <tr><th>Tipo</th><th>Copia da...</th><th>Restore</th></tr>
+  <tr><td>Full</td><td>Sempre tutto</td><td>Rapido</td></tr>
+  <tr><td>Incrementale</td><td>Ultimo backup di qualsiasi tipo</td><td>Serve l'intera catena in ordine</td></tr>
+  <tr><td>Differenziale</td><td>Ultimo full</td><td>Serve solo full + ultimo differenziale</td></tr>
+</table>
+
+<p><strong>RPO</strong> = quanti dati posso perdere (frequenza backup). <strong>RTO</strong> = quanto tempo per tornare operativo.</p>
+<p>Regola <strong>3-2-1</strong>: 3 copie, 2 supporti diversi, 1 offsite.</p>
+<p>DR (ripristino IT) ⊂ Business Continuity (continuità organizzazione intera).</p>
+
+<div class="callout">
+  <p class="callout-title">Trappola quiz</p>
+  <p>Incrementale guarda all'ultimo backup qualsiasi (richiede catena); differenziale guarda sempre all'ultimo full (non richiede catena).</p>
+</div>
+
+<h2>Fonti</h2>
+<ul>
+  <li><a href="https://it.wikipedia.org/wiki/Backup" target="_blank" rel="noopener">Backup — Wikipedia IT</a></li>
+</ul>
+
+<p class="source-note">Da: <a href="../lessons/0041-backup-e-recovery.html">Lezione 41 — Backup e recovery</a></p>

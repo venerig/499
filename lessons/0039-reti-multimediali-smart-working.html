@@ -1,0 +1,107 @@
+<title>Lezione 39 — Reti multimediali e smart working</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+<p class="eyebrow">Materia 12 · Reti multimediali (smart working) · Zona 🟢</p>
+<h1>VoIP, videoconferenza, VPN: la rete che ti fa lavorare da remoto</h1>
+<p class="subtitle">Lezione 39 — ripasso mirato: materia 11 copriva i fondamenti di rete; qui si guarda allo stesso stack dal punto di vista di chi deve far funzionare lo smart working.</p>
+
+<p class="progress">Percorso: <a href="../MISSION.md">MISSION</a> → Zona 🟢 → Reti multimediali / smart working (materia 12) → Lezione 1/… · Punteggio quiz: <span id="lesson-quiz-score">0 / 0</span></p>
+
+<h2>VoIP (Voice over IP)</h2>
+<p>Trasporta la voce come dati su rete IP invece che su rete telefonica tradizionale. Due protocolli chiave da manuale: <strong>SIP</strong> (Session Initiation Protocol, gestisce l'avvio/chiusura della chiamata) e <strong>RTP</strong> (Real-time Transport Protocol, trasporta effettivamente audio/video durante la chiamata, tipicamente su UDP).</p>
+
+<h2>Videoconferenza: banda e latenza</h2>
+<table>
+  <tr><th>Concetto</th><th>Cosa misura</th><th>Perché conta per la videoconferenza</th></tr>
+  <tr><td>Banda (bandwidth)</td><td>Quantità di dati trasmissibili per secondo</td><td>Troppo poca banda = immagine/audio a scatti o bassa qualità</td></tr>
+  <tr><td>Latenza (delay)</td><td>Tempo che un pacchetto impiega ad arrivare</td><td>Alta latenza = ritardo percepibile nella conversazione, anche con banda sufficiente</td></tr>
+</table>
+
+<div class="callout">
+  <p class="callout-title">Il tranello più comune</p>
+  <p>"Più banda" non risolve sempre i problemi di una videochiamata: una connessione con banda ampia ma <strong>latenza alta</strong> (es. satellitare) produce comunque conversazioni con ritardo percepibile. Il quiz che contrappone banda e latenza vuole farti riconoscere che sono due problemi distinti.</p>
+</div>
+
+<h2>QoS (Quality of Service)</h2>
+<p>Insieme di tecniche per <strong>prioritizzare</strong> certi tipi di traffico sulla rete (es. VoIP/videoconferenza) rispetto ad altri meno sensibili al ritardo (es. download di file), così che il traffico real-time non venga penalizzato quando la rete è congestionata.</p>
+
+<h2>VPN per l'accesso da remoto</h2>
+<p>Lo smart working si appoggia tipicamente su una <strong>VPN aziendale</strong>: crea un tunnel cifrato tra il dispositivo del dipendente e la rete interna dell'ente, permettendo di accedere a risorse interne (file server, applicativi gestionali) come se si fosse fisicamente in ufficio. Due famiglie tecniche citate spesso nei manuali: <strong>IPSec</strong> (a livello di rete, spesso per tunnel site-to-site o client robusti) e <strong>SSL/TLS VPN</strong> (spesso via browser o client leggero, più comune per l'accesso remoto individuale).</p>
+
+<h2>Collaborazione remota</h2>
+<p>Strumenti di condivisione documenti in tempo reale, condivisione schermo/desktop remoto, cloud storage sincronizzato: tutti si appoggiano alla stessa infrastruttura di rete vista sopra (banda, latenza, QoS, VPN per le risorse interne) — non sono una categoria tecnica separata, ma un insieme di applicazioni che ne dipendono.</p>
+
+<h2>Verifica — retrieval practice</h2>
+<p class="source-note">L'ordine delle opzioni cambia a ogni caricamento — rispondi dal ragionamento, non dalla posizione.</p>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">1. Quale protocollo gestisce l'avvio e la chiusura di una chiamata VoIP?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">SIP</button>
+    <button class="quiz-option" data-correct="false">RTP</button>
+    <button class="quiz-option" data-correct="false">DHCP</button>
+    <button class="quiz-option" data-correct="false">FTP</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>SIP gestisce la segnalazione (avvio/chiusura chiamata); RTP trasporta effettivamente l'audio/video durante la chiamata, tipicamente su UDP.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">2. Una connessione con banda ampia ma latenza molto alta, in una videoconferenza, produce tipicamente:</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Ritardo percepibile nella conversazione, anche con immagine/audio di buona qualità</button>
+    <button class="quiz-option" data-correct="false">Nessun problema, perché la banda ampia risolve sempre ogni limite di rete</button>
+    <button class="quiz-option" data-correct="false">Interruzione automatica e immediata della chiamata</button>
+    <button class="quiz-option" data-correct="false">Un errore di autenticazione VPN</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>La latenza è un problema distinto dalla banda: anche con banda sufficiente, un ritardo elevato nella trasmissione dei pacchetti produce una conversazione percepibilmente "sfasata".</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">3. A cosa serve il QoS (Quality of Service) su una rete aziendale?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">A prioritizzare il traffico sensibile al ritardo (es. VoIP) rispetto ad altro traffico meno critico</button>
+    <button class="quiz-option" data-correct="false">A cifrare tutto il traffico di rete</button>
+    <button class="quiz-option" data-correct="false">Ad assegnare automaticamente gli indirizzi IP ai dispositivi</button>
+    <button class="quiz-option" data-correct="false">A bloccare il traffico non autorizzato come un firewall</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Il QoS gestisce le priorità del traffico in condizioni di congestione, non la cifratura (compito di VPN/TLS) né l'assegnazione IP (compito di DHCP) né il filtraggio (compito del firewall).</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">4. Qual è il ruolo principale di una VPN aziendale nel contesto dello smart working?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Creare un tunnel cifrato che permette di accedere alle risorse interne come se si fosse in ufficio</button>
+    <button class="quiz-option" data-correct="false">Aumentare la banda disponibile sulla connessione domestica del dipendente</button>
+    <button class="quiz-option" data-correct="false">Assegnare un indirizzo MAC statico al dispositivo del dipendente</button>
+    <button class="quiz-option" data-correct="false">Sostituire completamente la necessità di un firewall aziendale</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>La VPN crea un tunnel cifrato tra il dispositivo remoto e la rete interna, non modifica la banda disponibile né sostituisce le altre misure di sicurezza come il firewall.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">5. Quale protocollo trasporta effettivamente l'audio e il video durante una chiamata VoIP già avviata?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">RTP</button>
+    <button class="quiz-option" data-correct="false">SIP</button>
+    <button class="quiz-option" data-correct="false">HTTP</button>
+    <button class="quiz-option" data-correct="false">SMTP</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>RTP (Real-time Transport Protocol) trasporta i dati audio/video durante la chiamata; SIP si occupa solo della segnalazione di avvio/chiusura.</div>
+</div>
+
+<h2>Fonte primaria consigliata</h2>
+<p>Per ripasso rapido: <a href="https://it.wikipedia.org/wiki/Voice_over_IP" target="_blank" rel="noopener">Voice over IP — Wikipedia IT</a> e <a href="https://it.wikipedia.org/wiki/Quality_of_service" target="_blank" rel="noopener">Quality of Service — Wikipedia IT</a>.</p>
+
+<p class="source-note">Materiale di riferimento compresso: <a href="../reference/reti-multimediali-smart-working.html">scheda "Reti multimediali e smart working"</a>.</p>
+
+<nav class="lesson-nav">
+  <span>← <a href="0038-reti-architetture-protocolli-sicurezza.html">Lezione 38 — Reti: architetture, protocolli, sicurezza</a></span>
+  <span>Prossima: <a href="0040-office-automation.html">Lezione 40 — Office automation</a> →</span>
+</nav>
+
+<script src="../assets/quiz.js"></script>

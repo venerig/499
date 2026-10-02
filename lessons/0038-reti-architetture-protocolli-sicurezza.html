@@ -1,0 +1,140 @@
+<title>Lezione 38 — Reti: architetture, protocolli, apparati e sicurezza delle connessioni</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+<p class="eyebrow">Materia 11 · Fondamenti di sistemi e reti · Zona 🟢</p>
+<h1>OSI, TCP/IP, apparati di rete: i livelli giusti per le domande a incrocio</h1>
+<p class="subtitle">Lezione 38 — ripasso mirato: il modello che usi implicitamente ogni giorno (debug di rete, Docker networking), qui nella tassonomia esatta da manuale.</p>
+
+<p class="progress">Percorso: <a href="../MISSION.md">MISSION</a> → Zona 🟢 → Fondamenti di sistemi e reti (materia 11) → Lezione 1/… · Punteggio quiz: <span id="lesson-quiz-score">0 / 0</span></p>
+
+<h2>Modello OSI vs TCP/IP</h2>
+<table>
+  <tr><th>OSI (7 livelli)</th><th>TCP/IP (4 livelli)</th><th>Esempi</th></tr>
+  <tr><td>7. Applicazione</td><td rowspan="3">Applicazione</td><td>HTTP, FTP, DNS</td></tr>
+  <tr><td>6. Presentazione</td><td>Codifica, cifratura (es. TLS)</td></tr>
+  <tr><td>5. Sessione</td><td>Gestione sessioni</td></tr>
+  <tr><td>4. Trasporto</td><td>Trasporto</td><td>TCP, UDP</td></tr>
+  <tr><td>3. Rete</td><td>Internet</td><td>IP, routing</td></tr>
+  <tr><td>2. Collegamento dati</td><td rowspan="2">Accesso alla rete</td><td>Ethernet, MAC address, switch</td></tr>
+  <tr><td>1. Fisico</td><td>Cavi, segnali, hub</td></tr>
+</table>
+
+<div class="callout">
+  <p class="callout-title">Il tranello più comune</p>
+  <p>Il modello OSI è teorico/didattico (7 livelli), quello TCP/IP è quello effettivamente implementato in Internet (4 livelli, a volte presentato come 5). Un quiz che chiede "quanti livelli ha il modello OSI" si aspetta <strong>7</strong>, anche se la rete reale segue lo schema TCP/IP più compresso.</p>
+</div>
+
+<h2>TCP vs UDP</h2>
+<table>
+  <tr><th></th><th>TCP</th><th>UDP</th></tr>
+  <tr><td>Connessione</td><td>Orientato alla connessione (handshake)</td><td>Senza connessione (connectionless)</td></tr>
+  <tr><td>Affidabilità</td><td>Garantita (ritrasmissione, ordine)</td><td>Non garantita</td></tr>
+  <tr><td>Velocità/overhead</td><td>Più overhead</td><td>Più leggero, più veloce</td></tr>
+  <tr><td>Uso tipico</td><td>HTTP/HTTPS, email, trasferimento file</td><td>Streaming, VoIP, DNS (query semplici), videogiochi online</td></tr>
+</table>
+
+<h2>Protocolli applicativi chiave</h2>
+<table>
+  <tr><th>Protocollo</th><th>Funzione</th></tr>
+  <tr><td>DNS</td><td>Risolve nomi di dominio in indirizzi IP</td></tr>
+  <tr><td>DHCP</td><td>Assegna automaticamente indirizzi IP (e altri parametri di rete) ai dispositivi</td></tr>
+  <tr><td>HTTP/HTTPS</td><td>Trasferimento pagine web (HTTPS = HTTP + cifratura TLS)</td></tr>
+  <tr><td>FTP/SFTP</td><td>Trasferimento file (SFTP = FTP su canale cifrato SSH)</td></tr>
+</table>
+
+<h2>Apparati di rete per livello</h2>
+<table>
+  <tr><th>Apparato</th><th>Livello OSI</th><th>Instrada in base a</th></tr>
+  <tr><td>Hub</td><td>1 (Fisico)</td><td>Nessuno — ritrasmette in broadcast a tutte le porte</td></tr>
+  <tr><td>Switch</td><td>2 (Collegamento dati)</td><td>Indirizzo MAC</td></tr>
+  <tr><td>Router</td><td>3 (Rete)</td><td>Indirizzo IP</td></tr>
+</table>
+
+<div class="callout">
+  <p class="callout-title">Il tranello più comune</p>
+  <p>Hub → switch → router è anche una scala di "intelligenza" crescente: l'hub non sa nulla (broadcast puro), lo switch impara gli indirizzi MAC per instradare solo alla porta giusta, il router instrada tra reti diverse usando indirizzi IP. Confondere switch e router sul criterio di instradamento (MAC vs IP) è l'errore più comune.</p>
+</div>
+
+<h2>Sicurezza delle connessioni</h2>
+<table>
+  <tr><th>Strumento</th><th>Cosa fa</th></tr>
+  <tr><td>Firewall</td><td>Filtra il traffico in base a regole (porte, IP, protocolli) — decide cosa passa</td></tr>
+  <tr><td>VPN</td><td>Crea un tunnel cifrato tra due punti su una rete non sicura (es. Internet)</td></tr>
+  <tr><td>TLS/SSL</td><td>Cifra il canale di comunicazione (es. HTTP → HTTPS)</td></tr>
+</table>
+<p>Il tranello classico: firewall e VPN non sono la stessa cosa e non sono sostituibili a vicenda — un firewall <strong>decide chi/cosa può passare</strong>, una VPN <strong>protegge il contenuto di ciò che passa</strong> rendendolo illeggibile a chi intercetta il traffico.</p>
+
+<h2>Verifica — retrieval practice</h2>
+<p class="source-note">L'ordine delle opzioni cambia a ogni caricamento — rispondi dal ragionamento, non dalla posizione.</p>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">1. Quanti livelli compongono il modello OSI?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">7</button>
+    <button class="quiz-option" data-correct="false">4</button>
+    <button class="quiz-option" data-correct="false">5</button>
+    <button class="quiz-option" data-correct="false">3</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Il modello OSI ha 7 livelli (fisico, collegamento dati, rete, trasporto, sessione, presentazione, applicazione). Il modello TCP/IP, effettivamente implementato, ne ha 4.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">2. Quale protocollo di trasporto è tipicamente usato per il traffico VoIP/streaming, dove la velocità conta più della garanzia di consegna?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">UDP</button>
+    <button class="quiz-option" data-correct="false">TCP</button>
+    <button class="quiz-option" data-correct="false">FTP</button>
+    <button class="quiz-option" data-correct="false">HTTP</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>UDP è senza connessione e senza garanzie di affidabilità, ma più leggero e veloce — preferito per streaming/VoIP dove un piccolo pacchetto perso è meno grave di un ritardo.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">3. Su quale base instrada il traffico uno switch di rete?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">L'indirizzo MAC</button>
+    <button class="quiz-option" data-correct="false">L'indirizzo IP</button>
+    <button class="quiz-option" data-correct="false">Il nome di dominio DNS</button>
+    <button class="quiz-option" data-correct="false">La porta TCP/UDP</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Lo switch opera al livello 2 (collegamento dati) e instrada in base all'indirizzo MAC. Il router, al livello 3, instrada in base all'indirizzo IP.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">4. Qual è la funzione del protocollo DHCP?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Assegnare automaticamente indirizzi IP ai dispositivi di rete</button>
+    <button class="quiz-option" data-correct="false">Risolvere nomi di dominio in indirizzi IP</button>
+    <button class="quiz-option" data-correct="false">Cifrare il traffico HTTP</button>
+    <button class="quiz-option" data-correct="false">Trasferire file tra client e server</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>DHCP assegna dinamicamente indirizzi IP (e altri parametri come gateway e DNS) ai dispositivi che si collegano alla rete. La risoluzione nomi è compito del DNS.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">5. Qual è la differenza concettuale principale tra un firewall e una VPN?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Il firewall filtra/decide cosa può passare, la VPN cifra il contenuto di ciò che passa</button>
+    <button class="quiz-option" data-correct="false">Sono due nomi per lo stesso identico strumento</button>
+    <button class="quiz-option" data-correct="false">Il firewall funziona solo su reti wireless, la VPN solo su reti cablate</button>
+    <button class="quiz-option" data-correct="false">La VPN filtra il traffico in base a regole, il firewall crea un tunnel cifrato</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Il firewall applica regole di accesso (chi/cosa passa); la VPN crea un tunnel cifrato per proteggere la riservatezza del traffico che passa. Sono complementari, non intercambiabili.</div>
+</div>
+
+<h2>Fonte primaria consigliata</h2>
+<p>Per ripasso rapido: <a href="https://it.wikipedia.org/wiki/Modello_OSI" target="_blank" rel="noopener">Modello OSI — Wikipedia IT</a> e <a href="https://it.wikipedia.org/wiki/Transmission_Control_Protocol" target="_blank" rel="noopener">TCP — Wikipedia IT</a>.</p>
+
+<p class="source-note">Materiale di riferimento compresso: <a href="../reference/reti-architetture-protocolli-sicurezza.html">scheda "Reti: architetture, protocolli, sicurezza"</a>.</p>
+
+<nav class="lesson-nav">
+  <span>← <a href="0037-application-server-e-middleware.html">Lezione 37 — Application server e middleware</a></span>
+  <span>Prossima: <a href="0039-reti-multimediali-smart-working.html">Lezione 39 — Reti multimediali e smart working</a> →</span>
+</nav>
+
+<script src="../assets/quiz.js"></script>
