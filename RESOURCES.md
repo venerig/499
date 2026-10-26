@@ -58,6 +58,13 @@
 Lezioni 33, 35-41 aggiunte su richiesta esplicita dell'utente (area a copertura zero fino a quel momento, pur essendo il nucleo tecnico principale del bando). Tono "ripasso calibrato al quiz PA", non introduzione da zero — vedi [[MISSION]] e [[NOTES]].
 
 ### Materia ⚪ — Inglese (16)
+- [L. 132/2025 — Disposizioni e deleghe in materia di intelligenza artificiale](https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2025-09-23;132)
+  Fonte primaria nazionale per la materia 3: art. 14 (IA nella PA), art. 20 (AgID e ACN autorità nazionali per l'IA).
+- [D.Lgs. 196/2003 — Codice privacy, testo vigente](https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2003-06-30;196)
+  Fonte primaria (parte nazionale) per la materia 4: artt. 2-ter (base giuridica PA), 2-quinquies (minori), 2-sexies (interesse pubblico rilevante), 153 (Garante).
+- [ACN — Agenzia per la Cybersicurezza Nazionale](https://www.acn.gov.it/)
+  Riferimento per la parte "sicurezza informatica" della materia 4: NIS2 (D.Lgs. 138/2024), L. 90/2024, notifica incidenti.
+
 - [Falso amico — Wikipedia IT](https://it.wikipedia.org/wiki/Falso_amico)
   Riferimento per false friends italiano-inglese ricorrenti nei quiz.
 _Gap:_ formato esatto della prova di inglese non confermato dal bando (il fetch della pagina InPA non espone il PDF completo) — si assume stesso formato a risposta multipla delle altre materie, coerente con "prova scritta unica". Verificare quando disponibile il PDF del bando 499 Assistenti Informatici (pubblicato 25/06/2026).
@@ -81,5 +88,5 @@ _Gap:_ formato esatto della prova di inglese non confermato dal bando (il fetch 
 _Non ancora esplorato._ Possibili candidati da valutare in una sessione futura: forum di categoria per concorsi INPS/PA su Concorsando.it o gruppi Telegram/Facebook dedicati al concorso 499 assistenti informatici INPS 2026 (utili per aggiornamenti sulla data della prova e condivisione di quesiti usciti in prove simili). Non ancora chiesto all'utente se preferisce partecipare — da verificare.
 
 ## Gaps
-- Lezione 11 (PNA/RPCT/PTPC, materia 15): non menziona che dal D.L. 80/2021 art.6 il PTPC è per la maggior parte delle PA assorbito nella sezione "Anticorruzione e Trasparenza" del PIAO — testo originale L.190/2012 ancora corretto, ma la prassi attuale (incl. INPS) usa il PIAO. Da integrare se richiesto.
+- AI Act: il Digital Omnibus (Reg. UE 2026/1744, in vigore 27/07/2026) è verificato solo su fonti secondarie concordanti — confermare numero e date su EUR-Lex.
 - Da verificare se la banca dati Concorsando è effettivamente allineata al bando 2026 attuale o a versioni precedenti del concorso.

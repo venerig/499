@@ -11,13 +11,13 @@
 
 <h2>Art. 3, punto 1 — la definizione legale di "sistema di IA"</h2>
 
-<p>Il testo ufficiale (in inglese, lingua in cui è stato reperito qui — la versione italiana ufficiale è sulla Gazzetta Ufficiale UE) definisce il "sistema di IA" come: <em>"a machine-based system that is designed to operate with varying levels of autonomy and that may exhibit adaptiveness after deployment, and that, for explicit or implicit objectives, infers, from the input it receives, how to generate outputs such as predictions, content, recommendations, or decisions that can influence physical or virtual environments"</em>.</p>
+<p>Il testo ufficiale italiano definisce il "sistema di IA" come: <em>"un sistema automatizzato progettato per funzionare con livelli di autonomia variabili e che può presentare adattabilità dopo la diffusione e che, per obiettivi espliciti o impliciti, <strong>deduce dall'input che riceve</strong> come generare output quali previsioni, contenuti, raccomandazioni o decisioni che possono influenzare ambienti fisici o virtuali"</em>.</p>
 
-<p>In sintesi (traduzione libera): un sistema basato su macchina, con un certo grado di autonomia, che può adattarsi dopo il rilascio, e che <strong>inferisce</strong> dagli input come generare output (previsioni, contenuti, raccomandazioni, decisioni) che influenzano l'ambiente fisico o virtuale.</p>
+<p>In sintesi: un sistema automatizzato, con un certo grado di autonomia, che può adattarsi dopo la diffusione, e che <strong>deduce</strong> dagli input come generare output (previsioni, contenuti, raccomandazioni, decisioni) che influenzano l'ambiente fisico o virtuale.</p>
 
 <div class="callout">
   <p class="callout-title">Il tranello più comune</p>
-  <p>La parola chiave è <strong>"infers"</strong> — inferisce. Un sistema che segue solo regole scritte esplicitamente da un umano (if/else, uno script di automazione classico) non è un "sistema di IA" ai sensi della legge, anche se automatizza decisioni complesse. Ciò che distingue un sistema di IA è la capacità di derivare pattern o strategie dai dati, non solo eseguire istruzioni predefinite — un confine che un SDET riconosce bene: non ogni script che "decide qualcosa" è un modello.</p>
+  <p>La parola chiave è <strong>"deduce"</strong> (nel testo inglese <em>infers</em>) — è il verbo che troverai nei quiz in italiano. Un sistema che segue solo regole scritte esplicitamente da un umano (if/else, uno script di automazione classico) non è un "sistema di IA" ai sensi della legge, anche se automatizza decisioni complesse. Ciò che distingue un sistema di IA è la capacità di derivare pattern o strategie dai dati, non solo eseguire istruzioni predefinite — un confine che un SDET riconosce bene: non ogni script che "decide qualcosa" è un modello.</p>
 </div>
 
 <h2>La classificazione per livello di rischio</h2>
@@ -27,12 +27,12 @@
   <tr>
     <td><span class="term">Rischio inaccettabile</span><br><span class="source-note">art. 5</span></td>
     <td>Sistemi di manipolazione subliminale/ingannevole, social scoring discriminatorio, identificazione biometrica in tempo reale in spazi pubblici per le forze dell'ordine (con eccezioni strette), riconoscimento delle emozioni su lavoro/istruzione.</td>
-    <td><strong>Vietati</strong>, senza eccezioni sostanziali.</td>
+    <td><strong>Vietati</strong>, con deroghe strette e tassative (es. identificazione biometrica remota in tempo reale per le forze dell'ordine, con autorizzazione; riconoscimento delle emozioni per motivi medici o di sicurezza).</td>
   </tr>
   <tr>
-    <td><span class="term">Alto rischio</span><br><span class="source-note">Titolo III</span></td>
+    <td><span class="term">Alto rischio</span><br><span class="source-note">Capo III (art. 6, All. I e III)</span></td>
     <td>Componenti di sicurezza in prodotti regolati (dispositivi medici, veicoli, macchinari), sistemi che incidono su diritti fondamentali (lavoro, istruzione, credito, giustizia).</td>
-    <td>Valutazione di conformità obbligatoria, documentazione tecnica, sorveglianza umana, monitoraggio continuo.</td>
+    <td>Valutazione di conformità obbligatoria, documentazione tecnica, sorveglianza umana, monitoraggio continuo. Obblighi applicabili dal 2 dicembre 2027 (All. III) e 2 agosto 2028 (All. I) dopo il Digital Omnibus — vedi lezione 46.</td>
   </tr>
   <tr>
     <td><span class="term">Rischio limitato / trasparenza</span><br><span class="source-note">art. 50</span></td>
@@ -57,13 +57,13 @@
 <div class="quiz" data-quiz>
   <p class="quiz-q">1. Cosa distingue un "sistema di IA", secondo la definizione dell'art. 3 AI Act, da un software basato solo su regole scritte da un umano?</p>
   <div class="quiz-options">
-    <button class="quiz-option" data-correct="true">La capacità di inferire dagli input come generare i propri output</button>
+    <button class="quiz-option" data-correct="true">La capacità di dedurre dagli input come generare i propri output</button>
     <button class="quiz-option" data-correct="false">Il fatto di essere scritto in un linguaggio di alto livello</button>
     <button class="quiz-option" data-correct="false">Il fatto di essere eseguito su infrastruttura cloud</button>
     <button class="quiz-option" data-correct="false">Il fatto di avere un'interfaccia grafica per l'utente</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
-  <div class="quiz-explain" data-explain>La definizione dell'art. 3 richiede che il sistema "inferisca" dagli input come generare output — un tratto che lo distingue da un sistema puramente basato su regole esplicite (if/else) scritte da un umano.</div>
+  <div class="quiz-explain" data-explain>La definizione dell'art. 3 richiede che il sistema "deduca dall'input che riceve" come generare output — un tratto che lo distingue da un sistema puramente basato su regole esplicite (if/else) scritte da un umano.</div>
 </div>
 
 <div class="quiz" data-quiz>
@@ -79,7 +79,7 @@
 </div>
 
 <div class="quiz" data-quiz>
-  <p class="quiz-q">3. Cosa richiedono i sistemi classificati "ad alto rischio" secondo il Titolo III?</p>
+  <p class="quiz-q">3. Cosa richiedono i sistemi classificati "ad alto rischio" secondo il Capo III del regolamento?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Valutazione di conformità, documentazione tecnica, sorveglianza umana</button>
     <button class="quiz-option" data-correct="false">Nessun obbligo, solo una dichiarazione volontaria</button>

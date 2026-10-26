@@ -1,0 +1,38 @@
+<title>Reference — Sicurezza informatica</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+<p class="eyebrow">Scheda di riferimento · Sicurezza informatica · Materia 4</p>
+<h1>CIA, crittografia, MFA, minacce, quadro PA</h1>
+<p class="subtitle">Stampabile — tienila a portata per il ripasso rapido prima dei quiz a tempo.</p>
+
+<p><strong>CIA</strong>: Riservatezza · Integrità · Disponibilità (DDoS e ransomware colpiscono la disponibilità).</p>
+
+<table>
+  <tr><th>Tipo</th><th>Chiavi</th><th>Esempio</th></tr>
+  <tr><td>Simmetrica</td><td>1 chiave condivisa</td><td>AES</td></tr>
+  <tr><td>Asimmetrica</td><td>Pubblica + privata</td><td>RSA</td></tr>
+  <tr><td>Hash</td><td>Nessuna, unidirezionale</td><td>SHA-256 (MD5/SHA-1 insicuri)</td></tr>
+</table>
+
+<div class="callout">
+  <p class="callout-title">Trappola quiz</p>
+  <p>Riservatezza → cifra con la <strong>pubblica del destinatario</strong>. Firma → firma con la <strong>tua privata</strong>. MFA = fattori di categorie diverse (sai / hai / sei): password + PIN è un solo fattore.</p>
+</div>
+
+<p>Virus = serve un ospite · Worm = si propaga da solo · Trojan = finto software legittimo · Ransomware = cifra e chiede riscatto.</p>
+
+<table>
+  <tr><th>Fonte</th><th>Punto chiave</th></tr>
+  <tr><td>D.L. 82/2021</td><td>Istituisce ACN</td></tr>
+  <tr><td>D.Lgs. 138/2024</td><td>Recepisce NIS2, in vigore 16/10/2024</td></tr>
+  <tr><td>L. 90/2024</td><td>PA: segnalazione incidenti 24 h, notifica completa 72 h, referente cybersicurezza</td></tr>
+</table>
+<p>Incidente con dati personali: Garante 72 h (art. 33 GDPR) <strong>e</strong> ACN 24 h — due canali distinti.</p>
+
+<h2>Fonti</h2>
+<ul>
+  <li><a href="https://www.acn.gov.it/" target="_blank" rel="noopener">ACN — Agenzia per la Cybersicurezza Nazionale</a></li>
+  <li><a href="https://it.wikipedia.org/wiki/Crittografia_asimmetrica" target="_blank" rel="noopener">Crittografia asimmetrica — Wikipedia IT</a></li>
+</ul>
+
+<p class="source-note">Da: <a href="../lessons/0042-sicurezza-informatica-fondamenti.html">Lezione 42 — Sicurezza informatica</a></p>

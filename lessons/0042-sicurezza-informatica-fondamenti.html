@@ -1,0 +1,132 @@
+<title>Lezione 42 — Sicurezza informatica: fondamenti e quadro PA</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+<p class="eyebrow">Materia 4 · Data privacy e sicurezza informatica · Zona 🟡</p>
+<h1>CIA, crittografia, autenticazione, minacce: la metà "sicurezza" della materia 4</h1>
+<p class="subtitle">Lezione 42 — le lezioni 20-23 coprivano la privacy (GDPR); il bando però intitola la materia "Data privacy <strong>e sicurezza informatica</strong>". Qui la seconda metà, con il quadro normativo italiano per la PA.</p>
+
+<p class="progress">Percorso: <a href="../MISSION.md">MISSION</a> → Zona 🟡 → Data privacy e sicurezza informatica (materia 4) → Lezione 5/… · Punteggio quiz: <span id="lesson-quiz-score">0 / 0</span></p>
+
+<h2>La triade CIA</h2>
+<table>
+  <tr><th>Proprietà</th><th>Significato</th><th>Minaccia tipica</th></tr>
+  <tr><td><span class="term">Riservatezza</span> (Confidentiality)</td><td>Solo chi è autorizzato accede all'informazione</td><td>Furto di credenziali, intercettazione</td></tr>
+  <tr><td><span class="term">Integrità</span> (Integrity)</td><td>L'informazione non viene alterata senza autorizzazione</td><td>Manomissione dei dati</td></tr>
+  <tr><td><span class="term">Disponibilità</span> (Availability)</td><td>L'informazione è accessibile quando serve</td><td>Attacco DoS/DDoS, ransomware</td></tr>
+</table>
+<p>È la stessa terna dell'art. 32 GDPR ("riservatezza, integrità, disponibilità e resilienza") — il punto di contatto tra le due metà della materia.</p>
+
+<h2>Crittografia: simmetrica, asimmetrica, hash</h2>
+<table>
+  <tr><th>Tipo</th><th>Come funziona</th><th>Esempi</th><th>Uso tipico</th></tr>
+  <tr><td>Simmetrica</td><td><strong>Una sola chiave</strong> condivisa, per cifrare e decifrare</td><td>AES</td><td>Cifratura veloce di grandi volumi di dati</td></tr>
+  <tr><td>Asimmetrica</td><td><strong>Coppia di chiavi</strong>: pubblica (si distribuisce) e privata (resta segreta)</td><td>RSA, curve ellittiche</td><td>Scambio chiavi, firma digitale, certificati</td></tr>
+  <tr><td>Hash</td><td>Funzione <strong>unidirezionale</strong>: da qualsiasi input un'impronta di lunghezza fissa, non reversibile</td><td>SHA-256 (MD5 e SHA-1 considerati insicuri)</td><td>Verifica di integrità, conservazione password</td></tr>
+</table>
+
+<div class="callout">
+  <p class="callout-title">Il tranello più comune</p>
+  <p>Con la crittografia asimmetrica le chiavi si usano in due direzioni opposte a seconda dello scopo: per <strong>riservatezza</strong> cifri con la chiave <strong>pubblica del destinatario</strong> (solo la sua privata decifra); per la <strong>firma</strong> firmi con la tua chiave <strong>privata</strong> e chiunque verifica con la tua pubblica. È lo stesso meccanismo della firma digitale CAD (lezione 1). E l'hash <strong>non</strong> è cifratura: non esiste una chiave per "decifrarlo".</p>
+</div>
+
+<h2>Autenticazione</h2>
+<p>I fattori di autenticazione sono tre categorie: qualcosa che <strong>sai</strong> (password, PIN), qualcosa che <strong>hai</strong> (smartphone con OTP, smart card, token), qualcosa che <strong>sei</strong> (biometria). L'<span class="term">autenticazione a più fattori</span> (MFA, o 2FA con due fattori) combina fattori di <strong>categorie diverse</strong>: password + PIN restano un solo fattore (entrambi "sai"). SPID dal livello 2 e CIE sono esempi di autenticazione a due fattori.</p>
+
+<h2>Malware e attacchi da riconoscere</h2>
+<table>
+  <tr><th>Nome</th><th>Tratto distintivo</th></tr>
+  <tr><td>Virus</td><td>Si attacca a un file/programma ospite e si attiva quando questo viene eseguito</td></tr>
+  <tr><td>Worm</td><td>Si propaga <strong>da solo</strong> in rete, senza bisogno di un ospite né di azione dell'utente</td></tr>
+  <tr><td>Trojan</td><td>Si presenta come software legittimo e nasconde funzioni malevole</td></tr>
+  <tr><td>Ransomware</td><td>Cifra i dati e chiede un riscatto per la chiave (colpisce la disponibilità)</td></tr>
+  <tr><td>Phishing</td><td>Ingegneria sociale via email/sito falso per carpire credenziali; <em>spear phishing</em> se mirato a una persona specifica</td></tr>
+  <tr><td>DoS / DDoS</td><td>Sovraccarica un servizio per renderlo indisponibile; DDoS se da molte sorgenti (botnet)</td></tr>
+</table>
+
+<h2>Il quadro italiano per la PA</h2>
+<table>
+  <tr><th>Fonte</th><th>Cosa stabilisce</th></tr>
+  <tr><td><strong>D.L. 82/2021</strong></td><td>Istituisce l'<strong>ACN — Agenzia per la Cybersicurezza Nazionale</strong>, autorità nazionale per la cybersicurezza (presso cui opera il CSIRT Italia)</td></tr>
+  <tr><td><strong>D.Lgs. 138/2024</strong></td><td>Recepisce la direttiva <strong>NIS2</strong> (UE 2022/2555), in vigore dal 16 ottobre 2024; ACN è l'autorità competente NIS</td></tr>
+  <tr><td><strong>L. 90/2024</strong></td><td>Obblighi per le PA (centrali, regioni, città metropolitane, comuni più grandi, ASL...): segnalazione degli incidenti <strong>entro 24 ore</strong> e notifica completa <strong>entro 72 ore</strong>; individuazione di un <strong>referente per la cybersicurezza</strong></td></tr>
+</table>
+
+<div class="callout">
+  <p class="callout-title">Due notifiche diverse, da non confondere</p>
+  <p>Un incidente che coinvolge dati personali può far scattare <strong>due</strong> obblighi paralleli: la notifica al <strong>Garante</strong> entro 72 ore (art. 33 GDPR, lezione 23) e la segnalazione all'<strong>ACN</strong> entro 24 ore (L. 90/2024 / NIS2). Destinatari diversi, finalità diverse (protezione dei dati vs sicurezza delle reti).</p>
+</div>
+
+<h2>Verifica — retrieval practice</h2>
+<p class="source-note">L'ordine delle opzioni cambia a ogni caricamento — rispondi dal ragionamento, non dalla posizione.</p>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">1. Un attacco DDoS colpisce principalmente quale proprietà della triade CIA?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Disponibilità</button>
+    <button class="quiz-option" data-correct="false">Riservatezza</button>
+    <button class="quiz-option" data-correct="false">Integrità</button>
+    <button class="quiz-option" data-correct="false">Non ripudio</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Il DDoS sovraccarica il servizio per renderlo inaccessibile: colpisce la disponibilità, non legge (riservatezza) né altera (integrità) i dati.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">2. Per inviare un messaggio che solo il destinatario possa leggere, con crittografia asimmetrica, si cifra con:</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">La chiave pubblica del destinatario</button>
+    <button class="quiz-option" data-correct="false">La chiave privata del destinatario</button>
+    <button class="quiz-option" data-correct="false">La chiave privata del mittente</button>
+    <button class="quiz-option" data-correct="false">Una chiave simmetrica pubblicata online</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Chiunque può cifrare con la chiave pubblica del destinatario, ma solo la sua chiave privata decifra. Con la propria chiave privata il mittente invece firma (autenticità), non garantisce riservatezza.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">3. Quale affermazione su una funzione di hash crittografica (es. SHA-256) è corretta?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">È unidirezionale: dall'impronta non si risale all'input</button>
+    <button class="quiz-option" data-correct="false">Si decifra con la chiave privata del titolare</button>
+    <button class="quiz-option" data-correct="false">Produce un output lungo quanto l'input</button>
+    <button class="quiz-option" data-correct="false">È un algoritmo di cifratura simmetrica</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>L'hash produce un'impronta di lunghezza fissa e non è reversibile: non c'è chiave per "decifrarlo". Serve a verificare l'integrità e a conservare le password, non a cifrare.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">4. Quale combinazione costituisce un'autenticazione a due fattori?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Password e codice OTP generato sullo smartphone</button>
+    <button class="quiz-option" data-correct="false">Password e PIN</button>
+    <button class="quiz-option" data-correct="false">Password e domanda di sicurezza</button>
+    <button class="quiz-option" data-correct="false">Due password diverse</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>I fattori devono appartenere a categorie diverse: password (qualcosa che sai) + OTP sullo smartphone (qualcosa che hai). PIN, domanda di sicurezza e seconda password sono tutti "qualcosa che sai": un solo fattore.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">5. Quale ente è l'autorità nazionale per la cybersicurezza, istituita dal D.L. 82/2021?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">ACN — Agenzia per la Cybersicurezza Nazionale</button>
+    <button class="quiz-option" data-correct="false">AgID — Agenzia per l'Italia Digitale</button>
+    <button class="quiz-option" data-correct="false">Garante per la protezione dei dati personali</button>
+    <button class="quiz-option" data-correct="false">ANAC — Autorità Nazionale Anticorruzione</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>ACN è l'autorità nazionale per la cybersicurezza (D.L. 82/2021) e l'autorità competente NIS (D.Lgs. 138/2024). AgID cura la trasformazione digitale, il Garante la protezione dei dati, ANAC l'anticorruzione: tutte autorità diverse.</div>
+</div>
+
+<h2>Fonte primaria consigliata</h2>
+<p>Sul sito dell'<a href="https://www.acn.gov.it/" target="_blank" rel="noopener">ACN</a> trovi i testi di NIS2 e L. 90/2024 e le guide alla notifica degli incidenti. Per il ripasso dei concetti tecnici: <a href="https://it.wikipedia.org/wiki/Crittografia_asimmetrica" target="_blank" rel="noopener">Crittografia asimmetrica — Wikipedia IT</a>.</p>
+
+<p class="source-note">Materiale di riferimento compresso: <a href="../reference/sicurezza-informatica-fondamenti.html">scheda "Sicurezza informatica"</a>.</p>
+
+<nav class="lesson-nav">
+  <span>← <a href="0041-backup-e-recovery.html">Lezione 41 — Backup e recovery</a></span>
+  <span>Prossima: <a href="0043-codice-privacy-italiano.html">Lezione 43 — Il Codice privacy italiano</a> →</span>
+</nav>
+
+<script src="../assets/quiz.js"></script>
