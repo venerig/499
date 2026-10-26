@@ -49,7 +49,19 @@
 </div>
 
 <div class="quiz" data-quiz>
-  <p class="quiz-q">2. Qual è l'obiettivo dell'apprendimento non supervisionato?</p>
+  <p class="quiz-q">2. Un dataset di test già etichettati come "flaky" o "stabili" usato per addestrare un classificatore è un caso di:</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Apprendimento supervisionato</button>
+    <button class="quiz-option" data-correct="false">Apprendimento non supervisionato</button>
+    <button class="quiz-option" data-correct="false">Apprendimento per rinforzo</button>
+    <button class="quiz-option" data-correct="false">Sistema esperto a regole</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Dati etichettati con la risposta corretta = apprendimento supervisionato.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">3. Qual è l'obiettivo dell'apprendimento non supervisionato?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Trovare una struttura nei dati, senza etichette</button>
     <button class="quiz-option" data-correct="false">Massimizzare una ricompensa in un ambiente dinamico</button>
@@ -61,7 +73,19 @@
 </div>
 
 <div class="quiz" data-quiz>
-  <p class="quiz-q">3. Quale esempio è tipicamente citato per l'apprendimento supervisionato?</p>
+  <p class="quiz-q">4. Un sistema impara a giocare a backgammon ricevendo solo il segnale di vittoria o sconfitta. Che tipo di apprendimento è?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Per rinforzo</button>
+    <button class="quiz-option" data-correct="false">Supervisionato</button>
+    <button class="quiz-option" data-correct="false">Non supervisionato</button>
+    <button class="quiz-option" data-correct="false">Nessuno, è un sistema a regole</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Esempio classico (TD-Gammon): l'agente riceve solo un segnale sull'obiettivo raggiunto — apprendimento per rinforzo.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">5. Quale esempio è tipicamente citato per l'apprendimento supervisionato?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Un filtro antispam addestrato su email già classificate</button>
     <button class="quiz-option" data-correct="false">Un agente che impara a giocare tramite vittorie e sconfitte</button>
@@ -73,7 +97,19 @@
 </div>
 
 <div class="quiz" data-quiz>
-  <p class="quiz-q">4. Cosa riceve il modello nell'apprendimento per rinforzo, invece di esempi etichettati?</p>
+  <p class="quiz-q">6. Classificare le email in categorie già note ("spam"/"non spam") è un compito tipico di quale apprendimento?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Supervisionato</button>
+    <button class="quiz-option" data-correct="false">Non supervisionato</button>
+    <button class="quiz-option" data-correct="false">Per rinforzo</button>
+    <button class="quiz-option" data-correct="false">Nessuno dei tre</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>La classificazione su categorie predefinite richiede dati etichettati: apprendimento supervisionato.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">7. Cosa riceve il modello nell'apprendimento per rinforzo, invece di esempi etichettati?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Un segnale che indica solo se l'obiettivo è stato raggiunto</button>
     <button class="quiz-option" data-correct="false">Un output desiderato per ogni singolo input</button>
@@ -85,7 +121,19 @@
 </div>
 
 <div class="quiz" data-quiz>
-  <p class="quiz-q">5. Per raggruppare gli utenti di un sito web in base al comportamento, senza categorie definite in anticipo, quale tipo di apprendimento è più adatto?</p>
+  <p class="quiz-q">8. Cosa distingue l'apprendimento per rinforzo da quello non supervisionato, pur mancando in entrambi le etichette?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Il rinforzo ha un obiettivo e un feedback, il non supervisionato no</button>
+    <button class="quiz-option" data-correct="false">Il non supervisionato usa sempre dati etichettati</button>
+    <button class="quiz-option" data-correct="false">Il rinforzo non usa alcun dato</button>
+    <button class="quiz-option" data-correct="false">Non c'è alcuna differenza</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Nel rinforzo c'è un segnale di ricompensa legato a un obiettivo; nel non supervisionato si cerca solo una struttura nei dati.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">9. Per raggruppare gli utenti di un sito web in base al comportamento, senza categorie definite in anticipo, quale tipo di apprendimento è più adatto?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Non supervisionato</button>
     <button class="quiz-option" data-correct="false">Supervisionato</button>
@@ -94,6 +142,18 @@
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>Il clustering del comportamento degli utenti senza categorie predefinite è l'esempio classico di apprendimento non supervisionato: si cerca una struttura nei dati, non si applica un'etichetta nota in partenza.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">10. Qual è l'obiettivo dell'apprendimento supervisionato?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Estrarre una regola generale che associ l'input all'output corretto</button>
+    <button class="quiz-option" data-correct="false">Trovare gruppi nei dati senza etichette</button>
+    <button class="quiz-option" data-correct="false">Massimizzare una ricompensa in un ambiente</button>
+    <button class="quiz-option" data-correct="false">Generare dati casuali</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Supervisionato: dagli esempi input-output si estrae una regola generale.</div>
 </div>
 
 <h2>Fonte primaria consigliata</h2>

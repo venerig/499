@@ -60,7 +60,19 @@
 </div>
 
 <div class="quiz" data-quiz>
-  <p class="quiz-q">2. Cosa rappresenta il permesso Linux espresso come "755"?</p>
+  <p class="quiz-q">2. Come gestisce Windows i permessi sui file?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Con ACL, assegnabili per singolo utente o gruppo</button>
+    <button class="quiz-option" data-correct="false">Solo con tre categorie fisse owner/group/other</button>
+    <button class="quiz-option" data-correct="false">Non gestisce permessi</button>
+    <button class="quiz-option" data-correct="false">Solo tramite password sul file</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Windows usa le Access Control List, più granulari del modello rwx di Linux.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">3. Cosa rappresenta il permesso Linux espresso come "755"?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Owner: read/write/execute; group e other: read/execute</button>
     <button class="quiz-option" data-correct="false">Un identificativo numerico del processo (PID)</button>
@@ -72,7 +84,19 @@
 </div>
 
 <div class="quiz" data-quiz>
-  <p class="quiz-q">3. Qual è il processo con PID 1 nei moderni sistemi Linux che usano systemd?</p>
+  <p class="quiz-q">4. Che tipo di kernel ha Linux?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Monolitico, con moduli caricabili dinamicamente</button>
+    <button class="quiz-option" data-correct="false">Microkernel puro</button>
+    <button class="quiz-option" data-correct="false">Ibrido come Windows NT</button>
+    <button class="quiz-option" data-correct="false">Nessun kernel</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Linux: kernel monolitico modulare.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">5. Qual è il processo con PID 1 nei moderni sistemi Linux che usano systemd?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">systemd stesso, il primo processo avviato dal kernel</button>
     <button class="quiz-option" data-correct="false">bash, la shell di default</button>
@@ -84,7 +108,19 @@
 </div>
 
 <div class="quiz" data-quiz>
-  <p class="quiz-q">4. Qual è la differenza principale tra il modello di pipeline di bash e quello di PowerShell?</p>
+  <p class="quiz-q">6. Quali ruoli offre tipicamente Windows Server rispetto all'edizione client?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Active Directory, DNS, DHCP server</button>
+    <button class="quiz-option" data-correct="false">Solo giochi e app multimediali</button>
+    <button class="quiz-option" data-correct="false">Nessun ruolo aggiuntivo</button>
+    <button class="quiz-option" data-correct="false">Solo una diversa interfaccia grafica</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Windows Server offre ruoli enterprise come Active Directory, DNS e DHCP.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">7. Qual è la differenza principale tra il modello di pipeline di bash e quello di PowerShell?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Bash passa flussi di testo grezzo, PowerShell passa oggetti tipizzati</button>
     <button class="quiz-option" data-correct="false">Bash funziona solo su Windows, PowerShell solo su Linux</button>
@@ -96,7 +132,19 @@
 </div>
 
 <div class="quiz" data-quiz>
-  <p class="quiz-q">5. Cosa caratterizza tipicamente un'installazione server di una distribuzione Linux rispetto a un'edizione desktop?</p>
+  <p class="quiz-q">8. Che tipo di kernel ha Windows (famiglia NT)?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Ibrido</button>
+    <button class="quiz-option" data-correct="false">Monolitico puro</button>
+    <button class="quiz-option" data-correct="false">Microkernel puro</button>
+    <button class="quiz-option" data-correct="false">Esokernel</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Windows NT: nucleo monolitico con componenti in stile microkernel — kernel ibrido.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">9. Cosa caratterizza tipicamente un'installazione server di una distribuzione Linux rispetto a un'edizione desktop?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Nessuna interfaccia grafica installata di default (headless)</button>
     <button class="quiz-option" data-correct="false">Un kernel completamente diverso, incompatibile con l'edizione desktop</button>
@@ -105,6 +153,18 @@
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>Le distribuzioni server (Ubuntu Server, RHEL...) tipicamente non installano una GUI di default — stesso kernel e stessa base del sistema, configurazione e ruoli diversi.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">10. Cosa rappresenta il permesso Linux "644"?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Owner: lettura e scrittura; group e other: sola lettura</button>
+    <button class="quiz-option" data-correct="false">Owner: tutti i permessi; group e other: nessuno</button>
+    <button class="quiz-option" data-correct="false">Tutti: lettura, scrittura ed esecuzione</button>
+    <button class="quiz-option" data-correct="false">Owner: sola esecuzione</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>6 = rw- (4+2), 4 = r--: owner legge e scrive, gli altri leggono soltanto.</div>
 </div>
 
 <h2>Fonte primaria consigliata</h2>

@@ -47,7 +47,19 @@
 </div>
 
 <div class="quiz" data-quiz>
-  <p class="quiz-q">2. Una connessione con banda ampia ma latenza molto alta, in una videoconferenza, produce tipicamente:</p>
+  <p class="quiz-q">2. A quale livello opera tipicamente una VPN IPSec?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Livello di rete, spesso per tunnel site-to-site</button>
+    <button class="quiz-option" data-correct="false">Solo nel browser</button>
+    <button class="quiz-option" data-correct="false">Livello fisico</button>
+    <button class="quiz-option" data-correct="false">Livello applicativo della posta</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>IPSec: livello di rete, tunnel site-to-site o client robusti.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">3. Una connessione con banda ampia ma latenza molto alta, in una videoconferenza, produce tipicamente:</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Ritardo percepibile nella conversazione, anche con immagine/audio di buona qualità</button>
     <button class="quiz-option" data-correct="false">Nessun problema, perché la banda ampia risolve sempre ogni limite di rete</button>
@@ -59,7 +71,19 @@
 </div>
 
 <div class="quiz" data-quiz>
-  <p class="quiz-q">3. A cosa serve il QoS (Quality of Service) su una rete aziendale?</p>
+  <p class="quiz-q">4. Su quale protocollo di trasporto viaggia tipicamente RTP?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">UDP</button>
+    <button class="quiz-option" data-correct="false">TCP</button>
+    <button class="quiz-option" data-correct="false">FTP</button>
+    <button class="quiz-option" data-correct="false">SMTP</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>RTP trasporta audio/video in tempo reale, tipicamente su UDP.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">5. A cosa serve il QoS (Quality of Service) su una rete aziendale?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">A prioritizzare il traffico sensibile al ritardo (es. VoIP) rispetto ad altro traffico meno critico</button>
     <button class="quiz-option" data-correct="false">A cifrare tutto il traffico di rete</button>
@@ -71,7 +95,19 @@
 </div>
 
 <div class="quiz" data-quiz>
-  <p class="quiz-q">4. Qual è il ruolo principale di una VPN aziendale nel contesto dello smart working?</p>
+  <p class="quiz-q">6. Cosa fa il VoIP?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Trasporta la voce come dati su rete IP</button>
+    <button class="quiz-option" data-correct="false">Trasporta la voce sulla rete telefonica tradizionale</button>
+    <button class="quiz-option" data-correct="false">Cifra le email</button>
+    <button class="quiz-option" data-correct="false">Assegna indirizzi IP ai telefoni</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Voice over IP: la voce viaggia come dati su rete IP.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">7. Qual è il ruolo principale di una VPN aziendale nel contesto dello smart working?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Creare un tunnel cifrato che permette di accedere alle risorse interne come se si fosse in ufficio</button>
     <button class="quiz-option" data-correct="false">Aumentare la banda disponibile sulla connessione domestica del dipendente</button>
@@ -83,7 +119,19 @@
 </div>
 
 <div class="quiz" data-quiz>
-  <p class="quiz-q">5. Quale protocollo trasporta effettivamente l'audio e il video durante una chiamata VoIP già avviata?</p>
+  <p class="quiz-q">8. Cosa misura la banda (bandwidth)?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">La quantità di dati trasmissibili per secondo</button>
+    <button class="quiz-option" data-correct="false">Il tempo che un pacchetto impiega ad arrivare</button>
+    <button class="quiz-option" data-correct="false">Il numero di utenti collegati</button>
+    <button class="quiz-option" data-correct="false">La distanza fisica dal server</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Banda = dati per secondo; latenza = tempo di arrivo di un pacchetto.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">9. Quale protocollo trasporta effettivamente l'audio e il video durante una chiamata VoIP già avviata?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">RTP</button>
     <button class="quiz-option" data-correct="false">SIP</button>
@@ -92,6 +140,18 @@
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>RTP (Real-time Transport Protocol) trasporta i dati audio/video durante la chiamata; SIP si occupa solo della segnalazione di avvio/chiusura.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">10. Come si usa tipicamente una VPN SSL/TLS?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Via browser o client leggero, per l'accesso remoto individuale</button>
+    <button class="quiz-option" data-correct="false">Solo tra due data center</button>
+    <button class="quiz-option" data-correct="false">Solo su reti cablate in ufficio</button>
+    <button class="quiz-option" data-correct="false">Solo per lo streaming video</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Le VPN SSL/TLS sono comuni per l'accesso remoto del singolo dipendente.</div>
 </div>
 
 <h2>Fonte primaria consigliata</h2>

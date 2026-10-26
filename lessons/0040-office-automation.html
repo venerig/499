@@ -57,7 +57,19 @@
 </div>
 
 <div class="quiz" data-quiz>
-  <p class="quiz-q">2. In un foglio di calcolo, qual è il comportamento di un riferimento assoluto come $A$1 quando la formula viene copiata in un'altra cella?</p>
+  <p class="quiz-q">2. Cosa fa la funzione CERCA.VERT (VLOOKUP)?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Cerca un valore in una colonna e restituisce il valore corrispondente da un'altra colonna</button>
+    <button class="quiz-option" data-correct="false">Somma i valori di un intervallo</button>
+    <button class="quiz-option" data-correct="false">Ordina alfabeticamente una colonna</button>
+    <button class="quiz-option" data-correct="false">Unisce due fogli di lavoro</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>CERCA.VERT/CERCA.X cercano un valore e restituiscono il dato corrispondente.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">3. In un foglio di calcolo, qual è il comportamento di un riferimento assoluto come $A$1 quando la formula viene copiata in un'altra cella?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Resta fisso, non cambia</button>
     <button class="quiz-option" data-correct="false">Si aggiorna seguendo lo spostamento, come un riferimento relativo</button>
@@ -69,7 +81,19 @@
 </div>
 
 <div class="quiz" data-quiz>
-  <p class="quiz-q">3. Qual è il formato nativo standard (ISO) usato da LibreOffice/OpenOffice?</p>
+  <p class="quiz-q">4. Qual è l'equivalente LibreOffice di Microsoft Excel?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Calc</button>
+    <button class="quiz-option" data-correct="false">Writer</button>
+    <button class="quiz-option" data-correct="false">Impress</button>
+    <button class="quiz-option" data-correct="false">Base</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Writer = Word, Calc = Excel, Impress = PowerPoint.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">5. Qual è il formato nativo standard (ISO) usato da LibreOffice/OpenOffice?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">ODF (.odt, .ods, .odp)</button>
     <button class="quiz-option" data-correct="false">.docx, .xlsx, .pptx</button>
@@ -81,7 +105,19 @@
 </div>
 
 <div class="quiz" data-quiz>
-  <p class="quiz-q">4. Perché il formato PDF non è generalmente indicato per l'editing nativo di un documento?</p>
+  <p class="quiz-q">6. In quale linguaggio sono tipicamente scritte le macro di Office?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">VBA (Visual Basic for Applications)</button>
+    <button class="quiz-option" data-correct="false">Python</button>
+    <button class="quiz-option" data-correct="false">SQL</button>
+    <button class="quiz-option" data-correct="false">HTML</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Le macro Office sono tipicamente in VBA.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">7. Perché il formato PDF non è generalmente indicato per l'editing nativo di un documento?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">È pensato principalmente per la lettura e la stampa con layout fisso, non per la modifica del contenuto</button>
     <button class="quiz-option" data-correct="false">Non può contenere testo, solo immagini</button>
@@ -93,7 +129,19 @@
 </div>
 
 <div class="quiz" data-quiz>
-  <p class="quiz-q">5. Perché le macro nei documenti Office sono considerate anche un rischio di sicurezza?</p>
+  <p class="quiz-q">8. Che cos'è in realtà un file .docx?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Un archivio ZIP di file XML</button>
+    <button class="quiz-option" data-correct="false">Un file binario proprietario</button>
+    <button class="quiz-option" data-correct="false">Un file di testo semplice</button>
+    <button class="quiz-option" data-correct="false">Un'immagine compressa</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>I formati Office 2007+ sono archivi ZIP che contengono file XML.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">9. Perché le macro nei documenti Office sono considerate anche un rischio di sicurezza?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Possono contenere codice eseguibile (VBA) usato come vettore di malware in allegati malevoli</button>
     <button class="quiz-option" data-correct="false">Occupano sempre troppo spazio su disco</button>
@@ -102,6 +150,18 @@
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>Le macro sono codice eseguibile (tipicamente VBA): un allegato con macro malevola è un classico vettore di infezione, motivo per cui le macro da file scaricati da Internet sono disabilitate di default.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">10. Cosa succede a un riferimento relativo (A1) quando la formula viene copiata in un'altra cella?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Si adatta alla nuova posizione</button>
+    <button class="quiz-option" data-correct="false">Resta fisso</button>
+    <button class="quiz-option" data-correct="false">Genera un errore</button>
+    <button class="quiz-option" data-correct="false">Diventa automaticamente assoluto</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Il riferimento relativo cambia con lo spostamento; quello assoluto ($A$1) resta fisso.</div>
 </div>
 
 <h2>Fonte primaria consigliata</h2>

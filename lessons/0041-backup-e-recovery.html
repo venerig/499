@@ -61,7 +61,19 @@
 </div>
 
 <div class="quiz" data-quiz>
-  <p class="quiz-q">2. Il Recovery Point Objective (RPO) risponde a quale domanda?</p>
+  <p class="quiz-q">2. Quale tipo di backup occupa più spazio?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Il backup completo (full)</button>
+    <button class="quiz-option" data-correct="false">L'incrementale</button>
+    <button class="quiz-option" data-correct="false">Il differenziale</button>
+    <button class="quiz-option" data-correct="false">Tutti occupano lo stesso spazio</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Il full copia tutti i dati ogni volta.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">3. Il Recovery Point Objective (RPO) risponde a quale domanda?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Quanti dati posso permettermi di perdere in caso di incidente?</button>
     <button class="quiz-option" data-correct="false">Quanto tempo posso permettermi di stare fermo prima del ripristino?</button>
@@ -73,7 +85,19 @@
 </div>
 
 <div class="quiz" data-quiz>
-  <p class="quiz-q">3. Secondo la regola 3-2-1 per il backup, quante copie dei dati devono essere conservate fuori sede (offsite)?</p>
+  <p class="quiz-q">4. Cosa misura il Recovery Time Objective (RTO)?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Il tempo massimo accettabile per tornare operativi</button>
+    <button class="quiz-option" data-correct="false">La quantità di dati che si può perdere</button>
+    <button class="quiz-option" data-correct="false">Lo spazio occupato dal backup</button>
+    <button class="quiz-option" data-correct="false">Il numero di copie offsite</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>RTO = tempo di ripristino obiettivo; RPO = dati che posso permettermi di perdere.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">5. Secondo la regola 3-2-1 per il backup, quante copie dei dati devono essere conservate fuori sede (offsite)?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">1</button>
     <button class="quiz-option" data-correct="false">3</button>
@@ -85,7 +109,19 @@
 </div>
 
 <div class="quiz" data-quiz>
-  <p class="quiz-q">4. Qual è la differenza principale tra Disaster Recovery (DR) e Business Continuity (BC)?</p>
+  <p class="quiz-q">6. Cosa significa il principio "un backup non testato non è un backup"?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Il test periodico di ripristino fa parte della strategia</button>
+    <button class="quiz-option" data-correct="false">I backup vanno eseguiti solo manualmente</button>
+    <button class="quiz-option" data-correct="false">Basta che il backup venga eseguito spesso</button>
+    <button class="quiz-option" data-correct="false">I backup cloud non vanno mai testati</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Senza test di restore non c'è garanzia che il backup sia utilizzabile.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">7. Qual è la differenza principale tra Disaster Recovery (DR) e Business Continuity (BC)?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Il DR è il ripristino tecnico dell'IT, la BC comprende la continuità dell'intera organizzazione</button>
     <button class="quiz-option" data-correct="false">Sono due nomi equivalenti per lo stesso identico processo</button>
@@ -97,7 +133,19 @@
 </div>
 
 <div class="quiz" data-quiz>
-  <p class="quiz-q">5. Per ripristinare i dati da un backup differenziale, di cosa si ha bisogno?</p>
+  <p class="quiz-q">8. Per ripristinare da backup incrementali, cosa serve?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">L'ultimo backup completo più tutti gli incrementali successivi, in ordine</button>
+    <button class="quiz-option" data-correct="false">Solo l'ultimo incrementale</button>
+    <button class="quiz-option" data-correct="false">Solo l'ultimo backup completo</button>
+    <button class="quiz-option" data-correct="false">L'ultimo completo e l'ultimo incrementale</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>L'incrementale richiede l'intera catena dopo l'ultimo full.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">9. Per ripristinare i dati da un backup differenziale, di cosa si ha bisogno?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Dell'ultimo backup completo più il backup differenziale più recente</button>
     <button class="quiz-option" data-correct="false">Solo del backup differenziale, senza alcun backup completo</button>
@@ -106,6 +154,18 @@
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>Il differenziale contiene tutte le modifiche dall'ultimo full: basta l'ultimo full più l'ultimo differenziale per il restore completo, senza dover ricostruire una catena come con gli incrementali.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">10. Nella regola 3-2-1, cosa indica il "2"?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Due supporti o tecnologie diverse</button>
+    <button class="quiz-option" data-correct="false">Due copie offsite</button>
+    <button class="quiz-option" data-correct="false">Due backup al giorno</button>
+    <button class="quiz-option" data-correct="false">Due amministratori di sistema</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>3 copie, su 2 supporti diversi, 1 offsite.</div>
 </div>
 
 <h2>Fonte primaria consigliata</h2>

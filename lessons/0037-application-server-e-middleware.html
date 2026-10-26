@@ -52,7 +52,19 @@
 </div>
 
 <div class="quiz" data-quiz>
-  <p class="quiz-q">2. Quale di questi è un esempio di message broker?</p>
+  <p class="quiz-q">2. Che cos'è il middleware?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Software che fa da ponte tra applicazioni o sistemi diversi</button>
+    <button class="quiz-option" data-correct="false">Un tipo di memoria della CPU</button>
+    <button class="quiz-option" data-correct="false">Un linguaggio di programmazione</button>
+    <button class="quiz-option" data-correct="false">Un sistema operativo per server</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Il middleware nasconde la complessità dell'integrazione tra sistemi diversi.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">3. Quale di questi è un esempio di message broker?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Apache Kafka</button>
     <button class="quiz-option" data-correct="false">Nginx</button>
@@ -64,7 +76,19 @@
 </div>
 
 <div class="quiz" data-quiz>
-  <p class="quiz-q">3. In un'architettura a 3 livelli (3-tier) classica, dove si colloca la logica di business?</p>
+  <p class="quiz-q">4. Nginx è tipicamente classificato come:</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Web server / reverse proxy</button>
+    <button class="quiz-option" data-correct="false">Message broker</button>
+    <button class="quiz-option" data-correct="false">Database relazionale</button>
+    <button class="quiz-option" data-correct="false">ORM</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Nginx e Apache HTTP Server sono web server, spesso usati come reverse proxy.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">5. In un'architettura a 3 livelli (3-tier) classica, dove si colloca la logica di business?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Nel livello intermedio, l'application server</button>
     <button class="quiz-option" data-correct="false">Nel database</button>
@@ -76,7 +100,19 @@
 </div>
 
 <div class="quiz" data-quiz>
-  <p class="quiz-q">4. Qual è la funzione principale di un middleware di tipo ORM (es. Hibernate)?</p>
+  <p class="quiz-q">6. Che tipo di comunicazione gestisce un message broker?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Scambio asincrono di messaggi tra sistemi</button>
+    <button class="quiz-option" data-correct="false">Traduzione di nomi di dominio</button>
+    <button class="quiz-option" data-correct="false">Assegnazione di indirizzi IP</button>
+    <button class="quiz-option" data-correct="false">Rendering di pagine HTML</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Message broker (RabbitMQ, Kafka): comunicazione asincrona.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">7. Qual è la funzione principale di un middleware di tipo ORM (es. Hibernate)?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Fare da ponte tra oggetti applicativi e dati relazionali in un database</button>
     <button class="quiz-option" data-correct="false">Instradare pacchetti di rete tra router diversi</button>
@@ -88,7 +124,19 @@
 </div>
 
 <div class="quiz" data-quiz>
-  <p class="quiz-q">5. Perché un prodotto come Tomcat può essere citato sia come web server che come application server?</p>
+  <p class="quiz-q">8. Che funzione ha un ESB (Enterprise Service Bus)?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Instradare ed eventualmente trasformare messaggi tra molti sistemi enterprise</button>
+    <button class="quiz-option" data-correct="false">Archiviare file statici</button>
+    <button class="quiz-option" data-correct="false">Compilare codice Java</button>
+    <button class="quiz-option" data-correct="false">Gestire i permessi del file system</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>L'ESB è middleware di integrazione tra sistemi enterprise.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">9. Perché un prodotto come Tomcat può essere citato sia come web server che come application server?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Perché integra entrambe le funzioni: serve richieste HTTP ed esegue logica applicativa (servlet/JSP)</button>
     <button class="quiz-option" data-correct="false">Perché il termine "application server" è stato abbandonato dal settore</button>
@@ -97,6 +145,18 @@
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>Tomcat è un servlet container: serve contenuto HTTP e, al tempo stesso, esegue la logica applicativa Java (servlet/JSP) — da qui l'ambiguità nella classificazione che il quiz chiede di sciogliere.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">10. Quale di questi è un application server?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">WildFly/JBoss</button>
+    <button class="quiz-option" data-correct="false">Nginx</button>
+    <button class="quiz-option" data-correct="false">RabbitMQ</button>
+    <button class="quiz-option" data-correct="false">PostgreSQL</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>WildFly/JBoss, WebLogic, Tomcat sono application server; Nginx è web server, RabbitMQ message broker.</div>
 </div>
 
 <h2>Fonte primaria consigliata</h2>

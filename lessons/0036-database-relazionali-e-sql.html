@@ -67,7 +67,19 @@
 </div>
 
 <div class="quiz" data-quiz>
-  <p class="quiz-q">2. Quale forma normale risolve il problema delle dipendenze transitive tra attributi non-chiave?</p>
+  <p class="quiz-q">2. Cosa richiede la prima forma normale (1NF)?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Valori atomici: un solo valore per cella</button>
+    <button class="quiz-option" data-correct="false">Assenza di dipendenze transitive</button>
+    <button class="quiz-option" data-correct="false">Assenza di dipendenze parziali</button>
+    <button class="quiz-option" data-correct="false">Almeno una chiave esterna</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>1NF = atomicità; 2NF = niente dipendenze parziali; 3NF = niente dipendenze transitive.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">3. Quale forma normale risolve il problema delle dipendenze transitive tra attributi non-chiave?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">3NF (terza forma normale)</button>
     <button class="quiz-option" data-correct="false">1NF (prima forma normale)</button>
@@ -79,7 +91,19 @@
 </div>
 
 <div class="quiz" data-quiz>
-  <p class="quiz-q">3. Quale proprietà ACID garantisce che una transazione confermata (commit) resti valida anche dopo un crash del sistema?</p>
+  <p class="quiz-q">4. A quale categoria SQL appartengono GRANT e REVOKE?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">DCL (Data Control Language)</button>
+    <button class="quiz-option" data-correct="false">DDL</button>
+    <button class="quiz-option" data-correct="false">DML</button>
+    <button class="quiz-option" data-correct="false">TCL</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>GRANT/REVOKE gestiscono i permessi: DCL.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">5. Quale proprietà ACID garantisce che una transazione confermata (commit) resti valida anche dopo un crash del sistema?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Durabilità</button>
     <button class="quiz-option" data-correct="false">Atomicità</button>
@@ -91,7 +115,19 @@
 </div>
 
 <div class="quiz" data-quiz>
-  <p class="quiz-q">4. Un LEFT JOIN tra tabella Clienti (sinistra) e Ordini (destra) restituisce:</p>
+  <p class="quiz-q">6. Quale proprietà ACID garantisce che una transazione sia "tutto o nulla"?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Atomicità</button>
+    <button class="quiz-option" data-correct="false">Consistenza</button>
+    <button class="quiz-option" data-correct="false">Isolamento</button>
+    <button class="quiz-option" data-correct="false">Durabilità</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Atomicità: se un passaggio fallisce, l'intera transazione viene annullata.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">7. Un LEFT JOIN tra tabella Clienti (sinistra) e Ordini (destra) restituisce:</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Tutti i clienti, anche quelli senza ordini (con NULL nei campi ordine)</button>
     <button class="quiz-option" data-correct="false">Solo i clienti che hanno almeno un ordine</button>
@@ -103,7 +139,19 @@
 </div>
 
 <div class="quiz" data-quiz>
-  <p class="quiz-q">5. Cosa garantisce in particolare la proprietà di "Isolamento" (Isolation) in ACID?</p>
+  <p class="quiz-q">8. A quale categoria SQL appartengono CREATE, ALTER e DROP?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">DDL (Data Definition Language)</button>
+    <button class="quiz-option" data-correct="false">DML</button>
+    <button class="quiz-option" data-correct="false">DCL</button>
+    <button class="quiz-option" data-correct="false">TCL</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Definiscono la struttura dello schema: DDL.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">9. Cosa garantisce in particolare la proprietà di "Isolamento" (Isolation) in ACID?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Che transazioni concorrenti non interferiscano vedendosi a metà percorso</button>
     <button class="quiz-option" data-correct="false">Che ogni query venga eseguita in meno di un secondo</button>
@@ -112,6 +160,18 @@
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>L'isolamento riguarda la concorrenza tra transazioni: ciascuna deve comportarsi come se fosse l'unica in esecuzione, senza vedere stati intermedi di altre transazioni non ancora confermate.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">10. Cosa garantisce una chiave esterna (foreign key)?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">L'integrità referenziale verso la chiave primaria di un'altra tabella</button>
+    <button class="quiz-option" data-correct="false">L'unicità di ogni riga della stessa tabella</button>
+    <button class="quiz-option" data-correct="false">La cifratura dei dati</button>
+    <button class="quiz-option" data-correct="false">La velocità delle query</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>La foreign key referenzia la primary key di un'altra tabella: niente ordini che puntano a clienti inesistenti.</div>
 </div>
 
 <h2>Fonte primaria consigliata</h2>

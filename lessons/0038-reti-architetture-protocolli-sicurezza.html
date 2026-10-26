@@ -80,7 +80,19 @@
 </div>
 
 <div class="quiz" data-quiz>
-  <p class="quiz-q">2. Quale protocollo di trasporto è tipicamente usato per il traffico VoIP/streaming, dove la velocità conta più della garanzia di consegna?</p>
+  <p class="quiz-q">2. Qual è la funzione del DNS?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Risolvere nomi di dominio in indirizzi IP</button>
+    <button class="quiz-option" data-correct="false">Assegnare indirizzi IP ai dispositivi</button>
+    <button class="quiz-option" data-correct="false">Cifrare il traffico web</button>
+    <button class="quiz-option" data-correct="false">Trasferire file</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>DNS risolve i nomi; DHCP assegna gli indirizzi.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">3. Quale protocollo di trasporto è tipicamente usato per il traffico VoIP/streaming, dove la velocità conta più della garanzia di consegna?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">UDP</button>
     <button class="quiz-option" data-correct="false">TCP</button>
@@ -92,7 +104,19 @@
 </div>
 
 <div class="quiz" data-quiz>
-  <p class="quiz-q">3. Su quale base instrada il traffico uno switch di rete?</p>
+  <p class="quiz-q">4. Su quale base instrada il traffico un router?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">L'indirizzo IP, al livello 3 (rete)</button>
+    <button class="quiz-option" data-correct="false">L'indirizzo MAC, al livello 2</button>
+    <button class="quiz-option" data-correct="false">Nessuna, ritrasmette a tutti</button>
+    <button class="quiz-option" data-correct="false">Il nome DNS</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Router = livello 3, indirizzi IP; switch = livello 2, MAC; hub = livello 1, broadcast.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">5. Su quale base instrada il traffico uno switch di rete?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">L'indirizzo MAC</button>
     <button class="quiz-option" data-correct="false">L'indirizzo IP</button>
@@ -104,7 +128,19 @@
 </div>
 
 <div class="quiz" data-quiz>
-  <p class="quiz-q">4. Qual è la funzione del protocollo DHCP?</p>
+  <p class="quiz-q">6. Quali caratteristiche ha il protocollo TCP?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Orientato alla connessione, con consegna affidabile e ordinata</button>
+    <button class="quiz-option" data-correct="false">Senza connessione e senza garanzie</button>
+    <button class="quiz-option" data-correct="false">Usato solo per lo streaming</button>
+    <button class="quiz-option" data-correct="false">Opera al livello fisico</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>TCP: handshake, ritrasmissioni, ordine; UDP: connectionless e più leggero.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">7. Qual è la funzione del protocollo DHCP?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Assegnare automaticamente indirizzi IP ai dispositivi di rete</button>
     <button class="quiz-option" data-correct="false">Risolvere nomi di dominio in indirizzi IP</button>
@@ -116,7 +152,19 @@
 </div>
 
 <div class="quiz" data-quiz>
-  <p class="quiz-q">5. Qual è la differenza concettuale principale tra un firewall e una VPN?</p>
+  <p class="quiz-q">8. Cosa fa un hub?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Ritrasmette il segnale a tutte le porte, al livello fisico</button>
+    <button class="quiz-option" data-correct="false">Instrada in base all'indirizzo IP</button>
+    <button class="quiz-option" data-correct="false">Impara gli indirizzi MAC</button>
+    <button class="quiz-option" data-correct="false">Cifra il traffico</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>L'hub opera al livello 1 senza alcuna logica di instradamento.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">9. Qual è la differenza concettuale principale tra un firewall e una VPN?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Il firewall filtra/decide cosa può passare, la VPN cifra il contenuto di ciò che passa</button>
     <button class="quiz-option" data-correct="false">Sono due nomi per lo stesso identico strumento</button>
@@ -125,6 +173,18 @@
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>Il firewall applica regole di accesso (chi/cosa passa); la VPN crea un tunnel cifrato per proteggere la riservatezza del traffico che passa. Sono complementari, non intercambiabili.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">10. Che cos'è SFTP?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">SSH File Transfer Protocol, un protocollo distinto basato su SSH</button>
+    <button class="quiz-option" data-correct="false">FTP incapsulato dentro SSH</button>
+    <button class="quiz-option" data-correct="false">FTP con cifratura TLS</button>
+    <button class="quiz-option" data-correct="false">Una versione semplificata di FTP senza autenticazione</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>SFTP è un protocollo a sé basato su SSH; FTP + TLS si chiama FTPS.</div>
 </div>
 
 <h2>Fonte primaria consigliata</h2>

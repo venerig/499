@@ -61,7 +61,19 @@
 </div>
 
 <div class="quiz" data-quiz>
-  <p class="quiz-q">2. Quale affermazione sulla RAM è corretta?</p>
+  <p class="quiz-q">2. Quando una porta AND restituisce 1?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Quando entrambi gli input sono 1</button>
+    <button class="quiz-option" data-correct="false">Quando almeno un input è 1</button>
+    <button class="quiz-option" data-correct="false">Quando gli input sono diversi</button>
+    <button class="quiz-option" data-correct="false">Quando entrambi gli input sono 0</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>AND = 1 solo se tutti gli input sono 1; OR se almeno uno; XOR se diversi.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">3. Quale affermazione sulla RAM è corretta?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">È una memoria volatile: perde il contenuto allo spegnimento</button>
     <button class="quiz-option" data-correct="false">È una memoria non volatile come il disco</button>
@@ -73,7 +85,19 @@
 </div>
 
 <div class="quiz" data-quiz>
-  <p class="quiz-q">3. In logica booleana, quando una porta XOR restituisce 1?</p>
+  <p class="quiz-q">4. Quale componente della CPU esegue le operazioni aritmetiche e logiche?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">L'ALU</button>
+    <button class="quiz-option" data-correct="false">L'unità di controllo</button>
+    <button class="quiz-option" data-correct="false">Il bus indirizzi</button>
+    <button class="quiz-option" data-correct="false">La ROM</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>ALU = Arithmetic Logic Unit; l'unità di controllo coordina il ciclo fetch-decode-execute.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">5. In logica booleana, quando una porta XOR restituisce 1?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Quando i due input sono diversi tra loro</button>
     <button class="quiz-option" data-correct="false">Quando almeno uno dei due input è 1</button>
@@ -85,7 +109,19 @@
 </div>
 
 <div class="quiz" data-quiz>
-  <p class="quiz-q">4. Quanti bit compongono un byte?</p>
+  <p class="quiz-q">6. Cosa caratterizza l'architettura di von Neumann rispetto alla memoria?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Dati e istruzioni nello stesso spazio di memoria</button>
+    <button class="quiz-option" data-correct="false">Dati e istruzioni in memorie separate obbligatorie</button>
+    <button class="quiz-option" data-correct="false">Nessuna memoria, solo registri</button>
+    <button class="quiz-option" data-correct="false">Memoria solo su disco</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Von Neumann: dati e istruzioni condividono la stessa memoria.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">7. Quanti bit compongono un byte?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">8</button>
     <button class="quiz-option" data-correct="false">4</button>
@@ -97,7 +133,19 @@
 </div>
 
 <div class="quiz" data-quiz>
-  <p class="quiz-q">5. Quale componente della CPU coordina il ciclo fetch-decode-execute e pilota gli altri componenti?</p>
+  <p class="quiz-q">8. Quale memoria è la più veloce e la più vicina alla CPU?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">La cache</button>
+    <button class="quiz-option" data-correct="false">La RAM</button>
+    <button class="quiz-option" data-correct="false">L'SSD</button>
+    <button class="quiz-option" data-correct="false">L'hard disk</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Più vicina alla CPU = più veloce, più piccola e più costosa per byte: la cache.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">9. Quale componente della CPU coordina il ciclo fetch-decode-execute e pilota gli altri componenti?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">L'unità di controllo</button>
     <button class="quiz-option" data-correct="false">L'ALU (Arithmetic Logic Unit)</button>
@@ -106,6 +154,18 @@
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>L'unità di controllo coordina il ciclo di esecuzione; l'ALU esegue le operazioni aritmetiche/logiche effettive, ma non pilota il ciclo.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">10. Come si rappresentano i numeri interi negativi nelle CPU moderne?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">In complemento a 2</button>
+    <button class="quiz-option" data-correct="false">Con un semplice bit di segno</button>
+    <button class="quiz-option" data-correct="false">In virgola mobile sempre</button>
+    <button class="quiz-option" data-correct="false">In codice ASCII</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>La convenzione delle CPU moderne è il complemento a 2.</div>
 </div>
 
 <h2>Fonte primaria consigliata</h2>

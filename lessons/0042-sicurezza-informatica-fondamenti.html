@@ -72,7 +72,19 @@
 </div>
 
 <div class="quiz" data-quiz>
-  <p class="quiz-q">2. Per inviare un messaggio che solo il destinatario possa leggere, con crittografia asimmetrica, si cifra con:</p>
+  <p class="quiz-q">2. Quale malware si propaga da solo in rete senza bisogno di un file ospite?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Worm</button>
+    <button class="quiz-option" data-correct="false">Virus</button>
+    <button class="quiz-option" data-correct="false">Trojan</button>
+    <button class="quiz-option" data-correct="false">Adware</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Il worm si diffonde autonomamente; il virus ha bisogno di un ospite; il trojan si finge software legittimo.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">3. Per inviare un messaggio che solo il destinatario possa leggere, con crittografia asimmetrica, si cifra con:</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">La chiave pubblica del destinatario</button>
     <button class="quiz-option" data-correct="false">La chiave privata del destinatario</button>
@@ -84,7 +96,19 @@
 </div>
 
 <div class="quiz" data-quiz>
-  <p class="quiz-q">3. Quale affermazione su una funzione di hash crittografica (es. SHA-256) è corretta?</p>
+  <p class="quiz-q">4. Per firmare digitalmente un documento con crittografia asimmetrica, quale chiave usa il mittente?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">La propria chiave privata</button>
+    <button class="quiz-option" data-correct="false">La chiave pubblica del destinatario</button>
+    <button class="quiz-option" data-correct="false">La propria chiave pubblica</button>
+    <button class="quiz-option" data-correct="false">Una chiave simmetrica condivisa</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Si firma con la propria chiave privata; chiunque verifica con la chiave pubblica del firmatario.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">5. Quale affermazione su una funzione di hash crittografica (es. SHA-256) è corretta?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">È unidirezionale: dall'impronta non si risale all'input</button>
     <button class="quiz-option" data-correct="false">Si decifra con la chiave privata del titolare</button>
@@ -96,7 +120,19 @@
 </div>
 
 <div class="quiz" data-quiz>
-  <p class="quiz-q">4. Quale combinazione costituisce un'autenticazione a due fattori?</p>
+  <p class="quiz-q">6. Con quale atto l'Italia ha recepito la direttiva NIS2?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">D.Lgs. 138/2024</button>
+    <button class="quiz-option" data-correct="false">D.L. 82/2021</button>
+    <button class="quiz-option" data-correct="false">L. 90/2024</button>
+    <button class="quiz-option" data-correct="false">D.Lgs. 101/2018</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>D.Lgs. 138/2024, in vigore dal 16 ottobre 2024; il D.L. 82/2021 ha istituito l'ACN.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">7. Quale combinazione costituisce un'autenticazione a due fattori?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Password e codice OTP generato sullo smartphone</button>
     <button class="quiz-option" data-correct="false">Password e PIN</button>
@@ -108,7 +144,19 @@
 </div>
 
 <div class="quiz" data-quiz>
-  <p class="quiz-q">5. Quale ente è l'autorità nazionale per la cybersicurezza, istituita dal D.L. 82/2021?</p>
+  <p class="quiz-q">8. AES è un algoritmo di crittografia:</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Simmetrica</button>
+    <button class="quiz-option" data-correct="false">Asimmetrica</button>
+    <button class="quiz-option" data-correct="false">Di hash</button>
+    <button class="quiz-option" data-correct="false">Di compressione</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>AES usa una sola chiave condivisa: crittografia simmetrica.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">9. Quale ente è l'autorità nazionale per la cybersicurezza, istituita dal D.L. 82/2021?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">ACN — Agenzia per la Cybersicurezza Nazionale</button>
     <button class="quiz-option" data-correct="false">AgID — Agenzia per l'Italia Digitale</button>
@@ -117,6 +165,18 @@
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>ACN è l'autorità nazionale per la cybersicurezza (D.L. 82/2021) e l'autorità competente NIS (D.Lgs. 138/2024). AgID cura la trasformazione digitale, il Garante la protezione dei dati, ANAC l'anticorruzione: tutte autorità diverse.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">10. Entro quanto le PA soggette alla L. 90/2024 segnalano un incidente informatico all'ACN?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Entro 24 ore, con notifica completa entro 72 ore</button>
+    <button class="quiz-option" data-correct="false">Entro 72 ore, con notifica completa entro 30 giorni</button>
+    <button class="quiz-option" data-correct="false">Entro 7 giorni</button>
+    <button class="quiz-option" data-correct="false">Solo se lo chiede il Garante</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>L. 90/2024: segnalazione senza ritardo e comunque entro 24 ore; notifica completa entro 72 ore.</div>
 </div>
 
 <h2>Fonte primaria consigliata</h2>

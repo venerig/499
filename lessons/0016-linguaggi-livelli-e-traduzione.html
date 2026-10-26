@@ -59,7 +59,19 @@
 </div>
 
 <div class="quiz" data-quiz>
-  <p class="quiz-q">2. Qual è il vantaggio tipico di un linguaggio compilato rispetto a uno interpretato?</p>
+  <p class="quiz-q">2. Come viene eseguito Java nel modello ibrido?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Compilato in bytecode ed eseguito dalla JVM</button>
+    <button class="quiz-option" data-correct="false">Compilato direttamente in codice macchina nativo</button>
+    <button class="quiz-option" data-correct="false">Solo interpretato riga per riga dal sorgente</button>
+    <button class="quiz-option" data-correct="false">Eseguito esclusivamente dal browser</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Java: compilazione in bytecode, poi esecuzione sulla JVM, spesso con JIT.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">3. Qual è il vantaggio tipico di un linguaggio compilato rispetto a uno interpretato?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Maggiore velocità di esecuzione a runtime</button>
     <button class="quiz-option" data-correct="false">Portabilità immediata su qualunque piattaforma</button>
@@ -71,7 +83,19 @@
 </div>
 
 <div class="quiz" data-quiz>
-  <p class="quiz-q">3. Cosa fa un compilatore Just-In-Time (JIT)?</p>
+  <p class="quiz-q">4. Qual è uno svantaggio tipico di un linguaggio compilato?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Serve un eseguibile diverso per ogni piattaforma</button>
+    <button class="quiz-option" data-correct="false">È più lento a runtime dell'interpretato</button>
+    <button class="quiz-option" data-correct="false">Non può usare variabili</button>
+    <button class="quiz-option" data-correct="false">Richiede sempre una macchina virtuale</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Il compilato è più veloce a runtime, ma produce un eseguibile specifico per piattaforma.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">5. Cosa fa un compilatore Just-In-Time (JIT)?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Traduce il bytecode in codice nativo durante l'esecuzione</button>
     <button class="quiz-option" data-correct="false">Traduce l'intero programma prima ancora di essere avviato</button>
@@ -83,7 +107,19 @@
 </div>
 
 <div class="quiz" data-quiz>
-  <p class="quiz-q">4. In un quiz che offre solo le opzioni "compilato" e "interpretato" (senza opzione "ibrido"), quale viene tipicamente considerata la risposta corretta per Python?</p>
+  <p class="quiz-q">6. Qual è il vantaggio tipico di un linguaggio interpretato?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Portabilità ovunque sia disponibile l'interprete</button>
+    <button class="quiz-option" data-correct="false">Massima velocità di esecuzione</button>
+    <button class="quiz-option" data-correct="false">Nessun ambiente di esecuzione necessario</button>
+    <button class="quiz-option" data-correct="false">Un unico eseguibile ottimizzato per ogni CPU</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>L'interpretato è portabile dove gira l'interprete, a costo di prestazioni inferiori.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">7. In un quiz che offre solo le opzioni "compilato" e "interpretato" (senza opzione "ibrido"), quale viene tipicamente considerata la risposta corretta per Python?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Interpretato</button>
     <button class="quiz-option" data-correct="false">Compilato</button>
@@ -95,7 +131,19 @@
 </div>
 
 <div class="quiz" data-quiz>
-  <p class="quiz-q">5. Cosa distingue l'approccio ibrido (bytecode + macchina virtuale) dal semplice compilato o interpretato?</p>
+  <p class="quiz-q">8. Come funziona un linguaggio interpretato, nella definizione da manuale?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Un interprete esegue il codice sorgente direttamente, istruzione per istruzione</button>
+    <button class="quiz-option" data-correct="false">Un compilatore traduce tutto in eseguibile prima dell'avvio</button>
+    <button class="quiz-option" data-correct="false">Il codice viene eseguito solo dal browser</button>
+    <button class="quiz-option" data-correct="false">Il codice viene convertito in hardware dedicato</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Interpretato: il sorgente è eseguito direttamente da un interprete, riga per riga.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">9. Cosa distingue l'approccio ibrido (bytecode + macchina virtuale) dal semplice compilato o interpretato?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Combina una compilazione intermedia con un'esecuzione tramite macchina virtuale</button>
     <button class="quiz-option" data-correct="false">Elimina completamente la necessità di un compilatore</button>
@@ -104,6 +152,18 @@
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>L'approccio ibrido genera bytecode intermedio tramite un compilatore, poi eseguito da una macchina virtuale (eventualmente con JIT) — un compromesso tra la velocità del compilato e la portabilità dell'interpretato.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">10. Come è classificato il linguaggio C nella tassonomia standard dei manuali?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Alto livello</button>
+    <button class="quiz-option" data-correct="false">Basso livello</button>
+    <button class="quiz-option" data-correct="false">Linguaggio macchina</button>
+    <button class="quiz-option" data-correct="false">Assembly</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Basso livello = linguaggio macchina e Assembly; il C, pur "vicino alla macchina", è classificato di alto livello.</div>
 </div>
 
 <h2>Fonte primaria consigliata</h2>
