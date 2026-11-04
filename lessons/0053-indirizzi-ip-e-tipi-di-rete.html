@@ -1,0 +1,201 @@
+<title>Lezione 53 — Indirizzi IP, subnetting e tipi di rete</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+<p class="eyebrow">Materia 11 · Fondamenti di sistemi e reti · Zona 🟢</p>
+<h1>Indirizzi IP, maschere di rete, record DNS e reti per estensione</h1>
+<p class="subtitle">Lezione 53 — integra le lezioni 38 e 47 con indirizzamento IPv4, subnetting di base, NAT, record DNS, tipi di rete e dispositivi, temi della playlist EmmeCiLab "Concorso informatici INPS 2026".</p>
+
+<p class="progress">Percorso: <a href="../MISSION.md">MISSION</a> → Zona 🟢 → Fondamenti di sistemi e reti (materia 11) → Lezione 3/… · Punteggio quiz: <span id="lesson-quiz-score">0 / 0</span></p>
+
+<h2>IPv4 e IPv6</h2>
+<p>Un indirizzo <strong>IPv4</strong> è di <strong>32 bit</strong>, scritto come 4 ottetti decimali (es. 192.168.1.10, ogni ottetto da 0 a 255). Un indirizzo <strong>IPv6</strong> è di <strong>128 bit</strong>, scritto in 8 gruppi esadecimali separati da due punti (es. 2001:db8::1). IPv6 nasce per l'esaurimento degli indirizzi IPv4.</p>
+
+<table>
+  <tr><th>Classe storica</th><th>Primo ottetto</th><th>Maschera predefinita</th></tr>
+  <tr><td>A</td><td>1 – 126</td><td>255.0.0.0 (/8)</td></tr>
+  <tr><td>B</td><td>128 – 191</td><td>255.255.0.0 (/16)</td></tr>
+  <tr><td>C</td><td>192 – 223</td><td>255.255.255.0 (/24)</td></tr>
+  <tr><td>D</td><td>224 – 239</td><td>Multicast</td></tr>
+  <tr><td>E</td><td>240 – 255</td><td>Riservata/sperimentale</td></tr>
+</table>
+<p>127.0.0.0/8 è il <strong>loopback</strong> (127.0.0.1 = la macchina stessa). Le classi sono superate dal <strong>CIDR</strong> (notazione /n), ma restano nei quiz.</p>
+
+<h2>Indirizzi privati, APIPA e NAT</h2>
+<ul>
+  <li><strong>Privati (RFC 1918)</strong>, non instradati su Internet: <strong>10.0.0.0/8</strong>, <strong>172.16.0.0/12</strong> (da 172.16.0.0 a 172.31.255.255), <strong>192.168.0.0/16</strong>.</li>
+  <li><strong>APIPA / link-local (169.254.0.0/16)</strong>: indirizzo che il dispositivo si assegna da solo quando non riceve risposta da un server DHCP. Vederlo è un sintomo di DHCP irraggiungibile.</li>
+  <li><strong>NAT</strong>: il router traduce gli indirizzi privati della rete interna in uno o più indirizzi pubblici per uscire su Internet.</li>
+  <li><strong>Gateway predefinito</strong>: il router a cui un host invia i pacchetti destinati a reti diverse dalla propria.</li>
+</ul>
+
+<h2>Subnetting di base</h2>
+<p>La maschera separa la parte di <strong>rete</strong> dalla parte di <strong>host</strong>. Con /n bit di rete restano 32 − n bit di host: <strong>host utilizzabili = 2<sup>32−n</sup> − 2</strong> (si tolgono l'indirizzo di rete, tutti zeri, e di broadcast, tutti uno).</p>
+<table>
+  <tr><th>Prefisso</th><th>Maschera</th><th>Indirizzi</th><th>Host utilizzabili</th></tr>
+  <tr><td>/24</td><td>255.255.255.0</td><td>256</td><td>254</td></tr>
+  <tr><td>/25</td><td>255.255.255.128</td><td>128</td><td>126</td></tr>
+  <tr><td>/26</td><td>255.255.255.192</td><td>64</td><td>62</td></tr>
+  <tr><td>/27</td><td>255.255.255.224</td><td>32</td><td>30</td></tr>
+  <tr><td>/30</td><td>255.255.255.252</td><td>4</td><td>2</td></tr>
+</table>
+<p>Esempio 192.168.1.0/24: rete 192.168.1.0, broadcast 192.168.1.255, host da .1 a .254.</p>
+
+<h2>Record DNS</h2>
+<table>
+  <tr><th>Record</th><th>Contenuto</th></tr>
+  <tr><td>A</td><td>Nome → indirizzo IPv4</td></tr>
+  <tr><td>AAAA</td><td>Nome → indirizzo IPv6</td></tr>
+  <tr><td>CNAME</td><td>Alias: un nome che rimanda a un altro nome</td></tr>
+  <tr><td>MX</td><td>Server di posta del dominio (con priorità)</td></tr>
+  <tr><td>NS</td><td>Server DNS autorevoli del dominio</td></tr>
+  <tr><td>PTR</td><td>Risoluzione inversa: IP → nome</td></tr>
+</table>
+
+<h2>Reti per estensione e dispositivi</h2>
+<p><strong>PAN</strong> (personale, pochi metri, es. Bluetooth) · <strong>LAN</strong> (locale: ufficio, edificio) · <strong>MAN</strong> (metropolitana: una città) · <strong>WAN</strong> (geografica: regioni, nazioni; Internet è la WAN più grande). Alcuni testi aggiungono la GAN (globale).</p>
+<ul>
+  <li><strong>Scheda di rete (NIC)</strong>: collega il dispositivo alla rete; ha un indirizzo <strong>MAC</strong> di 48 bit.</li>
+  <li><strong>Modem</strong>: MOdula e DEModula il segnale per trasmettere dati sulla linea del provider (es. DSL).</li>
+  <li><strong>Access point</strong>: collega i dispositivi Wi-Fi alla rete cablata.</li>
+  <li><strong>VPN</strong>: tunnel cifrato su rete pubblica; <em>remote access</em> (singolo utente verso la rete aziendale) o <em>site-to-site</em> (tra due sedi).</li>
+</ul>
+
+<div class="callout">
+  <p class="callout-title">Il tranello più comune</p>
+  <p>172.32.x.x <strong>non</strong> è privato: il blocco 172.16.0.0/12 finisce a 172.31.255.255. E negli host utilizzabili si sottrae sempre 2: un /24 ha 256 indirizzi ma 254 host.</p>
+</div>
+
+<h2>Verifica — retrieval practice</h2>
+<p class="source-note">L'ordine delle opzioni cambia a ogni caricamento — rispondi dal ragionamento, non dalla posizione.</p>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">1. Quale di questi indirizzi appartiene a un intervallo privato (RFC 1918)?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">172.20.5.1</button>
+    <button class="quiz-option" data-correct="false">172.32.5.1</button>
+    <button class="quiz-option" data-correct="false">192.169.1.1</button>
+    <button class="quiz-option" data-correct="false">11.0.0.1</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Privati: 10.0.0.0/8, 172.16.0.0–172.31.255.255, 192.168.0.0/16. 172.32, 192.169 e 11 sono pubblici.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">2. Quanti host utilizzabili offre una rete /24 (maschera 255.255.255.0)?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">254</button>
+    <button class="quiz-option" data-correct="false">256</button>
+    <button class="quiz-option" data-correct="false">255</button>
+    <button class="quiz-option" data-correct="false">24</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>2<sup>8</sup> = 256 indirizzi, meno indirizzo di rete e broadcast = 254.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">3. Quale record DNS indica il server di posta di un dominio?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">MX</button>
+    <button class="quiz-option" data-correct="false">A</button>
+    <button class="quiz-option" data-correct="false">CNAME</button>
+    <button class="quiz-option" data-correct="false">PTR</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>MX = Mail eXchanger. A dà l'IPv4, CNAME è un alias, PTR la risoluzione inversa.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">4. Un PC ha l'indirizzo 169.254.10.20. Cosa indica, tipicamente?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Che non ha ricevuto risposta da un server DHCP e si è autoassegnato un indirizzo</button>
+    <button class="quiz-option" data-correct="false">Che è il gateway predefinito della rete</button>
+    <button class="quiz-option" data-correct="false">Che sta usando l'indirizzo di loopback</button>
+    <button class="quiz-option" data-correct="false">Che ha un indirizzo pubblico assegnato dal provider</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>169.254.0.0/16 è l'intervallo link-local (APIPA): sintomo di DHCP non raggiungibile. Il loopback è 127.0.0.1.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">5. Quale maschera di sottorete corrisponde al prefisso /26?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">255.255.255.192</button>
+    <button class="quiz-option" data-correct="false">255.255.255.128</button>
+    <button class="quiz-option" data-correct="false">255.255.255.224</button>
+    <button class="quiz-option" data-correct="false">255.255.0.0</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>/26 = 24 bit + 2 bit nell'ultimo ottetto (128 + 64 = 192): 64 indirizzi, 62 host.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">6. Di quanti bit è composto un indirizzo IPv6?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">128</button>
+    <button class="quiz-option" data-correct="false">32</button>
+    <button class="quiz-option" data-correct="false">64</button>
+    <button class="quiz-option" data-correct="false">48</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>IPv6 = 128 bit; IPv4 = 32 bit; l'indirizzo MAC = 48 bit.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">7. Una rete che collega le sedi di un ente all'interno della stessa città è, per estensione, una:</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">MAN</button>
+    <button class="quiz-option" data-correct="false">PAN</button>
+    <button class="quiz-option" data-correct="false">LAN</button>
+    <button class="quiz-option" data-correct="false">VLAN</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>MAN = Metropolitan Area Network. La VLAN è una suddivisione logica di una LAN, non una categoria di estensione.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">8. A cosa serve un record DNS di tipo CNAME?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">A definire un alias, cioè un nome che rimanda a un altro nome</button>
+    <button class="quiz-option" data-correct="false">A indicare l'indirizzo IPv6 di un host</button>
+    <button class="quiz-option" data-correct="false">A indicare il server di posta</button>
+    <button class="quiz-option" data-correct="false">A risolvere un indirizzo IP in un nome</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Es. www.esempio.it CNAME esempio.it. IPv6 = AAAA, posta = MX, inversa = PTR.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">9. Qual è la funzione di un access point?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Collegare i dispositivi wireless (Wi-Fi) alla rete cablata</button>
+    <button class="quiz-option" data-correct="false">Tradurre i nomi di dominio in indirizzi IP</button>
+    <button class="quiz-option" data-correct="false">Modulare il segnale sulla linea telefonica del provider</button>
+    <button class="quiz-option" data-correct="false">Assegnare automaticamente gli indirizzi IP</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>L'access point è il ponte tra Wi-Fi e rete cablata. DNS traduce i nomi, il modem modula, DHCP assegna gli IP.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">10. Cosa fa il NAT in un router domestico o aziendale?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Traduce gli indirizzi IP privati interni in un indirizzo pubblico per accedere a Internet</button>
+    <button class="quiz-option" data-correct="false">Cifra tutto il traffico come una VPN</button>
+    <button class="quiz-option" data-correct="false">Assegna i nomi di dominio ai computer</button>
+    <button class="quiz-option" data-correct="false">Converte gli indirizzi IPv4 in indirizzi MAC</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>NAT = Network Address Translation: molti host privati escono con un solo IP pubblico. La corrispondenza IP → MAC è compito di ARP.</div>
+</div>
+
+<h2>Fonte primaria consigliata</h2>
+<p><a href="https://www.rfc-editor.org/rfc/rfc1918" target="_blank" rel="noopener">RFC 1918 — indirizzi privati</a>, <a href="https://www.rfc-editor.org/rfc/rfc3927" target="_blank" rel="noopener">RFC 3927 — indirizzi link-local IPv4</a>, <a href="https://www.rfc-editor.org/rfc/rfc4632" target="_blank" rel="noopener">RFC 4632 — CIDR</a>. Ripasso: <a href="https://it.wikipedia.org/wiki/Indirizzo_IP" target="_blank" rel="noopener">Indirizzo IP — Wikipedia IT</a>.</p>
+
+<p class="source-note">Materiale di riferimento compresso: <a href="../reference/indirizzi-ip-e-tipi-di-rete.html">scheda "Indirizzi IP e tipi di rete"</a>.</p>
+
+<nav class="lesson-nav">
+  <span>← <a href="0052-informatica-pratica-da-quiz-reali.html">Lezione 52 — Informatica pratica da quiz reali</a></span>
+  <span>Prossima: <a href="0054-progettazione-database-e-nosql.html">Lezione 54 — Progettazione dei database e NoSQL</a> →</span>
+</nav>
+
+<script src="../assets/quiz.js"></script>

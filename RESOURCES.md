@@ -73,6 +73,8 @@ _Gap:_ formato esatto della prova di inglese non confermato dal bando (il fetch 
 
 - [YouTube — playlist "ASSISTENTI INFORMATICI INPS 2026" (canale Colorami la Giornata, 7 video)](https://www.youtube.com/playlist?list=PLLydN7IKnfJc)
   Riassunti generati con IA: utili come mappa degli argomenti, **non affidabili nei dettagli** (es. "FTP limitato a 4 GB / SFTP a 16 GB", "PRINCE2 ha 4 principi e 8 processi" sono errati). Trascrizioni estratte con yt-dlp e usate per le lezioni 47-51 solo dopo verifica su fonti primarie.
+- [YouTube — playlist "CONCORSO INFORMATICI INPS 2026" (canale EmmeCiLab, 31 video)](https://www.youtube.com/playlist?list=PLYl_XnTircfQ)
+  Docente reale, livello base, in genere corretto. Il video sui quiz reali dell'Agenzia delle Dogane 2025 mostra il livello pratico delle domande d'informatica. 6 video riservati agli abbonati non consultati. Usata come mappa per le lezioni 52-55; fatti verificati su RFC, ISO, AgID, Microsoft.
 
 - [ConcorsiPubblici.com — Quiz Diritto Amministrativo](https://www.concorsipubblici.com/quiz/categorie/diritto-amministrativo-1757)
   Quiz gratuiti verificati su normativa. Usare per: retrieval practice sul formato a risposta multipla dopo ogni lezione zona 🔴/🟡.

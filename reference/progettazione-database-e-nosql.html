@@ -1,0 +1,24 @@
+<title>Reference — Progettazione database e NoSQL</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+<p class="eyebrow">Scheda di riferimento · Database · Materia 8</p>
+<h1>Fasi di progettazione, E-R, famiglie NoSQL</h1>
+<p class="subtitle">Stampabile — tienila a portata per il ripasso rapido prima dei quiz a tempo.</p>
+
+<p><strong>Fasi</strong>: requisiti → concettuale (<strong>schema E-R</strong>, indipendente) → logica (tabelle, dipende dal modello) → fisica (indici, dipende dal DBMS).</p>
+<p><strong>E-R</strong>: rettangolo entità · rombo relazione · ovale attributo · identificatore → chiave primaria. <strong>1:N</strong> → chiave esterna sul lato N · <strong>N:M</strong> → tabella di collegamento.</p>
+<p><strong>NoSQL</strong> ("Not only SQL"): chiave-valore (Redis) · documentale (MongoDB) · a colonne (Cassandra, HBase) · a grafo (Neo4j). Schema flessibile, scalabilità orizzontale, spesso BASE / consistenza eventuale.</p>
+<p><strong>CAP</strong>: con partizione di rete si sceglie tra consistenza e disponibilità.</p>
+
+<div class="callout">
+  <p class="callout-title">Trappola quiz</p>
+  <p>E-R = concettuale, non logico. CAP ≠ ACID.</p>
+</div>
+
+<h2>Fonti</h2>
+<ul>
+  <li>Atzeni et al., <em>Basi di dati</em>, McGraw-Hill</li>
+  <li><a href="https://it.wikipedia.org/wiki/NoSQL" target="_blank" rel="noopener">NoSQL — Wikipedia IT</a></li>
+</ul>
+
+<p class="source-note">Da: <a href="../lessons/0054-progettazione-database-e-nosql.html">Lezione 54 — Progettazione dei database e NoSQL</a></p>

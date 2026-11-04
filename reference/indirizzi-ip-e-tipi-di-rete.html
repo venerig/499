@@ -1,0 +1,32 @@
+<title>Reference — Indirizzi IP e tipi di rete</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+<p class="eyebrow">Scheda di riferimento · Reti · Materia 11</p>
+<h1>IPv4, subnetting, record DNS, PAN/LAN/MAN/WAN</h1>
+<p class="subtitle">Stampabile — tienila a portata per il ripasso rapido prima dei quiz a tempo.</p>
+
+<p><strong>IPv4</strong> 32 bit, 4 ottetti · <strong>IPv6</strong> 128 bit, esadecimale · <strong>MAC</strong> 48 bit. Classi: A 1-126 /8 · B 128-191 /16 · C 192-223 /24 · D multicast · E sperimentale. 127.0.0.1 loopback.</p>
+<p><strong>Privati</strong>: 10.0.0.0/8 · 172.16.0.0/12 (fino a 172.31.255.255) · 192.168.0.0/16. <strong>169.254.x.x</strong> = APIPA, DHCP irraggiungibile. <strong>NAT</strong>: privati → pubblico.</p>
+
+<table>
+  <tr><th>Prefisso</th><th>Maschera</th><th>Host</th></tr>
+  <tr><td>/24</td><td>255.255.255.0</td><td>254</td></tr>
+  <tr><td>/25</td><td>255.255.255.128</td><td>126</td></tr>
+  <tr><td>/26</td><td>255.255.255.192</td><td>62</td></tr>
+  <tr><td>/27</td><td>255.255.255.224</td><td>30</td></tr>
+  <tr><td>/30</td><td>255.255.255.252</td><td>2</td></tr>
+</table>
+<p>Host = 2<sup>32−n</sup> − 2. <strong>DNS</strong>: A IPv4 · AAAA IPv6 · CNAME alias · MX posta · NS server autorevoli · PTR inverso.</p>
+<p><strong>Estensione</strong>: PAN (Bluetooth) · LAN (edificio) · MAN (città) · WAN (geografica). Modem modula/demodula · access point Wi-Fi ↔ cablata · VPN remote access / site-to-site.</p>
+
+<div class="callout">
+  <p class="callout-title">Trappola quiz</p>
+  <p>172.32.x.x è pubblico. Host utilizzabili = indirizzi − 2.</p>
+</div>
+
+<h2>Fonti</h2>
+<ul>
+  <li><a href="https://www.rfc-editor.org/rfc/rfc1918" target="_blank" rel="noopener">RFC 1918</a> · <a href="https://www.rfc-editor.org/rfc/rfc3927" target="_blank" rel="noopener">RFC 3927</a> · <a href="https://www.rfc-editor.org/rfc/rfc4632" target="_blank" rel="noopener">RFC 4632</a></li>
+</ul>
+
+<p class="source-note">Da: <a href="../lessons/0053-indirizzi-ip-e-tipi-di-rete.html">Lezione 53 — Indirizzi IP, subnetting e tipi di rete</a></p>

@@ -1,0 +1,178 @@
+<title>Lezione 54 — Progettazione dei database e NoSQL</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+<p class="eyebrow">Materia 8 · Database relazionali · Zona 🟢</p>
+<h1>Dai requisiti allo schema fisico, e quando si sceglie un NoSQL</h1>
+<p class="subtitle">Lezione 54 — integra la lezione 36 (modello relazionale, SQL, ACID) con le fasi di progettazione, il modello E-R e le famiglie NoSQL, temi della playlist EmmeCiLab "Concorso informatici INPS 2026".</p>
+
+<p class="progress">Percorso: <a href="../MISSION.md">MISSION</a> → Zona 🟢 → Database relazionali (materia 8) → Lezione 2/… · Punteggio quiz: <span id="lesson-quiz-score">0 / 0</span></p>
+
+<h2>Le fasi della progettazione</h2>
+<table>
+  <tr><th>Fase</th><th>Prodotto</th><th>Dipende da</th></tr>
+  <tr><td>1. Analisi dei requisiti</td><td>Specifiche: quali dati, quali operazioni, quali vincoli</td><td>Il dominio applicativo</td></tr>
+  <tr><td>2. Progettazione concettuale</td><td><strong>Schema E-R</strong></td><td>Nessun DBMS né modello dei dati: è indipendente</td></tr>
+  <tr><td>3. Progettazione logica</td><td>Schema logico (es. tabelle relazionali), con ristrutturazione e verifica della normalizzazione</td><td>Il modello dei dati (relazionale), non il prodotto</td></tr>
+  <tr><td>4. Progettazione fisica</td><td>Schema fisico: indici, file, partizionamento</td><td>Il DBMS specifico (Oracle, PostgreSQL, …)</td></tr>
+</table>
+
+<h2>Il modello Entità-Relazione</h2>
+<ul>
+  <li><strong>Entità</strong> (rettangolo): classe di oggetti, es. Dipendente, Ufficio.</li>
+  <li><strong>Relazione o associazione</strong> (rombo): legame tra entità, es. Lavora_in.</li>
+  <li><strong>Attributo</strong> (ovale o pallino): proprietà, es. codice fiscale.</li>
+  <li><strong>Identificatore</strong>: attributo/i che distinguono ogni istanza; diventa la chiave primaria.</li>
+  <li><strong>Cardinalità</strong>: 1:1, 1:N, N:M.</li>
+</ul>
+<p>Traduzione nel relazionale: una relazione <strong>1:N</strong> si risolve con una <strong>chiave esterna sul lato N</strong> (ogni Dipendente ha l'id del suo Ufficio). Una relazione <strong>N:M</strong> richiede una <strong>tabella di collegamento</strong> con le chiavi esterne di entrambe le entità (Studente – Esame – Corso).</p>
+
+<h2>NoSQL: le quattro famiglie</h2>
+<table>
+  <tr><th>Famiglia</th><th>Come memorizza</th><th>Esempi</th></tr>
+  <tr><td>Chiave-valore</td><td>Coppie chiave → valore, accesso velocissimo</td><td>Redis, DynamoDB</td></tr>
+  <tr><td>Documentale</td><td>Documenti JSON/BSON con struttura flessibile</td><td>MongoDB, CouchDB</td></tr>
+  <tr><td>A colonne (wide-column)</td><td>Righe con famiglie di colonne variabili, enormi volumi</td><td>Cassandra, HBase</td></tr>
+  <tr><td>A grafo</td><td>Nodi e archi, per relazioni complesse (reti sociali, frodi)</td><td>Neo4j</td></tr>
+</table>
+<p>Tratti comuni: <strong>schema flessibile</strong>, <strong>scalabilità orizzontale</strong> (si aggiungono server invece di potenziarne uno), spesso consistenza <em>eventuale</em> (approccio BASE) invece delle transazioni ACID rigide, anche se alcuni prodotti, come MongoDB, oggi supportano transazioni ACID.</p>
+<p><strong>Teorema CAP</strong>: un sistema distribuito, in presenza di una partizione di rete (P), deve scegliere tra <strong>consistenza</strong> (C) e <strong>disponibilità</strong> (A); non può garantire tutte e tre le proprietà insieme.</p>
+
+<div class="callout">
+  <p class="callout-title">Il tranello più comune</p>
+  <p>Lo schema E-R è <strong>concettuale</strong>, non logico: le tabelle arrivano nella progettazione logica, gli indici in quella fisica. E NoSQL significa "Not only SQL", non "senza SQL".</p>
+</div>
+
+<h2>Verifica — retrieval practice</h2>
+<p class="source-note">L'ordine delle opzioni cambia a ogni caricamento — rispondi dal ragionamento, non dalla posizione.</p>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">1. Qual è l'ordine corretto delle fasi di progettazione di una base di dati?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Analisi dei requisiti, progettazione concettuale, logica, fisica</button>
+    <button class="quiz-option" data-correct="false">Progettazione logica, concettuale, fisica, analisi dei requisiti</button>
+    <button class="quiz-option" data-correct="false">Progettazione fisica, logica, concettuale, analisi dei requisiti</button>
+    <button class="quiz-option" data-correct="false">Analisi dei requisiti, progettazione logica, concettuale, fisica</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Si va dall'astratto al concreto: requisiti → E-R → tabelle → indici e file.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">2. In quale fase si produce lo schema Entità-Relazione?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Progettazione concettuale</button>
+    <button class="quiz-option" data-correct="false">Progettazione logica</button>
+    <button class="quiz-option" data-correct="false">Progettazione fisica</button>
+    <button class="quiz-option" data-correct="false">Implementazione SQL</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Lo schema E-R è concettuale: indipendente dal modello dei dati e dal DBMS.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">3. Quale fase della progettazione dipende dal DBMS specifico scelto, ad esempio per definire gli indici?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Progettazione fisica</button>
+    <button class="quiz-option" data-correct="false">Progettazione concettuale</button>
+    <button class="quiz-option" data-correct="false">Analisi dei requisiti</button>
+    <button class="quiz-option" data-correct="false">Progettazione logica</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>La logica dipende dal modello (relazionale); la fisica dal prodotto concreto (indici, file, partizioni).</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">4. In un diagramma E-R, cosa rappresenta il rombo?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Una relazione (associazione) tra entità</button>
+    <button class="quiz-option" data-correct="false">Un'entità</button>
+    <button class="quiz-option" data-correct="false">Un attributo</button>
+    <button class="quiz-option" data-correct="false">Una chiave esterna</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Rettangolo = entità, rombo = relazione, ovale/pallino = attributo.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">5. Come si traduce nel modello relazionale una relazione N:M tra Studente e Corso?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Con una tabella di collegamento che contiene le chiavi esterne di entrambe</button>
+    <button class="quiz-option" data-correct="false">Aggiungendo una chiave esterna solo nella tabella Studente</button>
+    <button class="quiz-option" data-correct="false">Unendo Studente e Corso in un'unica tabella</button>
+    <button class="quiz-option" data-correct="false">Non si può rappresentare nel modello relazionale</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>N:M → tabella ponte (es. Iscrizione con id_studente e id_corso). Una sola chiave esterna basta solo per 1:N.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">6. MongoDB è un database NoSQL di tipo:</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Documentale</button>
+    <button class="quiz-option" data-correct="false">A grafo</button>
+    <button class="quiz-option" data-correct="false">Chiave-valore puro</button>
+    <button class="quiz-option" data-correct="false">Relazionale</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>MongoDB memorizza documenti BSON (JSON binario) con struttura flessibile.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">7. Per analizzare relazioni complesse tra persone, come in un social network, quale famiglia NoSQL è la più adatta?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">A grafo, es. Neo4j</button>
+    <button class="quiz-option" data-correct="false">Chiave-valore, es. Redis</button>
+    <button class="quiz-option" data-correct="false">A colonne, es. Cassandra</button>
+    <button class="quiz-option" data-correct="false">Documentale, es. CouchDB</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>I database a grafo modellano nodi e archi e attraversano le relazioni in modo efficiente.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">8. Una relazione 1:N tra Ufficio (1) e Dipendente (N) si traduce con una chiave esterna:</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Nella tabella Dipendente, che riferisce l'Ufficio</button>
+    <button class="quiz-option" data-correct="false">Nella tabella Ufficio, che elenca tutti i dipendenti</button>
+    <button class="quiz-option" data-correct="false">In entrambe le tabelle</button>
+    <button class="quiz-option" data-correct="false">In una tabella di collegamento obbligatoria</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>La chiave esterna va sul lato N: ogni dipendente ha un solo ufficio, quindi un solo valore.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">9. Cosa afferma il teorema CAP sui sistemi distribuiti?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">In presenza di una partizione di rete bisogna scegliere tra consistenza e disponibilità</button>
+    <button class="quiz-option" data-correct="false">Un sistema distribuito garantisce sempre consistenza, disponibilità e tolleranza alle partizioni</button>
+    <button class="quiz-option" data-correct="false">Ogni transazione deve essere atomica, consistente, isolata e durevole</button>
+    <button class="quiz-option" data-correct="false">I database NoSQL non possono essere distribuiti</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>CAP = Consistency, Availability, Partition tolerance: non tutte e tre insieme. ACID è un'altra cosa (proprietà delle transazioni).</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">10. Che tipo di scalabilità è tipica dei database NoSQL?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Orizzontale: si aggiungono altri server al cluster</button>
+    <button class="quiz-option" data-correct="false">Solo verticale: si potenzia un unico server</button>
+    <button class="quiz-option" data-correct="false">Nessuna: funzionano solo su un server</button>
+    <button class="quiz-option" data-correct="false">Diagonale: si duplicano le tabelle</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>NoSQL nasce per distribuire dati e carico su molti nodi (scale-out).</div>
+</div>
+
+<h2>Fonte primaria consigliata</h2>
+<p>Manuale di riferimento: Atzeni, Ceri, Fraternali, Paraboschi, Torlone, <em>Basi di dati</em> (McGraw-Hill), parte sulla progettazione. Ripasso: <a href="https://it.wikipedia.org/wiki/Progettazione_di_basi_di_dati" target="_blank" rel="noopener">Progettazione di basi di dati — Wikipedia IT</a>, <a href="https://it.wikipedia.org/wiki/NoSQL" target="_blank" rel="noopener">NoSQL — Wikipedia IT</a>.</p>
+
+<p class="source-note">Materiale di riferimento compresso: <a href="../reference/progettazione-database-e-nosql.html">scheda "Progettazione database e NoSQL"</a>.</p>
+
+<nav class="lesson-nav">
+  <span>← <a href="0053-indirizzi-ip-e-tipi-di-rete.html">Lezione 53 — Indirizzi IP, subnetting e tipi di rete</a></span>
+  <span>Prossima: <a href="0055-algoritmi-strutture-dati-qualita-software.html">Lezione 55 — Algoritmi, strutture dati e qualità del software</a> →</span>
+</nav>
+
+<script src="../assets/quiz.js"></script>

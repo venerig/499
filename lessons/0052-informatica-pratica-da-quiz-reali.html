@@ -1,0 +1,199 @@
+<title>Lezione 52 — Informatica pratica da quiz reali</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+<p class="eyebrow">Materia 1 · Informatica di base · Zona 🟢</p>
+<h1>Estensioni, scorciatoie, malware e concetti base: il livello dei quiz veri</h1>
+<p class="subtitle">Lezione 52 — le domande d'informatica dei concorsi PA recenti (es. Agenzia delle Dogane 2025, analizzate nella playlist EmmeCiLab "Concorso informatici INPS 2026") sono spesso pratiche e di base. Qui i temi ricorrenti, verificati.</p>
+
+<p class="progress">Percorso: <a href="../MISSION.md">MISSION</a> → Zona 🟢 → Informatica di base (materia 1) → Lezione 2/… · Punteggio quiz: <span id="lesson-quiz-score">0 / 0</span></p>
+
+<h2>Estensioni dei file da riconoscere</h2>
+<table>
+  <tr><th>Estensione</th><th>Cos'è</th></tr>
+  <tr><td>.exe</td><td>Programma eseguibile Windows</td></tr>
+  <tr><td>.jpg / .jpeg</td><td>Immagine compressa con perdita (foto)</td></tr>
+  <tr><td>.png</td><td>Immagine compressa senza perdita, supporta la trasparenza</td></tr>
+  <tr><td>.gif</td><td>Immagine con al massimo 256 colori, supporta l'animazione</td></tr>
+  <tr><td>.psd</td><td>Progetto Adobe Photoshop (con livelli)</td></tr>
+  <tr><td>.pps / .ppsx</td><td>Presentazione PowerPoint che si apre direttamente in modalità presentazione</td></tr>
+  <tr><td>.pst</td><td>File di dati di Outlook (archivio di posta, contatti, calendario)</td></tr>
+  <tr><td>.csv</td><td>Testo con valori separati da virgola o punto e virgola, apribile con un foglio di calcolo</td></tr>
+  <tr><td>.zip / .rar / .7z</td><td>Archivi compressi</td></tr>
+  <tr><td>.p7m</td><td>Busta firmata digitalmente in formato <strong>CAdES</strong> (contiene il file originale, es. documento.pdf.p7m)</td></tr>
+  <tr><td>.pdf firmato</td><td>Firma <strong>PAdES</strong>: la firma è dentro il PDF, che resta .pdf e si apre con un normale lettore</td></tr>
+</table>
+<p>Il terzo formato di firma è <strong>XAdES</strong>, per i file XML (es. la fattura elettronica). Per CAdES serve un software di verifica che "apra la busta".</p>
+
+<h2>Scorciatoie di Windows</h2>
+<table>
+  <tr><th>Tasti</th><th>Azione</th></tr>
+  <tr><td>Ctrl+C / Ctrl+X / Ctrl+V</td><td>Copia / taglia / incolla</td></tr>
+  <tr><td>Ctrl+Z / Ctrl+Y</td><td>Annulla / ripeti</td></tr>
+  <tr><td>Ctrl+A</td><td>Seleziona tutto</td></tr>
+  <tr><td>Alt+Tab</td><td>Passa da una finestra aperta all'altra</td></tr>
+  <tr><td>Win+L</td><td>Blocca il computer</td></tr>
+  <tr><td>Win+E / Win+D</td><td>Apre Esplora file / mostra il desktop</td></tr>
+  <tr><td>Ctrl+Alt+Canc</td><td>Schermata di sicurezza: blocca, cambia utente, esci, Gestione attività</td></tr>
+  <tr><td>Ctrl+Shift+Esc</td><td>Apre direttamente Gestione attività</td></tr>
+  <tr><td>F2</td><td>Rinomina il file selezionato</td></tr>
+</table>
+
+<h2>Altri malware e attacchi (oltre alla lezione 42)</h2>
+<table>
+  <tr><th>Nome</th><th>Tratto distintivo</th></tr>
+  <tr><td>Spyware</td><td>Raccoglie di nascosto informazioni sull'utente e le invia a terzi</td></tr>
+  <tr><td>Keylogger</td><td>Registra i tasti premuti, quindi anche password e PIN</td></tr>
+  <tr><td>Adware</td><td>Mostra pubblicità indesiderata</td></tr>
+  <tr><td>Rootkit</td><td>Si nasconde nel sistema con privilegi elevati per non farsi rilevare</td></tr>
+  <tr><td>Spoofing</td><td>Falsifica un'identità: mittente email, indirizzo IP, numero di telefono</td></tr>
+  <tr><td>Spam</td><td>Messaggi non richiesti inviati in massa</td></tr>
+</table>
+<p><strong>Autenticazione</strong> = verificare <em>chi sei</em> (password, SPID, impronta). <strong>Autorizzazione</strong> = stabilire <em>cosa puoi fare</em> una volta riconosciuto (permessi, ruoli). L'autenticazione viene prima.</p>
+
+<h2>Concetti di base che i quiz amano</h2>
+<ul>
+  <li><strong>Dato</strong>: elemento grezzo (es. "38,5"). <strong>Informazione</strong>: dato interpretato in un contesto ("febbre a 38,5"). <strong>Conoscenza</strong>: informazioni organizzate che servono a decidere.</li>
+  <li><strong>Sistema informativo</strong>: persone, procedure e risorse con cui un'organizzazione gestisce le proprie informazioni, anche su carta. <strong>Sistema informatico</strong>: la sua parte automatizzata (hardware, software, reti). Il secondo è un sottoinsieme del primo.</li>
+  <li><strong>Multipli del byte</strong>: nei quiz 1 KB = 1024 byte, 1 MB = 1024 KB, poi GB e TB. Formalmente il Sistema Internazionale usa kB = 1000 byte e la IEC KiB = 1024 byte; se tra le opzioni c'è solo 1024, è quella.</li>
+  <li><strong>Posta elettronica</strong>: A = destinatari principali; CC (copia conoscenza) = in copia, visibili a tutti; <strong>CCN</strong> (copia conoscenza nascosta) = ricevono il messaggio ma gli altri destinatari non li vedono.</li>
+</ul>
+
+<div class="callout">
+  <p class="callout-title">Il tranello più comune</p>
+  <p>.p7m non è "un PDF protetto": è una busta CAdES che contiene il file originale. La firma PAdES invece lascia il file in .pdf. E CCN non nasconde il messaggio: nasconde solo l'indirizzo del destinatario agli altri.</p>
+</div>
+
+<h2>Verifica — retrieval practice</h2>
+<p class="source-note">L'ordine delle opzioni cambia a ogni caricamento — rispondi dal ragionamento, non dalla posizione.</p>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">1. Un documento firmato digitalmente ha estensione .p7m. Quale formato di firma è stato usato?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">CAdES</button>
+    <button class="quiz-option" data-correct="false">PAdES</button>
+    <button class="quiz-option" data-correct="false">XAdES</button>
+    <button class="quiz-option" data-correct="false">Firma elettronica semplice</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>.p7m è la busta CAdES che racchiude il file originale (es. contratto.pdf.p7m). PAdES è dentro il PDF, XAdES è per l'XML.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">2. Che cosa contiene un file con estensione .pst?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">I dati di Outlook: posta, contatti e calendario</button>
+    <button class="quiz-option" data-correct="false">Un progetto di Photoshop</button>
+    <button class="quiz-option" data-correct="false">Una presentazione PowerPoint in modalità presentazione</button>
+    <button class="quiz-option" data-correct="false">Un archivio compresso</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>.pst è il file di dati di Outlook. Photoshop usa .psd, la presentazione diretta PowerPoint .pps/.ppsx.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">3. In Windows, cosa fa la combinazione Ctrl+X su un file selezionato?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Lo taglia, per spostarlo dove si incolla con Ctrl+V</button>
+    <button class="quiz-option" data-correct="false">Lo copia lasciando l'originale al suo posto</button>
+    <button class="quiz-option" data-correct="false">Lo elimina definitivamente senza passare dal cestino</button>
+    <button class="quiz-option" data-correct="false">Chiude la finestra attiva</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Ctrl+X taglia, Ctrl+C copia, Ctrl+V incolla. L'eliminazione definitiva è Maiusc+Canc.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">4. Inviando un'email, cosa succede ai destinatari inseriti nel campo CCN?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Ricevono il messaggio, ma gli altri destinatari non vedono il loro indirizzo</button>
+    <button class="quiz-option" data-correct="false">Ricevono solo l'oggetto del messaggio</button>
+    <button class="quiz-option" data-correct="false">Ricevono il messaggio cifrato</button>
+    <button class="quiz-option" data-correct="false">Ricevono una copia solo se il destinatario principale la inoltra</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>CCN = copia conoscenza nascosta: utile per invii a molte persone senza esporre gli indirizzi.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">5. Che cos'è un keylogger?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Un software o dispositivo che registra i tasti premuti, comprese le password</button>
+    <button class="quiz-option" data-correct="false">Un programma che mostra pubblicità indesiderata</button>
+    <button class="quiz-option" data-correct="false">Un registro di sistema che annota gli accessi autorizzati</button>
+    <button class="quiz-option" data-correct="false">Un malware che cifra i dati e chiede un riscatto</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Il keylogger è uno strumento di spionaggio; la pubblicità indesiderata è adware, il riscatto è ransomware.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">6. Qual è la differenza tra autenticazione e autorizzazione?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">L'autenticazione verifica chi è l'utente, l'autorizzazione stabilisce cosa può fare</button>
+    <button class="quiz-option" data-correct="false">Sono sinonimi</button>
+    <button class="quiz-option" data-correct="false">L'autorizzazione verifica la password, l'autenticazione assegna i permessi</button>
+    <button class="quiz-option" data-correct="false">L'autenticazione riguarda solo i dispositivi, l'autorizzazione solo le persone</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Prima si prova l'identità (autenticazione), poi si applicano permessi e ruoli (autorizzazione).</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">7. Che rapporto c'è tra sistema informativo e sistema informatico?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Il sistema informatico è la parte automatizzata del sistema informativo</button>
+    <button class="quiz-option" data-correct="false">Sono la stessa cosa</button>
+    <button class="quiz-option" data-correct="false">Il sistema informativo è una parte del sistema informatico</button>
+    <button class="quiz-option" data-correct="false">Il sistema informativo riguarda solo l'hardware</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Il sistema informativo comprende anche persone, procedure e documenti cartacei; quello informatico è hardware, software e reti che lo automatizzano.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">8. Quale affermazione distingue correttamente dato e informazione?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Il dato è un elemento grezzo; diventa informazione quando è interpretato in un contesto</button>
+    <button class="quiz-option" data-correct="false">Il dato è sempre numerico, l'informazione sempre testuale</button>
+    <button class="quiz-option" data-correct="false">L'informazione è un dato salvato su disco</button>
+    <button class="quiz-option" data-correct="false">Dato e informazione sono sinonimi</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>"38,5" è un dato; "temperatura corporea 38,5 °C" è un'informazione; sapere che serve un medico è conoscenza.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">9. Un PDF firmato in formato PAdES:</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Mantiene l'estensione .pdf e si apre con un normale lettore PDF</button>
+    <button class="quiz-option" data-correct="false">Assume l'estensione .p7m</button>
+    <button class="quiz-option" data-correct="false">Diventa un file XML</button>
+    <button class="quiz-option" data-correct="false">Non può più essere visualizzato senza la smart card del firmatario</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Con PAdES la firma è incorporata nel PDF; con CAdES il file finisce in una busta .p7m.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">10. Quale caratteristica ha il formato immagine GIF?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Supporta al massimo 256 colori e permette immagini animate</button>
+    <button class="quiz-option" data-correct="false">È il formato nativo di Photoshop con i livelli</button>
+    <button class="quiz-option" data-correct="false">È un formato vettoriale scalabile senza perdita</button>
+    <button class="quiz-option" data-correct="false">È il formato con compressione con perdita tipico delle foto</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>GIF: palette da 256 colori e animazione. Photoshop è .psd, il vettoriale è es. .svg, le foto compresse con perdita sono .jpg.</div>
+</div>
+
+<h2>Fonte primaria consigliata</h2>
+<p>Formati di firma: <a href="https://www.agid.gov.it/it/piattaforme/firma-elettronica-qualificata" target="_blank" rel="noopener">AgID — Firma elettronica qualificata</a>. Scorciatoie: <a href="https://support.microsoft.com/it-it/windows/scelte-rapide-da-tastiera-in-windows-dcc61a57-8ff0-cffe-9796-cb9706c75eec" target="_blank" rel="noopener">Microsoft — Scelte rapide da tastiera in Windows</a>. Malware: <a href="https://www.acn.gov.it/" target="_blank" rel="noopener">ACN</a> e lezione 42.</p>
+
+<p class="source-note">Materiale di riferimento compresso: <a href="../reference/informatica-pratica-da-quiz-reali.html">scheda "Informatica pratica da quiz reali"</a>.</p>
+
+<nav class="lesson-nav">
+  <span>← <a href="0051-legge-ia-principi-tutele-reati.html">Lezione 51 — Legge IA: principi, tutele e reati</a></span>
+  <span>Prossima: <a href="0053-indirizzi-ip-e-tipi-di-rete.html">Lezione 53 — Indirizzi IP, subnetting e tipi di rete</a> →</span>
+</nav>
+
+<script src="../assets/quiz.js"></script>

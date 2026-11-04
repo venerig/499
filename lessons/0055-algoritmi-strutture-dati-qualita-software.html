@@ -1,0 +1,186 @@
+<title>Lezione 55 — Algoritmi, strutture dati e qualità del software</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+<p class="eyebrow">Materia 2 · Linguaggi di programmazione · Zona 🟡</p>
+<h1>Pile, code, complessità O-grande, ordinamento e qualità del software</h1>
+<p class="subtitle">Lezione 55 — strutture dati, complessità computazionale, algoritmi di ricerca e ordinamento, modello di qualità ISO/IEC 25010, temi della playlist EmmeCiLab "Concorso informatici INPS 2026".</p>
+
+<p class="progress">Percorso: <a href="../MISSION.md">MISSION</a> → Zona 🟡 → Linguaggi di programmazione (materia 2) → Lezione 4/… · Punteggio quiz: <span id="lesson-quiz-score">0 / 0</span></p>
+
+<h2>Strutture dati</h2>
+<table>
+  <tr><th>Struttura</th><th>Caratteristica</th></tr>
+  <tr><td>Array</td><td>Elementi contigui, accesso per indice in tempo costante</td></tr>
+  <tr><td>Lista concatenata</td><td>Nodi collegati da puntatori; inserimenti facili, accesso sequenziale</td></tr>
+  <tr><td><strong>Pila (stack)</strong></td><td><strong>LIFO</strong>: l'ultimo inserito è il primo estratto (push/pop). Es. annulla, chiamate di funzione</td></tr>
+  <tr><td><strong>Coda (queue)</strong></td><td><strong>FIFO</strong>: il primo inserito è il primo estratto. Es. coda di stampa</td></tr>
+  <tr><td>Albero</td><td>Gerarchia: radice, nodi, foglie. Nell'albero binario di ricerca a sinistra i valori minori, a destra i maggiori</td></tr>
+  <tr><td>Grafo</td><td>Nodi (vertici) collegati da archi, orientati o no. Es. reti stradali, social</td></tr>
+  <tr><td>Tabella hash</td><td>Una funzione hash mappa la chiave in una posizione: accesso medio in tempo costante</td></tr>
+</table>
+
+<h2>Complessità computazionale (notazione O-grande)</h2>
+<p>La notazione O descrive come crescono tempo o memoria al crescere dell'input <em>n</em>, di solito nel caso peggiore.</p>
+<table>
+  <tr><th>Classe</th><th>Nome</th><th>Esempio</th></tr>
+  <tr><td>O(1)</td><td>Costante</td><td>Accesso a un elemento di un array per indice</td></tr>
+  <tr><td>O(log n)</td><td>Logaritmica</td><td><strong>Ricerca binaria</strong> (solo su dati <strong>ordinati</strong>)</td></tr>
+  <tr><td>O(n)</td><td>Lineare</td><td>Ricerca sequenziale</td></tr>
+  <tr><td>O(n log n)</td><td>Quasi lineare</td><td>Merge sort, heap sort</td></tr>
+  <tr><td>O(n²)</td><td>Quadratica</td><td>Bubble sort, selection sort, insertion sort</td></tr>
+  <tr><td>O(2<sup>n</sup>)</td><td>Esponenziale</td><td>Provare tutti i sottoinsiemi</td></tr>
+</table>
+
+<h2>Algoritmi di ordinamento</h2>
+<table>
+  <tr><th>Algoritmo</th><th>Idea</th><th>Medio</th><th>Peggiore</th></tr>
+  <tr><td>Bubble sort</td><td>Scambia elementi adiacenti fuori ordine, ripetendo le passate</td><td>O(n²)</td><td>O(n²)</td></tr>
+  <tr><td>Selection sort</td><td>Seleziona il minimo e lo mette in testa</td><td>O(n²)</td><td>O(n²)</td></tr>
+  <tr><td>Insertion sort</td><td>Inserisce ogni elemento al suo posto nella parte già ordinata; O(n) se l'input è già ordinato</td><td>O(n²)</td><td>O(n²)</td></tr>
+  <tr><td>Merge sort</td><td>Divide et impera: divide a metà, ordina, fonde</td><td>O(n log n)</td><td>O(n log n)</td></tr>
+  <tr><td>Quicksort</td><td>Divide et impera attorno a un pivot</td><td>O(n log n)</td><td><strong>O(n²)</strong> con pivot sfortunati</td></tr>
+</table>
+
+<h2>Qualità del software</h2>
+<p>I manuali classici citano <strong>correttezza</strong> (fa ciò che dicono le specifiche), <strong>affidabilità</strong>, <strong>robustezza</strong> (si comporta in modo ragionevole anche con input errati o situazioni impreviste), <strong>efficienza</strong>, <strong>usabilità</strong>, <strong>manutenibilità</strong>, <strong>portabilità</strong> e scalabilità.</p>
+<p>Lo standard di riferimento è <strong>ISO/IEC 25010</strong> (famiglia SQuaRE). La revisione <strong>2023</strong> ha 9 caratteristiche di qualità del prodotto: idoneità funzionale, efficienza prestazionale, compatibilità, capacità di interazione (ex usabilità), affidabilità, sicurezza, manutenibilità, flessibilità (ex portabilità) e <em>safety</em> (nuova). L'edizione 2011 ne aveva 8.</p>
+
+<div class="callout">
+  <p class="callout-title">Il tranello più comune</p>
+  <p>La ricerca binaria è O(log n) <strong>solo se i dati sono ordinati</strong>. E il quicksort è veloce in media ma nel caso peggiore è quadratico, mentre il merge sort resta O(n log n) sempre.</p>
+</div>
+
+<h2>Verifica — retrieval practice</h2>
+<p class="source-note">L'ordine delle opzioni cambia a ogni caricamento — rispondi dal ragionamento, non dalla posizione.</p>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">1. Quale politica di accesso segue una pila (stack)?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">LIFO: l'ultimo elemento inserito è il primo estratto</button>
+    <button class="quiz-option" data-correct="false">FIFO: il primo elemento inserito è il primo estratto</button>
+    <button class="quiz-option" data-correct="false">Accesso casuale per indice</button>
+    <button class="quiz-option" data-correct="false">Estrazione per priorità</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Stack = LIFO (push/pop), come una pila di piatti. FIFO è la coda.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">2. Qual è la complessità della ricerca binaria su n elementi?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">O(log n)</button>
+    <button class="quiz-option" data-correct="false">O(n)</button>
+    <button class="quiz-option" data-correct="false">O(n²)</button>
+    <button class="quiz-option" data-correct="false">O(1)</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>A ogni passo dimezza l'intervallo di ricerca: con 1 milione di elementi bastano circa 20 confronti.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">3. Una coda di stampa gestisce i documenti nell'ordine in cui arrivano. Quale struttura dati usa?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Coda (FIFO)</button>
+    <button class="quiz-option" data-correct="false">Pila (LIFO)</button>
+    <button class="quiz-option" data-correct="false">Albero binario di ricerca</button>
+    <button class="quiz-option" data-correct="false">Grafo</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>First In, First Out: il primo documento inviato è il primo stampato.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">4. Qual è la complessità del bubble sort nel caso peggiore?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">O(n²)</button>
+    <button class="quiz-option" data-correct="false">O(n log n)</button>
+    <button class="quiz-option" data-correct="false">O(log n)</button>
+    <button class="quiz-option" data-correct="false">O(n)</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Il bubble sort confronta e scambia coppie adiacenti con passate ripetute: quadratico.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">5. Quale algoritmo di ordinamento mantiene complessità O(n log n) anche nel caso peggiore?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Merge sort</button>
+    <button class="quiz-option" data-correct="false">Quicksort</button>
+    <button class="quiz-option" data-correct="false">Bubble sort</button>
+    <button class="quiz-option" data-correct="false">Insertion sort</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Merge sort divide sempre a metà: O(n log n) in ogni caso. Il quicksort degrada a O(n²) con pivot sfortunati.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">6. Qual è la complessità del quicksort nel caso peggiore?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">O(n²)</button>
+    <button class="quiz-option" data-correct="false">O(n log n)</button>
+    <button class="quiz-option" data-correct="false">O(n)</button>
+    <button class="quiz-option" data-correct="false">O(log n)</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Se il pivot è sempre il minimo o il massimo (es. input già ordinato con pivot sul primo elemento), le partizioni sono sbilanciate: O(n²). In media è O(n log n).</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">7. Quale standard ISO definisce il modello di qualità del prodotto software?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">ISO/IEC 25010</button>
+    <button class="quiz-option" data-correct="false">ISO/IEC 27001</button>
+    <button class="quiz-option" data-correct="false">ISO 9001</button>
+    <button class="quiz-option" data-correct="false">ISO/IEC 20000</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>25010 = qualità del prodotto software (SQuaRE). 27001 = sicurezza delle informazioni, 9001 = qualità dell'organizzazione, 20000 = gestione dei servizi IT.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">8. Un software che continua a comportarsi in modo ragionevole anche con input errati o situazioni impreviste è:</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Robusto</button>
+    <button class="quiz-option" data-correct="false">Portabile</button>
+    <button class="quiz-option" data-correct="false">Corretto</button>
+    <button class="quiz-option" data-correct="false">Scalabile</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Correttezza = rispetta le specifiche; robustezza = regge anche fuori dalle specifiche; portabilità = gira su ambienti diversi.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">9. Da quali elementi è composto un grafo?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Nodi (vertici) collegati da archi</button>
+    <button class="quiz-option" data-correct="false">Solo una radice e delle foglie, senza cicli</button>
+    <button class="quiz-option" data-correct="false">Elementi contigui accessibili per indice</button>
+    <button class="quiz-option" data-correct="false">Coppie chiave-valore indicizzate da una funzione hash</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Il grafo è la struttura più generale: archi orientati o no, cicli ammessi. L'albero è un grafo connesso senza cicli.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">10. Quale condizione è necessaria per applicare la ricerca binaria?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">I dati devono essere ordinati</button>
+    <button class="quiz-option" data-correct="false">I dati devono essere numeri interi</button>
+    <button class="quiz-option" data-correct="false">I dati devono essere in una lista concatenata</button>
+    <button class="quiz-option" data-correct="false">Gli elementi devono essere meno di 1000</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Senza ordinamento non si sa in quale metà proseguire; su dati non ordinati serve la ricerca sequenziale O(n).</div>
+</div>
+
+<h2>Fonte primaria consigliata</h2>
+<p>Manuale di riferimento: Cormen, Leiserson, Rivest, Stein, <em>Introduzione agli algoritmi e strutture dati</em>. Qualità: <a href="https://www.iso.org/standard/78176.html" target="_blank" rel="noopener">ISO/IEC 25010:2023</a> e <a href="https://quality.arc42.org/standards/iso-25010" target="_blank" rel="noopener">arc42 — ISO 25010</a>. Ripasso: <a href="https://it.wikipedia.org/wiki/O-grande" target="_blank" rel="noopener">O-grande — Wikipedia IT</a>.</p>
+
+<p class="source-note">Materiale di riferimento compresso: <a href="../reference/algoritmi-strutture-dati-qualita-software.html">scheda "Algoritmi, strutture dati e qualità"</a>.</p>
+
+<nav class="lesson-nav">
+  <span>← <a href="0054-progettazione-database-e-nosql.html">Lezione 54 — Progettazione dei database e NoSQL</a></span>
+  <span><a href="../index.html">Torna all'indice delle lezioni</a> →</span>
+</nav>
+
+<script src="../assets/quiz.js"></script>
