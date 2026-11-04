@@ -1,0 +1,35 @@
+<title>Reference — Porte, protocolli, incapsulamento</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+<p class="eyebrow">Scheda di riferimento · Reti · Materia 11</p>
+<h1>Porte IANA, porte dei protocolli, PDU e TTL</h1>
+<p class="subtitle">Stampabile — tienila a portata per il ripasso rapido prima dei quiz a tempo.</p>
+
+<p><strong>Fasce IANA</strong>: 0-1023 well-known · 1024-49151 registrate · 49152-65535 dinamiche/private.</p>
+
+<table>
+  <tr><th>Porta</th><th>Protocollo</th></tr>
+  <tr><td>20 / 21</td><td>FTP dati / comandi</td></tr>
+  <tr><td>22</td><td>SSH, SFTP</td></tr>
+  <tr><td>23</td><td>Telnet (in chiaro)</td></tr>
+  <tr><td>25 / 587 / 465</td><td>SMTP tra server / invio client (STARTTLS) / TLS implicito</td></tr>
+  <tr><td>53</td><td>DNS</td></tr>
+  <tr><td>80 / 443</td><td>HTTP / HTTPS</td></tr>
+  <tr><td>110 / 995</td><td>POP3 / POP3S</td></tr>
+  <tr><td>143 / 993</td><td>IMAP / IMAPS</td></tr>
+  <tr><td>3389</td><td>RDP</td></tr>
+</table>
+
+<p><strong>PDU</strong>: dati (L7-5) → segmento/datagramma (L4) → pacchetto (L3, router, IP) → frame (L2, switch, MAC) → bit (L1, hub). <strong>TTL</strong>: −1 a ogni router, a 0 il pacchetto è scartato.</p>
+
+<div class="callout">
+  <p class="callout-title">Trappola quiz</p>
+  <p>IMAP/POP3 ricevono, SMTP invia. Hardening SSH = niente root + chiavi; cambiare porta non è sicurezza. FTP e SFTP non hanno limiti di 4/16 GB (errore del video).</p>
+</div>
+
+<h2>Fonti</h2>
+<ul>
+  <li><a href="https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml" target="_blank" rel="noopener">IANA — Port Number Registry</a></li>
+</ul>
+
+<p class="source-note">Da: <a href="../lessons/0047-porte-protocolli-incapsulamento.html">Lezione 47 — Porte, protocolli e incapsulamento</a></p>

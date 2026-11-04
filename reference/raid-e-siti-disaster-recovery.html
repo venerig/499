@@ -1,0 +1,29 @@
+<title>Reference — RAID e siti di DR</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+<p class="eyebrow">Scheda di riferimento · Backup e recovery · Materia 13</p>
+<h1>Livelli RAID e siti hot / warm / cold</h1>
+<p class="subtitle">Stampabile — tienila a portata per il ripasso rapido prima dei quiz a tempo.</p>
+
+<table>
+  <tr><th>RAID</th><th>Tecnica</th><th>Min dischi</th><th>Capacità</th><th>Guasti</th></tr>
+  <tr><td>0</td><td>Striping</td><td>2</td><td>100%</td><td>0</td></tr>
+  <tr><td>1</td><td>Mirroring</td><td>2</td><td>50%</td><td>1</td></tr>
+  <tr><td>5</td><td>Parità distribuita</td><td>3</td><td>n − 1</td><td>1</td></tr>
+  <tr><td>6</td><td>Doppia parità</td><td>4</td><td>n − 2</td><td>2</td></tr>
+  <tr><td>10</td><td>Mirror + striping</td><td>4, pari</td><td>50%</td><td>≥1</td></tr>
+</table>
+
+<p><strong>Hot</strong>: tutto pronto e sincronizzato, minuti/ore, costoso · <strong>Warm</strong>: parziale, ore/giorni · <strong>Cold</strong>: solo locali, giorni/settimane, economico.</p>
+
+<div class="callout">
+  <p class="callout-title">Trappola quiz</p>
+  <p>Il RAID non è un backup. 4 × 1 TB: RAID 1/10 = 2 TB, RAID 5 = 3 TB, RAID 6 = 2 TB.</p>
+</div>
+
+<h2>Fonti</h2>
+<ul>
+  <li><a href="https://it.wikipedia.org/wiki/RAID" target="_blank" rel="noopener">RAID — Wikipedia IT</a></li>
+</ul>
+
+<p class="source-note">Da: <a href="../lessons/0048-raid-e-siti-disaster-recovery.html">Lezione 48 — RAID e siti di disaster recovery</a></p>

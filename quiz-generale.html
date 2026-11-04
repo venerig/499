@@ -3,13 +3,13 @@
 
 <p class="eyebrow">Simulazione · Tutte le materie</p>
 <h1>Quiz generale — round completo</h1>
-<p class="subtitle">Tutte le 460 domande di verifica delle 46 lezioni, in un unico round con ordine casuale a ogni caricamento della pagina. Utile per un ripasso interleaved tra materie diverse, non solo all'interno della stessa lezione.</p>
+<p class="subtitle">Tutte le 510 domande di verifica delle 51 lezioni, in un unico round con ordine casuale a ogni caricamento della pagina. Utile per un ripasso interleaved tra materie diverse, non solo all'interno della stessa lezione.</p>
 
 <p class="progress">Torna all'<a href="index.html">indice delle lezioni</a> · Punteggio: <span id="lesson-quiz-score">0 / 0</span></p>
 
 <div class="callout">
   <p class="callout-title">Come usarlo</p>
-  <p>Le domande sono mescolate a ogni ricaricamento della pagina — anche l'ordine delle opzioni all'interno di ciascuna domanda cambia, come nelle singole lezioni. Il punteggio qui sopra si aggiorna in tempo reale man mano che rispondi, ed è visibile in ogni momento senza dover finire tutte le 460 domande in un colpo solo.</p>
+  <p>Le domande sono mescolate a ogni ricaricamento della pagina — anche l'ordine delle opzioni all'interno di ciascuna domanda cambia, come nelle singole lezioni. Il punteggio qui sopra si aggiorna in tempo reale man mano che rispondi, ed è visibile in ogni momento senza dover finire tutte le 510 domande in un colpo solo.</p>
 </div>
 
 <div id="quiz-round">
@@ -6491,6 +6491,706 @@ Cloud backup has become a standard part of business continuity planning. Unlike 
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>Art. 4: fornitori e deployer assicurano un livello sufficiente di alfabetizzazione in materia di IA del proprio personale.</div>
+</div>
+</div>
+
+<div class="quiz-unit">
+<div class="quiz" data-quiz>
+  <p class="quiz-q">1. In quale fascia IANA rientrano le porte da 0 a 1023?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Porte well-known (di sistema)</button>
+    <button class="quiz-option" data-correct="false">Porte registrate</button>
+    <button class="quiz-option" data-correct="false">Porte dinamiche o private</button>
+    <button class="quiz-option" data-correct="false">Porte riservate ai client</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>IANA: 0-1023 well-known, 1024-49151 registrate, 49152-65535 dinamiche/private.</div>
+</div>
+</div>
+
+<div class="quiz-unit">
+<div class="quiz" data-quiz>
+  <p class="quiz-q">2. Quale porta usa IMAP protetto da TLS (IMAPS)?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">993</button>
+    <button class="quiz-option" data-correct="false">143</button>
+    <button class="quiz-option" data-correct="false">995</button>
+    <button class="quiz-option" data-correct="false">465</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>IMAP in chiaro 143, IMAPS 993; POP3S è 995, SMTP con TLS implicito 465.</div>
+</div>
+</div>
+
+<div class="quiz-unit">
+<div class="quiz" data-quiz>
+  <p class="quiz-q">3. Quale protocollo serve a inviare la posta elettronica?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">SMTP</button>
+    <button class="quiz-option" data-correct="false">IMAP</button>
+    <button class="quiz-option" data-correct="false">POP3</button>
+    <button class="quiz-option" data-correct="false">SNMP</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>IMAP e POP3 servono a ricevere/leggere la posta; l'invio avviene con SMTP.</div>
+</div>
+</div>
+
+<div class="quiz-unit">
+<div class="quiz" data-quiz>
+  <p class="quiz-q">4. Quale differenza c'è tra IMAP e POP3?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">IMAP lascia la posta sul server e sincronizza più dispositivi, POP3 la scarica in locale</button>
+    <button class="quiz-option" data-correct="false">POP3 è cifrato, IMAP mai</button>
+    <button class="quiz-option" data-correct="false">IMAP serve solo a inviare, POP3 solo a ricevere</button>
+    <button class="quiz-option" data-correct="false">Sono due nomi dello stesso protocollo</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>IMAP = sincronizzazione lato server; POP3 = scaricamento locale, di norma con rimozione dal server.</div>
+</div>
+</div>
+
+<div class="quiz-unit">
+<div class="quiz" data-quiz>
+  <p class="quiz-q">5. Quali porte usa FTP?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">21 per i comandi e 20 per i dati</button>
+    <button class="quiz-option" data-correct="false">22 per comandi e dati</button>
+    <button class="quiz-option" data-correct="false">80 e 443</button>
+    <button class="quiz-option" data-correct="false">25 e 110</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>FTP usa due canali in chiaro: 21 (controllo) e 20 (dati in modalità attiva).</div>
+</div>
+</div>
+
+<div class="quiz-unit">
+<div class="quiz" data-quiz>
+  <p class="quiz-q">6. Quale protocollo ha sostituito Telnet (porta 23) per l'amministrazione remota sicura?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">SSH, porta 22</button>
+    <button class="quiz-option" data-correct="false">FTP, porta 21</button>
+    <button class="quiz-option" data-correct="false">RDP, porta 3389</button>
+    <button class="quiz-option" data-correct="false">HTTP, porta 80</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>SSH cifra l'intera sessione, a differenza di Telnet che viaggia in chiaro.</div>
+</div>
+</div>
+
+<div class="quiz-unit">
+<div class="quiz" data-quiz>
+  <p class="quiz-q">7. Quale misura di hardening SSH è più efficace?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Disabilitare il login diretto di root e usare l'autenticazione a chiave pubblica</button>
+    <button class="quiz-option" data-correct="false">Spostare SSH sulla porta 2222 lasciando il resto invariato</button>
+    <button class="quiz-option" data-correct="false">Usare password brevi ma frequenti</button>
+    <button class="quiz-option" data-correct="false">Abilitare Telnet come accesso di riserva</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Cambiare porta riduce solo il rumore degli scanner; le misure vere sono niente login root e autenticazione a chiave.</div>
+</div>
+</div>
+
+<div class="quiz-unit">
+<div class="quiz" data-quiz>
+  <p class="quiz-q">8. Come si chiama l'unità di dati del livello 3 (rete)?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Pacchetto</button>
+    <button class="quiz-option" data-correct="false">Frame</button>
+    <button class="quiz-option" data-correct="false">Segmento</button>
+    <button class="quiz-option" data-correct="false">Bit</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Livello 4 segmento/datagramma, livello 3 pacchetto, livello 2 frame, livello 1 bit.</div>
+</div>
+</div>
+
+<div class="quiz-unit">
+<div class="quiz" data-quiz>
+  <p class="quiz-q">9. Cosa succede quando il campo TTL di un pacchetto IP arriva a zero?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Il router scarta il pacchetto</button>
+    <button class="quiz-option" data-correct="false">Il pacchetto viene consegnato con priorità</button>
+    <button class="quiz-option" data-correct="false">Il TTL si azzera e riparte da 64</button>
+    <button class="quiz-option" data-correct="false">Il pacchetto viene duplicato</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Ogni router decrementa il TTL di 1; a zero il pacchetto è scartato, per evitare che giri all'infinito.</div>
+</div>
+</div>
+
+<div class="quiz-unit">
+<div class="quiz" data-quiz>
+  <p class="quiz-q">10. Qual è l'ordine corretto dei livelli OSI dall'alto verso il basso?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Applicazione, presentazione, sessione, trasporto, rete, collegamento dati, fisico</button>
+    <button class="quiz-option" data-correct="false">Fisico, collegamento dati, rete, trasporto, sessione, presentazione, applicazione</button>
+    <button class="quiz-option" data-correct="false">Applicazione, trasporto, sessione, presentazione, rete, fisico, collegamento dati</button>
+    <button class="quiz-option" data-correct="false">Applicazione, sessione, presentazione, rete, trasporto, collegamento dati, fisico</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Dall'alto: 7 applicazione, 6 presentazione, 5 sessione, 4 trasporto, 3 rete, 2 collegamento dati, 1 fisico.</div>
+</div>
+</div>
+
+<div class="quiz-unit">
+<div class="quiz" data-quiz>
+  <p class="quiz-q">1. Quanti guasti tollera il RAID 0?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Nessuno: basta un disco guasto per perdere tutti i dati</button>
+    <button class="quiz-option" data-correct="false">Uno</button>
+    <button class="quiz-option" data-correct="false">Due</button>
+    <button class="quiz-option" data-correct="false">Metà dei dischi</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Il RAID 0 fa solo striping: prestazioni alte, nessuna ridondanza.</div>
+</div>
+</div>
+
+<div class="quiz-unit">
+<div class="quiz" data-quiz>
+  <p class="quiz-q">2. Con 4 dischi da 1 TB in RAID 5, quanta capacità utile si ottiene?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">3 TB</button>
+    <button class="quiz-option" data-correct="false">2 TB</button>
+    <button class="quiz-option" data-correct="false">4 TB</button>
+    <button class="quiz-option" data-correct="false">1 TB</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>RAID 5: (n − 1) × disco più piccolo = (4 − 1) × 1 TB = 3 TB.</div>
+</div>
+</div>
+
+<div class="quiz-unit">
+<div class="quiz" data-quiz>
+  <p class="quiz-q">3. Quale tecnica usa il RAID 1?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Mirroring: copia identica dei dati su ogni disco</button>
+    <button class="quiz-option" data-correct="false">Striping senza ridondanza</button>
+    <button class="quiz-option" data-correct="false">Parità distribuita</button>
+    <button class="quiz-option" data-correct="false">Doppia parità</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>RAID 1 = mirroring; dimezza lo spazio con 2 dischi e tollera la perdita di un disco.</div>
+</div>
+</div>
+
+<div class="quiz-unit">
+<div class="quiz" data-quiz>
+  <p class="quiz-q">4. Qual è il numero minimo di dischi per un RAID 5?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">3</button>
+    <button class="quiz-option" data-correct="false">2</button>
+    <button class="quiz-option" data-correct="false">4</button>
+    <button class="quiz-option" data-correct="false">5</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>RAID 5 richiede almeno 3 dischi; RAID 6 e RAID 10 almeno 4.</div>
+</div>
+</div>
+
+<div class="quiz-unit">
+<div class="quiz" data-quiz>
+  <p class="quiz-q">5. Perché il RAID non sostituisce il backup?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Protegge solo dal guasto fisico dei dischi, non da cancellazioni, ransomware o disastri</button>
+    <button class="quiz-option" data-correct="false">Perché è più lento del backup</button>
+    <button class="quiz-option" data-correct="false">Perché funziona solo su server Linux</button>
+    <button class="quiz-option" data-correct="false">Perché richiede sempre dischi SSD</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Il RAID replica subito anche cancellazioni e cifrature malevole: non offre copie storiche né protezione fuori sede.</div>
+</div>
+</div>
+
+<div class="quiz-unit">
+<div class="quiz" data-quiz>
+  <p class="quiz-q">6. Quante rotture di disco tollera il RAID 6?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Due</button>
+    <button class="quiz-option" data-correct="false">Una</button>
+    <button class="quiz-option" data-correct="false">Nessuna</button>
+    <button class="quiz-option" data-correct="false">Tre</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>RAID 6 usa doppia parità distribuita e tollera la perdita contemporanea di due dischi.</div>
+</div>
+</div>
+
+<div class="quiz-unit">
+<div class="quiz" data-quiz>
+  <p class="quiz-q">7. Quale caratteristica ha il RAID 10?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Combina mirroring e striping, richiede almeno 4 dischi in numero pari</button>
+    <button class="quiz-option" data-correct="false">Usa la parità distribuita su 3 dischi</button>
+    <button class="quiz-option" data-correct="false">Non offre alcuna ridondanza</button>
+    <button class="quiz-option" data-correct="false">Funziona con un solo disco</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>RAID 10 = coppie in mirror unite in striping: protezione e prestazioni, 50% di capacità.</div>
+</div>
+</div>
+
+<div class="quiz-unit">
+<div class="quiz" data-quiz>
+  <p class="quiz-q">8. Quale sito di disaster recovery ha hardware pronto e dati sincronizzati in modo continuo?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Hot site</button>
+    <button class="quiz-option" data-correct="false">Warm site</button>
+    <button class="quiz-option" data-correct="false">Cold site</button>
+    <button class="quiz-option" data-correct="false">Sito di backup su nastro</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>L'hot site riparte in minuti o poche ore, a costo massimo.</div>
+</div>
+</div>
+
+<div class="quiz-unit">
+<div class="quiz" data-quiz>
+  <p class="quiz-q">9. Cosa offre tipicamente un cold site?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Solo locali e impianti, senza hardware né dati pronti</button>
+    <button class="quiz-option" data-correct="false">Hardware ridondato e sincronizzazione continua</button>
+    <button class="quiz-option" data-correct="false">Infrastruttura parzialmente pronta</button>
+    <button class="quiz-option" data-correct="false">Una copia identica in tempo reale del data center</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Il cold site è il più economico ma richiede giorni o settimane per ripartire.</div>
+</div>
+</div>
+
+<div class="quiz-unit">
+<div class="quiz" data-quiz>
+  <p class="quiz-q">10. Un'organizzazione deve tornare operativa in pochi minuti dopo un disastro. Quale sito è coerente con questo RTO?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Hot site</button>
+    <button class="quiz-option" data-correct="false">Cold site</button>
+    <button class="quiz-option" data-correct="false">Warm site</button>
+    <button class="quiz-option" data-correct="false">Nessun sito, basta il RAID</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Un RTO di minuti richiede infrastruttura già pronta e sincronizzata: hot site.</div>
+</div>
+</div>
+
+<div class="quiz-unit">
+<div class="quiz" data-quiz>
+  <p class="quiz-q">1. Quale atto ha istituito l'Agenzia per la Cybersicurezza Nazionale?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Il D.L. 82/2021</button>
+    <button class="quiz-option" data-correct="false">Il D.Lgs. 65/2018</button>
+    <button class="quiz-option" data-correct="false">Il D.L. 105/2019</button>
+    <button class="quiz-option" data-correct="false">La L. 124/2007</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Il D.L. 82/2021 ha riordinato l'architettura nazionale e istituito l'ACN.</div>
+</div>
+</div>
+
+<div class="quiz-unit">
+<div class="quiz" data-quiz>
+  <p class="quiz-q">2. Da chi è presieduto il Comitato interministeriale per la cybersicurezza (CIC)?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Dal Presidente del Consiglio dei ministri</button>
+    <button class="quiz-option" data-correct="false">Dal direttore dell'ACN</button>
+    <button class="quiz-option" data-correct="false">Dal Ministro dell'interno</button>
+    <button class="quiz-option" data-correct="false">Dal Presidente della Repubblica</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Il CIC è presieduto dal Presidente del Consiglio e svolge funzioni di consulenza, proposta e alta sorveglianza.</div>
+</div>
+</div>
+
+<div class="quiz-unit">
+<div class="quiz" data-quiz>
+  <p class="quiz-q">3. Presso quale organo è costituito il Nucleo per la cybersicurezza?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Presso l'ACN</button>
+    <button class="quiz-option" data-correct="false">Presso il Garante privacy</button>
+    <button class="quiz-option" data-correct="false">Presso l'AgID</button>
+    <button class="quiz-option" data-correct="false">Presso il Ministero della difesa</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Il Nucleo per la cybersicurezza è costituito presso l'ACN per prevenzione e gestione delle crisi cibernetiche.</div>
+</div>
+</div>
+
+<div class="quiz-unit">
+<div class="quiz" data-quiz>
+  <p class="quiz-q">4. Quante misure prevede il Piano di implementazione della Strategia nazionale di cybersicurezza 2022-2026?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">82</button>
+    <button class="quiz-option" data-correct="false">24</button>
+    <button class="quiz-option" data-correct="false">60</button>
+    <button class="quiz-option" data-correct="false">100</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Il Piano di implementazione conta 82 misure da realizzare entro il 2026.</div>
+</div>
+</div>
+
+<div class="quiz-unit">
+<div class="quiz" data-quiz>
+  <p class="quiz-q">5. Con quale atto è stata adottata la Strategia nazionale di cybersicurezza 2022-2026?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">DPCM del 17 maggio 2022</button>
+    <button class="quiz-option" data-correct="false">Legge ordinaria del Parlamento</button>
+    <button class="quiz-option" data-correct="false">Decreto del Presidente della Repubblica</button>
+    <button class="quiz-option" data-correct="false">Determinazione dell'AgID</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>La Strategia e il Piano di implementazione sono stati adottati con DPCM del 17 maggio 2022.</div>
+</div>
+</div>
+
+<div class="quiz-unit">
+<div class="quiz" data-quiz>
+  <p class="quiz-q">6. Quali sono i tre obiettivi della Strategia nazionale di cybersicurezza?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Protezione, risposta, sviluppo</button>
+    <button class="quiz-option" data-correct="false">Prevenzione, repressione, sanzione</button>
+    <button class="quiz-option" data-correct="false">Hardware, software, rete</button>
+    <button class="quiz-option" data-correct="false">Riservatezza, integrità, disponibilità</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>I tre obiettivi sono protezione, risposta e sviluppo, affiancati da fattori abilitanti trasversali.</div>
+</div>
+</div>
+
+<div class="quiz-unit">
+<div class="quiz" data-quiz>
+  <p class="quiz-q">7. Qual è la novità principale del Perimetro di sicurezza nazionale cibernetica (D.L. 105/2019) rispetto al decreto NIS?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Obblighi più stringenti estesi anche alle forniture ICT e alla catena di approvvigionamento</button>
+    <button class="quiz-option" data-correct="false">L'abolizione dell'obbligo di notifica degli incidenti</button>
+    <button class="quiz-option" data-correct="false">L'istituzione del Garante privacy</button>
+    <button class="quiz-option" data-correct="false">La recezione della direttiva NIS2</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Il Perimetro rafforza gli obblighi e li estende al procurement ICT dei soggetti inclusi.</div>
+</div>
+</div>
+
+<div class="quiz-unit">
+<div class="quiz" data-quiz>
+  <p class="quiz-q">8. Qual è la differenza tra SOC e CSIRT?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Il SOC monitora e rileva le minacce, il CSIRT interviene sugli incidenti avvenuti</button>
+    <button class="quiz-option" data-correct="false">Sono due nomi della stessa struttura</button>
+    <button class="quiz-option" data-correct="false">Il SOC sanziona, il CSIRT legifera</button>
+    <button class="quiz-option" data-correct="false">Il CSIRT monitora, il SOC ripristina i sistemi</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>SOC = monitoraggio e detection; CSIRT = risposta agli incidenti, contenimento e ripristino.</div>
+</div>
+</div>
+
+<div class="quiz-unit">
+<div class="quiz" data-quiz>
+  <p class="quiz-q">9. Presso quale organo opera il CSIRT Italia?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">ACN</button>
+    <button class="quiz-option" data-correct="false">AgID</button>
+    <button class="quiz-option" data-correct="false">Polizia postale</button>
+    <button class="quiz-option" data-correct="false">Garante privacy</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Il CSIRT Italia opera presso l'Agenzia per la Cybersicurezza Nazionale.</div>
+</div>
+</div>
+
+<div class="quiz-unit">
+<div class="quiz" data-quiz>
+  <p class="quiz-q">10. Quale atto ha abrogato il D.Lgs. 65/2018 (primo decreto NIS)?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Il D.Lgs. 138/2024 di recepimento della NIS2</button>
+    <button class="quiz-option" data-correct="false">Il D.L. 82/2021</button>
+    <button class="quiz-option" data-correct="false">La L. 90/2024</button>
+    <button class="quiz-option" data-correct="false">Il D.L. 105/2019</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Il D.Lgs. 138/2024 recepisce la NIS2 e abroga il D.Lgs. 65/2018.</div>
+</div>
+</div>
+
+<div class="quiz-unit">
+<div class="quiz" data-quiz>
+  <p class="quiz-q">1. Cosa significa l'acronimo PRINCE2?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">PRojects IN Controlled Environments</button>
+    <button class="quiz-option" data-correct="false">PRoject INtegration and Control Engine</button>
+    <button class="quiz-option" data-correct="false">PRocess IN Corporate Enterprises</button>
+    <button class="quiz-option" data-correct="false">PRiority INformation Control</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>PRINCE2 = PRojects IN Controlled Environments, progetti in ambiente controllato.</div>
+</div>
+</div>
+
+<div class="quiz-unit">
+<div class="quiz" data-quiz>
+  <p class="quiz-q">2. Quanti principi ha PRINCE2?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Sette</button>
+    <button class="quiz-option" data-correct="false">Quattro</button>
+    <button class="quiz-option" data-correct="false">Otto</button>
+    <button class="quiz-option" data-correct="false">Dodici</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Sette principi: giustificazione continua, imparare dall'esperienza, ruoli definiti, gestione per fasi, per eccezioni, focus sui prodotti, adattamento.</div>
+</div>
+</div>
+
+<div class="quiz-unit">
+<div class="quiz" data-quiz>
+  <p class="quiz-q">3. Quali tre interessi rappresenta il Project Board?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Business (Executive), utenti (Senior User), fornitori (Senior Supplier)</button>
+    <button class="quiz-option" data-correct="false">Sponsor, PMO, auditor</button>
+    <button class="quiz-option" data-correct="false">Cliente, legale, finanza</button>
+    <button class="quiz-option" data-correct="false">Project Manager, team, utenti</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Il Board riunisce Executive, Senior User e Senior Supplier.</div>
+</div>
+</div>
+
+<div class="quiz-unit">
+<div class="quiz" data-quiz>
+  <p class="quiz-q">4. Chi presiede il Project Board ed è responsabile del business case?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">L'Executive</button>
+    <button class="quiz-option" data-correct="false">Il Project Manager</button>
+    <button class="quiz-option" data-correct="false">Il Senior Supplier</button>
+    <button class="quiz-option" data-correct="false">Il Team Manager</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>L'Executive rappresenta il business, presiede il Board e risponde del business case.</div>
+</div>
+</div>
+
+<div class="quiz-unit">
+<div class="quiz" data-quiz>
+  <p class="quiz-q">5. Cosa prevede il principio di "gestione per eccezioni"?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Il project manager lavora entro tolleranze e scala la decisione se rischia di superarle</button>
+    <button class="quiz-option" data-correct="false">Il Board decide ogni singola attività</button>
+    <button class="quiz-option" data-correct="false">Le eccezioni vengono ignorate fino alla chiusura</button>
+    <button class="quiz-option" data-correct="false">Il progetto non ha limiti di tempo e costo</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Tolleranze su tempi, costi, ambito, qualità, rischi e benefici: superarle richiede l'intervento del livello superiore.</div>
+</div>
+</div>
+
+<div class="quiz-unit">
+<div class="quiz" data-quiz>
+  <p class="quiz-q">6. Su cosa si basa la pianificazione in PRINCE2?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Sui prodotti da consegnare (Product Breakdown Structure)</button>
+    <button class="quiz-option" data-correct="false">Solo sulle attività (Work Breakdown Structure)</button>
+    <button class="quiz-option" data-correct="false">Sulle ore lavorate da ciascuno</button>
+    <button class="quiz-option" data-correct="false">Sul budget annuale dell'ente</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>"Focus sui prodotti": PRINCE2 pianifica per prodotti, la cui qualità è verificabile.</div>
+</div>
+</div>
+
+<div class="quiz-unit">
+<div class="quiz" data-quiz>
+  <p class="quiz-q">7. Cosa accade alla fine di ogni fase (stage) in PRINCE2?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Il progetto prosegue solo con l'autorizzazione del Project Board</button>
+    <button class="quiz-option" data-correct="false">Il progetto prosegue automaticamente</button>
+    <button class="quiz-option" data-correct="false">Il progetto si chiude sempre</button>
+    <button class="quiz-option" data-correct="false">Il project manager cambia obbligatoriamente</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Gestione per fasi: a fine fase il Board decide se autorizzare la successiva.</div>
+</div>
+</div>
+
+<div class="quiz-unit">
+<div class="quiz" data-quiz>
+  <p class="quiz-q">8. In quale anno la versione 2 ha reso PRINCE un metodo generico, non solo IT?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">1996</button>
+    <button class="quiz-option" data-correct="false">1975</button>
+    <button class="quiz-option" data-correct="false">1989</button>
+    <button class="quiz-option" data-correct="false">2009</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>PROMPT 1975, PRINCE 1989 per l'IT, PRINCE2 1996 metodo generico; revisioni 2009, 2017, 2023.</div>
+</div>
+</div>
+
+<div class="quiz-unit">
+<div class="quiz" data-quiz>
+  <p class="quiz-q">9. Quanti processi prevede PRINCE2 dall'edizione 2009?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Sette</button>
+    <button class="quiz-option" data-correct="false">Otto</button>
+    <button class="quiz-option" data-correct="false">Quattro</button>
+    <button class="quiz-option" data-correct="false">Dieci</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Sette processi (SU, DP, IP, CS, MP, SB, CP); gli otto processi erano dell'edizione 2005, con la pianificazione come processo a sé.</div>
+</div>
+</div>
+
+<div class="quiz-unit">
+<div class="quiz" data-quiz>
+  <p class="quiz-q">10. Quale processo PRINCE2 è svolto dal Project Board per prendere le decisioni chiave?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Direzione del progetto (Directing a Project)</button>
+    <button class="quiz-option" data-correct="false">Gestione della consegna dei prodotti</button>
+    <button class="quiz-option" data-correct="false">Controllo di una fase</button>
+    <button class="quiz-option" data-correct="false">Avvio del progetto</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Directing a Project (DP) è il processo del Board; il controllo delle fasi spetta al Project Manager.</div>
+</div>
+</div>
+
+<div class="quiz-unit">
+<div class="quiz" data-quiz>
+  <p class="quiz-q">1. Secondo l'art. 3, co. 6 L. 132/2025, che ruolo ha la cybersicurezza nei sistemi di IA?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">È una precondizione essenziale lungo tutto il ciclo di vita del sistema</button>
+    <button class="quiz-option" data-correct="false">È un requisito facoltativo</button>
+    <button class="quiz-option" data-correct="false">Riguarda solo la fase di sviluppo</button>
+    <button class="quiz-option" data-correct="false">È richiesta solo per i sistemi della PA</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Art. 3, co. 6: deve essere assicurata, "quale precondizione essenziale, la cybersicurezza lungo tutto il ciclo di vita".</div>
+</div>
+</div>
+
+<div class="quiz-unit">
+<div class="quiz" data-quiz>
+  <p class="quiz-q">2. Cosa garantisce l'art. 3, co. 3 L. 132/2025?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Il rispetto dell'autonomia decisionale umana, con sorveglianza e intervento umano</button>
+    <button class="quiz-option" data-correct="false">La piena autonomia decisionale dei sistemi di IA</button>
+    <button class="quiz-option" data-correct="false">L'anonimato degli sviluppatori</button>
+    <button class="quiz-option" data-correct="false">Il divieto di IA nei servizi pubblici</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Art. 3, co. 3: i sistemi rispettano autonomia e potere decisionale dell'uomo e prevedono sorveglianza e intervento umano.</div>
+</div>
+</div>
+
+<div class="quiz-unit">
+<div class="quiz" data-quiz>
+  <p class="quiz-q">3. Secondo l'art. 4 L. 132/2025, chi deve dare il consenso per un minore di 14 anni che accede a tecnologie di IA?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Chi esercita la responsabilità genitoriale</button>
+    <button class="quiz-option" data-correct="false">Il minore stesso</button>
+    <button class="quiz-option" data-correct="false">La scuola frequentata</button>
+    <button class="quiz-option" data-correct="false">Il fornitore del servizio</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Art. 4: sotto i 14 anni serve il consenso di chi esercita la responsabilità genitoriale; dai 14 anni il minore può consentire da solo.</div>
+</div>
+</div>
+
+<div class="quiz-unit">
+<div class="quiz" data-quiz>
+  <p class="quiz-q">4. In ambito sanitario, secondo l'art. 7, chi prende la decisione finale su diagnosi e cura?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Il medico: l'IA è solo un supporto</button>
+    <button class="quiz-option" data-correct="false">Il sistema di IA, se certificato</button>
+    <button class="quiz-option" data-correct="false">Il direttore sanitario della struttura</button>
+    <button class="quiz-option" data-correct="false">Il paziente da solo</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Art. 7: i sistemi di IA costituiscono un supporto; la decisione resta agli esercenti la professione medica.</div>
+</div>
+</div>
+
+<div class="quiz-unit">
+<div class="quiz" data-quiz>
+  <p class="quiz-q">5. A quali opere si applica la tutela del diritto d'autore dopo l'art. 25 L. 132/2025?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Alle opere dell'ingegno umano, anche create con IA se risultato del lavoro intellettuale dell'autore</button>
+    <button class="quiz-option" data-correct="false">A qualsiasi contenuto generato da un'IA</button>
+    <button class="quiz-option" data-correct="false">Solo alle opere create senza alcun software</button>
+    <button class="quiz-option" data-correct="false">Solo alle opere registrate presso l'AgID</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Art. 25: la L. 633/1941 protegge le opere dell'ingegno "umano", anche realizzate con l'ausilio dell'IA purché frutto del lavoro intellettuale dell'autore.</div>
+</div>
+</div>
+
+<div class="quiz-unit">
+<div class="quiz" data-quiz>
+  <p class="quiz-q">6. Quale pena prevede il nuovo art. 612-quater c.p. per l'illecita diffusione di deepfake?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Reclusione da 1 a 5 anni</button>
+    <button class="quiz-option" data-correct="false">Solo una sanzione amministrativa</button>
+    <button class="quiz-option" data-correct="false">Reclusione da 6 mesi a 1 anno</button>
+    <button class="quiz-option" data-correct="false">Reclusione da 5 a 10 anni</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Art. 612-quater: reclusione da uno a cinque anni per chi diffonde contenuti generati o alterati con IA causando un danno ingiusto.</div>
+</div>
+</div>
+
+<div class="quiz-unit">
+<div class="quiz" data-quiz>
+  <p class="quiz-q">7. Il reato di illecita diffusione di deepfake (art. 612-quater) è procedibile:</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">A querela, ma d'ufficio se commesso contro una pubblica autorità per le sue funzioni (e negli altri casi previsti)</button>
+    <button class="quiz-option" data-correct="false">Sempre d'ufficio</button>
+    <button class="quiz-option" data-correct="false">Solo su segnalazione dell'ACN</button>
+    <button class="quiz-option" data-correct="false">Solo su richiesta del Garante privacy</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Di regola a querela; d'ufficio se connesso a delitto procedibile d'ufficio, contro persona incapace o contro una pubblica autorità per le funzioni esercitate.</div>
+</div>
+</div>
+
+<div class="quiz-unit">
+<div class="quiz" data-quiz>
+  <p class="quiz-q">8. Quale pena prevede la L. 132/2025 per l'aggiotaggio commesso mediante IA?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Reclusione da 2 a 7 anni</button>
+    <button class="quiz-option" data-correct="false">Reclusione da 1 a 3 anni</button>
+    <button class="quiz-option" data-correct="false">Solo una multa</button>
+    <button class="quiz-option" data-correct="false">Reclusione da 10 a 15 anni</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Art. 26: per l'aggiotaggio (art. 2637 c.c.) commesso con IA, reclusione da due a sette anni.</div>
+</div>
+</div>
+
+<div class="quiz-unit">
+<div class="quiz" data-quiz>
+  <p class="quiz-q">9. Chi gestisce gli spazi di sperimentazione (sandbox) per i sistemi di IA previsti dall'art. 20?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">AgID e ACN congiuntamente</button>
+    <button class="quiz-option" data-correct="false">Solo AgID</button>
+    <button class="quiz-option" data-correct="false">Solo ACN</button>
+    <button class="quiz-option" data-correct="false">Il Garante privacy</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Art. 20, lett. c: AgID e ACN istituiscono e gestiscono congiuntamente gli spazi di sperimentazione.</div>
+</div>
+</div>
+
+<div class="quiz-unit">
+<div class="quiz" data-quiz>
+  <p class="quiz-q">10. Quale aggravante comune introduce l'art. 26 nel codice penale?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Aver commesso il fatto mediante sistemi di IA come mezzo insidioso o che ostacola la difesa o aggrava le conseguenze</button>
+    <button class="quiz-option" data-correct="false">Aver commesso il fatto di notte</button>
+    <button class="quiz-option" data-correct="false">Aver usato un computer qualsiasi</button>
+    <button class="quiz-option" data-correct="false">Aver commesso il fatto all'estero</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Art. 61, n. 11-undecies c.p.: aggravante per l'impiego di sistemi di IA come mezzo insidioso, che ostacola la difesa o aggrava le conseguenze.</div>
 </div>
 </div>
 

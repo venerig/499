@@ -1,0 +1,168 @@
+<title>Lezione 48 — RAID e siti di disaster recovery</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+<p class="eyebrow">Materia 13 · Backup e recovery · Zona 🟢</p>
+<h1>Quanti dischi possono rompersi, e dove si riparte dopo un disastro</h1>
+<p class="subtitle">Lezione 48 — integra la lezione 41 (backup, RPO/RTO) con i livelli RAID e i siti hot, warm e cold, argomenti della playlist "Assistenti informatici INPS 2026".</p>
+
+<p class="progress">Percorso: <a href="../MISSION.md">MISSION</a> → Zona 🟢 → Backup e recovery (materia 13) → Lezione 2/… · Punteggio quiz: <span id="lesson-quiz-score">0 / 0</span></p>
+
+<h2>I livelli RAID più chiesti</h2>
+<table>
+  <tr><th>Livello</th><th>Tecnica</th><th>Dischi minimi</th><th>Capacità utile</th><th>Guasti tollerati</th></tr>
+  <tr><td>RAID 0</td><td>Striping (dati divisi a blocchi su più dischi)</td><td>2</td><td>100%</td><td><strong>Nessuno</strong>: se si rompe un disco si perde tutto</td></tr>
+  <tr><td>RAID 1</td><td>Mirroring (copia identica su ogni disco)</td><td>2</td><td>50% (con 2 dischi)</td><td>1 disco</td></tr>
+  <tr><td>RAID 5</td><td>Striping con parità distribuita</td><td>3</td><td>(n − 1) × disco più piccolo</td><td>1 disco</td></tr>
+  <tr><td>RAID 6</td><td>Striping con doppia parità distribuita</td><td>4</td><td>(n − 2) × disco più piccolo</td><td>2 dischi</td></tr>
+  <tr><td>RAID 10 (1+0)</td><td>Mirroring + striping</td><td>4 (numero pari)</td><td>50%</td><td>Almeno 1 disco (uno per ogni coppia in mirror)</td></tr>
+</table>
+<p>RAID 0 massimizza le prestazioni ma non protegge; RAID 1 protegge ma dimezza lo spazio; RAID 5 bilancia spazio e protezione, con una ricostruzione lenta e pesante dopo un guasto; RAID 10 unisce protezione e prestazioni elevate senza calcoli di parità, a costo del 50% dello spazio.</p>
+
+<div class="callout">
+  <p class="callout-title">Il tranello più comune</p>
+  <p><strong>Il RAID non è un backup.</strong> Protegge solo dal guasto fisico di uno (o due) dischi: contro una cancellazione accidentale, un ransomware o un incendio della sala server non serve a nulla, perché replica subito anche l'errore. Secondo tranello, il calcolo: con 4 dischi da 1 TB, RAID 1/10 dà 2 TB utili, RAID 5 dà 3 TB, RAID 6 dà 2 TB.</p>
+</div>
+
+<h2>Siti di disaster recovery: hot, warm, cold</h2>
+<table>
+  <tr><th>Sito</th><th>Cosa è pronto</th><th>Tempo di ripartenza</th><th>Costo</th></tr>
+  <tr><td>Hot site</td><td>Hardware completo e dati sincronizzati in modo continuo</td><td>Minuti / poche ore</td><td>Massimo</td></tr>
+  <tr><td>Warm site</td><td>Infrastruttura parzialmente pronta, dati da ripristinare</td><td>Ore / giorni</td><td>Intermedio</td></tr>
+  <tr><td>Cold site</td><td>Solo locali e impianti, niente hardware né dati</td><td>Giorni / settimane</td><td>Minimo</td></tr>
+</table>
+<p>La scelta deriva da RTO e RPO (lezione 41): un RTO di pochi minuti richiede un hot site; un RTO di settimane può accontentarsi di un cold site. RPO e RTO guardano in direzioni opposte rispetto all'evento: l'RPO "indietro" (quanti dati si perdono), l'RTO "avanti" (quanto si resta fermi).</p>
+
+<h2>Verifica — retrieval practice</h2>
+<p class="source-note">L'ordine delle opzioni cambia a ogni caricamento — rispondi dal ragionamento, non dalla posizione.</p>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">1. Quanti guasti tollera il RAID 0?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Nessuno: basta un disco guasto per perdere tutti i dati</button>
+    <button class="quiz-option" data-correct="false">Uno</button>
+    <button class="quiz-option" data-correct="false">Due</button>
+    <button class="quiz-option" data-correct="false">Metà dei dischi</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Il RAID 0 fa solo striping: prestazioni alte, nessuna ridondanza.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">2. Con 4 dischi da 1 TB in RAID 5, quanta capacità utile si ottiene?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">3 TB</button>
+    <button class="quiz-option" data-correct="false">2 TB</button>
+    <button class="quiz-option" data-correct="false">4 TB</button>
+    <button class="quiz-option" data-correct="false">1 TB</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>RAID 5: (n − 1) × disco più piccolo = (4 − 1) × 1 TB = 3 TB.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">3. Quale tecnica usa il RAID 1?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Mirroring: copia identica dei dati su ogni disco</button>
+    <button class="quiz-option" data-correct="false">Striping senza ridondanza</button>
+    <button class="quiz-option" data-correct="false">Parità distribuita</button>
+    <button class="quiz-option" data-correct="false">Doppia parità</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>RAID 1 = mirroring; dimezza lo spazio con 2 dischi e tollera la perdita di un disco.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">4. Qual è il numero minimo di dischi per un RAID 5?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">3</button>
+    <button class="quiz-option" data-correct="false">2</button>
+    <button class="quiz-option" data-correct="false">4</button>
+    <button class="quiz-option" data-correct="false">5</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>RAID 5 richiede almeno 3 dischi; RAID 6 e RAID 10 almeno 4.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">5. Perché il RAID non sostituisce il backup?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Protegge solo dal guasto fisico dei dischi, non da cancellazioni, ransomware o disastri</button>
+    <button class="quiz-option" data-correct="false">Perché è più lento del backup</button>
+    <button class="quiz-option" data-correct="false">Perché funziona solo su server Linux</button>
+    <button class="quiz-option" data-correct="false">Perché richiede sempre dischi SSD</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Il RAID replica subito anche cancellazioni e cifrature malevole: non offre copie storiche né protezione fuori sede.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">6. Quante rotture di disco tollera il RAID 6?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Due</button>
+    <button class="quiz-option" data-correct="false">Una</button>
+    <button class="quiz-option" data-correct="false">Nessuna</button>
+    <button class="quiz-option" data-correct="false">Tre</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>RAID 6 usa doppia parità distribuita e tollera la perdita contemporanea di due dischi.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">7. Quale caratteristica ha il RAID 10?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Combina mirroring e striping, richiede almeno 4 dischi in numero pari</button>
+    <button class="quiz-option" data-correct="false">Usa la parità distribuita su 3 dischi</button>
+    <button class="quiz-option" data-correct="false">Non offre alcuna ridondanza</button>
+    <button class="quiz-option" data-correct="false">Funziona con un solo disco</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>RAID 10 = coppie in mirror unite in striping: protezione e prestazioni, 50% di capacità.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">8. Quale sito di disaster recovery ha hardware pronto e dati sincronizzati in modo continuo?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Hot site</button>
+    <button class="quiz-option" data-correct="false">Warm site</button>
+    <button class="quiz-option" data-correct="false">Cold site</button>
+    <button class="quiz-option" data-correct="false">Sito di backup su nastro</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>L'hot site riparte in minuti o poche ore, a costo massimo.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">9. Cosa offre tipicamente un cold site?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Solo locali e impianti, senza hardware né dati pronti</button>
+    <button class="quiz-option" data-correct="false">Hardware ridondato e sincronizzazione continua</button>
+    <button class="quiz-option" data-correct="false">Infrastruttura parzialmente pronta</button>
+    <button class="quiz-option" data-correct="false">Una copia identica in tempo reale del data center</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Il cold site è il più economico ma richiede giorni o settimane per ripartire.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">10. Un'organizzazione deve tornare operativa in pochi minuti dopo un disastro. Quale sito è coerente con questo RTO?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Hot site</button>
+    <button class="quiz-option" data-correct="false">Cold site</button>
+    <button class="quiz-option" data-correct="false">Warm site</button>
+    <button class="quiz-option" data-correct="false">Nessun sito, basta il RAID</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Un RTO di minuti richiede infrastruttura già pronta e sincronizzata: hot site.</div>
+</div>
+
+<h2>Fonte primaria consigliata</h2>
+<p>Per ripasso rapido: <a href="https://it.wikipedia.org/wiki/RAID" target="_blank" rel="noopener">RAID — Wikipedia IT</a> e <a href="https://it.wikipedia.org/wiki/Disaster_recovery" target="_blank" rel="noopener">Disaster recovery — Wikipedia IT</a>.</p>
+
+<p class="source-note">Materiale di riferimento compresso: <a href="../reference/raid-e-siti-disaster-recovery.html">scheda "RAID e siti di DR"</a>.</p>
+
+<nav class="lesson-nav">
+  <span>← <a href="0047-porte-protocolli-incapsulamento.html">Lezione 47 — Porte, protocolli e incapsulamento</a></span>
+  <span>Prossima: <a href="0049-architettura-nazionale-cybersicurezza.html">Lezione 49 — Architettura nazionale della cybersicurezza</a> →</span>
+</nav>
+
+<script src="../assets/quiz.js"></script>

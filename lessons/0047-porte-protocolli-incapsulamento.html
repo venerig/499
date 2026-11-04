@@ -1,0 +1,191 @@
+<title>Lezione 47 — Porte, protocolli e incapsulamento</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+<p class="eyebrow">Materia 11 · Fondamenti di sistemi e reti · Zona 🟢</p>
+<h1>Il numero di porta giusto, e cosa succede a un pacchetto scendendo lo stack</h1>
+<p class="subtitle">Lezione 47 — integra la lezione 38 con gli argomenti della playlist "Assistenti informatici INPS 2026": fasce di porte IANA, porte dei protocolli più chiesti, hardening SSH, incapsulamento e TTL.</p>
+
+<p class="progress">Percorso: <a href="../MISSION.md">MISSION</a> → Zona 🟢 → Fondamenti di sistemi e reti (materia 11) → Lezione 2/… · Punteggio quiz: <span id="lesson-quiz-score">0 / 0</span></p>
+
+<h2>Le tre fasce di porte IANA</h2>
+<table>
+  <tr><th>Fascia</th><th>Intervallo</th><th>Uso</th></tr>
+  <tr><td>Well-known (di sistema)</td><td>0 – 1023</td><td>Servizi standard; su Linux per mettersi in ascolto servono privilegi elevati (root)</td></tr>
+  <tr><td>Registrate</td><td>1024 – 49151</td><td>Applicazioni e servizi registrati presso IANA</td></tr>
+  <tr><td>Dinamiche / private (effimere)</td><td>49152 – 65535</td><td>Porte temporanee assegnate al lato client di una connessione</td></tr>
+</table>
+
+<h2>Le porte da sapere a memoria</h2>
+<table>
+  <tr><th>Protocollo</th><th>Porta</th><th>Nota</th></tr>
+  <tr><td>FTP</td><td>21 (comandi), 20 (dati)</td><td>Due canali, in chiaro</td></tr>
+  <tr><td>SSH / SFTP</td><td>22</td><td>Canale unico cifrato; SFTP viaggia su SSH</td></tr>
+  <tr><td>Telnet</td><td>23</td><td>Amministrazione remota in chiaro, sostituita da SSH</td></tr>
+  <tr><td>SMTP</td><td>25 (tra server), 587 (invio dal client, con STARTTLS), 465 (TLS implicito)</td><td>Serve a <strong>inviare</strong> la posta</td></tr>
+  <tr><td>DNS</td><td>53</td><td>Risoluzione nomi</td></tr>
+  <tr><td>HTTP / HTTPS</td><td>80 / 443</td><td>Web in chiaro / cifrato con TLS</td></tr>
+  <tr><td>POP3 / POP3S</td><td>110 / 995</td><td>Scarica la posta in locale (di norma la rimuove dal server)</td></tr>
+  <tr><td>IMAP / IMAPS</td><td>143 / 993</td><td>Lascia la posta sul server e sincronizza più dispositivi</td></tr>
+  <tr><td>RDP</td><td>3389</td><td>Desktop remoto Windows</td></tr>
+</table>
+
+<div class="callout">
+  <p class="callout-title">Il tranello più comune</p>
+  <p>IMAP e POP3 servono a <strong>ricevere/leggere</strong> la posta; per <strong>inviarla</strong> serve SMTP. E le varianti "S" (993, 995, 465, 443) sono le stesse funzioni protette da TLS: se il quiz chiede la porta "sicura" di IMAP, la risposta è 993, non 143.</p>
+</div>
+
+<h2>SSH: amministrazione remota e hardening</h2>
+<p>SSH (porta 22) ha sostituito Telnet perché cifra l'intera sessione. Le misure di hardening tipiche: <strong>disabilitare il login diretto di root</strong>, usare l'<strong>autenticazione a chiave pubblica</strong> invece della password, limitare gli utenti ammessi. Spostare SSH su una porta non standard (es. 2222) riduce solo il "rumore" degli scanner automatici: non è una vera misura di sicurezza.</p>
+<p>Il <strong>port forwarding</strong> sul router rende raggiungibile da Internet un servizio interno: è un'apertura voluta nel firewall, quindi va fatto solo per servizi cifrati e aggiornati, mai per protocolli in chiaro come Telnet o FTP.</p>
+
+<h2>Incapsulamento: il nome dei dati a ogni livello</h2>
+<table>
+  <tr><th>Livello OSI</th><th>Unità di dati (PDU)</th><th>Indirizzo / apparato</th></tr>
+  <tr><td>7-5 Applicazione, presentazione, sessione</td><td>Dati</td><td>—</td></tr>
+  <tr><td>4 Trasporto</td><td>Segmento (TCP) / datagramma (UDP)</td><td>Porte</td></tr>
+  <tr><td>3 Rete</td><td>Pacchetto</td><td>Indirizzo IP — router</td></tr>
+  <tr><td>2 Collegamento dati</td><td>Frame (trama)</td><td>Indirizzo MAC — switch</td></tr>
+  <tr><td>1 Fisico</td><td>Bit</td><td>Hub, ripetitori</td></tr>
+</table>
+<p>Scendendo dall'applicazione al fisico ogni livello aggiunge la propria intestazione (header) ai dati del livello superiore — come matrioske. L'ordine dei livelli dall'alto: applicazione, presentazione, sessione, trasporto, rete, collegamento dati, fisico.</p>
+<p>Il <strong>TTL</strong> (Time To Live) è un campo dell'intestazione IP (livello 3): ogni router lo decrementa di 1 e quando arriva a 0 il pacchetto viene scartato. Serve a evitare che un pacchetto giri all'infinito in caso di loop di instradamento.</p>
+
+<div class="callout">
+  <p class="callout-title">Attenzione a cosa dicono i video</p>
+  <p>Il video della playlist su porte e protocolli afferma che FTP sarebbe limitato a 4 GB per file e SFTP a 16 GB: <strong>non è vero</strong>, nessuno dei due protocolli ha questi limiti. Dice anche che per inviare posta serve "obbligatoriamente" la porta 465: in realtà sono in uso sia 465 che 587 (e 25 tra server). Quiz e lezione seguono le specifiche, non il video.</p>
+</div>
+
+<h2>Verifica — retrieval practice</h2>
+<p class="source-note">L'ordine delle opzioni cambia a ogni caricamento — rispondi dal ragionamento, non dalla posizione.</p>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">1. In quale fascia IANA rientrano le porte da 0 a 1023?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Porte well-known (di sistema)</button>
+    <button class="quiz-option" data-correct="false">Porte registrate</button>
+    <button class="quiz-option" data-correct="false">Porte dinamiche o private</button>
+    <button class="quiz-option" data-correct="false">Porte riservate ai client</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>IANA: 0-1023 well-known, 1024-49151 registrate, 49152-65535 dinamiche/private.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">2. Quale porta usa IMAP protetto da TLS (IMAPS)?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">993</button>
+    <button class="quiz-option" data-correct="false">143</button>
+    <button class="quiz-option" data-correct="false">995</button>
+    <button class="quiz-option" data-correct="false">465</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>IMAP in chiaro 143, IMAPS 993; POP3S è 995, SMTP con TLS implicito 465.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">3. Quale protocollo serve a inviare la posta elettronica?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">SMTP</button>
+    <button class="quiz-option" data-correct="false">IMAP</button>
+    <button class="quiz-option" data-correct="false">POP3</button>
+    <button class="quiz-option" data-correct="false">SNMP</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>IMAP e POP3 servono a ricevere/leggere la posta; l'invio avviene con SMTP.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">4. Quale differenza c'è tra IMAP e POP3?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">IMAP lascia la posta sul server e sincronizza più dispositivi, POP3 la scarica in locale</button>
+    <button class="quiz-option" data-correct="false">POP3 è cifrato, IMAP mai</button>
+    <button class="quiz-option" data-correct="false">IMAP serve solo a inviare, POP3 solo a ricevere</button>
+    <button class="quiz-option" data-correct="false">Sono due nomi dello stesso protocollo</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>IMAP = sincronizzazione lato server; POP3 = scaricamento locale, di norma con rimozione dal server.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">5. Quali porte usa FTP?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">21 per i comandi e 20 per i dati</button>
+    <button class="quiz-option" data-correct="false">22 per comandi e dati</button>
+    <button class="quiz-option" data-correct="false">80 e 443</button>
+    <button class="quiz-option" data-correct="false">25 e 110</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>FTP usa due canali in chiaro: 21 (controllo) e 20 (dati in modalità attiva).</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">6. Quale protocollo ha sostituito Telnet (porta 23) per l'amministrazione remota sicura?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">SSH, porta 22</button>
+    <button class="quiz-option" data-correct="false">FTP, porta 21</button>
+    <button class="quiz-option" data-correct="false">RDP, porta 3389</button>
+    <button class="quiz-option" data-correct="false">HTTP, porta 80</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>SSH cifra l'intera sessione, a differenza di Telnet che viaggia in chiaro.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">7. Quale misura di hardening SSH è più efficace?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Disabilitare il login diretto di root e usare l'autenticazione a chiave pubblica</button>
+    <button class="quiz-option" data-correct="false">Spostare SSH sulla porta 2222 lasciando il resto invariato</button>
+    <button class="quiz-option" data-correct="false">Usare password brevi ma frequenti</button>
+    <button class="quiz-option" data-correct="false">Abilitare Telnet come accesso di riserva</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Cambiare porta riduce solo il rumore degli scanner; le misure vere sono niente login root e autenticazione a chiave.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">8. Come si chiama l'unità di dati del livello 3 (rete)?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Pacchetto</button>
+    <button class="quiz-option" data-correct="false">Frame</button>
+    <button class="quiz-option" data-correct="false">Segmento</button>
+    <button class="quiz-option" data-correct="false">Bit</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Livello 4 segmento/datagramma, livello 3 pacchetto, livello 2 frame, livello 1 bit.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">9. Cosa succede quando il campo TTL di un pacchetto IP arriva a zero?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Il router scarta il pacchetto</button>
+    <button class="quiz-option" data-correct="false">Il pacchetto viene consegnato con priorità</button>
+    <button class="quiz-option" data-correct="false">Il TTL si azzera e riparte da 64</button>
+    <button class="quiz-option" data-correct="false">Il pacchetto viene duplicato</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Ogni router decrementa il TTL di 1; a zero il pacchetto è scartato, per evitare che giri all'infinito.</div>
+</div>
+
+<div class="quiz" data-quiz>
+  <p class="quiz-q">10. Qual è l'ordine corretto dei livelli OSI dall'alto verso il basso?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="true">Applicazione, presentazione, sessione, trasporto, rete, collegamento dati, fisico</button>
+    <button class="quiz-option" data-correct="false">Fisico, collegamento dati, rete, trasporto, sessione, presentazione, applicazione</button>
+    <button class="quiz-option" data-correct="false">Applicazione, trasporto, sessione, presentazione, rete, fisico, collegamento dati</button>
+    <button class="quiz-option" data-correct="false">Applicazione, sessione, presentazione, rete, trasporto, collegamento dati, fisico</button>
+  </div>
+  <p class="quiz-feedback" data-feedback></p>
+  <div class="quiz-explain" data-explain>Dall'alto: 7 applicazione, 6 presentazione, 5 sessione, 4 trasporto, 3 rete, 2 collegamento dati, 1 fisico.</div>
+</div>
+
+<h2>Fonte primaria consigliata</h2>
+<p><a href="https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml" target="_blank" rel="noopener">IANA — Service Name and Transport Protocol Port Number Registry</a> (fasce e assegnazioni ufficiali delle porte).</p>
+
+<p class="source-note">Materiale di riferimento compresso: <a href="../reference/porte-protocolli-incapsulamento.html">scheda "Porte, protocolli, incapsulamento"</a>.</p>
+
+<nav class="lesson-nav">
+  <span>← <a href="0046-ia-legge-italiana-e-calendario-ai-act.html">Lezione 46 — IA: legge italiana e calendario AI Act</a></span>
+  <span>Prossima: <a href="0048-raid-e-siti-disaster-recovery.html">Lezione 48 — RAID e siti di disaster recovery</a> →</span>
+</nav>
+
+<script src="../assets/quiz.js"></script>

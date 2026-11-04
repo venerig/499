@@ -71,6 +71,9 @@ _Gap:_ formato esatto della prova di inglese non confermato dal bando (il fetch 
 
 ## Esercitazione (banche dati quiz)
 
+- [YouTube — playlist "ASSISTENTI INFORMATICI INPS 2026" (canale Colorami la Giornata, 7 video)](https://www.youtube.com/playlist?list=PLLydN7IKnfJc)
+  Riassunti generati con IA: utili come mappa degli argomenti, **non affidabili nei dettagli** (es. "FTP limitato a 4 GB / SFTP a 16 GB", "PRINCE2 ha 4 principi e 8 processi" sono errati). Trascrizioni estratte con yt-dlp e usate per le lezioni 47-51 solo dopo verifica su fonti primarie.
+
 - [ConcorsiPubblici.com — Quiz Diritto Amministrativo](https://www.concorsipubblici.com/quiz/categorie/diritto-amministrativo-1757)
   Quiz gratuiti verificati su normativa. Usare per: retrieval practice sul formato a risposta multipla dopo ogni lezione zona 🔴/🟡.
 - [Concorsando.it — Quiz Concorso Assistenti Informatici INPS 2026](https://www.concorsando.it/blog/quiz-concorso-assistenti-inps-informatici-2026-banca-dati/)
