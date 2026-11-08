@@ -13,8 +13,57 @@
 //
 // Optional: an element with id="lesson-quiz-score" is kept in sync as
 // "N / M" across every .quiz on the page.
+//
+// Wrong answers are saved in localStorage (this browser only); a later
+// correct answer removes them. With ?errori in the URL, a #quiz-round page
+// keeps only the saved questions. id="errori-count" shows how many are saved.
 
 (function () {
+  var STORE = "inps499-errori";
+
+  function loadErrors() {
+    try { return JSON.parse(localStorage.getItem(STORE)) || []; } catch (e) { return []; }
+  }
+
+  function saveErrors(list) {
+    try { localStorage.setItem(STORE, JSON.stringify(list)); } catch (e) {}
+    var countEl = document.getElementById("errori-count");
+    if (countEl) countEl.textContent = list.length;
+  }
+
+  // Question text alone is not unique (two English items share it), so the
+  // correct answer is part of the key.
+  function quizKey(quiz) {
+    var q = quiz.querySelector(".quiz-q");
+    var ok = quiz.querySelector('.quiz-option[data-correct="true"]');
+    return (q ? q.textContent.replace(/^\d+\.\s*/, "").trim() : "") + " | " + (ok ? ok.textContent.trim() : "");
+  }
+
+  function recordAnswer(quiz, isCorrect) {
+    var key = quizKey(quiz);
+    var list = loadErrors().filter(function (k) { return k !== key; });
+    if (!isCorrect) list.push(key);
+    saveErrors(list);
+  }
+
+  function keepOnlyErrors() {
+    var round = document.getElementById("quiz-round");
+    if (!round || !/[?&]errori\b/.test(location.search)) return;
+    var saved = loadErrors();
+    round.querySelectorAll(".quiz-unit").forEach(function (unit) {
+      var quiz = unit.querySelector("[data-quiz]");
+      if (!quiz || saved.indexOf(quizKey(quiz)) === -1) unit.remove();
+    });
+    round.querySelectorAll(".quiz-q").forEach(function (q, idx) {
+      q.textContent = (idx + 1) + ". " + q.textContent.replace(/^\d+\.\s*/, "");
+    });
+    var h1 = document.querySelector("h1");
+    if (h1) h1.textContent = "Ripasso errori";
+    var sub = document.querySelector(".subtitle");
+    if (sub) sub.textContent = "Solo le domande sbagliate finora (" + round.querySelectorAll("[data-quiz]").length + "). Una risposta giusta toglie la domanda dall'elenco; ricarica la pagina per rifare quelle rimaste.";
+    if (!round.querySelector("[data-quiz]")) round.innerHTML = "<p>Nessun errore salvato. Sbaglia qualche domanda nelle lezioni o nel quiz generale e tornerà qui.</p>";
+  }
+
   function updateScore() {
     var scoreEl = document.getElementById("lesson-quiz-score");
     if (!scoreEl) return;
@@ -67,13 +116,16 @@
 
         if (explain) explain.classList.add("shown");
 
+        recordAnswer(quiz, isCorrect);
         updateScore();
       });
     });
   }
 
   document.addEventListener("DOMContentLoaded", function () {
+    keepOnlyErrors();
     document.querySelectorAll("[data-quiz]").forEach(wireQuiz);
+    saveErrors(loadErrors());
     updateScore();
   });
 })();

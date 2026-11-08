@@ -82,6 +82,7 @@ const page = `<title>Quiz generale — Concorso INPS 499</title>
 <div class="callout">
   <p class="callout-title">Come usarlo</p>
   <p>Le domande sono mescolate a ogni ricaricamento della pagina — anche l'ordine delle opzioni all'interno di ciascuna domanda cambia, come nelle singole lezioni. Il punteggio qui sopra si aggiorna in tempo reale man mano che rispondi, ed è visibile in ogni momento senza dover finire tutte le ${total} domande in un colpo solo.</p>
+  <p>Le risposte sbagliate (qui e nelle lezioni) vengono salvate in questo browser: rifalle tutte insieme in <a href="quiz-generale.html?errori"><strong>Ripasso errori</strong></a> (<span id="errori-count">0</span> salvate).</p>
 </div>
 
 <div id="quiz-round">
