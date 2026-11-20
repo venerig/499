@@ -39,9 +39,9 @@
   <p class="quiz-q">1. Quanti guasti tollera il RAID 0?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Nessuno: basta un disco guasto per perdere tutti i dati</button>
-    <button class="quiz-option" data-correct="false">Uno</button>
-    <button class="quiz-option" data-correct="false">Due</button>
-    <button class="quiz-option" data-correct="false">Metà dei dischi</button>
+    <button class="quiz-option" data-correct="false">Uno, grazie alla parità calcolata su ogni blocco</button>
+    <button class="quiz-option" data-correct="false">Due, come nel RAID 6 con doppia parità</button>
+    <button class="quiz-option" data-correct="false">Metà dei dischi, purché non siano adiacenti nello stripe</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>Il RAID 0 fa solo striping: prestazioni alte, nessuna ridondanza.</div>
@@ -63,9 +63,9 @@
   <p class="quiz-q">3. Quale tecnica usa il RAID 1?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Mirroring: copia identica dei dati su ogni disco</button>
-    <button class="quiz-option" data-correct="false">Striping senza ridondanza</button>
-    <button class="quiz-option" data-correct="false">Parità distribuita</button>
-    <button class="quiz-option" data-correct="false">Doppia parità</button>
+    <button class="quiz-option" data-correct="false">Striping senza ridondanza, come nel RAID 0</button>
+    <button class="quiz-option" data-correct="false">Parità distribuita su più dischi, come nel RAID 5</button>
+    <button class="quiz-option" data-correct="false">Doppia parità distribuita, come nel RAID 6</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>RAID 1 = mirroring; dimezza lo spazio con 2 dischi e tollera la perdita di un disco.</div>
@@ -87,9 +87,9 @@
   <p class="quiz-q">5. Perché il RAID non sostituisce il backup?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Protegge solo dal guasto fisico dei dischi, non da cancellazioni, ransomware o disastri</button>
-    <button class="quiz-option" data-correct="false">Perché è più lento del backup</button>
-    <button class="quiz-option" data-correct="false">Perché funziona solo su server Linux</button>
-    <button class="quiz-option" data-correct="false">Perché richiede sempre dischi SSD</button>
+    <button class="quiz-option" data-correct="false">Perché è più lento del backup su nastro, quindi meno adatto ad archivi storici</button>
+    <button class="quiz-option" data-correct="false">Perché funziona solo su server Linux e non su Windows Server</button>
+    <button class="quiz-option" data-correct="false">Perché richiede sempre dischi SSD, incompatibile con dischi meccanici</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>Il RAID replica subito anche cancellazioni e cifrature malevole: non offre copie storiche né protezione fuori sede.</div>
@@ -111,9 +111,9 @@
   <p class="quiz-q">7. Quale caratteristica ha il RAID 10?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Combina mirroring e striping, richiede almeno 4 dischi in numero pari</button>
-    <button class="quiz-option" data-correct="false">Usa la parità distribuita su 3 dischi</button>
-    <button class="quiz-option" data-correct="false">Non offre alcuna ridondanza</button>
-    <button class="quiz-option" data-correct="false">Funziona con un solo disco</button>
+    <button class="quiz-option" data-correct="false">Usa la parità distribuita su almeno 3 dischi, come il RAID 5</button>
+    <button class="quiz-option" data-correct="false">Non offre alcuna ridondanza, esattamente come il RAID 0</button>
+    <button class="quiz-option" data-correct="false">Funziona anche con un solo disco, senza bisogno di ridondanza</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>RAID 10 = coppie in mirror unite in striping: protezione e prestazioni, 50% di capacità.</div>

@@ -85,9 +85,9 @@
   <p class="quiz-q">4. In un diagramma E-R, cosa rappresenta il rombo?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Una relazione (associazione) tra entità</button>
-    <button class="quiz-option" data-correct="false">Un'entità</button>
-    <button class="quiz-option" data-correct="false">Un attributo</button>
-    <button class="quiz-option" data-correct="false">Una chiave esterna</button>
+    <button class="quiz-option" data-correct="false">Un'entità, cioè una classe di oggetti del dominio</button>
+    <button class="quiz-option" data-correct="false">Un attributo, cioè una proprietà di un'entità</button>
+    <button class="quiz-option" data-correct="false">Una chiave esterna che collega due tabelle</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>Rettangolo = entità, rombo = relazione, ovale/pallino = attributo.</div>
@@ -98,8 +98,8 @@
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Con una tabella di collegamento che contiene le chiavi esterne di entrambe</button>
     <button class="quiz-option" data-correct="false">Aggiungendo una chiave esterna solo nella tabella Studente</button>
-    <button class="quiz-option" data-correct="false">Unendo Studente e Corso in un'unica tabella</button>
-    <button class="quiz-option" data-correct="false">Non si può rappresentare nel modello relazionale</button>
+    <button class="quiz-option" data-correct="false">Unendo Studente e Corso in un'unica tabella con tutti gli attributi</button>
+    <button class="quiz-option" data-correct="false">Non si può rappresentare in alcun modo nel modello relazionale</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>N:M → tabella ponte (es. Iscrizione con id_studente e id_corso). Una sola chiave esterna basta solo per 1:N.</div>
@@ -158,8 +158,8 @@
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Orizzontale: si aggiungono altri server al cluster</button>
     <button class="quiz-option" data-correct="false">Solo verticale: si potenzia un unico server</button>
-    <button class="quiz-option" data-correct="false">Nessuna: funzionano solo su un server</button>
-    <button class="quiz-option" data-correct="false">Diagonale: si duplicano le tabelle</button>
+    <button class="quiz-option" data-correct="false">Nessuna: funzionano solo su un singolo server dedicato</button>
+    <button class="quiz-option" data-correct="false">Diagonale: si duplicano le tabelle su più dischi dello stesso server</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>NoSQL nasce per distribuire dati e carico su molti nodi (scale-out).</div>

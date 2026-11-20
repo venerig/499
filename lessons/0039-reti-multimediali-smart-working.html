@@ -50,9 +50,9 @@
   <p class="quiz-q">2. A quale livello opera tipicamente una VPN IPSec?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Livello di rete, spesso per tunnel site-to-site</button>
-    <button class="quiz-option" data-correct="false">Solo nel browser</button>
-    <button class="quiz-option" data-correct="false">Livello fisico</button>
-    <button class="quiz-option" data-correct="false">Livello applicativo della posta</button>
+    <button class="quiz-option" data-correct="false">Solo nel browser, senza bisogno di installare software</button>
+    <button class="quiz-option" data-correct="false">Livello fisico, direttamente sui cavi di rete</button>
+    <button class="quiz-option" data-correct="false">Livello applicativo, integrato nel client di posta</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>IPSec: livello di rete, tunnel site-to-site o client robusti.</div>
@@ -63,8 +63,8 @@
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Ritardo percepibile nella conversazione, anche con immagine/audio di buona qualità</button>
     <button class="quiz-option" data-correct="false">Nessun problema, perché la banda ampia risolve sempre ogni limite di rete</button>
-    <button class="quiz-option" data-correct="false">Interruzione automatica e immediata della chiamata</button>
-    <button class="quiz-option" data-correct="false">Un errore di autenticazione VPN</button>
+    <button class="quiz-option" data-correct="false">Interruzione automatica e immediata della chiamata da parte del client</button>
+    <button class="quiz-option" data-correct="false">Un errore di autenticazione VPN non collegato alla qualità della linea</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>La latenza è un problema distinto dalla banda: anche con banda sufficiente, un ritardo elevato nella trasmissione dei pacchetti produce una conversazione percepibilmente "sfasata".</div>
@@ -86,9 +86,9 @@
   <p class="quiz-q">5. A cosa serve il QoS (Quality of Service) su una rete aziendale?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">A prioritizzare il traffico sensibile al ritardo (es. VoIP) rispetto ad altro traffico meno critico</button>
-    <button class="quiz-option" data-correct="false">A cifrare tutto il traffico di rete</button>
-    <button class="quiz-option" data-correct="false">Ad assegnare automaticamente gli indirizzi IP ai dispositivi</button>
-    <button class="quiz-option" data-correct="false">A bloccare il traffico non autorizzato come un firewall</button>
+    <button class="quiz-option" data-correct="false">A cifrare tutto il traffico di rete end-to-end, indipendentemente dal tipo di contenuto</button>
+    <button class="quiz-option" data-correct="false">Ad assegnare automaticamente gli indirizzi IP ai dispositivi che si collegano alla rete</button>
+    <button class="quiz-option" data-correct="false">A bloccare il traffico non autorizzato in base a regole, come farebbe un firewall</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>Il QoS gestisce le priorità del traffico in condizioni di congestione, non la cifratura (compito di VPN/TLS) né l'assegnazione IP (compito di DHCP) né il filtraggio (compito del firewall).</div>
@@ -110,9 +110,9 @@
   <p class="quiz-q">7. Qual è il ruolo principale di una VPN aziendale nel contesto dello smart working?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Creare un tunnel cifrato che permette di accedere alle risorse interne come se si fosse in ufficio</button>
-    <button class="quiz-option" data-correct="false">Aumentare la banda disponibile sulla connessione domestica del dipendente</button>
-    <button class="quiz-option" data-correct="false">Assegnare un indirizzo MAC statico al dispositivo del dipendente</button>
-    <button class="quiz-option" data-correct="false">Sostituire completamente la necessità di un firewall aziendale</button>
+    <button class="quiz-option" data-correct="false">Aumentare direttamente la banda disponibile sulla connessione domestica del dipendente</button>
+    <button class="quiz-option" data-correct="false">Assegnare un indirizzo MAC statico permanente al dispositivo del dipendente</button>
+    <button class="quiz-option" data-correct="false">Sostituire completamente la necessità di un firewall aziendale perimetrale</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>La VPN crea un tunnel cifrato tra il dispositivo remoto e la rete interna, non modifica la banda disponibile né sostituisce le altre misure di sicurezza come il firewall.</div>
@@ -123,8 +123,8 @@
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">La quantità di dati trasmissibili per secondo</button>
     <button class="quiz-option" data-correct="false">Il tempo che un pacchetto impiega ad arrivare</button>
-    <button class="quiz-option" data-correct="false">Il numero di utenti collegati</button>
-    <button class="quiz-option" data-correct="false">La distanza fisica dal server</button>
+    <button class="quiz-option" data-correct="false">Il numero di utenti collegati simultaneamente alla rete</button>
+    <button class="quiz-option" data-correct="false">La distanza fisica in chilometri tra client e server</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>Banda = dati per secondo; latenza = tempo di arrivo di un pacchetto.</div>
@@ -146,9 +146,9 @@
   <p class="quiz-q">10. Come si usa tipicamente una VPN SSL/TLS?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Via browser o client leggero, per l'accesso remoto individuale</button>
-    <button class="quiz-option" data-correct="false">Solo tra due data center</button>
-    <button class="quiz-option" data-correct="false">Solo su reti cablate in ufficio</button>
-    <button class="quiz-option" data-correct="false">Solo per lo streaming video</button>
+    <button class="quiz-option" data-correct="false">Solo tra due data center, mai per un singolo utente remoto</button>
+    <button class="quiz-option" data-correct="false">Solo su reti cablate, mai in mobilità o da casa</button>
+    <button class="quiz-option" data-correct="false">Solo per lo streaming video ad alta definizione</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>Le VPN SSL/TLS sono comuni per l'accesso remoto del singolo dipendente.</div>

@@ -64,8 +64,8 @@
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Con ACL, assegnabili per singolo utente o gruppo</button>
     <button class="quiz-option" data-correct="false">Solo con tre categorie fisse owner/group/other</button>
-    <button class="quiz-option" data-correct="false">Non gestisce permessi</button>
-    <button class="quiz-option" data-correct="false">Solo tramite password sul file</button>
+    <button class="quiz-option" data-correct="false">Non gestisce permessi, si basa solo sulla crittografia del disco</button>
+    <button class="quiz-option" data-correct="false">Solo tramite una password impostata su ciascun file</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>Windows usa le Access Control List, più granulari del modello rwx di Linux.</div>
@@ -87,9 +87,9 @@
   <p class="quiz-q">4. Che tipo di kernel ha Linux?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Monolitico, con moduli caricabili dinamicamente</button>
-    <button class="quiz-option" data-correct="false">Microkernel puro</button>
-    <button class="quiz-option" data-correct="false">Ibrido come Windows NT</button>
-    <button class="quiz-option" data-correct="false">Nessun kernel</button>
+    <button class="quiz-option" data-correct="false">Microkernel puro, con servizi di sistema in spazio utente</button>
+    <button class="quiz-option" data-correct="false">Ibrido, nucleo monolitico con componenti stile microkernel</button>
+    <button class="quiz-option" data-correct="false">Nessun kernel: i processi accedono direttamente all'hardware</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>Linux: kernel monolitico modulare.</div>
@@ -99,9 +99,9 @@
   <p class="quiz-q">5. Qual è il processo con PID 1 nei moderni sistemi Linux che usano systemd?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">systemd stesso, il primo processo avviato dal kernel</button>
-    <button class="quiz-option" data-correct="false">bash, la shell di default</button>
-    <button class="quiz-option" data-correct="false">Il kernel stesso</button>
-    <button class="quiz-option" data-correct="false">Il primo processo utente avviato dopo il login</button>
+    <button class="quiz-option" data-correct="false">bash, la shell predefinita usata per l'interattività da terminale</button>
+    <button class="quiz-option" data-correct="false">Il kernel stesso, prima di qualunque processo in user space</button>
+    <button class="quiz-option" data-correct="false">Il primo processo utente avviato dopo il login, non quello con PID 1</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>systemd è il processo di init, avviato con PID 1 dal kernel, e gestisce l'avvio e il ciclo di vita di tutti i servizi successivi.</div>
@@ -159,9 +159,9 @@
   <p class="quiz-q">10. Cosa rappresenta il permesso Linux "644"?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Owner: lettura e scrittura; group e other: sola lettura</button>
-    <button class="quiz-option" data-correct="false">Owner: tutti i permessi; group e other: nessuno</button>
-    <button class="quiz-option" data-correct="false">Tutti: lettura, scrittura ed esecuzione</button>
-    <button class="quiz-option" data-correct="false">Owner: sola esecuzione</button>
+    <button class="quiz-option" data-correct="false">Owner: tutti i permessi (rwx); group e other: nessun accesso</button>
+    <button class="quiz-option" data-correct="false">Tutti gli utenti: lettura, scrittura ed esecuzione senza distinzioni</button>
+    <button class="quiz-option" data-correct="false">Owner: sola esecuzione; group e other: nessun permesso</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>6 = rw- (4+2), 4 = r--: owner legge e scrive, gli altri leggono soltanto.</div>

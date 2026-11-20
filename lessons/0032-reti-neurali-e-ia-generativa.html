@@ -42,9 +42,9 @@
   <p class="quiz-q">1. Cosa fa un neurone artificiale con i segnali che riceve in ingresso?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Li pesa e applica una funzione di attivazione per produrre un output</button>
-    <button class="quiz-option" data-correct="false">Li ignora completamente fino allo strato di output</button>
-    <button class="quiz-option" data-correct="false">Li memorizza senza alcuna elaborazione</button>
-    <button class="quiz-option" data-correct="false">Li trasmette invariati al neurone successivo</button>
+    <button class="quiz-option" data-correct="false">Li ignora completamente fino a raggiungere lo strato di output</button>
+    <button class="quiz-option" data-correct="false">Li memorizza in una cache senza alcuna elaborazione</button>
+    <button class="quiz-option" data-correct="false">Li trasmette invariati al neurone dello strato successivo</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>Ogni input viene moltiplicato per un peso (che ne indica l'importanza), poi la somma pesata passa attraverso una funzione di attivazione che determina l'output del neurone.</div>
@@ -54,9 +54,9 @@
   <p class="quiz-q">2. Cosa rappresenta il peso di una connessione tra due neuroni?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Quanto conta quel segnale nel calcolo del neurone successivo</button>
-    <button class="quiz-option" data-correct="false">La dimensione in byte del modello</button>
-    <button class="quiz-option" data-correct="false">Il numero di strati della rete</button>
-    <button class="quiz-option" data-correct="false">La velocità del processore</button>
+    <button class="quiz-option" data-correct="false">La dimensione in byte occupata dal modello salvato</button>
+    <button class="quiz-option" data-correct="false">Il numero totale di strati presenti nella rete</button>
+    <button class="quiz-option" data-correct="false">La velocità di calcolo del processore impiegato</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>Ogni input è moltiplicato per un peso che ne indica l'importanza.</div>
@@ -78,9 +78,9 @@
   <p class="quiz-q">4. Che cos'è il deep learning?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Una rete neurale con molti strati nascosti</button>
-    <button class="quiz-option" data-correct="false">Un algoritmo senza reti neurali</button>
-    <button class="quiz-option" data-correct="false">Un database molto grande</button>
-    <button class="quiz-option" data-correct="false">Una rete con un solo neurone</button>
+    <button class="quiz-option" data-correct="false">Un algoritmo che non usa reti neurali</button>
+    <button class="quiz-option" data-correct="false">Un database relazionale molto grande</button>
+    <button class="quiz-option" data-correct="false">Una rete composta da un solo neurone</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>Deep learning = rete neurale con molti livelli intermedi di elaborazione.</div>
@@ -102,9 +102,9 @@
   <p class="quiz-q">6. Un sistema di raccomandazione dei prodotti è tipicamente un esempio di IA:</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Discriminativa/predittiva</button>
-    <button class="quiz-option" data-correct="false">Generativa</button>
-    <button class="quiz-option" data-correct="false">Né l'una né l'altra</button>
-    <button class="quiz-option" data-correct="false">Vietata dall'AI Act</button>
+    <button class="quiz-option" data-correct="false">Generativa, perché crea contenuto nuovo</button>
+    <button class="quiz-option" data-correct="false">Né generativa né discriminativa</button>
+    <button class="quiz-option" data-correct="false">Vietata esplicitamente dall'AI Act</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>Raccomandare o classificare su dati esistenti è IA discriminativa/predittiva, non generativa.</div>
@@ -114,9 +114,9 @@
   <p class="quiz-q">7. Quale tipo di modello è alla base di sistemi come GPT per la generazione di testo?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Modelli linguistici di grandi dimensioni (LLM)</button>
-    <button class="quiz-option" data-correct="false">Modelli di diffusione per immagini</button>
-    <button class="quiz-option" data-correct="false">Alberi decisionali classici</button>
-    <button class="quiz-option" data-correct="false">Sistemi esperti basati solo su regole</button>
+    <button class="quiz-option" data-correct="false">Modelli di diffusione per generare immagini</button>
+    <button class="quiz-option" data-correct="false">Alberi decisionali classici per la classificazione</button>
+    <button class="quiz-option" data-correct="false">Sistemi esperti basati solo su regole fisse</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>I modelli linguistici di grandi dimensioni (LLM) sono l'architettura alla base di sistemi come GPT; i modelli di diffusione (es. Stable Diffusion) sono invece tipici della generazione di immagini.</div>
@@ -126,9 +126,9 @@
   <p class="quiz-q">8. Stable Diffusion è un esempio di:</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Modello di diffusione per generare immagini</button>
-    <button class="quiz-option" data-correct="false">Classificatore di spam</button>
-    <button class="quiz-option" data-correct="false">Modello linguistico per il testo</button>
-    <button class="quiz-option" data-correct="false">Sistema esperto a regole</button>
+    <button class="quiz-option" data-correct="false">Classificatore di spam basato su regole</button>
+    <button class="quiz-option" data-correct="false">Modello linguistico per generare testo</button>
+    <button class="quiz-option" data-correct="false">Sistema esperto basato su regole fisse</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>I modelli di diffusione come Stable Diffusion sono tipici della generazione di immagini.</div>
@@ -150,9 +150,9 @@
   <p class="quiz-q">10. "IA generativa" è sinonimo di "intelligenza artificiale"?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">No, è un sottoinsieme che genera contenuto nuovo</button>
-    <button class="quiz-option" data-correct="false">Sì, sono sinonimi</button>
-    <button class="quiz-option" data-correct="false">No, l'IA generativa non usa reti neurali</button>
-    <button class="quiz-option" data-correct="false">Sì, ma solo per il testo</button>
+    <button class="quiz-option" data-correct="false">Sì, sono termini perfettamente sinonimi</button>
+    <button class="quiz-option" data-correct="false">No, l'IA generativa non usa mai reti neurali</button>
+    <button class="quiz-option" data-correct="false">Sì, ma solo quando genera testo</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>L'IA generativa è un sottoinsieme; molte applicazioni di IA sono discriminative.</div>

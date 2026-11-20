@@ -108,9 +108,9 @@
   <p class="quiz-q">4. Un PC ha l'indirizzo 169.254.10.20. Cosa indica, tipicamente?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Che non ha ricevuto risposta da un server DHCP e si è autoassegnato un indirizzo</button>
-    <button class="quiz-option" data-correct="false">Che è il gateway predefinito della rete</button>
-    <button class="quiz-option" data-correct="false">Che sta usando l'indirizzo di loopback</button>
-    <button class="quiz-option" data-correct="false">Che ha un indirizzo pubblico assegnato dal provider</button>
+    <button class="quiz-option" data-correct="false">Che è il gateway predefinito configurato manualmente sull'interfaccia di rete</button>
+    <button class="quiz-option" data-correct="false">Che sta usando l'indirizzo di loopback riservato ai test locali della macchina</button>
+    <button class="quiz-option" data-correct="false">Che ha un indirizzo pubblico assegnato direttamente dal provider Internet</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>169.254.0.0/16 è l'intervallo link-local (APIPA): sintomo di DHCP non raggiungibile. Il loopback è 127.0.0.1.</div>
@@ -131,10 +131,10 @@
 <div class="quiz" data-quiz>
   <p class="quiz-q">6. Di quanti bit è composto un indirizzo IPv6?</p>
   <div class="quiz-options">
-    <button class="quiz-option" data-correct="true">128</button>
-    <button class="quiz-option" data-correct="false">32</button>
-    <button class="quiz-option" data-correct="false">64</button>
-    <button class="quiz-option" data-correct="false">48</button>
+    <button class="quiz-option" data-correct="true">128, un indirizzo IPv6</button>
+    <button class="quiz-option" data-correct="false">32, un indirizzo IPv4</button>
+    <button class="quiz-option" data-correct="false">64, metà di un indirizzo IPv6</button>
+    <button class="quiz-option" data-correct="false">48, un indirizzo MAC</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>IPv6 = 128 bit; IPv4 = 32 bit; l'indirizzo MAC = 48 bit.</div>
@@ -156,9 +156,9 @@
   <p class="quiz-q">8. A cosa serve un record DNS di tipo CNAME?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">A definire un alias, cioè un nome che rimanda a un altro nome</button>
-    <button class="quiz-option" data-correct="false">A indicare l'indirizzo IPv6 di un host</button>
-    <button class="quiz-option" data-correct="false">A indicare il server di posta</button>
-    <button class="quiz-option" data-correct="false">A risolvere un indirizzo IP in un nome</button>
+    <button class="quiz-option" data-correct="false">A indicare l'indirizzo IPv6 associato a un nome host</button>
+    <button class="quiz-option" data-correct="false">A indicare il server di posta elettronica del dominio</button>
+    <button class="quiz-option" data-correct="false">A risolvere un indirizzo IP pubblico in un nome di dominio</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>Es. www.esempio.it CNAME esempio.it. IPv6 = AAAA, posta = MX, inversa = PTR.</div>
@@ -180,9 +180,9 @@
   <p class="quiz-q">10. Cosa fa il NAT in un router domestico o aziendale?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Traduce gli indirizzi IP privati interni in un indirizzo pubblico per accedere a Internet</button>
-    <button class="quiz-option" data-correct="false">Cifra tutto il traffico come una VPN</button>
-    <button class="quiz-option" data-correct="false">Assegna i nomi di dominio ai computer</button>
-    <button class="quiz-option" data-correct="false">Converte gli indirizzi IPv4 in indirizzi MAC</button>
+    <button class="quiz-option" data-correct="false">Cifra tutto il traffico in transito sulla rete, come farebbe una VPN</button>
+    <button class="quiz-option" data-correct="false">Assegna automaticamente i nomi di dominio a tutti i computer della rete</button>
+    <button class="quiz-option" data-correct="false">Converte gli indirizzi IPv4 in indirizzi MAC a livello di switch locale</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>NAT = Network Address Translation: molti host privati escono con un solo IP pubblico. La corrispondenza IP → MAC è compito di ARP.</div>

@@ -52,9 +52,9 @@
   <p class="quiz-q">1. Un backup incrementale copia:</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Solo le modifiche dall'ultimo backup di qualsiasi tipo (full o incrementale)</button>
-    <button class="quiz-option" data-correct="false">Sempre tutti i dati, come un backup completo</button>
+    <button class="quiz-option" data-correct="false">Sempre tutti i dati presenti nel sistema, esattamente come un backup completo</button>
     <button class="quiz-option" data-correct="false">Solo le modifiche dall'ultimo backup completo, ignorando altri incrementali</button>
-    <button class="quiz-option" data-correct="false">Nessun dato, solo i metadati del file system</button>
+    <button class="quiz-option" data-correct="false">Nessun dato reale, solo i metadati e i permessi del file system</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>L'incrementale copia le modifiche dall'ultimo backup di qualsiasi tipo, che può essere un full o un altro incrementale — a differenza del differenziale, che guarda sempre all'ultimo full.</div>
@@ -88,9 +88,9 @@
   <p class="quiz-q">4. Cosa misura il Recovery Time Objective (RTO)?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Il tempo massimo accettabile per tornare operativi</button>
-    <button class="quiz-option" data-correct="false">La quantità di dati che si può perdere</button>
-    <button class="quiz-option" data-correct="false">Lo spazio occupato dal backup</button>
-    <button class="quiz-option" data-correct="false">Il numero di copie offsite</button>
+    <button class="quiz-option" data-correct="false">La quantità massima di dati che si può permettersi di perdere</button>
+    <button class="quiz-option" data-correct="false">Lo spazio su disco occupato complessivamente dal backup</button>
+    <button class="quiz-option" data-correct="false">Il numero minimo di copie da conservare offsite</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>RTO = tempo di ripristino obiettivo; RPO = dati che posso permettermi di perdere.</div>
@@ -112,9 +112,9 @@
   <p class="quiz-q">6. Cosa significa il principio "un backup non testato non è un backup"?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Il test periodico di ripristino fa parte della strategia</button>
-    <button class="quiz-option" data-correct="false">I backup vanno eseguiti solo manualmente</button>
-    <button class="quiz-option" data-correct="false">Basta che il backup venga eseguito spesso</button>
-    <button class="quiz-option" data-correct="false">I backup cloud non vanno mai testati</button>
+    <button class="quiz-option" data-correct="false">I backup vanno sempre eseguiti manualmente, mai in modo automatico</button>
+    <button class="quiz-option" data-correct="false">Basta che il backup venga eseguito molto spesso, anche senza testarlo</button>
+    <button class="quiz-option" data-correct="false">I backup cloud non vanno mai testati, solo quelli locali</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>Senza test di restore non c'è garanzia che il backup sia utilizzabile.</div>
@@ -124,7 +124,7 @@
   <p class="quiz-q">7. Qual è la differenza principale tra Disaster Recovery (DR) e Business Continuity (BC)?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Il DR è il ripristino tecnico dell'IT, la BC comprende la continuità dell'intera organizzazione</button>
-    <button class="quiz-option" data-correct="false">Sono due nomi equivalenti per lo stesso identico processo</button>
+    <button class="quiz-option" data-correct="false">Sono due nomi equivalenti e intercambiabili per lo stesso identico processo tecnico</button>
     <button class="quiz-option" data-correct="false">La BC riguarda solo il backup dei dati, il DR riguarda solo il personale</button>
     <button class="quiz-option" data-correct="false">Il DR si applica solo alle piccole organizzazioni, la BC solo alle grandi</button>
   </div>
@@ -136,9 +136,9 @@
   <p class="quiz-q">8. Per ripristinare da backup incrementali, cosa serve?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">L'ultimo backup completo più tutti gli incrementali successivi, in ordine</button>
-    <button class="quiz-option" data-correct="false">Solo l'ultimo incrementale</button>
-    <button class="quiz-option" data-correct="false">Solo l'ultimo backup completo</button>
-    <button class="quiz-option" data-correct="false">L'ultimo completo e l'ultimo incrementale</button>
+    <button class="quiz-option" data-correct="false">Solo l'ultimo incrementale, senza bisogno di altro</button>
+    <button class="quiz-option" data-correct="false">Solo l'ultimo backup completo, ignorando gli incrementali</button>
+    <button class="quiz-option" data-correct="false">L'ultimo completo e soltanto l'ultimo incrementale, nessun altro</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>L'incrementale richiede l'intera catena dopo l'ultimo full.</div>
@@ -160,9 +160,9 @@
   <p class="quiz-q">10. Nella regola 3-2-1, cosa indica il "2"?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Due supporti o tecnologie diverse</button>
-    <button class="quiz-option" data-correct="false">Due copie offsite</button>
-    <button class="quiz-option" data-correct="false">Due backup al giorno</button>
-    <button class="quiz-option" data-correct="false">Due amministratori di sistema</button>
+    <button class="quiz-option" data-correct="false">Due copie conservate offsite, fuori dalla sede</button>
+    <button class="quiz-option" data-correct="false">Due backup completi eseguiti ogni giorno</button>
+    <button class="quiz-option" data-correct="false">Due amministratori di sistema diversi incaricati del backup</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>3 copie, su 2 supporti diversi, 1 offsite.</div>

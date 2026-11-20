@@ -40,9 +40,9 @@
   <p class="quiz-q">1. Cosa riceve un modello durante l'addestramento supervisionato?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Esempi di input insieme ai rispettivi output desiderati</button>
-    <button class="quiz-option" data-correct="false">Solo dati grezzi, senza alcuna etichetta</button>
-    <button class="quiz-option" data-correct="false">Solo un segnale di ricompensa o penalità</button>
-    <button class="quiz-option" data-correct="false">Nessun dato, solo regole scritte a mano</button>
+    <button class="quiz-option" data-correct="false">Solo dati grezzi, senza alcuna etichetta, da cui estrarre pattern nascosti</button>
+    <button class="quiz-option" data-correct="false">Solo un segnale di ricompensa o penalità legato a un obiettivo da raggiungere</button>
+    <button class="quiz-option" data-correct="false">Nessun dato osservato: solo regole scritte a mano da un esperto del dominio</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>Nell'apprendimento supervisionato il modello riceve "possibili input e i rispettivi output desiderati" — dati etichettati da cui estrarre una regola generale.</div>
@@ -124,9 +124,9 @@
   <p class="quiz-q">8. Cosa distingue l'apprendimento per rinforzo da quello non supervisionato, pur mancando in entrambi le etichette?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Il rinforzo ha un obiettivo e un feedback, il non supervisionato no</button>
-    <button class="quiz-option" data-correct="false">Il non supervisionato usa sempre dati etichettati</button>
-    <button class="quiz-option" data-correct="false">Il rinforzo non usa alcun dato</button>
-    <button class="quiz-option" data-correct="false">Non c'è alcuna differenza</button>
+    <button class="quiz-option" data-correct="false">Il non supervisionato usa sempre dati etichettati con la risposta corretta</button>
+    <button class="quiz-option" data-correct="false">Il rinforzo non usa alcun dato, agisce solo su regole scritte a priori</button>
+    <button class="quiz-option" data-correct="false">Non c'è alcuna differenza: sono due nomi diversi per lo stesso approccio</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>Nel rinforzo c'è un segnale di ricompensa legato a un obiettivo; nel non supervisionato si cerca solo una struttura nei dati.</div>
@@ -148,9 +148,9 @@
   <p class="quiz-q">10. Qual è l'obiettivo dell'apprendimento supervisionato?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Estrarre una regola generale che associ l'input all'output corretto</button>
-    <button class="quiz-option" data-correct="false">Trovare gruppi nei dati senza etichette</button>
-    <button class="quiz-option" data-correct="false">Massimizzare una ricompensa in un ambiente</button>
-    <button class="quiz-option" data-correct="false">Generare dati casuali</button>
+    <button class="quiz-option" data-correct="false">Trovare gruppi o strutture nei dati, senza alcuna etichetta di riferimento</button>
+    <button class="quiz-option" data-correct="false">Massimizzare una ricompensa interagendo nel tempo con un ambiente dinamico</button>
+    <button class="quiz-option" data-correct="false">Generare dati casuali simili a quelli osservati durante l'addestramento</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>Supervisionato: dagli esempi input-output si estrae una regola generale.</div>

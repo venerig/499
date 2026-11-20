@@ -84,8 +84,8 @@
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Risolvere nomi di dominio in indirizzi IP</button>
     <button class="quiz-option" data-correct="false">Assegnare indirizzi IP ai dispositivi</button>
-    <button class="quiz-option" data-correct="false">Cifrare il traffico web</button>
-    <button class="quiz-option" data-correct="false">Trasferire file</button>
+    <button class="quiz-option" data-correct="false">Cifrare il traffico web tramite un certificato TLS</button>
+    <button class="quiz-option" data-correct="false">Trasferire file tra client e server</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>DNS risolve i nomi; DHCP assegna gli indirizzi.</div>
@@ -108,8 +108,8 @@
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">L'indirizzo IP, al livello 3 (rete)</button>
     <button class="quiz-option" data-correct="false">L'indirizzo MAC, al livello 2</button>
-    <button class="quiz-option" data-correct="false">Nessuna, ritrasmette a tutti</button>
-    <button class="quiz-option" data-correct="false">Il nome DNS</button>
+    <button class="quiz-option" data-correct="false">Nessuna, ritrasmette il segnale a tutte le porte</button>
+    <button class="quiz-option" data-correct="false">Il nome di dominio DNS della destinazione</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>Router = livello 3, indirizzi IP; switch = livello 2, MAC; hub = livello 1, broadcast.</div>
@@ -131,9 +131,9 @@
   <p class="quiz-q">6. Quali caratteristiche ha il protocollo TCP?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Orientato alla connessione, con consegna affidabile e ordinata</button>
-    <button class="quiz-option" data-correct="false">Senza connessione e senza garanzie</button>
-    <button class="quiz-option" data-correct="false">Usato solo per lo streaming</button>
-    <button class="quiz-option" data-correct="false">Opera al livello fisico</button>
+    <button class="quiz-option" data-correct="false">Senza connessione e senza garanzie di consegna o di ordine</button>
+    <button class="quiz-option" data-correct="false">Usato esclusivamente per lo streaming video in diretta</button>
+    <button class="quiz-option" data-correct="false">Opera al livello fisico, senza alcuna nozione di connessione</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>TCP: handshake, ritrasmissioni, ordine; UDP: connectionless e più leggero.</div>
@@ -144,8 +144,8 @@
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Assegnare automaticamente indirizzi IP ai dispositivi di rete</button>
     <button class="quiz-option" data-correct="false">Risolvere nomi di dominio in indirizzi IP</button>
-    <button class="quiz-option" data-correct="false">Cifrare il traffico HTTP</button>
-    <button class="quiz-option" data-correct="false">Trasferire file tra client e server</button>
+    <button class="quiz-option" data-correct="false">Cifrare il traffico HTTP tramite un certificato digitale</button>
+    <button class="quiz-option" data-correct="false">Trasferire file tra client e server via rete</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>DHCP assegna dinamicamente indirizzi IP (e altri parametri come gateway e DNS) ai dispositivi che si collegano alla rete. La risoluzione nomi è compito del DNS.</div>
@@ -155,9 +155,9 @@
   <p class="quiz-q">8. Cosa fa un hub?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Ritrasmette il segnale a tutte le porte, al livello fisico</button>
-    <button class="quiz-option" data-correct="false">Instrada in base all'indirizzo IP</button>
-    <button class="quiz-option" data-correct="false">Impara gli indirizzi MAC</button>
-    <button class="quiz-option" data-correct="false">Cifra il traffico</button>
+    <button class="quiz-option" data-correct="false">Instrada in base all'indirizzo IP, al livello di rete</button>
+    <button class="quiz-option" data-correct="false">Impara gli indirizzi MAC delle porte collegate</button>
+    <button class="quiz-option" data-correct="false">Cifra il traffico che passa attraverso le sue porte</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>L'hub opera al livello 1 senza alcuna logica di instradamento.</div>
@@ -167,7 +167,7 @@
   <p class="quiz-q">9. Qual è la differenza concettuale principale tra un firewall e una VPN?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Il firewall filtra/decide cosa può passare, la VPN cifra il contenuto di ciò che passa</button>
-    <button class="quiz-option" data-correct="false">Sono due nomi per lo stesso identico strumento</button>
+    <button class="quiz-option" data-correct="false">Sono due nomi diversi per lo stesso identico strumento di sicurezza</button>
     <button class="quiz-option" data-correct="false">Il firewall funziona solo su reti wireless, la VPN solo su reti cablate</button>
     <button class="quiz-option" data-correct="false">La VPN filtra il traffico in base a regole, il firewall crea un tunnel cifrato</button>
   </div>
@@ -179,8 +179,8 @@
   <p class="quiz-q">10. Che cos'è SFTP?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">SSH File Transfer Protocol, un protocollo distinto basato su SSH</button>
-    <button class="quiz-option" data-correct="false">FTP incapsulato dentro SSH</button>
-    <button class="quiz-option" data-correct="false">FTP con cifratura TLS</button>
+    <button class="quiz-option" data-correct="false">FTP incapsulato all'interno di un tunnel SSH esistente</button>
+    <button class="quiz-option" data-correct="false">FTP con cifratura TLS aggiuntiva sopra il canale</button>
     <button class="quiz-option" data-correct="false">Una versione semplificata di FTP senza autenticazione</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>

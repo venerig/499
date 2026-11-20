@@ -62,9 +62,9 @@
   <p class="quiz-q">1. In quale fascia IANA rientrano le porte da 0 a 1023?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Porte well-known (di sistema)</button>
-    <button class="quiz-option" data-correct="false">Porte registrate</button>
-    <button class="quiz-option" data-correct="false">Porte dinamiche o private</button>
-    <button class="quiz-option" data-correct="false">Porte riservate ai client</button>
+    <button class="quiz-option" data-correct="false">Porte registrate presso IANA per applicazioni di terze parti</button>
+    <button class="quiz-option" data-correct="false">Porte dinamiche o private, assegnate temporaneamente al client</button>
+    <button class="quiz-option" data-correct="false">Porte riservate esclusivamente al lato client di una connessione</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>IANA: 0-1023 well-known, 1024-49151 registrate, 49152-65535 dinamiche/private.</div>
@@ -98,9 +98,9 @@
   <p class="quiz-q">4. Quale differenza c'è tra IMAP e POP3?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">IMAP lascia la posta sul server e sincronizza più dispositivi, POP3 la scarica in locale</button>
-    <button class="quiz-option" data-correct="false">POP3 è cifrato, IMAP mai</button>
-    <button class="quiz-option" data-correct="false">IMAP serve solo a inviare, POP3 solo a ricevere</button>
-    <button class="quiz-option" data-correct="false">Sono due nomi dello stesso protocollo</button>
+    <button class="quiz-option" data-correct="false">POP3 è sempre cifrato con TLS, mentre IMAP viaggia sempre in chiaro</button>
+    <button class="quiz-option" data-correct="false">IMAP serve solo a inviare la posta, mentre POP3 serve solo a riceverla</button>
+    <button class="quiz-option" data-correct="false">Sono due nomi equivalenti dello stesso identico protocollo di posta</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>IMAP = sincronizzazione lato server; POP3 = scaricamento locale, di norma con rimozione dal server.</div>
@@ -110,9 +110,9 @@
   <p class="quiz-q">5. Quali porte usa FTP?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">21 per i comandi e 20 per i dati</button>
-    <button class="quiz-option" data-correct="false">22 per comandi e dati</button>
-    <button class="quiz-option" data-correct="false">80 e 443</button>
-    <button class="quiz-option" data-correct="false">25 e 110</button>
+    <button class="quiz-option" data-correct="false">22 per comandi e dati, lo stesso canale cifrato usato da SSH</button>
+    <button class="quiz-option" data-correct="false">80 e 443, le stesse porte del traffico web HTTP e HTTPS</button>
+    <button class="quiz-option" data-correct="false">25 e 110, le porte rispettivamente di SMTP e di POP3</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>FTP usa due canali in chiaro: 21 (controllo) e 20 (dati in modalità attiva).</div>
@@ -135,8 +135,8 @@
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Disabilitare il login diretto di root e usare l'autenticazione a chiave pubblica</button>
     <button class="quiz-option" data-correct="false">Spostare SSH sulla porta 2222 lasciando il resto invariato</button>
-    <button class="quiz-option" data-correct="false">Usare password brevi ma frequenti</button>
-    <button class="quiz-option" data-correct="false">Abilitare Telnet come accesso di riserva</button>
+    <button class="quiz-option" data-correct="false">Usare password brevi ma cambiate molto frequentemente ogni settimana</button>
+    <button class="quiz-option" data-correct="false">Abilitare Telnet come accesso di riserva in caso di problemi con SSH</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>Cambiare porta riduce solo il rumore degli scanner; le misure vere sono niente login root e autenticazione a chiave.</div>
@@ -145,10 +145,10 @@
 <div class="quiz" data-quiz>
   <p class="quiz-q">8. Come si chiama l'unità di dati del livello 3 (rete)?</p>
   <div class="quiz-options">
-    <button class="quiz-option" data-correct="true">Pacchetto</button>
-    <button class="quiz-option" data-correct="false">Frame</button>
-    <button class="quiz-option" data-correct="false">Segmento</button>
-    <button class="quiz-option" data-correct="false">Bit</button>
+    <button class="quiz-option" data-correct="true">Pacchetto, l'unità di dati del livello 3</button>
+    <button class="quiz-option" data-correct="false">Frame, l'unità di dati del livello 2</button>
+    <button class="quiz-option" data-correct="false">Segmento, l'unità di dati del livello 4</button>
+    <button class="quiz-option" data-correct="false">Bit, l'unità di dati del livello 1</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>Livello 4 segmento/datagramma, livello 3 pacchetto, livello 2 frame, livello 1 bit.</div>

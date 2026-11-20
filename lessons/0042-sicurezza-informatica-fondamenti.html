@@ -111,9 +111,9 @@
   <p class="quiz-q">5. Quale affermazione su una funzione di hash crittografica (es. SHA-256) è corretta?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">È unidirezionale: dall'impronta non si risale all'input</button>
-    <button class="quiz-option" data-correct="false">Si decifra con la chiave privata del titolare</button>
-    <button class="quiz-option" data-correct="false">Produce un output lungo quanto l'input</button>
-    <button class="quiz-option" data-correct="false">È un algoritmo di cifratura simmetrica</button>
+    <button class="quiz-option" data-correct="false">Si decifra con la chiave privata del titolare, come la crittografia asimmetrica</button>
+    <button class="quiz-option" data-correct="false">Produce sempre un output della stessa identica lunghezza dell'input originale</button>
+    <button class="quiz-option" data-correct="false">È un algoritmo di cifratura simmetrica reversibile con la chiave giusta</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>L'hash produce un'impronta di lunghezza fissa e non è reversibile: non c'è chiave per "decifrarlo". Serve a verificare l'integrità e a conservare le password, non a cifrare.</div>
@@ -135,9 +135,9 @@
   <p class="quiz-q">7. Quale combinazione costituisce un'autenticazione a due fattori?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Password e codice OTP generato sullo smartphone</button>
-    <button class="quiz-option" data-correct="false">Password e PIN</button>
-    <button class="quiz-option" data-correct="false">Password e domanda di sicurezza</button>
-    <button class="quiz-option" data-correct="false">Due password diverse</button>
+    <button class="quiz-option" data-correct="false">Password e PIN, entrambi numeri che l'utente deve ricordare</button>
+    <button class="quiz-option" data-correct="false">Password e risposta a una domanda di sicurezza memorizzata</button>
+    <button class="quiz-option" data-correct="false">Due password diverse usate per lo stesso account</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>I fattori devono appartenere a categorie diverse: password (qualcosa che sai) + OTP sullo smartphone (qualcosa che hai). PIN, domanda di sicurezza e seconda password sono tutti "qualcosa che sai": un solo fattore.</div>
@@ -172,8 +172,8 @@
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Entro 24 ore, con notifica completa entro 72 ore</button>
     <button class="quiz-option" data-correct="false">Entro 72 ore, con notifica completa entro 30 giorni</button>
-    <button class="quiz-option" data-correct="false">Entro 7 giorni</button>
-    <button class="quiz-option" data-correct="false">Solo se lo chiede il Garante</button>
+    <button class="quiz-option" data-correct="false">Entro 7 giorni dalla scoperta dell'incidente</button>
+    <button class="quiz-option" data-correct="false">Solo se lo richiede espressamente il Garante per la privacy</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>L. 90/2024: segnalazione senza ritardo e comunque entro 24 ore; notifica completa entro 72 ore.</div>

@@ -48,9 +48,9 @@
   <p class="quiz-q">1. Cosa indica la "x" finale nei formati .docx/.xlsx/.pptx rispetto a .doc/.xls/.ppt?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Il passaggio a un formato basato su XML, introdotto da Office 2007</button>
-    <button class="quiz-option" data-correct="false">Un file protetto da password</button>
-    <button class="quiz-option" data-correct="false">Un file compatibile solo con macOS</button>
-    <button class="quiz-option" data-correct="false">Un file di sola lettura</button>
+    <button class="quiz-option" data-correct="false">Un file protetto da password e cifrato di default dal sistema operativo</button>
+    <button class="quiz-option" data-correct="false">Un file compatibile esclusivamente con sistemi macOS</button>
+    <button class="quiz-option" data-correct="false">Un file impostato in sola lettura, non modificabile</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>La "x" segna il passaggio dal formato binario proprietario legacy al formato XML (in realtà un archivio ZIP di file XML) introdotto con Office 2007.</div>
@@ -60,9 +60,9 @@
   <p class="quiz-q">2. Cosa fa la funzione CERCA.VERT (VLOOKUP)?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Cerca un valore in una colonna e restituisce il valore corrispondente da un'altra colonna</button>
-    <button class="quiz-option" data-correct="false">Somma i valori di un intervallo</button>
-    <button class="quiz-option" data-correct="false">Ordina alfabeticamente una colonna</button>
-    <button class="quiz-option" data-correct="false">Unisce due fogli di lavoro</button>
+    <button class="quiz-option" data-correct="false">Somma automaticamente tutti i valori numerici presenti in un intervallo di celle selezionato</button>
+    <button class="quiz-option" data-correct="false">Ordina alfabeticamente il contenuto testuale di una colonna</button>
+    <button class="quiz-option" data-correct="false">Unisce il contenuto di due fogli di lavoro in un terzo foglio</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>CERCA.VERT/CERCA.X cercano un valore e restituiscono il dato corrispondente.</div>
@@ -107,7 +107,7 @@
 <div class="quiz" data-quiz>
   <p class="quiz-q">6. In quale linguaggio sono tipicamente scritte le macro di Office?</p>
   <div class="quiz-options">
-    <button class="quiz-option" data-correct="true">VBA (Visual Basic for Applications)</button>
+    <button class="quiz-option" data-correct="true">VBA</button>
     <button class="quiz-option" data-correct="false">Python</button>
     <button class="quiz-option" data-correct="false">SQL</button>
     <button class="quiz-option" data-correct="false">HTML</button>
@@ -120,9 +120,9 @@
   <p class="quiz-q">7. Perché il formato PDF non è generalmente indicato per l'editing nativo di un documento?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">È pensato principalmente per la lettura e la stampa con layout fisso, non per la modifica del contenuto</button>
-    <button class="quiz-option" data-correct="false">Non può contenere testo, solo immagini</button>
-    <button class="quiz-option" data-correct="false">È leggibile solo su sistemi Windows</button>
-    <button class="quiz-option" data-correct="false">Non esiste alcun software in grado di aprirlo</button>
+    <button class="quiz-option" data-correct="false">Non può contenere testo, solo immagini scansionate pagina per pagina, come un file TIFF</button>
+    <button class="quiz-option" data-correct="false">È leggibile solo su sistemi Windows con Adobe Acrobat installato, non su macOS o Linux</button>
+    <button class="quiz-option" data-correct="false">Non esiste alcun software gratuito in grado di aprirlo, solo suite commerciali costose</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>Il PDF è un formato di interscambio/stampa con layout fisso, pensato per la visualizzazione coerente su ogni dispositivo — non per l'editing diretto del contenuto come i formati nativi delle suite office.</div>
@@ -144,9 +144,9 @@
   <p class="quiz-q">9. Perché le macro nei documenti Office sono considerate anche un rischio di sicurezza?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Possono contenere codice eseguibile (VBA) usato come vettore di malware in allegati malevoli</button>
-    <button class="quiz-option" data-correct="false">Occupano sempre troppo spazio su disco</button>
-    <button class="quiz-option" data-correct="false">Rendono il documento illeggibile su altri computer</button>
-    <button class="quiz-option" data-correct="false">Sono vietate per legge in ogni contesto</button>
+    <button class="quiz-option" data-correct="false">Occupano sempre troppo spazio su disco, rallentando sensibilmente il sistema operativo</button>
+    <button class="quiz-option" data-correct="false">Rendono il documento illeggibile su altri computer senza Office installato</button>
+    <button class="quiz-option" data-correct="false">Sono vietate per legge in ogni contesto, anche quelle scritte internamente</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>Le macro sono codice eseguibile (tipicamente VBA): un allegato con macro malevola è un classico vettore di infezione, motivo per cui le macro da file scaricati da Internet sono disabilitate di default.</div>
@@ -156,9 +156,9 @@
   <p class="quiz-q">10. Cosa succede a un riferimento relativo (A1) quando la formula viene copiata in un'altra cella?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Si adatta alla nuova posizione</button>
-    <button class="quiz-option" data-correct="false">Resta fisso</button>
-    <button class="quiz-option" data-correct="false">Genera un errore</button>
-    <button class="quiz-option" data-correct="false">Diventa automaticamente assoluto</button>
+    <button class="quiz-option" data-correct="false">Resta fisso, esattamente come un riferimento assoluto</button>
+    <button class="quiz-option" data-correct="false">Genera sempre un errore di formula non valida</button>
+    <button class="quiz-option" data-correct="false">Diventa automaticamente un riferimento assoluto permanente</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>Il riferimento relativo cambia con lo spostamento; quello assoluto ($A$1) resta fisso.</div>

@@ -50,9 +50,9 @@
   <p class="quiz-q">1. Quali linguaggi appartengono alla categoria "basso livello"?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Linguaggio macchina e Assembly</button>
-    <button class="quiz-option" data-correct="false">Java e Python</button>
-    <button class="quiz-option" data-correct="false">SQL e HTML</button>
-    <button class="quiz-option" data-correct="false">C e Fortran</button>
+    <button class="quiz-option" data-correct="false">Java e Python, nonostante passino entrambi da una compilazione intermedia</button>
+    <button class="quiz-option" data-correct="false">SQL e HTML, linguaggi dichiarativi non orientati all'esecuzione procedurale</button>
+    <button class="quiz-option" data-correct="false">C e Fortran, spesso scambiati per basso livello per la vicinanza all'hardware</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>Basso livello = linguaggio macchina e Assembly, che operano direttamente sull'hardware. C e Fortran, pur "vicini alla macchina" nell'uso comune, sono classificati come alto livello nella tassonomia standard dei manuali.</div>
@@ -86,9 +86,9 @@
   <p class="quiz-q">4. Qual è uno svantaggio tipico di un linguaggio compilato?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Serve un eseguibile diverso per ogni piattaforma</button>
-    <button class="quiz-option" data-correct="false">È più lento a runtime dell'interpretato</button>
-    <button class="quiz-option" data-correct="false">Non può usare variabili</button>
-    <button class="quiz-option" data-correct="false">Richiede sempre una macchina virtuale</button>
+    <button class="quiz-option" data-correct="false">È più lento a runtime dell'interpretato, perché traduce durante l'esecuzione</button>
+    <button class="quiz-option" data-correct="false">Non può usare variabili, essendo il programma fissato in fase di compilazione</button>
+    <button class="quiz-option" data-correct="false">Richiede sempre una macchina virtuale per eseguire il codice oggetto generato</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>Il compilato è più veloce a runtime, ma produce un eseguibile specifico per piattaforma.</div>
@@ -134,9 +134,9 @@
   <p class="quiz-q">8. Come funziona un linguaggio interpretato, nella definizione da manuale?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Un interprete esegue il codice sorgente direttamente, istruzione per istruzione</button>
-    <button class="quiz-option" data-correct="false">Un compilatore traduce tutto in eseguibile prima dell'avvio</button>
-    <button class="quiz-option" data-correct="false">Il codice viene eseguito solo dal browser</button>
-    <button class="quiz-option" data-correct="false">Il codice viene convertito in hardware dedicato</button>
+    <button class="quiz-option" data-correct="false">Un compilatore traduce l'intero programma in eseguibile prima di ogni esecuzione</button>
+    <button class="quiz-option" data-correct="false">Il codice viene eseguito solo all'interno di un browser, tramite motore JavaScript</button>
+    <button class="quiz-option" data-correct="false">Il codice sorgente viene convertito direttamente in un circuito hardware dedicato</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>Interpretato: il sorgente è eseguito direttamente da un interprete, riga per riga.</div>
@@ -146,9 +146,9 @@
   <p class="quiz-q">9. Cosa distingue l'approccio ibrido (bytecode + macchina virtuale) dal semplice compilato o interpretato?</p>
   <div class="quiz-options">
     <button class="quiz-option" data-correct="true">Combina una compilazione intermedia con un'esecuzione tramite macchina virtuale</button>
-    <button class="quiz-option" data-correct="false">Elimina completamente la necessità di un compilatore</button>
-    <button class="quiz-option" data-correct="false">Richiede sempre un eseguibile diverso per ogni piattaforma</button>
-    <button class="quiz-option" data-correct="false">Esegue il codice sorgente originale senza alcuna traduzione</button>
+    <button class="quiz-option" data-correct="false">Elimina completamente la necessità di un compilatore, delegando tutto a un interprete puro</button>
+    <button class="quiz-option" data-correct="false">Richiede sempre un eseguibile nativo diverso per ogni piattaforma, come il compilato puro</button>
+    <button class="quiz-option" data-correct="false">Esegue il codice sorgente originale senza alcuna traduzione intermedia, riga per riga</button>
   </div>
   <p class="quiz-feedback" data-feedback></p>
   <div class="quiz-explain" data-explain>L'approccio ibrido genera bytecode intermedio tramite un compilatore, poi eseguito da una macchina virtuale (eventualmente con JIT) — un compromesso tra la velocità del compilato e la portabilità dell'interpretato.</div>
